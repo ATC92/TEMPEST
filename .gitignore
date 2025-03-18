@@ -1,2 +1,9 @@
+#Ignorar archivos de compilacion, depuracion.
+*.log
+*.tmp
+*.swp
+
+# Ignorar carpetas para main
 install/
+build/
 commands.txt
