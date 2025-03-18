@@ -1,1 +1,1 @@
-CMakeFiles/Project.dir/main.c.obj CMakeFiles/Project.dir/__/Motor/Motor.c.obj CMakeFiles/Project.dir/__/Juego/Juego.c.obj CMakeFiles/Project.dir/__/Entity/Entity.c.obj
+CMakeFiles/Project.dir/main.c.obj CMakeFiles/Project.dir/__/Engine/Engine.c.obj CMakeFiles/Project.dir/__/Game/Game.c.obj CMakeFiles/Project.dir/__/Entity/Entity.c.obj CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj CMakeFiles/Project.dir/__/Utils/Information.c.obj CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj CMakeFiles/Project.dir/__/MapGen/Map.c.obj

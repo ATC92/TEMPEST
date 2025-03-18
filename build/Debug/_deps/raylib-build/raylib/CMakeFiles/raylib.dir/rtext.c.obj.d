@@ -1,6 +1,6 @@
 _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.obj: \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\rtext.c \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\raylib.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\rtext.c \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\raylib.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
  C:/msys64/mingw64/include/stdarg.h \
  C:/msys64/mingw64/include/_mingw_stdarg.h \
@@ -9,9 +9,9 @@ _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.obj: \
  C:/msys64/mingw64/include/_mingw_secapi.h \
  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\config.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\utils.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\rlgl.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\config.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\utils.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\rlgl.h \
  C:/msys64/mingw64/include/stdlib.h C:/msys64/mingw64/include/corecrt.h \
  C:/msys64/mingw64/include/corecrt_wstdlib.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
@@ -28,6 +28,6 @@ _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.obj: \
  C:/msys64/mingw64/include/string.h \
  C:/msys64/mingw64/include/sec_api/string_s.h \
  C:/msys64/mingw64/include/ctype.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external/stb_rect_pack.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external/stb_rect_pack.h \
  C:/msys64/mingw64/include/assert.h C:/msys64/mingw64/include/math.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external/stb_truetype.h
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external/stb_truetype.h

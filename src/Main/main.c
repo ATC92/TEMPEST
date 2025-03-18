@@ -1,48 +1,18 @@
-#include "../Motor/Motor.h"
-#include "../Entity/Entity.h"
-
+#include "../Engine/Engine.h"
 int main(void)
 {
-    // Init VAR
-    // --------------------------------------------------------------------
-    const int screenWidth = 1250;
-    const int screenHeight = 950;
-    // --------------------------------------------------------------------
-    // Window Init
-    InitWindow(screenWidth,screenHeight,"Project V-Beta");              // Width, Height, Name.
-    SetTargetFPS(60);                                                   // Init Fps in 60.
-    // --------------------------------------------------------------------
-    // Init the assets and everything por the game.
-    InitGame();
-    // Main Loop Game
-    while (!WindowShouldClose())
+    InitWindow(1250, 950, "Project V-Beta");        ///< Set Name of the window
+    SetTargetFPS(75);                               ///< Set FPS
+    InitGame();                                     ///< Init Game Engine
+    while (!WindowShouldClose())                    ///< Main loop for the game
     {
-        // --------------------------------------------------------------------
-        // UPDATE
-        // --------------------------------------------------------------------
-
-        // Update Movement of Player
-        updateMovement();
-        // Create Entity Enemys 
-
-        GameUpdate();
-        // --------------------------------------------------------------------
-        // Draw
-        // --------------------------------------------------------------------
-
-        // Init Drawing part
-        BeginDrawing();
-            // Clear the Canvas
-            ClearBackground(RAYWHITE);
-            GameRender();
-        // End Drawing part
-        EndDrawing();
+        GameUpdate();                               ///< Game Engine Update
+        BeginDrawing();                             ///< || Start Drawing, RayLib Context
+            ClearBackground(RAYWHITE);              ///< Give a color to the Background
+            GameRender();                           ///< Game Engine Render
+        EndDrawing();                               ///< || End Drawing, RalyLib Context
     }
-    // --------------------------------------------------------------------
-    // De-Init
-    // --------------------------------------------------------------------
-    DeInitGame();
-    CloseWindow();                                                      // OpenGL Context
-    //--------------------------------------------------------------------
-    // END Context Game
+    DeInitGame();                                   ///< De-Init Game Engine
+    CloseWindow();                                  ///< Close Window OpenGL Context
+    return EXIT_SUCCESS;                            ///< Close main correctly
 }

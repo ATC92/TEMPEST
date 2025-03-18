@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\user\Documents\Projects\VideoGame
+CMAKE_SOURCE_DIR = C:\Users\user\Documents\Projects\CGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\user\Documents\Projects\VideoGame\build\Debug
+CMAKE_BINARY_DIR = C:\Users\user\Documents\Projects\CGame\build\Debug
 
 # Utility rule file for update_mappings.
 
@@ -66,8 +66,8 @@ include _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.d
 include _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/progress.make
 
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\user\Documents\Projects\VideoGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src && "C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/user/Documents/Projects/VideoGame/build/Debug/_deps/raylib-src/src/external/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src && "C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/user/Documents/Projects/CGame/build/Debug/_deps/raylib-src/src/external/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/codegen:
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/codegen
@@ -81,10 +81,10 @@ _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
 
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-build\raylib\external\glfw\src && $(CMAKE_COMMAND) -P CMakeFiles\update_mappings.dir\cmake_clean.cmake
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-build\raylib\external\glfw\src && $(CMAKE_COMMAND) -P CMakeFiles\update_mappings.dir\cmake_clean.cmake
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\user\Documents\Projects\VideoGame C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src C:\Users\user\Documents\Projects\VideoGame\build\Debug C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-build\raylib\external\glfw\src C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-build\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\user\Documents\Projects\CGame C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src C:\Users\user\Documents\Projects\CGame\build\Debug C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-build\raylib\external\glfw\src C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-build\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/depend
 

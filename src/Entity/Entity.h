@@ -1,42 +1,92 @@
 #pragma once
+///< Extern Libraries
 #include "raylib.h"
-/*
-    ----------------------------------------------------
-    Definition of the types of entitys.
-    
-    - PLAYER
-    - ENEMY
-    ----------------------------------------------------
-    - Last Modification 06/03/2025
-    ----------------------------------------------------
-*/
-typedef enum
-{
-    PLAYER,
-    ENEMY
-}eType;
+#include "cJSON.h"
+///< C Libraries
+#include <string.h>
+///< CGame Libraries
 
+/////////////////////////////////////////////////////////////////////////
+/**
+ * @brief struct with the enumeration of where is looking the @n `Entity`
+ * 
+ * ---
+ * 
+ * Contains:
+ * 
+ * @param UP        ///< 0
+ * @param RIGHT     ///< 1
+ * @param DOWN      ///< 3
+ * @param LEFT      ///< 4
+*/
+typedef enum _eLooking
+{
+    UP,
+    RIGHT,
+    DOWN,
+    LEFT
+}eLooking;
+/**
+ * @brief struct with all param for the Texture Enitity
+ * 
+ * ---
+ * 
+ * @param char*         <NAME>
+ * @param int           <ID>
+ * @param Texture2D     <Texture>
+ * @param cJSON*        <Enitity Parse JSON>
+ */
+typedef struct _tEntity
+{
+    char* name;
+    int ID;
+    Texture2D Texture;
+    cJSON* parseJson_Entity;
+}tEntity;
+/////////////////////////////////////////////////////////////////////////
+/**
+ * 
+ */
+typedef enum _typeEntity
+{
+    _PLAYER,
+    _NPC
+}TypeEntity;
 /**
  * @brief Structure for Player entity.
  * 
- * - Last Modification 06/03/2025
+ * ---
+ * 
+ * @param char*     <NAME>          ///< Name of the entity Enemy
+ * @param float     <HEALTH>        ///< Health of the entity Enemy
+ * @param float     <ARMOR>         ///< Armor of the entity Enemy
+ * @param float     <SPEED>         ///< Speed of the entity Enemy
+ * @param float     <EXPERIENCE>    ///< Experience of the entity Enemy
+ * @param Vector2   <POSITION>      ///< Position { X , Y }
  */
-typedef struct Player
+typedef struct _Player
 {
     char* name;         ///< Name of the entity Player
     float health;       ///< Health of the entity Player
     float armor;        ///< Armor of the entity Player
     float speed;        ///< Speed of the entity Player
     float exp;          ///< Experience of the entity Player
-    Vector2 position;   ///< Position {X,Y}
-}_ply;
-
+    Vector2 position;   ///< Vector2D position {X,Y}
+}Player;
 /**
  * @brief Structure for Enemy entity.
  * 
- * - Last Modification 06/03/2025
+ * ---
+ * 
+ * @param char*     <NAME>          ///< Name of the entity Enemy
+ * @param float     <HEALTH>        ///< Health of the entity Enemy
+ * @param float     <ARMOR>         ///< Armor of the entity Enemy
+ * @param float     <SPEED>         ///< Speed of the entity Enemy
+ * @param float     <CRITICAL>      ///< Critical of the entity Enemy
+ * @param float     <EXPERIENCE>    ///< Experience of the entity Enemy
+ * @param Vector2   <POSITION>      ///< Position { X , Y }
  */
-typedef struct Enemy
+typedef struct _npc
 {
     char* name;         ///< Name of the entity Enemy
     float health;       ///< Health of the entity Enemy
@@ -45,60 +95,39 @@ typedef struct Enemy
     float crit;         ///< Critical of the entity Enemy
     float exp;          ///< Experience of the entity Enemy
     Vector2 position;   ///< Position {X,Y}
-}_eny;
+}NPC;
+/**
+ * @brief Main Entity
 
-/*
-    ----------------------------------------------------
-        Union Data Entity
-            It will contain all the entities that the Union can handle.
-            Adding:
-                - Player
-                - Enemy
-    ----------------------------------------------------
-    - Last Modification 06/03/2025
-    ----------------------------------------------------
+ * ---
+
+ *  Contain:
+ * @param Player            ///< Player struct
+ * @param NPC               ///< NPC struct
+ * @param eLooking          ///< Where is the Entity looking
+ * @param tEntity           ///< List of textures of the entity
 */
-typedef union _eData
+typedef struct _Entity
 {
-    // Struct type Player
-    _ply Player;
-    // Struct type Enemy
-    _eny Enemy;
-}eData;
-
-/*
-    ----------------------------------------------------
-        Main Entity
-        Contain:
-            * _eData, Entity Data.
-            * _eType, Entity Type
-
-    ----------------------------------------------------
-    - Last Modification 06/03/2025
-    ----------------------------------------------------
-*/
-typedef struct _entity
-{
-    // Union entity 
-    eData EntityData;
-    // Struct Entity Type
-    eType EntityType;
+    Player _player;             ///< Player struct
+    NPC _npc;                   ///< NPC struct
+    tEntity* _tEntity;          ///< List of textures of the entity
+    int _eLook;                 ///< Where the entity is looking
+    TypeEntity  _typeEntity;    ///< Type of entity in the ENUM.
 }Entity;
-
-
-// Funtions of the game
-
-/*
-    GenEntity
-    - char _t       = Type of the Entity
-    - char* _n      = Name of the Entity
-    - float _h      = Health of the Entity
-    - float _ar     = Armor of the Entity
-    - float _sp     = Speed of the Entity
-    - float _crt    = Critical of the Entity
-    ----------------------------------------------------
-    - Last Modification 06/03/2025
-    ----------------------------------------------------
-*/
+/////////////////////////////////////////////////////////////////////////
+/**
+ * @brief Generation of entity atributes
+ * 
+ * ---
+ * 
+ * @param char*     _n      ///< Name of the Entity
+ * @param float     _h      ///< Health of the Entity
+ * @param float     _ar     ///< Armor of the Entity
+ * @param float     _sp     ///< Speed of the Entity
+ * @param float     _crt    ///< Critical of the Entity
+ * 
+ * @return @n `Entity`      ///< Struct main with all parameters    
+ */
 Entity GenEntity(int,char*,float,float,float,float);
 

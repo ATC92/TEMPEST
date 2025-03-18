@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\user\Documents\Projects\VideoGame
+CMAKE_SOURCE_DIR = C:\Users\user\Documents\Projects\CGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\user\Documents\Projects\VideoGame\build\Debug
+CMAKE_BINARY_DIR = C:\Users\user\Documents\Projects\CGame\build\Debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = C:\Users\user\Documents\Projects\VideoGame\build\Debug
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && "C:\Program Files\CMake\bin\cpack.exe" --config ./CPackConfig.cmake
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && "C:\Program Files\CMake\bin\cpack.exe" --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -77,7 +77,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && "C:\Program Files\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake C:/Users/user/Documents/Projects/VideoGame/build/Debug/CPackSourceConfig.cmake
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && "C:\Program Files\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake C:/Users/user/Documents/Projects/CGame/build/Debug/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -151,14 +151,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\Documents\Projects\VideoGame\build\Debug\CMakeFiles C:\Users\user\Documents\Projects\VideoGame\build\Debug\src\Main\\CMakeFiles\progress.marks
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\Documents\Projects\VideoGame\build\Debug\CMakeFiles 0
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main\\CMakeFiles\progress.marks
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/clean
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/clean
 .PHONY : clean
 
 # The main clean target
@@ -167,22 +167,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/preinstall
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/preinstall
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/Main/CMakeFiles/Project.dir/rule:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/CMakeFiles/Project.dir/rule
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/CMakeFiles/Project.dir/rule
 .PHONY : src/Main/CMakeFiles/Project.dir/rule
 
 # Convenience name for target.
@@ -191,15 +191,39 @@ Project: src/Main/CMakeFiles/Project.dir/rule
 
 # fast build rule for target.
 Project/fast:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/build
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/build
 .PHONY : Project/fast
+
+__/Engine/Engine.obj: __/Engine/Engine.c.obj
+.PHONY : __/Engine/Engine.obj
+
+# target to build an object file
+__/Engine/Engine.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.obj
+.PHONY : __/Engine/Engine.c.obj
+
+__/Engine/Engine.i: __/Engine/Engine.c.i
+.PHONY : __/Engine/Engine.i
+
+# target to preprocess a source file
+__/Engine/Engine.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.i
+.PHONY : __/Engine/Engine.c.i
+
+__/Engine/Engine.s: __/Engine/Engine.c.s
+.PHONY : __/Engine/Engine.s
+
+# target to generate assembly for a file
+__/Engine/Engine.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.s
+.PHONY : __/Engine/Engine.c.s
 
 __/Entity/Entity.obj: __/Entity/Entity.c.obj
 .PHONY : __/Entity/Entity.obj
 
 # target to build an object file
 __/Entity/Entity.c.obj:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj
 .PHONY : __/Entity/Entity.c.obj
 
 __/Entity/Entity.i: __/Entity/Entity.c.i
@@ -207,7 +231,7 @@ __/Entity/Entity.i: __/Entity/Entity.c.i
 
 # target to preprocess a source file
 __/Entity/Entity.c.i:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.i
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.i
 .PHONY : __/Entity/Entity.c.i
 
 __/Entity/Entity.s: __/Entity/Entity.c.s
@@ -215,63 +239,135 @@ __/Entity/Entity.s: __/Entity/Entity.c.s
 
 # target to generate assembly for a file
 __/Entity/Entity.c.s:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.s
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.s
 .PHONY : __/Entity/Entity.c.s
 
-__/Juego/Juego.obj: __/Juego/Juego.c.obj
-.PHONY : __/Juego/Juego.obj
+__/Game/Game.obj: __/Game/Game.c.obj
+.PHONY : __/Game/Game.obj
 
 # target to build an object file
-__/Juego/Juego.c.obj:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Juego/Juego.c.obj
-.PHONY : __/Juego/Juego.c.obj
+__/Game/Game.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj
+.PHONY : __/Game/Game.c.obj
 
-__/Juego/Juego.i: __/Juego/Juego.c.i
-.PHONY : __/Juego/Juego.i
+__/Game/Game.i: __/Game/Game.c.i
+.PHONY : __/Game/Game.i
 
 # target to preprocess a source file
-__/Juego/Juego.c.i:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Juego/Juego.c.i
-.PHONY : __/Juego/Juego.c.i
+__/Game/Game.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Game/Game.c.i
+.PHONY : __/Game/Game.c.i
 
-__/Juego/Juego.s: __/Juego/Juego.c.s
-.PHONY : __/Juego/Juego.s
+__/Game/Game.s: __/Game/Game.c.s
+.PHONY : __/Game/Game.s
 
 # target to generate assembly for a file
-__/Juego/Juego.c.s:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Juego/Juego.c.s
-.PHONY : __/Juego/Juego.c.s
+__/Game/Game.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Game/Game.c.s
+.PHONY : __/Game/Game.c.s
 
-__/Motor/Motor.obj: __/Motor/Motor.c.obj
-.PHONY : __/Motor/Motor.obj
+__/MapGen/Map.obj: __/MapGen/Map.c.obj
+.PHONY : __/MapGen/Map.obj
 
 # target to build an object file
-__/Motor/Motor.c.obj:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Motor/Motor.c.obj
-.PHONY : __/Motor/Motor.c.obj
+__/MapGen/Map.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj
+.PHONY : __/MapGen/Map.c.obj
 
-__/Motor/Motor.i: __/Motor/Motor.c.i
-.PHONY : __/Motor/Motor.i
+__/MapGen/Map.i: __/MapGen/Map.c.i
+.PHONY : __/MapGen/Map.i
 
 # target to preprocess a source file
-__/Motor/Motor.c.i:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Motor/Motor.c.i
-.PHONY : __/Motor/Motor.c.i
+__/MapGen/Map.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.i
+.PHONY : __/MapGen/Map.c.i
 
-__/Motor/Motor.s: __/Motor/Motor.c.s
-.PHONY : __/Motor/Motor.s
+__/MapGen/Map.s: __/MapGen/Map.c.s
+.PHONY : __/MapGen/Map.s
 
 # target to generate assembly for a file
-__/Motor/Motor.c.s:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Motor/Motor.c.s
-.PHONY : __/Motor/Motor.c.s
+__/MapGen/Map.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.s
+.PHONY : __/MapGen/Map.c.s
+
+__/Utils/EngineUpdates.obj: __/Utils/EngineUpdates.c.obj
+.PHONY : __/Utils/EngineUpdates.obj
+
+# target to build an object file
+__/Utils/EngineUpdates.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj
+.PHONY : __/Utils/EngineUpdates.c.obj
+
+__/Utils/EngineUpdates.i: __/Utils/EngineUpdates.c.i
+.PHONY : __/Utils/EngineUpdates.i
+
+# target to preprocess a source file
+__/Utils/EngineUpdates.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.i
+.PHONY : __/Utils/EngineUpdates.c.i
+
+__/Utils/EngineUpdates.s: __/Utils/EngineUpdates.c.s
+.PHONY : __/Utils/EngineUpdates.s
+
+# target to generate assembly for a file
+__/Utils/EngineUpdates.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.s
+.PHONY : __/Utils/EngineUpdates.c.s
+
+__/Utils/Information.obj: __/Utils/Information.c.obj
+.PHONY : __/Utils/Information.obj
+
+# target to build an object file
+__/Utils/Information.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj
+.PHONY : __/Utils/Information.c.obj
+
+__/Utils/Information.i: __/Utils/Information.c.i
+.PHONY : __/Utils/Information.i
+
+# target to preprocess a source file
+__/Utils/Information.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.i
+.PHONY : __/Utils/Information.c.i
+
+__/Utils/Information.s: __/Utils/Information.c.s
+.PHONY : __/Utils/Information.s
+
+# target to generate assembly for a file
+__/Utils/Information.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.s
+.PHONY : __/Utils/Information.c.s
+
+__/Utils/LoadTextures.obj: __/Utils/LoadTextures.c.obj
+.PHONY : __/Utils/LoadTextures.obj
+
+# target to build an object file
+__/Utils/LoadTextures.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj
+.PHONY : __/Utils/LoadTextures.c.obj
+
+__/Utils/LoadTextures.i: __/Utils/LoadTextures.c.i
+.PHONY : __/Utils/LoadTextures.i
+
+# target to preprocess a source file
+__/Utils/LoadTextures.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.i
+.PHONY : __/Utils/LoadTextures.c.i
+
+__/Utils/LoadTextures.s: __/Utils/LoadTextures.c.s
+.PHONY : __/Utils/LoadTextures.s
+
+# target to generate assembly for a file
+__/Utils/LoadTextures.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.s
+.PHONY : __/Utils/LoadTextures.c.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.c.obj:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/main.c.obj
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -279,7 +375,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/main.c.i
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -287,7 +383,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/main.c.s
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -305,15 +401,27 @@ help:
 	@echo ... package_source
 	@echo ... rebuild_cache
 	@echo ... Project
+	@echo ... __/Engine/Engine.obj
+	@echo ... __/Engine/Engine.i
+	@echo ... __/Engine/Engine.s
 	@echo ... __/Entity/Entity.obj
 	@echo ... __/Entity/Entity.i
 	@echo ... __/Entity/Entity.s
-	@echo ... __/Juego/Juego.obj
-	@echo ... __/Juego/Juego.i
-	@echo ... __/Juego/Juego.s
-	@echo ... __/Motor/Motor.obj
-	@echo ... __/Motor/Motor.i
-	@echo ... __/Motor/Motor.s
+	@echo ... __/Game/Game.obj
+	@echo ... __/Game/Game.i
+	@echo ... __/Game/Game.s
+	@echo ... __/MapGen/Map.obj
+	@echo ... __/MapGen/Map.i
+	@echo ... __/MapGen/Map.s
+	@echo ... __/Utils/EngineUpdates.obj
+	@echo ... __/Utils/EngineUpdates.i
+	@echo ... __/Utils/EngineUpdates.s
+	@echo ... __/Utils/Information.obj
+	@echo ... __/Utils/Information.i
+	@echo ... __/Utils/Information.s
+	@echo ... __/Utils/LoadTextures.obj
+	@echo ... __/Utils/LoadTextures.i
+	@echo ... __/Utils/LoadTextures.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
@@ -328,6 +436,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

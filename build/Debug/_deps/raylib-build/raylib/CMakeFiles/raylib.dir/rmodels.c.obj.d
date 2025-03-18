@@ -1,6 +1,6 @@
 _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.obj: \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\rmodels.c \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\raylib.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\rmodels.c \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\raylib.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
  C:/msys64/mingw64/include/stdarg.h \
  C:/msys64/mingw64/include/_mingw_stdarg.h \
@@ -9,10 +9,10 @@ _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.obj: \
  C:/msys64/mingw64/include/_mingw_secapi.h \
  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\config.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\utils.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\rlgl.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\raymath.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\config.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\utils.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\rlgl.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\raymath.h \
  C:/msys64/mingw64/include/math.h C:/msys64/mingw64/include/crtdefs.h \
  C:/msys64/mingw64/include/corecrt.h C:/msys64/mingw64/include/stdio.h \
  C:/msys64/mingw64/include/corecrt_stdio_config.h \
@@ -29,16 +29,16 @@ _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.obj: \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
  C:/msys64/mingw64/include/errno.h C:/msys64/mingw64/include/string.h \
  C:/msys64/mingw64/include/sec_api/string_s.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external/tinyobj_loader_c.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external/tinyobj_loader_c.h \
  C:/msys64/mingw64/include/assert.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external/cgltf.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external/cgltf.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
  C:/msys64/mingw64/include/stddef.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
  C:/msys64/mingw64/include/stdint.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/float.h \
  C:/msys64/mingw64/include/float.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external/vox_loader.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external/m3d.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external/par_shapes.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external/vox_loader.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external/m3d.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external/par_shapes.h \
  C:/msys64/mingw64/include/direct.h C:/msys64/mingw64/include/io.h

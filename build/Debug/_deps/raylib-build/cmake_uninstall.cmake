@@ -1,8 +1,8 @@
-if(NOT EXISTS "C:/Users/user/Documents/Projects/VideoGame/build/Debug/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: C:/Users/user/Documents/Projects/VideoGame/build/Debug/install_manifest.txt")
+if(NOT EXISTS "C:/Users/user/Documents/Projects/CGame/build/Debug/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: C:/Users/user/Documents/Projects/CGame/build/Debug/install_manifest.txt")
 endif()
 
-file(READ "C:/Users/user/Documents/Projects/VideoGame/build/Debug/install_manifest.txt" files)
+file(READ "C:/Users/user/Documents/Projects/CGame/build/Debug/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
   message(STATUS "Uninstalling $ENV{DESTDIR}${file}")

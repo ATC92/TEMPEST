@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\user\Documents\Projects\VideoGame
+CMAKE_SOURCE_DIR = C:\Users\user\Documents\Projects\CGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\user\Documents\Projects\VideoGame\build\Debug
+CMAKE_BINARY_DIR = C:\Users\user\Documents\Projects\CGame\build\Debug
 
 # Utility rule file for uninstall.
 
@@ -66,7 +66,7 @@ include _deps/raylib-build/CMakeFiles/uninstall.dir/compiler_depend.make
 include _deps/raylib-build/CMakeFiles/uninstall.dir/progress.make
 
 _deps/raylib-build/CMakeFiles/uninstall:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-build && "C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/user/Documents/Projects/VideoGame/build/Debug/_deps/raylib-build/cmake_uninstall.cmake
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-build && "C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/user/Documents/Projects/CGame/build/Debug/_deps/raylib-build/cmake_uninstall.cmake
 
 _deps/raylib-build/CMakeFiles/uninstall.dir/codegen:
 .PHONY : _deps/raylib-build/CMakeFiles/uninstall.dir/codegen
@@ -80,10 +80,10 @@ _deps/raylib-build/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : _deps/raylib-build/CMakeFiles/uninstall.dir/build
 
 _deps/raylib-build/CMakeFiles/uninstall.dir/clean:
-	cd /d C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-build && $(CMAKE_COMMAND) -P CMakeFiles\uninstall.dir\cmake_clean.cmake
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-build && $(CMAKE_COMMAND) -P CMakeFiles\uninstall.dir\cmake_clean.cmake
 .PHONY : _deps/raylib-build/CMakeFiles/uninstall.dir/clean
 
 _deps/raylib-build/CMakeFiles/uninstall.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\user\Documents\Projects\VideoGame C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src C:\Users\user\Documents\Projects\VideoGame\build\Debug C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-build C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-build\CMakeFiles\uninstall.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\user\Documents\Projects\CGame C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src C:\Users\user\Documents\Projects\CGame\build\Debug C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-build C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-build\CMakeFiles\uninstall.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : _deps/raylib-build/CMakeFiles/uninstall.dir/depend
 

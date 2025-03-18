@@ -1,6 +1,6 @@
 _deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.obj: \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\utils.c \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\raylib.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\utils.c \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\raylib.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
  C:/msys64/mingw64/include/stdarg.h \
  C:/msys64/mingw64/include/_mingw_stdarg.h \
@@ -9,8 +9,8 @@ _deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.obj: \
  C:/msys64/mingw64/include/_mingw_secapi.h \
  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\config.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\utils.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\config.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\utils.h \
  C:/msys64/mingw64/include/stdlib.h C:/msys64/mingw64/include/corecrt.h \
  C:/msys64/mingw64/include/corecrt_wstdlib.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \

@@ -1,35 +1,29 @@
 #include "Entity.h"
-
 Entity GenEntity(int _t, char* _n, float _h, float _ar, float _sp, float _crt)
 {
-    // Generation Entity Player
-    Entity _e;
-    _e.EntityType = _t;
-
-    switch (_t)
+    Entity _e = {0};            ///< Generation Entity
+    switch (_t)                 ///< Selection of the Type to gen.
     {
-        case PLAYER:
-            _e.EntityData.Player.name = _n;
-            _e.EntityData.Player.health = _h;
-            _e.EntityData.Player.armor = _ar;
-            _e.EntityData.Player.armor = _ar;
-            _e.EntityData.Player.speed = _sp;
-            _e.EntityData.Player.position = (Vector2){0,0};
-            break;
-        case ENEMY:
-            _e.EntityData.Enemy.name = _n;
-            _e.EntityData.Enemy.health = _h;
-            _e.EntityData.Enemy.armor = _ar;
-            _e.EntityData.Enemy.armor = _ar;
-            _e.EntityData.Enemy.crit = _crt;
-            _e.EntityData.Enemy.speed = _sp;
-            _e.EntityData.Enemy.position = (Vector2){20.f,20.f};
-            break;
+        case _PLAYER:
+            _e._player.name = strdup(_n);
+            _e._player.health = _h;
+            _e._player.armor = _ar;
+            _e._player.speed = _sp;
+            _e._player.position = (Vector2){0,0};
+            _e._typeEntity = _PLAYER;
+        break;
+        case _NPC:
+            _e._npc.name = strdup(_n);;
+            _e._npc.health = _h;
+            _e._npc.armor = _ar;
+            _e._npc.crit = _crt;
+            _e._npc.speed = _sp;
+            _e._npc.position = (Vector2){0,0};
+            _e._typeEntity = _NPC;
+        break;
         default:
-            break;
+        break;
     }
-    
-    return _e;
+    return _e;              ///< Return entity
 }
 
-// Enf Entity.c

@@ -1,7 +1,7 @@
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj: \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src\win32_joystick.c \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src\internal.h \
- C:/Users/user/Documents/Projects/VideoGame/build/Debug/_deps/raylib-src/src/external/glfw/include/GLFW/glfw3.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src\win32_joystick.c \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src\internal.h \
+ C:/Users/user/Documents/Projects/CGame/build/Debug/_deps/raylib-src/src/external/glfw/include/GLFW/glfw3.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
  C:/msys64/mingw64/include/stddef.h C:/msys64/mingw64/include/crtdefs.h \
  C:/msys64/mingw64/include/corecrt.h C:/msys64/mingw64/include/_mingw.h \
@@ -11,9 +11,9 @@ _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c
  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
  C:/msys64/mingw64/include/stdint.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src\platform.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src\null_platform.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src\win32_platform.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src\platform.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src\null_platform.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src\win32_platform.h \
  C:/msys64/mingw64/include/wctype.h C:/msys64/mingw64/include/windows.h \
  C:/msys64/mingw64/include/sdkddkver.h C:/msys64/mingw64/include/excpt.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
@@ -216,11 +216,11 @@ _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c
  C:/msys64/mingw64/include/propidl.h \
  C:/msys64/mingw64/include/_mingw_dxhelper.h \
  C:/msys64/mingw64/include/xinput.h C:/msys64/mingw64/include/dbt.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src\null_joystick.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src\win32_joystick.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src\win32_thread.h \
- C:\Users\user\Documents\Projects\VideoGame\build\Debug\_deps\raylib-src\src\external\glfw\src\win32_time.h \
- C:/Users/user/Documents/Projects/VideoGame/build/Debug/_deps/raylib-src/src/external/glfw/include/GLFW/glfw3native.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src\null_joystick.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src\win32_joystick.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src\win32_thread.h \
+ C:\Users\user\Documents\Projects\CGame\build\Debug\_deps\raylib-src\src\external\glfw\src\win32_time.h \
+ C:/Users/user/Documents/Projects/CGame/build/Debug/_deps/raylib-src/src/external/glfw/include/GLFW/glfw3native.h \
  C:/msys64/mingw64/include/stdio.h \
  C:/msys64/mingw64/include/corecrt_stdio_config.h \
  C:/msys64/mingw64/include/_mingw_off_t.h \
