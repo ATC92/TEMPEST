@@ -632,23 +632,23 @@ _deps/cjson-build/CMakeFiles/cJSON_test.dir/clean:
 
 # All Build rule for target.
 _deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/CMakeFiles/cJSON_test.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_examples.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_hex4.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_number.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_string.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_number.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_examples.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/print_array.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/misc_tests.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_object.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/print_number.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_value.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/print_object.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_array.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_with_opts.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/print_array.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/print_string.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/print_number.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/compare_tests.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_object.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/readme_examples.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/misc_tests.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/print_value.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/cjson_add.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/print_string.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/print_value.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/compare_tests.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/readme_examples.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/parse_with_opts.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/all: _deps/cjson-build/tests/CMakeFiles/minify_tests.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\check.dir\build.make _deps/cjson-build/CMakeFiles/check.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\check.dir\build.make _deps/cjson-build/CMakeFiles/check.dir/build
@@ -668,23 +668,23 @@ check: _deps/cjson-build/CMakeFiles/check.dir/rule
 
 # codegen rule for target.
 _deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/CMakeFiles/cJSON_test.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_examples.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_hex4.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_number.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_string.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_number.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_examples.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/print_array.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/misc_tests.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_object.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/print_number.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_value.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/print_object.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_array.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_with_opts.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/print_array.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/print_string.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/print_number.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/compare_tests.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_object.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/readme_examples.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/misc_tests.dir/all
-_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/print_value.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/cjson_add.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/print_string.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/print_value.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/compare_tests.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/readme_examples.dir/all
+_deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/parse_with_opts.dir/all
 _deps/cjson-build/CMakeFiles/check.dir/codegen: _deps/cjson-build/tests/CMakeFiles/minify_tests.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\check.dir\build.make _deps/cjson-build/CMakeFiles/check.dir/codegen
 .PHONY : _deps/cjson-build/CMakeFiles/check.dir/codegen

@@ -6,5 +6,5 @@ C_DEFINES = -DASSETS=\"C:/Users/user/Documents/Projects/CGame/assets\" -DGRAPHIC
 
 C_INCLUDES = @CMakeFiles/raylib.dir/includes_C.rsp
 
-C_FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99
+C_FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -Wno-error=float-conversion -g -std=gnu99
 

@@ -6,5 +6,5 @@ C_DEFINES = -DASSETS=\"C:/Users/user/Documents/Projects/CGame/assets\" -DUNICODE
 
 C_INCLUDES = @CMakeFiles/glfw.dir/includes_C.rsp
 
-C_FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall
+C_FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -Wno-error=float-conversion -g -std=c99 -Wall
 

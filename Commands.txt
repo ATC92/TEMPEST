@@ -1,0 +1,10 @@
+///< Debug version build/Debug
+cmake -G"MinGW Makefiles" ../.. -DCMAKE_BUILD_TYPE=Debug
+cmake --build build/Debug --target Project
+
+///< Release version
+cmake -G"MinGW Makefiles" -B build/Release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install
+cmake --build build/Release
+cmake --install build/Release
+cpack --config build/Release/CPackConfig.cmake
+

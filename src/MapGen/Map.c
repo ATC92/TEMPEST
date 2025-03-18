@@ -4,7 +4,7 @@ RenderData* GenTileMap(void)
     // Var Temp Return
     RenderData* tempData = (RenderData*)calloc(1,sizeof(RenderData));
     ///< Load cJSON
-    tempData->mapRoot = Load_cJSON("src/MapGen/map.json");
+    tempData->mapRoot = Load_cJSON("assets/JSON/map.json");
     tempData->sTilesData = LoadMapTextures(tempData->mapRoot);
     return tempData;
 }

@@ -26,7 +26,7 @@ void InitGame()
     eplayer = GenEntity(_PLAYER, "Hero", 100.f,20.f,1.5f,20.f);
     eplayer._player.position = (Vector2){0,0};
     ///< Player Gen Textures
-    eplayer._tEntity = GenTextureEntity("src/Entity/Entity.json","PLAYER");
+    eplayer._tEntity = GenTextureEntity("assets/JSON/Entity.json","PLAYER");
     ///< Camera Init
     camera.target = eplayer._player.position;
     camera.zoom = 3.0f;
