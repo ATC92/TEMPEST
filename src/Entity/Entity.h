@@ -5,7 +5,11 @@
 ///< C Libraries
 #include <string.h>
 ///< CGame Libraries
-
+#include "../MapGen/Map.h"
+/////////////////////////////////////////////////////////////////////////
+///< Forward Declaration of ListTileSize
+struct _szListTile;
+typedef struct _szListTile ListTileSize;
 /////////////////////////////////////////////////////////////////////////
 /**
  * @brief struct with the enumeration of where is looking the @n `Entity`
@@ -109,11 +113,12 @@ typedef struct _npc
 */
 typedef struct _Entity
 {
-    Player _player;             ///< Player struct
-    NPC _npc;                   ///< NPC struct
-    tEntity* _tEntity;          ///< List of textures of the entity
-    int _eLook;                 ///< Where the entity is looking
-    TypeEntity  _typeEntity;    ///< Type of entity in the ENUM.
+    Player _player;                 ///< Player struct
+    NPC _npc;                       ///< NPC struct
+    tEntity* _tEntity;              ///< List of textures of the entity
+    int _eLook;                     ///< Where the entity is looking
+    TypeEntity  _typeEntity;        ///< Type of entity in the ENUM.
+    ListTileSize* _lSize;          ///< Size of the list of cJSON.
 }Entity;
 /////////////////////////////////////////////////////////////////////////
 /**

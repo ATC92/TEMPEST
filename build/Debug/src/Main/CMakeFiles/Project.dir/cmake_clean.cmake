@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "C:/Users/user/Documents/Projects/CGame/bin/debug/Project.exe"
-  "C:/Users/user/Documents/Projects/CGame/bin/debug/Project.exe.manifest"
-  "C:/Users/user/Documents/Projects/CGame/bin/debug/Project.pdb"
+  "C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe"
+  "C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe.manifest"
+  "C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.pdb"
   "CMakeFiles/Project.dir/__/Engine/Engine.c.obj"
   "CMakeFiles/Project.dir/__/Engine/Engine.c.obj.d"
   "CMakeFiles/Project.dir/__/Entity/Entity.c.obj"

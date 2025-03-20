@@ -180,68 +180,6 @@ depend:
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-_deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/rule:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/rule
-.PHONY : _deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/rule
-
-# Convenience name for target.
-fuzz_main: _deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/rule
-.PHONY : fuzz_main
-
-# fast build rule for target.
-fuzz_main/fast:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\fuzzing\CMakeFiles\fuzz_main.dir\build.make _deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/build
-.PHONY : fuzz_main/fast
-
-cjson_read_fuzzer.obj: cjson_read_fuzzer.c.obj
-.PHONY : cjson_read_fuzzer.obj
-
-# target to build an object file
-cjson_read_fuzzer.c.obj:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\fuzzing\CMakeFiles\fuzz_main.dir\build.make _deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.obj
-.PHONY : cjson_read_fuzzer.c.obj
-
-cjson_read_fuzzer.i: cjson_read_fuzzer.c.i
-.PHONY : cjson_read_fuzzer.i
-
-# target to preprocess a source file
-cjson_read_fuzzer.c.i:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\fuzzing\CMakeFiles\fuzz_main.dir\build.make _deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.i
-.PHONY : cjson_read_fuzzer.c.i
-
-cjson_read_fuzzer.s: cjson_read_fuzzer.c.s
-.PHONY : cjson_read_fuzzer.s
-
-# target to generate assembly for a file
-cjson_read_fuzzer.c.s:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\fuzzing\CMakeFiles\fuzz_main.dir\build.make _deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/cjson_read_fuzzer.c.s
-.PHONY : cjson_read_fuzzer.c.s
-
-fuzz_main.obj: fuzz_main.c.obj
-.PHONY : fuzz_main.obj
-
-# target to build an object file
-fuzz_main.c.obj:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\fuzzing\CMakeFiles\fuzz_main.dir\build.make _deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.obj
-.PHONY : fuzz_main.c.obj
-
-fuzz_main.i: fuzz_main.c.i
-.PHONY : fuzz_main.i
-
-# target to preprocess a source file
-fuzz_main.c.i:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\fuzzing\CMakeFiles\fuzz_main.dir\build.make _deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.i
-.PHONY : fuzz_main.c.i
-
-fuzz_main.s: fuzz_main.c.s
-.PHONY : fuzz_main.s
-
-# target to generate assembly for a file
-fuzz_main.c.s:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\fuzzing\CMakeFiles\fuzz_main.dir\build.make _deps/cjson-build/fuzzing/CMakeFiles/fuzz_main.dir/fuzz_main.c.s
-.PHONY : fuzz_main.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -256,13 +194,6 @@ help:
 	@echo ... package
 	@echo ... package_source
 	@echo ... rebuild_cache
-	@echo ... fuzz_main
-	@echo ... cjson_read_fuzzer.obj
-	@echo ... cjson_read_fuzzer.i
-	@echo ... cjson_read_fuzzer.s
-	@echo ... fuzz_main.obj
-	@echo ... fuzz_main.i
-	@echo ... fuzz_main.s
 .PHONY : help
 
 

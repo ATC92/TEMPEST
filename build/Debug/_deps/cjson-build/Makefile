@@ -194,34 +194,6 @@ cjson/fast:
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\cjson.dir\build.make _deps/cjson-build/CMakeFiles/cjson.dir/build
 .PHONY : cjson/fast
 
-# Convenience name for target.
-_deps/cjson-build/CMakeFiles/cJSON_test.dir/rule:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/cjson-build/CMakeFiles/cJSON_test.dir/rule
-.PHONY : _deps/cjson-build/CMakeFiles/cJSON_test.dir/rule
-
-# Convenience name for target.
-cJSON_test: _deps/cjson-build/CMakeFiles/cJSON_test.dir/rule
-.PHONY : cJSON_test
-
-# fast build rule for target.
-cJSON_test/fast:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\cJSON_test.dir\build.make _deps/cjson-build/CMakeFiles/cJSON_test.dir/build
-.PHONY : cJSON_test/fast
-
-# Convenience name for target.
-_deps/cjson-build/CMakeFiles/check.dir/rule:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/cjson-build/CMakeFiles/check.dir/rule
-.PHONY : _deps/cjson-build/CMakeFiles/check.dir/rule
-
-# Convenience name for target.
-check: _deps/cjson-build/CMakeFiles/check.dir/rule
-.PHONY : check
-
-# fast build rule for target.
-check/fast:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\check.dir\build.make _deps/cjson-build/CMakeFiles/check.dir/build
-.PHONY : check/fast
-
 cJSON.obj: cJSON.c.obj
 .PHONY : cJSON.obj
 
@@ -246,30 +218,6 @@ cJSON.c.s:
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\cjson.dir\build.make _deps/cjson-build/CMakeFiles/cjson.dir/cJSON.c.s
 .PHONY : cJSON.c.s
 
-test.obj: test.c.obj
-.PHONY : test.obj
-
-# target to build an object file
-test.c.obj:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\cJSON_test.dir\build.make _deps/cjson-build/CMakeFiles/cJSON_test.dir/test.c.obj
-.PHONY : test.c.obj
-
-test.i: test.c.i
-.PHONY : test.i
-
-# target to preprocess a source file
-test.c.i:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\cJSON_test.dir\build.make _deps/cjson-build/CMakeFiles/cJSON_test.dir/test.c.i
-.PHONY : test.c.i
-
-test.s: test.c.s
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.c.s:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\cJSON_test.dir\build.make _deps/cjson-build/CMakeFiles/cJSON_test.dir/test.c.s
-.PHONY : test.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -284,15 +232,10 @@ help:
 	@echo ... package
 	@echo ... package_source
 	@echo ... rebuild_cache
-	@echo ... check
-	@echo ... cJSON_test
 	@echo ... cjson
 	@echo ... cJSON.obj
 	@echo ... cJSON.i
 	@echo ... cJSON.s
-	@echo ... test.obj
-	@echo ... test.i
-	@echo ... test.s
 .PHONY : help
 
 

@@ -11,7 +11,8 @@ Entity GenEntity(int _t, char* _n, float _h, float _ar, float _sp, float _crt)
             _e._player.speed = _sp;
             _e._player.position = (Vector2){0,0};
             _e._typeEntity = _PLAYER;
-        break;
+            _e._lSize = (ListTileSize*)calloc(1,sizeof(ListTileSize));
+            break;
         case _NPC:
             _e._npc.name = strdup(_n);;
             _e._npc.health = _h;
@@ -20,6 +21,7 @@ Entity GenEntity(int _t, char* _n, float _h, float _ar, float _sp, float _crt)
             _e._npc.speed = _sp;
             _e._npc.position = (Vector2){0,0};
             _e._typeEntity = _NPC;
+            _e._lSize = (ListTileSize*)calloc(1,sizeof(ListTileSize));
         break;
         default:
         break;

@@ -5,5 +5,5 @@
 
 # Ignorar carpetas para main
 install/
-build/
+#build/
 commands.txt

@@ -19,7 +19,7 @@
  * cJSON* json = Load_cJSON("config.json");
  * @endcode
  */
-cJSON* Load_cJSON(const char* path)
+cJSON* Load_cJSON(const char* path, ListTileSize* szList)
 {
     FILE *file = fopen(path, "r");                                  ///< Creating the FILE
     if(!file) 
@@ -54,7 +54,29 @@ cJSON* Load_cJSON(const char* path)
         cJSON_Delete(json); 
         return NULL;
     }
+    ///< Array Size for each cJSON load
+    GetArraySizeJSON(json,szList);
+    printf("\n\nERROR HERE");
+
     return json;
+}
+/**
+ * @brief Size of the JSON File
+ */
+void GetArraySizeJSON(const cJSON* json,ListTileSize* szList)
+{
+    ///<
+    cJSON* _iTiles = cJSON_GetObjectItemCaseSensitive(json, "tiles");
+    cJSON* _iMaps = cJSON_GetObjectItemCaseSensitive(json, "maps");
+    cJSON* _iPlayer = cJSON_GetObjectItemCaseSensitive(json, "PLAYER");
+    // cJSON* _iNPC = cJSON_GetObjectItemCaseSensitive(json, "NPC");
+    ///< Get the size of each cJSON List.
+    if(cJSON_GetArraySize(_iTiles) > 0)
+        szList->_sz1 = cJSON_GetArraySize(_iTiles);
+    if(cJSON_GetArraySize(_iMaps) > 0)
+        szList->_sz2 = cJSON_GetArraySize(_iMaps);
+    if(cJSON_GetArraySize(_iPlayer) > 0)
+        szList->_sz3 = cJSON_GetArraySize(_iPlayer);
 }
 /**
  * @brief Process Tile
@@ -70,7 +92,7 @@ cJSON* Load_cJSON(const char* path)
  */
 void ProcessTile(void* item, const cJSON* json)
 {
-        ///< Init temp declaration
+    ///< Init temp declaration
     sTile* tile = (sTile*)item;
     cJSON* Name = cJSON_GetObjectItemCaseSensitive(json,"Name");
     cJSON* ID = cJSON_GetObjectItemCaseSensitive(json, "ID");
@@ -143,10 +165,6 @@ void* LoadTexturesFromJSON(const cJSON* json, const char* key, size_t struct_siz
         free(items);
         return NULL;
     }
-
-    char* jsonStr = cJSON_Print(jItems);
-    free(jsonStr);
-
     cJSON* _item;
     int i = 0;
     cJSON_ArrayForEach(_item, jItems)
@@ -171,9 +189,9 @@ void* LoadTexturesFromJSON(const cJSON* json, const char* key, size_t struct_siz
  * @param json Parsed cJSON object.
  * @return @n `sTile*` Pointer to the generated array of tiles.
  */
-sTile* LoadMapTextures(const cJSON* json)
+sTile* LoadMapTextures(cJSON* _data,int _sz)
 {
-    return (sTile*)LoadTexturesFromJSON(json, "tiles", sizeof(sTile), 6, ProcessTile);
+    return (sTile*)LoadTexturesFromJSON(_data, "tiles", sizeof(sTile), _sz, ProcessTile);
 }
 /**
  * @brief Generate an array of textures (tEntity*).
@@ -182,13 +200,17 @@ sTile* LoadMapTextures(const cJSON* json)
  * 
  * @param Patch Path to the JSON file containing the configuration.
  * @param key Key identifying the entity to load from the JSON.
+ * @param _lsz Size List of the amount of textures in the JSON.
  * @return @n `tEntity*` Pointer to the generated array of textures.
  */
-tEntity* GenTextureEntity(const char*path, const char*key)
+tEntity* GenTextureEntity(const char*path, const char*key,ListTileSize** _lsz)
 {
-    cJSON* json = Load_cJSON(path);
-    tEntity* eTemp = LoadTexturesFromJSON(json, key, sizeof(tEntity), 6, ProcessEntity);
-    //cJSON_Delete(json);
+    cJSON* json = Load_cJSON(path,*_lsz);
+    tEntity* eTemp;
+    if(strcmp(key,"PLAYER") == 0)
+        eTemp = LoadTexturesFromJSON(json, key, sizeof(tEntity), (*_lsz)->_sz3, ProcessEntity);
+    else if(strcmp(key,"NPC") == 0)
+        eTemp = LoadTexturesFromJSON(json, key, sizeof(tEntity), (*_lsz)->_sz4, ProcessEntity);
     return eTemp;
 }
 /**
@@ -198,8 +220,6 @@ tEntity* GenTextureEntity(const char*path, const char*key)
  */
 void RenderTileMap(RenderData* _mD, MapEnum _slct)
 {
-    int texture_index_x=0;
-    int texture_index_y=0;
     int tileset_columns = 10;
     for (int y = 0; y < _mD->mapsData[_slct].height; y++)
     {
@@ -207,12 +227,9 @@ void RenderTileMap(RenderData* _mD, MapEnum _slct)
         {
             int tile_id = _mD->mapsData[_slct].data[y][x];
 
-            int texture_index_x = tile_id % tileset_columns;
-            int texture_index_y = tile_id / tileset_columns;
-
             Rectangle source = {
-                (float)texture_index_x * TILE_WIDTH,
-                (float)texture_index_y * TILE_HEIGHT,
+                (float)(tile_id % tileset_columns) * TILE_WIDTH,
+                (float)(tile_id / tileset_columns) * TILE_HEIGHT,
                 (float)TILE_WIDTH,
                 (float)TILE_HEIGHT
             };
@@ -238,8 +255,6 @@ void RenderTileMap(RenderData* _mD, MapEnum _slct)
  */
 void RenderPlayer(const Entity eplayer, const Camera2D _cam)
 {
-    // DrawTexture(eplayer._tEntity[eplayer._eLook].Texture, eplayer._player.position.x, eplayer._player.position.y, WHITE);
-
     Rectangle source = 
     { 
         (float)1 * TILE_WIDTH,
@@ -248,9 +263,9 @@ void RenderPlayer(const Entity eplayer, const Camera2D _cam)
     };
 
     Rectangle dest =
-    { 
-        floorf(eplayer._player.position.x), 
-        floorf(eplayer._player.position.y), 
+    {
+        eplayer._player.position.x + ((1.f/GetFPS()) * eplayer._player.speed), 
+        eplayer._player.position.y + ((1.f/GetFPS()) * eplayer._player.speed), 
         (float)TILE_WIDTH, (float)TILE_HEIGHT 
     };
 

@@ -334,12 +334,6 @@ CUSTOMIZE_BUILD:BOOL=OFF
 //Enable AddressSanitizer (ASAN) for debugging (degrades performance)
 ENABLE_ASAN:BOOL=OFF
 
-//Enable building cJSON test
-ENABLE_CJSON_TEST:BOOL=ON
-
-//Enable creating uninstall target
-ENABLE_CJSON_UNINSTALL:BOOL=OFF
-
 //Enable building the cJSON_Utils library.
 ENABLE_CJSON_UTILS:BOOL=OFF
 
@@ -496,6 +490,7 @@ raylib_SOURCE_DIR:STATIC=C:/Users/user/Documents/Projects/CGame/build/Debug/_dep
 # INTERNAL cache entries
 ########################
 
+CJSON_INSTALL:INTERNAL=FALSE
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -696,6 +691,12 @@ CPACK_SOURCE_7Z-ADVANCED:INTERNAL=1
 CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 //Have include dinput.h
 DINPUT_H_FOUND:INTERNAL=1
+ENABLE_CJSON_BUILD_SHARED_AND_STATIC:INTERNAL=FALSE
+ENABLE_CJSON_BUILD_TOOLS:INTERNAL=FALSE
+//Enable building cJSON test
+ENABLE_CJSON_TEST:INTERNAL=FALSE
+//Enable creating uninstall target
+ENABLE_CJSON_UNINSTALL:INTERNAL=FALSE
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Test FLAG_SUPPORTED_Wall
