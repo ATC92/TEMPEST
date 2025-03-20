@@ -5,6 +5,7 @@
 
 # Ignorar carpetas para main
 install/
+bin/
 build/
 .vscode/
 commands.txt
