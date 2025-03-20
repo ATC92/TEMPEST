@@ -143,10 +143,6 @@ void* LoadTexturesFromJSON(const cJSON* json, const char* key, size_t struct_siz
         free(items);
         return NULL;
     }
-
-    char* jsonStr = cJSON_Print(jItems);
-    free(jsonStr);
-
     cJSON* _item;
     int i = 0;
     cJSON_ArrayForEach(_item, jItems)

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/CMakeFiles/cjson-populate"
+		},
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/CMakeFiles/cjson-populate.rule"
+		},
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/CMakeFiles/cjson-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/cjson-populate-prefix/src/cjson-populate-stamp/cjson-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/cjson-populate-prefix/src/cjson-populate-stamp/cjson-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/cjson-populate-prefix/src/cjson-populate-stamp/cjson-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/cjson-populate-prefix/src/cjson-populate-stamp/cjson-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/cjson-populate-prefix/src/cjson-populate-stamp/cjson-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/cjson-populate-prefix/src/cjson-populate-stamp/cjson-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/cjson-populate-prefix/src/cjson-populate-stamp/cjson-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/user/Documents/Projects/CGame/build/Release/_deps/cjson-subbuild/cjson-populate-prefix/src/cjson-populate-stamp/cjson-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cjson-populate"
+		],
+		"name" : "cjson-populate"
+	}
+}
