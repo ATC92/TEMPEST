@@ -13,15 +13,35 @@
 #define TILE_HEIGHT 16
 #define WORLD_TILE_WIDTH 10         // 10 * TILE_WIDTH
 #define WORLD_TILE_HEIGHT 10        // 10 * TILE_HEIGHT
-///< MapData
-///< Save information of the map
+/**
+ * @brief Four var @n `int` for save size 
+ * 
+ * - @n `int _sz1`                  ///< Size of array list # 1 | ( "tiles" )
+ * 
+ * - @n `int _sz2`                  ///< Size of array list # 2 | ( "maps" )
+ * 
+ * - @n `int _sz3`                  ///< Size of array list # 3 | ( "PLAYER" )
+ * 
+ * - @n `int _sz4`                  ///< Size of array list # 4 | ( "NPC" )
+ */
+typedef struct _szListTile
+{
+    int _sz1;
+    int _sz2;
+    int _sz3;
+    int _sz4;
+    cJSON* rawJSON;
+}ListTileSize;
+/**
+ * @brief MapData, Save information of the map
+ */
 typedef struct _MapData
 {
-    char* name;
-    int width;
-    int height;
-    int** data;
-    cJSON* parseMapGen;
+    char* name;             ///< Name of the Level.
+    int width;              ///< Width of the Map (int).
+    int height;             ///< Heigth of the map (int).
+    int** data;             ///< Information of the map [(int) x][(int) y], but ptr**.
+    cJSON* parseMapGen;     ///< Struct cJSON with the raw map in JSON format. 
 }MapData;
 /**
  * @brief sTILE, The space of the world in Tiles
@@ -48,6 +68,7 @@ typedef struct _renderData
 {
     MapData* mapsData;      ///< Pointer to the map data.
     sTile* sTilesData;      ///< Pointer to the tile data.
+    ListTileSize listSize;  ///< Size of each array of the cJSON.
     MapEnum mapSlctr;       ///< Enum that selects the current map.
     cJSON* mapRoot;         ///< Root node of the cJSON map.
 }RenderData;

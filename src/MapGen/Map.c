@@ -3,9 +3,11 @@ RenderData* GenTileMap(void)
 {
     // Var Temp Return
     RenderData* tempData = (RenderData*)calloc(1,sizeof(RenderData));
+    ListTileSize listSize;
     ///< Load cJSON
-    tempData->mapRoot = Load_cJSON("assets/JSON/map.json");
-    tempData->sTilesData = LoadMapTextures(tempData->mapRoot);
+    tempData->mapRoot = Load_cJSON("assets/JSON/map.json",&listSize);
+    tempData->listSize = listSize;
+    tempData->sTilesData = LoadMapTextures(tempData->mapRoot,tempData->listSize._sz1);
     return tempData;
 }
 void CreateMap_sTile(RenderData* _mD, MapEnum _s)
@@ -18,7 +20,6 @@ void CreateMap_sTile(RenderData* _mD, MapEnum _s)
     ///< Allocate memory to _mD->mapsData
     _mD->mapsData = (MapData*)calloc(2,sizeof(MapData));
     ///< Allocate memory to _mD->mapsData->Data
-    
     cJSON* jMaps = cJSON_GetObjectItemCaseSensitive(_mD->mapRoot,"maps");
     ///< Validate jMaps before use
     if (!jMaps)

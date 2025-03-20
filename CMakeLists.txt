@@ -4,20 +4,21 @@ project(Project LANGUAGES C CXX)  # Agregar soporte para C y C++
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 17)
 
-# Solo aplicar esta opción en GCC o Clang
+# Solo para GCC o Clang
 if (CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error=float-conversion")
 endif()
 
-# Configurar salida de binarios según el tipo de compilación
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/$<CONFIG>")
+# Configurar segun el tipo de compilacion
+set(BIN "${CMAKE_SOURCE_DIR}/bin")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${BIN}/${CMAKE_BUILD_TYPE}")
+#${CMAKE_BINARY_DIR}/bin/$<CONFIG>
 
-
-# Definiciones de compilación
+# Definiciones de compilacion
 add_compile_definitions(ASSETS="${CMAKE_SOURCE_DIR}/assets")
 
 # -----------------------------------------------
-# Configuración de dependencias externas (RayLib y cJson)
+# Configuracion de dependencias externas (RayLib y cJson)
 # -----------------------------------------------
 include(FetchContent)
 ####################################################
@@ -29,7 +30,7 @@ FetchContent_Declare(
     GIT_TAG "5.5"
     GIT_SHALLOW TRUE
 )
-# Configuración para RayLib
+# Configuracion para RayLib
 message(STATUS "Descargando RayLib...")
 set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(BUILD_GAMES OFF CACHE BOOL "" FORCE)
@@ -45,7 +46,7 @@ FetchContent_Declare(
     GIT_TAG "v1.7.18"
     GIT_SHALLOW TRUE
 )
-# Configuración para cJson
+# Configuracion para cJson
 message(STATUS "Descargando cJson...")
 set(CJSON_INSTALL FALSE CACHE INTERNAL "" FORCE)
 set(ENABLE_CJSON_TEST FALSE CACHE INTERNAL "" FORCE)
@@ -62,7 +63,7 @@ endif()
 message(STATUS "RayLib y cJson configurados correctamente.")
 
 # -----------------------------------------------
-# Configurar ejecutable y enlazar librerías
+# Configurar ejecutable y enlazar librerias
 # -----------------------------------------------
 add_subdirectory(src)
 
@@ -70,7 +71,7 @@ target_link_libraries(Project PRIVATE raylib cjson)
 target_include_directories(Project PRIVATE ${cjson_SOURCE_DIR})
 
 # -----------------------------------------------
-# Configuración de instalación
+# Configuracion de instalacion
 # -----------------------------------------------
 install(TARGETS Project 
     RUNTIME DESTINATION bin
@@ -85,10 +86,10 @@ install(DIRECTORY "${CMAKE_SOURCE_DIR}/assets" DESTINATION bin)
 install(FILES "${CMAKE_SOURCE_DIR}/README.md" DESTINATION bin)
 
 # -----------------------------------------------
-# Configuración de empaquetado con CPack (Solo en Release)
+# Configuracion de empaquetado con CPack (Solo en Release)
 # -----------------------------------------------
 if (CMAKE_BUILD_TYPE STREQUAL "Release")
-    message(STATUS "Configurando compilación en Release: Desactivando warnings")
+    message(STATUS "Configurando compilacion en Release: Desactivando warnings")
     # GCC y Clang
     if (CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
         set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -w")
