@@ -6,10 +6,15 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.obj: C:/Users/user/Documents/
   _deps/raylib-src/src/raylib.h \
   _deps/raylib-src/src/raymath.h \
   C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
-  C:/Users/user/Documents/Projects/CGame/src/MapGen/Map.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/EngineUpdates.h \
+  C:/Users/user/Documents/Projects/CGame/src/Game/Game.h \
+  C:/Users/user/Documents/Projects/CGame/src/Game/OnUpdate.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/ScenesManager.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/LoadTextures.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -40,13 +45,23 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.obj: C:/Users/user/Documents/
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
-  C:/Users/user/Documents/Projects/CGame/src/Engine/Engine.h
+  C:/Users/user/Documents/Projects/CGame/src/Engine/Engine.h \
+  C:/Users/user/Documents/Projects/CGame/src/Engine/Updates.h
 
-src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj: C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.c \
+src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.obj: C:/Users/user/Documents/Projects/CGame/src/Engine/Updates.c \
   _deps/cjson-src/cJSON.h \
   _deps/raylib-src/src/raylib.h \
-  C:/Users/user/Documents/Projects/CGame/src/MapGen/Map.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/LoadTextures.h \
+  _deps/raylib-src/src/raymath.h \
+  C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
+  C:/Users/user/Documents/Projects/CGame/src/Game/Game.h \
+  C:/Users/user/Documents/Projects/CGame/src/Game/OnUpdate.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/ScenesManager.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -60,6 +75,42 @@ src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj: C:/Users/user/Documents/
   C:/msys64/mingw64/include/limits.h \
   C:/msys64/mingw64/include/malloc.h \
   C:/msys64/mingw64/include/math.h \
+  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  C:/msys64/mingw64/include/sec_api/string_s.h \
+  C:/msys64/mingw64/include/stdarg.h \
+  C:/msys64/mingw64/include/stddef.h \
+  C:/msys64/mingw64/include/stdio.h \
+  C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/string.h \
+  C:/msys64/mingw64/include/swprintf.inl \
+  C:/msys64/mingw64/include/vadefs.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Users/user/Documents/Projects/CGame/src/Engine/Updates.h
+
+src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj: C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.c \
+  _deps/cjson-src/cJSON.h \
+  _deps/raylib-src/src/raylib.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
+  C:/msys64/mingw64/include/_mingw.h \
+  C:/msys64/mingw64/include/_mingw_mac.h \
+  C:/msys64/mingw64/include/_mingw_off_t.h \
+  C:/msys64/mingw64/include/_mingw_secapi.h \
+  C:/msys64/mingw64/include/_mingw_stdarg.h \
+  C:/msys64/mingw64/include/corecrt.h \
+  C:/msys64/mingw64/include/corecrt_stdio_config.h \
+  C:/msys64/mingw64/include/corecrt_wstdlib.h \
+  C:/msys64/mingw64/include/crtdefs.h \
+  C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/limits.h \
+  C:/msys64/mingw64/include/malloc.h \
   C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
   C:/msys64/mingw64/include/sec_api/stdio_s.h \
   C:/msys64/mingw64/include/sec_api/stdlib_s.h \
@@ -80,13 +131,17 @@ src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj: C:/Users/user/Documents/
   C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h
 
 src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj: C:/Users/user/Documents/Projects/CGame/src/Game/Game.c \
-  C:/Users/user/Documents/Projects/CGame/src/Game/Game.h
-
-src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj: C:/Users/user/Documents/Projects/CGame/src/MapGen/Map.c \
   _deps/cjson-src/cJSON.h \
   _deps/raylib-src/src/raylib.h \
+  _deps/raylib-src/src/raymath.h \
   C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/LoadTextures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/ScenesManager.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -117,14 +172,21 @@ src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj: C:/Users/user/Documents/Pro
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
-  C:/Users/user/Documents/Projects/CGame/src/MapGen/Map.h
+  C:/Users/user/Documents/Projects/CGame/src/Game/Game.h \
+  C:/Users/user/Documents/Projects/CGame/src/Game/OnUpdate.h
 
-src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj: C:/Users/user/Documents/Projects/CGame/src/Utils/EngineUpdates.c \
+src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj: C:/Users/user/Documents/Projects/CGame/src/Game/OnUpdate.c \
   _deps/cjson-src/cJSON.h \
   _deps/raylib-src/src/raylib.h \
+  _deps/raylib-src/src/raymath.h \
   C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
-  C:/Users/user/Documents/Projects/CGame/src/MapGen/Map.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/LoadTextures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/ScenesManager.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -155,7 +217,193 @@ src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj: C:/Users/user/Docu
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/EngineUpdates.h
+  C:/Users/user/Documents/Projects/CGame/src/Game/Game.h \
+  C:/Users/user/Documents/Projects/CGame/src/Game/OnUpdate.h
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj: C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.c \
+  _deps/cjson-src/cJSON.h \
+  _deps/raylib-src/src/raylib.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
+  C:/msys64/mingw64/include/_mingw.h \
+  C:/msys64/mingw64/include/_mingw_mac.h \
+  C:/msys64/mingw64/include/_mingw_off_t.h \
+  C:/msys64/mingw64/include/_mingw_secapi.h \
+  C:/msys64/mingw64/include/_mingw_stdarg.h \
+  C:/msys64/mingw64/include/corecrt.h \
+  C:/msys64/mingw64/include/corecrt_stdio_config.h \
+  C:/msys64/mingw64/include/corecrt_wstdlib.h \
+  C:/msys64/mingw64/include/crtdefs.h \
+  C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/limits.h \
+  C:/msys64/mingw64/include/malloc.h \
+  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  C:/msys64/mingw64/include/sec_api/string_s.h \
+  C:/msys64/mingw64/include/stdarg.h \
+  C:/msys64/mingw64/include/stddef.h \
+  C:/msys64/mingw64/include/stdio.h \
+  C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/string.h \
+  C:/msys64/mingw64/include/swprintf.inl \
+  C:/msys64/mingw64/include/vadefs.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.h
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj: C:/Users/user/Documents/Projects/CGame/src/Scenes/ScenesManager.c \
+  _deps/cjson-src/cJSON.h \
+  _deps/raylib-src/src/raylib.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
+  C:/msys64/mingw64/include/_mingw.h \
+  C:/msys64/mingw64/include/_mingw_mac.h \
+  C:/msys64/mingw64/include/_mingw_off_t.h \
+  C:/msys64/mingw64/include/_mingw_secapi.h \
+  C:/msys64/mingw64/include/_mingw_stdarg.h \
+  C:/msys64/mingw64/include/corecrt.h \
+  C:/msys64/mingw64/include/corecrt_stdio_config.h \
+  C:/msys64/mingw64/include/corecrt_wstdlib.h \
+  C:/msys64/mingw64/include/crtdefs.h \
+  C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/limits.h \
+  C:/msys64/mingw64/include/malloc.h \
+  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  C:/msys64/mingw64/include/sec_api/string_s.h \
+  C:/msys64/mingw64/include/stdarg.h \
+  C:/msys64/mingw64/include/stddef.h \
+  C:/msys64/mingw64/include/stdio.h \
+  C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/string.h \
+  C:/msys64/mingw64/include/swprintf.inl \
+  C:/msys64/mingw64/include/vadefs.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/ScenesManager.h
+
+src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj: C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.c \
+  _deps/cjson-src/cJSON.h \
+  _deps/raylib-src/src/raylib.h \
+  C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
+  C:/msys64/mingw64/include/_mingw.h \
+  C:/msys64/mingw64/include/_mingw_mac.h \
+  C:/msys64/mingw64/include/_mingw_off_t.h \
+  C:/msys64/mingw64/include/_mingw_secapi.h \
+  C:/msys64/mingw64/include/_mingw_stdarg.h \
+  C:/msys64/mingw64/include/corecrt.h \
+  C:/msys64/mingw64/include/corecrt_stdio_config.h \
+  C:/msys64/mingw64/include/corecrt_wstdlib.h \
+  C:/msys64/mingw64/include/crtdefs.h \
+  C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/limits.h \
+  C:/msys64/mingw64/include/malloc.h \
+  C:/msys64/mingw64/include/math.h \
+  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  C:/msys64/mingw64/include/sec_api/string_s.h \
+  C:/msys64/mingw64/include/stdarg.h \
+  C:/msys64/mingw64/include/stddef.h \
+  C:/msys64/mingw64/include/stdio.h \
+  C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/string.h \
+  C:/msys64/mingw64/include/swprintf.inl \
+  C:/msys64/mingw64/include/vadefs.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h
+
+src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj: C:/Users/user/Documents/Projects/CGame/src/Textures/Map.c \
+  _deps/cjson-src/cJSON.h \
+  _deps/raylib-src/src/raylib.h \
+  C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
+  C:/msys64/mingw64/include/_mingw.h \
+  C:/msys64/mingw64/include/_mingw_mac.h \
+  C:/msys64/mingw64/include/_mingw_off_t.h \
+  C:/msys64/mingw64/include/_mingw_secapi.h \
+  C:/msys64/mingw64/include/_mingw_stdarg.h \
+  C:/msys64/mingw64/include/corecrt.h \
+  C:/msys64/mingw64/include/corecrt_stdio_config.h \
+  C:/msys64/mingw64/include/corecrt_wstdlib.h \
+  C:/msys64/mingw64/include/crtdefs.h \
+  C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/limits.h \
+  C:/msys64/mingw64/include/malloc.h \
+  C:/msys64/mingw64/include/math.h \
+  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  C:/msys64/mingw64/include/sec_api/string_s.h \
+  C:/msys64/mingw64/include/stdarg.h \
+  C:/msys64/mingw64/include/stddef.h \
+  C:/msys64/mingw64/include/stdio.h \
+  C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/string.h \
+  C:/msys64/mingw64/include/swprintf.inl \
+  C:/msys64/mingw64/include/vadefs.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h
+
+src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj: C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.c \
+  _deps/cjson-src/cJSON.h \
+  _deps/raylib-src/src/raylib.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
+  C:/msys64/mingw64/include/_mingw.h \
+  C:/msys64/mingw64/include/_mingw_mac.h \
+  C:/msys64/mingw64/include/_mingw_off_t.h \
+  C:/msys64/mingw64/include/_mingw_secapi.h \
+  C:/msys64/mingw64/include/_mingw_stdarg.h \
+  C:/msys64/mingw64/include/corecrt.h \
+  C:/msys64/mingw64/include/corecrt_stdio_config.h \
+  C:/msys64/mingw64/include/corecrt_wstdlib.h \
+  C:/msys64/mingw64/include/crtdefs.h \
+  C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/limits.h \
+  C:/msys64/mingw64/include/malloc.h \
+  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  C:/msys64/mingw64/include/stdarg.h \
+  C:/msys64/mingw64/include/stddef.h \
+  C:/msys64/mingw64/include/stdio.h \
+  C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/swprintf.inl \
+  C:/msys64/mingw64/include/vadefs.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h
 
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj: C:/Users/user/Documents/Projects/CGame/src/Utils/Information.c \
   _deps/raylib-src/src/raylib.h \
@@ -170,53 +418,22 @@ src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj: C:/Users/user/Docume
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
   C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h
 
-src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj: C:/Users/user/Documents/Projects/CGame/src/Utils/LoadTextures.c \
-  _deps/cjson-src/cJSON.h \
-  _deps/raylib-src/src/raylib.h \
-  C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
-  C:/Users/user/Documents/Projects/CGame/src/MapGen/Map.h \
-  C:/msys64/mingw64/include/_mingw.h \
-  C:/msys64/mingw64/include/_mingw_mac.h \
-  C:/msys64/mingw64/include/_mingw_off_t.h \
-  C:/msys64/mingw64/include/_mingw_secapi.h \
-  C:/msys64/mingw64/include/_mingw_stdarg.h \
-  C:/msys64/mingw64/include/corecrt.h \
-  C:/msys64/mingw64/include/corecrt_stdio_config.h \
-  C:/msys64/mingw64/include/corecrt_wstdlib.h \
-  C:/msys64/mingw64/include/crtdefs.h \
-  C:/msys64/mingw64/include/errno.h \
-  C:/msys64/mingw64/include/limits.h \
-  C:/msys64/mingw64/include/malloc.h \
-  C:/msys64/mingw64/include/math.h \
-  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
-  C:/msys64/mingw64/include/sec_api/stdio_s.h \
-  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
-  C:/msys64/mingw64/include/sec_api/string_s.h \
-  C:/msys64/mingw64/include/stdarg.h \
-  C:/msys64/mingw64/include/stddef.h \
-  C:/msys64/mingw64/include/stdio.h \
-  C:/msys64/mingw64/include/stdlib.h \
-  C:/msys64/mingw64/include/string.h \
-  C:/msys64/mingw64/include/swprintf.inl \
-  C:/msys64/mingw64/include/vadefs.h \
-  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
-  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
-  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
-  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
-  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
-  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/LoadTextures.h
-
 src/Main/CMakeFiles/Project.dir/main.c.obj: C:/Users/user/Documents/Projects/CGame/src/Main/main.c \
   _deps/cjson-src/cJSON.h \
   _deps/raylib-src/src/raylib.h \
   _deps/raylib-src/src/raymath.h \
   C:/Users/user/Documents/Projects/CGame/src/Engine/Engine.h \
+  C:/Users/user/Documents/Projects/CGame/src/Engine/Updates.h \
   C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
-  C:/Users/user/Documents/Projects/CGame/src/MapGen/Map.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/EngineUpdates.h \
+  C:/Users/user/Documents/Projects/CGame/src/Game/Game.h \
+  C:/Users/user/Documents/Projects/CGame/src/Game/OnUpdate.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.h \
+  C:/Users/user/Documents/Projects/CGame/src/Scenes/ScenesManager.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/LoadTextures.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -249,41 +466,53 @@ src/Main/CMakeFiles/Project.dir/main.c.obj: C:/Users/user/Documents/Projects/CGa
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h
 
 
-_deps/cjson-src/cJSON.h:
-
 C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h:
+
+C:/Users/user/Documents/Projects/CGame/src/Scenes/ScenesManager.h:
+
+_deps/cjson-src/cJSON.h:
 
 C:/Users/user/Documents/Projects/CGame/src/Engine/Engine.c:
 
+C:/Users/user/Documents/Projects/CGame/src/Engine/Updates.h:
+
+C:/msys64/mingw64/include/math.h:
+
+C:/Users/user/Documents/Projects/CGame/src/Game/Game.h:
+
 _deps/raylib-src/src/raylib.h:
 
-C:/msys64/mingw64/include/_mingw_mac.h:
-
-C:/Users/user/Documents/Projects/CGame/src/Utils/EngineUpdates.h:
+C:/Users/user/Documents/Projects/CGame/src/Textures/Map.c:
 
 _deps/raylib-src/src/raymath.h:
+
+C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.h:
+
+C:/Users/user/Documents/Projects/CGame/src/Game/OnUpdate.h:
 
 C:/msys64/mingw64/include/malloc.h:
 
 C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h:
 
-C:/msys64/mingw64/include/swprintf.inl:
+C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h:
 
-C:/msys64/mingw64/include/stdlib.h:
+C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h:
 
-C:/Users/user/Documents/Projects/CGame/src/MapGen/Map.h:
+C:/Users/user/Documents/Projects/CGame/src/Engine/Engine.h:
 
-C:/Users/user/Documents/Projects/CGame/src/Utils/LoadTextures.h:
+C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h:
+
+C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h:
 
 C:/msys64/mingw64/include/_mingw.h:
 
+C:/msys64/mingw64/include/_mingw_mac.h:
+
 C:/msys64/mingw64/include/corecrt_wstdlib.h:
 
 C:/msys64/mingw64/include/_mingw_off_t.h:
-
-C:/Users/user/Documents/Projects/CGame/src/MapGen/Map.c:
 
 C:/msys64/mingw64/include/_mingw_secapi.h:
 
@@ -291,19 +520,19 @@ C:/msys64/mingw64/include/_mingw_stdarg.h:
 
 C:/Users/user/Documents/Projects/CGame/src/Utils/Information.c:
 
+C:/Users/user/Documents/Projects/CGame/src/Scenes/ScenesManager.c:
+
 C:/msys64/mingw64/include/corecrt.h:
 
 C:/msys64/mingw64/include/corecrt_stdio_config.h:
 
 C:/msys64/mingw64/include/crtdefs.h:
 
+C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.c:
+
 C:/msys64/mingw64/include/errno.h:
 
 C:/msys64/mingw64/include/limits.h:
-
-C:/Users/user/Documents/Projects/CGame/src/Game/Game.h:
-
-C:/msys64/mingw64/include/math.h:
 
 C:/msys64/mingw64/include/stdio.h:
 
@@ -313,13 +542,15 @@ C:/msys64/mingw64/include/sec_api/stdio_s.h:
 
 C:/msys64/mingw64/include/sec_api/stdlib_s.h:
 
-C:/Users/user/Documents/Projects/CGame/src/Utils/EngineUpdates.c:
-
 C:/msys64/mingw64/include/sec_api/string_s.h:
 
 C:/msys64/mingw64/include/stdarg.h:
 
 C:/msys64/mingw64/include/stddef.h:
+
+C:/msys64/mingw64/include/swprintf.inl:
+
+C:/msys64/mingw64/include/stdlib.h:
 
 C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.c:
 
@@ -327,13 +558,15 @@ C:/msys64/mingw64/include/string.h:
 
 C:/msys64/mingw64/include/vadefs.h:
 
-C:/Users/user/Documents/Projects/CGame/src/Utils/LoadTextures.c:
-
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h:
+
+C:/Users/user/Documents/Projects/CGame/src/Game/OnUpdate.c:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h:
 
 C:/Users/user/Documents/Projects/CGame/src/Game/Game.c:
+
+C:/Users/user/Documents/Projects/CGame/src/Engine/Updates.c:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h:
 
@@ -341,6 +574,8 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h:
 
-C:/Users/user/Documents/Projects/CGame/src/Engine/Engine.h:
-
 C:/Users/user/Documents/Projects/CGame/src/Main/main.c:
+
+C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.c:
+
+C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.c:

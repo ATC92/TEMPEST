@@ -59,8 +59,7 @@ if (TARGET cjson)
     set_target_properties(cjson PROPERTIES EXCLUDE_FROM_ALL TRUE EXCLUDE_FROM_DEFAULT_BUILD TRUE)
 endif()
 
-
-message(STATUS "RayLib y cJson configurados correctamente.")
+message(STATUS "Librerias onfiguradas correctamente.")
 
 # -----------------------------------------------
 # Configurar ejecutable y enlazar librerias

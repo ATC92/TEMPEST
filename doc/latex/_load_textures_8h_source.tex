@@ -1,0 +1,28 @@
+\doxysection{Load\+Textures.\+h}
+\hypertarget{_load_textures_8h_source}{}\label{_load_textures_8h_source}\index{src/Textures/LoadTextures.h@{src/Textures/LoadTextures.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}cJSON.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../Entity/Entity.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Textures.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ void\ (*ProcessItemFunc)(\textcolor{keywordtype}{void}*,\ \textcolor{keyword}{const}\ cJSON*);}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ cJSON*\ Load\_cJSON(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00019\ \textcolor{comment}{//}}
+\DoxyCodeLine{00020\ TileMap*\ LoadMapTextures(\textcolor{keywordtype}{char}*,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00021\ \textcolor{comment}{//}}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ RenderTileMap(RenderData*,MapEnum);}
+\DoxyCodeLine{00023\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ RenderPlayer(\textcolor{keyword}{const}\ Entity*,\textcolor{keyword}{const}\ Camera2D);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+
+\end{DoxyCode}

@@ -1,0 +1,33 @@
+\doxysection{Hash\+Table.\+h}
+\hypertarget{_hash_table_8h_source}{}\label{_hash_table_8h_source}\index{src/Utils/HashTable.h@{src/Utils/HashTable.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__item}{\_item}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00015\ \ \ \ \ Texture2D\ tile;}
+\DoxyCodeLine{00016\ \}ItemHT;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___h_t}{\_HT}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ ItemHT**\ items;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ size;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ count;}
+\DoxyCodeLine{00023\ \}HashTable;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ HashTable*\ CreateHashTable(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ InsertItem(HashTable*,\textcolor{keywordtype}{int},Image);}
+\DoxyCodeLine{00043\ ItemHT*\ SearchItem(HashTable*,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{bool}\ IsTileEmpty(Image,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ PrintHashTable(HashTable*);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{int}\ HashFunction(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ FreeItem(ItemHT*);}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ FreeHashTable(HashTable*);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+
+\end{DoxyCode}

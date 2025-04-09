@@ -101,11 +101,26 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Engine/Engine.c.s"
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Engine\Engine.c -o CMakeFiles\Project.dir\__\Engine\Engine.c.s
 
+src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
+src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
+src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.obj: C:/Users/user/Documents/Projects/CGame/src/Engine/Updates.c
+src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.obj"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.obj -MF CMakeFiles\Project.dir\__\Engine\Updates.c.obj.d -o CMakeFiles\Project.dir\__\Engine\Updates.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Engine\Updates.c
+
+src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Engine/Updates.c.i"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\user\Documents\Projects\CGame\src\Engine\Updates.c > CMakeFiles\Project.dir\__\Engine\Updates.c.i
+
+src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Engine/Updates.c.s"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Engine\Updates.c -o CMakeFiles\Project.dir\__\Engine\Updates.c.s
+
 src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
 src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
 src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj: C:/Users/user/Documents/Projects/CGame/src/Game/Game.c
 src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj"
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj -MF CMakeFiles\Project.dir\__\Game\Game.c.obj.d -o CMakeFiles\Project.dir\__\Game\Game.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Game\Game.c
 
 src/Main/CMakeFiles/Project.dir/__/Game/Game.c.i: cmake_force
@@ -116,11 +131,26 @@ src/Main/CMakeFiles/Project.dir/__/Game/Game.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Game/Game.c.s"
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Game\Game.c -o CMakeFiles\Project.dir\__\Game\Game.c.s
 
+src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
+src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
+src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj: C:/Users/user/Documents/Projects/CGame/src/Game/OnUpdate.c
+src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj -MF CMakeFiles\Project.dir\__\Game\OnUpdate.c.obj.d -o CMakeFiles\Project.dir\__\Game\OnUpdate.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Game\OnUpdate.c
+
+src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Game/OnUpdate.c.i"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\user\Documents\Projects\CGame\src\Game\OnUpdate.c > CMakeFiles\Project.dir\__\Game\OnUpdate.c.i
+
+src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Game/OnUpdate.c.s"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Game\OnUpdate.c -o CMakeFiles\Project.dir\__\Game\OnUpdate.c.s
+
 src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
 src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
 src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj: C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.c
 src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj"
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj -MF CMakeFiles\Project.dir\__\Entity\Entity.c.obj.d -o CMakeFiles\Project.dir\__\Entity\Entity.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Entity\Entity.c
 
 src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.i: cmake_force
@@ -131,26 +161,26 @@ src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Entity/Entity.c.s"
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Entity\Entity.c -o CMakeFiles\Project.dir\__\Entity\Entity.c.s
 
-src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
-src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
-src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj: C:/Users/user/Documents/Projects/CGame/src/Utils/EngineUpdates.c
-src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj"
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj -MF CMakeFiles\Project.dir\__\Utils\EngineUpdates.c.obj.d -o CMakeFiles\Project.dir\__\Utils\EngineUpdates.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Utils\EngineUpdates.c
+src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
+src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
+src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj: C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.c
+src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj -MF CMakeFiles\Project.dir\__\Utils\HashTable.c.obj.d -o CMakeFiles\Project.dir\__\Utils\HashTable.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Utils\HashTable.c
 
-src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.i"
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\user\Documents\Projects\CGame\src\Utils\EngineUpdates.c > CMakeFiles\Project.dir\__\Utils\EngineUpdates.c.i
+src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Utils/HashTable.c.i"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\user\Documents\Projects\CGame\src\Utils\HashTable.c > CMakeFiles\Project.dir\__\Utils\HashTable.c.i
 
-src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.s"
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Utils\EngineUpdates.c -o CMakeFiles\Project.dir\__\Utils\EngineUpdates.c.s
+src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Utils/HashTable.c.s"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Utils\HashTable.c -o CMakeFiles\Project.dir\__\Utils\HashTable.c.s
 
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj: C:/Users/user/Documents/Projects/CGame/src/Utils/Information.c
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj"
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj -MF CMakeFiles\Project.dir\__\Utils\Information.c.obj.d -o CMakeFiles\Project.dir\__\Utils\Information.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Utils\Information.c
 
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.i: cmake_force
@@ -161,65 +191,103 @@ src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Utils/Information.c.s"
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Utils\Information.c -o CMakeFiles\Project.dir\__\Utils\Information.c.s
 
-src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
-src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
-src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj: C:/Users/user/Documents/Projects/CGame/src/Utils/LoadTextures.c
-src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj"
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj -MF CMakeFiles\Project.dir\__\Utils\LoadTextures.c.obj.d -o CMakeFiles\Project.dir\__\Utils\LoadTextures.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Utils\LoadTextures.c
+src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
+src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
+src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj: C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.c
+src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj -MF CMakeFiles\Project.dir\__\Textures\LoadTextures.c.obj.d -o CMakeFiles\Project.dir\__\Textures\LoadTextures.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Textures\LoadTextures.c
 
-src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Utils/LoadTextures.c.i"
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\user\Documents\Projects\CGame\src\Utils\LoadTextures.c > CMakeFiles\Project.dir\__\Utils\LoadTextures.c.i
+src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Textures/LoadTextures.c.i"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\user\Documents\Projects\CGame\src\Textures\LoadTextures.c > CMakeFiles\Project.dir\__\Textures\LoadTextures.c.i
 
-src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Utils/LoadTextures.c.s"
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Utils\LoadTextures.c -o CMakeFiles\Project.dir\__\Utils\LoadTextures.c.s
+src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Textures/LoadTextures.c.s"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Textures\LoadTextures.c -o CMakeFiles\Project.dir\__\Textures\LoadTextures.c.s
 
-src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
-src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
-src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj: C:/Users/user/Documents/Projects/CGame/src/MapGen/Map.c
-src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj"
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj -MF CMakeFiles\Project.dir\__\MapGen\Map.c.obj.d -o CMakeFiles\Project.dir\__\MapGen\Map.c.obj -c C:\Users\user\Documents\Projects\CGame\src\MapGen\Map.c
+src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
+src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
+src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj: C:/Users/user/Documents/Projects/CGame/src/Textures/Map.c
+src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj -MF CMakeFiles\Project.dir\__\Textures\Map.c.obj.d -o CMakeFiles\Project.dir\__\Textures\Map.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Textures\Map.c
 
-src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/MapGen/Map.c.i"
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\user\Documents\Projects\CGame\src\MapGen\Map.c > CMakeFiles\Project.dir\__\MapGen\Map.c.i
+src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Textures/Map.c.i"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\user\Documents\Projects\CGame\src\Textures\Map.c > CMakeFiles\Project.dir\__\Textures\Map.c.i
 
-src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/MapGen/Map.c.s"
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\MapGen\Map.c -o CMakeFiles\Project.dir\__\MapGen\Map.c.s
+src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Textures/Map.c.s"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Textures\Map.c -o CMakeFiles\Project.dir\__\Textures\Map.c.s
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
+src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
+src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj: C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.c
+src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj -MF CMakeFiles\Project.dir\__\Scenes\Scenes.c.obj.d -o CMakeFiles\Project.dir\__\Scenes\Scenes.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Scenes\Scenes.c
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Scenes/Scenes.c.i"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\user\Documents\Projects\CGame\src\Scenes\Scenes.c > CMakeFiles\Project.dir\__\Scenes\Scenes.c.i
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Scenes/Scenes.c.s"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Scenes\Scenes.c -o CMakeFiles\Project.dir\__\Scenes\Scenes.c.s
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj: src/Main/CMakeFiles/Project.dir/flags.make
+src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj: src/Main/CMakeFiles/Project.dir/includes_C.rsp
+src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj: C:/Users/user/Documents/Projects/CGame/src/Scenes/ScenesManager.c
+src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj -MF CMakeFiles\Project.dir\__\Scenes\ScenesManager.c.obj.d -o CMakeFiles\Project.dir\__\Scenes\ScenesManager.c.obj -c C:\Users\user\Documents\Projects\CGame\src\Scenes\ScenesManager.c
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.i"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\user\Documents\Projects\CGame\src\Scenes\ScenesManager.c > CMakeFiles\Project.dir\__\Scenes\ScenesManager.c.i
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.s"
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && C:\msys64\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\user\Documents\Projects\CGame\src\Scenes\ScenesManager.c -o CMakeFiles\Project.dir\__\Scenes\ScenesManager.c.s
 
 # Object files for target Project
 Project_OBJECTS = \
 "CMakeFiles/Project.dir/main.c.obj" \
 "CMakeFiles/Project.dir/__/Engine/Engine.c.obj" \
+"CMakeFiles/Project.dir/__/Engine/Updates.c.obj" \
 "CMakeFiles/Project.dir/__/Game/Game.c.obj" \
+"CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj" \
 "CMakeFiles/Project.dir/__/Entity/Entity.c.obj" \
-"CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj" \
+"CMakeFiles/Project.dir/__/Utils/HashTable.c.obj" \
 "CMakeFiles/Project.dir/__/Utils/Information.c.obj" \
-"CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj" \
-"CMakeFiles/Project.dir/__/MapGen/Map.c.obj"
+"CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj" \
+"CMakeFiles/Project.dir/__/Textures/Map.c.obj" \
+"CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj" \
+"CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj"
 
 # External object files for target Project
 Project_EXTERNAL_OBJECTS =
 
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/main.c.obj
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.obj
+C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.obj
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj
+C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj
-C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj
+C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.obj
-C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj
-C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj
+C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj
+C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj
+C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj
+C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/build.make
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: _deps/raylib-build/raylib/libraylib.a
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: _deps/cjson-build/libcjson.a
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/linkLibs.rsp
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/objects1.rsp
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable C:\Users\user\Documents\Projects\CGame\bin\Debug\Project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\user\Documents\Projects\CGame\build\Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable C:\Users\user\Documents\Projects\CGame\bin\Debug\Project.exe"
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug\src\Main && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

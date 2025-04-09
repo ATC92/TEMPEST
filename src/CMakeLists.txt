@@ -5,6 +5,7 @@ add_subdirectory(Engine)
 add_subdirectory(Game)
 add_subdirectory(Entity)
 add_subdirectory(Utils)
-add_subdirectory(MapGen)
+add_subdirectory(Textures)
+add_subdirectory(Scenes)
 
 target_include_directories(Project PRIVATE ./)

@@ -372,9 +372,6 @@ ENABLE_TARGET_EXPORT:BOOL=ON
 //Enable UndefinedBehaviorSanitizer (UBSan) for debugging
 ENABLE_UBSAN:BOOL=OFF
 
-//OFF
-ENABLE_VALGRIND:BOOL=OFF
-
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=C:/Users/user/Documents/Projects/CGame/build/Debug/_deps
 
@@ -390,6 +387,10 @@ FETCHCONTENT_QUIET:BOOL=ON
 FETCHCONTENT_SOURCE_DIR_CJSON:PATH=
 
 //When not empty, overrides where to find pre-populated content
+// for raygui
+FETCHCONTENT_SOURCE_DIR_RAYGUI:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for raylib
 FETCHCONTENT_SOURCE_DIR_RAYLIB:PATH=
 
@@ -398,6 +399,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of cjson
 FETCHCONTENT_UPDATES_DISCONNECTED_CJSON:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of raygui
+FETCHCONTENT_UPDATES_DISCONNECTED_RAYGUI:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of raylib
 FETCHCONTENT_UPDATES_DISCONNECTED_RAYLIB:BOOL=OFF
@@ -450,13 +454,13 @@ OPENGL_glu_LIBRARY:STRING=glu32
 PLATFORM:STRING=Desktop
 
 //Value Computed by CMake
-Project_BINARY_DIR:STATIC=C:/Users/user/Documents/Projects/CGame/build/Debug/src/MapGen
+Project_BINARY_DIR:STATIC=C:/Users/user/Documents/Projects/CGame/build/Debug/src/Scenes
 
 //Value Computed by CMake
 Project_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-Project_SOURCE_DIR:STATIC=C:/Users/user/Documents/Projects/CGame/src/MapGen
+Project_SOURCE_DIR:STATIC=C:/Users/user/Documents/Projects/CGame/src/Scenes
 
 //Link raylib against system GLFW instead of embedded one
 USE_EXTERNAL_GLFW:STRING=OFF
@@ -627,7 +631,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=16
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

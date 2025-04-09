@@ -1,0 +1,44 @@
+\doxysection{Scenes\+Manager.\+h}
+\hypertarget{_scenes_manager_8h_source}{}\label{_scenes_manager_8h_source}\index{src/Scenes/ScenesManager.h@{src/Scenes/ScenesManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}stdio.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}stdlib.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}string.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Textures/Textures.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../Utils/Information.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Scenes.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \_scn}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ MainMenu,}
+\DoxyCodeLine{00017\ \ \ \ \ GameState,}
+\DoxyCodeLine{00018\ \ \ \ \ OptionMenu,}
+\DoxyCodeLine{00019\ \ \ \ \ ConfigurationMenu,}
+\DoxyCodeLine{00020\ \ \ \ \ LoadScreen}
+\DoxyCodeLine{00021\ \}ManagerScenes;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__inf}{\_inf}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{char}*\ Name;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{char}*\ information;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}*\ LOG;}
+\DoxyCodeLine{00027\ \ \ \ \ ManagerScenes\ type;}
+\DoxyCodeLine{00028\ \}InformationScene;}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__scene}{\_scene}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ InformationScene\ \mbox{\hyperlink{struct__scene_a0bc131877368dd3f2115c506f38f46da}{infScene}};}
+\DoxyCodeLine{00037\ \}Scene;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{extern}\ Scene*\ scenes;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ InitScenes(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00044\ Scene*\ CreateScene(\textcolor{keywordtype}{char}*,\textcolor{keywordtype}{char}*,\textcolor{keywordtype}{char}*,ManagerScenes);}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ ChangeScene();}
+\DoxyCodeLine{00046\ InformationScene\ GetCurrentScene(Scene);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+
+\end{DoxyCode}

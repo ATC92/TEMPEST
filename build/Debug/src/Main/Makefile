@@ -218,6 +218,30 @@ __/Engine/Engine.c.s:
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.s
 .PHONY : __/Engine/Engine.c.s
 
+__/Engine/Updates.obj: __/Engine/Updates.c.obj
+.PHONY : __/Engine/Updates.obj
+
+# target to build an object file
+__/Engine/Updates.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.obj
+.PHONY : __/Engine/Updates.c.obj
+
+__/Engine/Updates.i: __/Engine/Updates.c.i
+.PHONY : __/Engine/Updates.i
+
+# target to preprocess a source file
+__/Engine/Updates.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.i
+.PHONY : __/Engine/Updates.c.i
+
+__/Engine/Updates.s: __/Engine/Updates.c.s
+.PHONY : __/Engine/Updates.s
+
+# target to generate assembly for a file
+__/Engine/Updates.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.s
+.PHONY : __/Engine/Updates.c.s
+
 __/Entity/Entity.obj: __/Entity/Entity.c.obj
 .PHONY : __/Entity/Entity.obj
 
@@ -266,53 +290,149 @@ __/Game/Game.c.s:
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Game/Game.c.s
 .PHONY : __/Game/Game.c.s
 
-__/MapGen/Map.obj: __/MapGen/Map.c.obj
-.PHONY : __/MapGen/Map.obj
+__/Game/OnUpdate.obj: __/Game/OnUpdate.c.obj
+.PHONY : __/Game/OnUpdate.obj
 
 # target to build an object file
-__/MapGen/Map.c.obj:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.obj
-.PHONY : __/MapGen/Map.c.obj
+__/Game/OnUpdate.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj
+.PHONY : __/Game/OnUpdate.c.obj
 
-__/MapGen/Map.i: __/MapGen/Map.c.i
-.PHONY : __/MapGen/Map.i
+__/Game/OnUpdate.i: __/Game/OnUpdate.c.i
+.PHONY : __/Game/OnUpdate.i
 
 # target to preprocess a source file
-__/MapGen/Map.c.i:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.i
-.PHONY : __/MapGen/Map.c.i
+__/Game/OnUpdate.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.i
+.PHONY : __/Game/OnUpdate.c.i
 
-__/MapGen/Map.s: __/MapGen/Map.c.s
-.PHONY : __/MapGen/Map.s
+__/Game/OnUpdate.s: __/Game/OnUpdate.c.s
+.PHONY : __/Game/OnUpdate.s
 
 # target to generate assembly for a file
-__/MapGen/Map.c.s:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/MapGen/Map.c.s
-.PHONY : __/MapGen/Map.c.s
+__/Game/OnUpdate.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.s
+.PHONY : __/Game/OnUpdate.c.s
 
-__/Utils/EngineUpdates.obj: __/Utils/EngineUpdates.c.obj
-.PHONY : __/Utils/EngineUpdates.obj
+__/Scenes/Scenes.obj: __/Scenes/Scenes.c.obj
+.PHONY : __/Scenes/Scenes.obj
 
 # target to build an object file
-__/Utils/EngineUpdates.c.obj:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.obj
-.PHONY : __/Utils/EngineUpdates.c.obj
+__/Scenes/Scenes.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj
+.PHONY : __/Scenes/Scenes.c.obj
 
-__/Utils/EngineUpdates.i: __/Utils/EngineUpdates.c.i
-.PHONY : __/Utils/EngineUpdates.i
+__/Scenes/Scenes.i: __/Scenes/Scenes.c.i
+.PHONY : __/Scenes/Scenes.i
 
 # target to preprocess a source file
-__/Utils/EngineUpdates.c.i:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.i
-.PHONY : __/Utils/EngineUpdates.c.i
+__/Scenes/Scenes.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.i
+.PHONY : __/Scenes/Scenes.c.i
 
-__/Utils/EngineUpdates.s: __/Utils/EngineUpdates.c.s
-.PHONY : __/Utils/EngineUpdates.s
+__/Scenes/Scenes.s: __/Scenes/Scenes.c.s
+.PHONY : __/Scenes/Scenes.s
 
 # target to generate assembly for a file
-__/Utils/EngineUpdates.c.s:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/EngineUpdates.c.s
-.PHONY : __/Utils/EngineUpdates.c.s
+__/Scenes/Scenes.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.s
+.PHONY : __/Scenes/Scenes.c.s
+
+__/Scenes/ScenesManager.obj: __/Scenes/ScenesManager.c.obj
+.PHONY : __/Scenes/ScenesManager.obj
+
+# target to build an object file
+__/Scenes/ScenesManager.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj
+.PHONY : __/Scenes/ScenesManager.c.obj
+
+__/Scenes/ScenesManager.i: __/Scenes/ScenesManager.c.i
+.PHONY : __/Scenes/ScenesManager.i
+
+# target to preprocess a source file
+__/Scenes/ScenesManager.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.i
+.PHONY : __/Scenes/ScenesManager.c.i
+
+__/Scenes/ScenesManager.s: __/Scenes/ScenesManager.c.s
+.PHONY : __/Scenes/ScenesManager.s
+
+# target to generate assembly for a file
+__/Scenes/ScenesManager.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.s
+.PHONY : __/Scenes/ScenesManager.c.s
+
+__/Textures/LoadTextures.obj: __/Textures/LoadTextures.c.obj
+.PHONY : __/Textures/LoadTextures.obj
+
+# target to build an object file
+__/Textures/LoadTextures.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj
+.PHONY : __/Textures/LoadTextures.c.obj
+
+__/Textures/LoadTextures.i: __/Textures/LoadTextures.c.i
+.PHONY : __/Textures/LoadTextures.i
+
+# target to preprocess a source file
+__/Textures/LoadTextures.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.i
+.PHONY : __/Textures/LoadTextures.c.i
+
+__/Textures/LoadTextures.s: __/Textures/LoadTextures.c.s
+.PHONY : __/Textures/LoadTextures.s
+
+# target to generate assembly for a file
+__/Textures/LoadTextures.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.s
+.PHONY : __/Textures/LoadTextures.c.s
+
+__/Textures/Map.obj: __/Textures/Map.c.obj
+.PHONY : __/Textures/Map.obj
+
+# target to build an object file
+__/Textures/Map.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj
+.PHONY : __/Textures/Map.c.obj
+
+__/Textures/Map.i: __/Textures/Map.c.i
+.PHONY : __/Textures/Map.i
+
+# target to preprocess a source file
+__/Textures/Map.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.i
+.PHONY : __/Textures/Map.c.i
+
+__/Textures/Map.s: __/Textures/Map.c.s
+.PHONY : __/Textures/Map.s
+
+# target to generate assembly for a file
+__/Textures/Map.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.s
+.PHONY : __/Textures/Map.c.s
+
+__/Utils/HashTable.obj: __/Utils/HashTable.c.obj
+.PHONY : __/Utils/HashTable.obj
+
+# target to build an object file
+__/Utils/HashTable.c.obj:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj
+.PHONY : __/Utils/HashTable.c.obj
+
+__/Utils/HashTable.i: __/Utils/HashTable.c.i
+.PHONY : __/Utils/HashTable.i
+
+# target to preprocess a source file
+__/Utils/HashTable.c.i:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.i
+.PHONY : __/Utils/HashTable.c.i
+
+__/Utils/HashTable.s: __/Utils/HashTable.c.s
+.PHONY : __/Utils/HashTable.s
+
+# target to generate assembly for a file
+__/Utils/HashTable.c.s:
+	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.s
+.PHONY : __/Utils/HashTable.c.s
 
 __/Utils/Information.obj: __/Utils/Information.c.obj
 .PHONY : __/Utils/Information.obj
@@ -337,30 +457,6 @@ __/Utils/Information.s: __/Utils/Information.c.s
 __/Utils/Information.c.s:
 	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.s
 .PHONY : __/Utils/Information.c.s
-
-__/Utils/LoadTextures.obj: __/Utils/LoadTextures.c.obj
-.PHONY : __/Utils/LoadTextures.obj
-
-# target to build an object file
-__/Utils/LoadTextures.c.obj:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.obj
-.PHONY : __/Utils/LoadTextures.c.obj
-
-__/Utils/LoadTextures.i: __/Utils/LoadTextures.c.i
-.PHONY : __/Utils/LoadTextures.i
-
-# target to preprocess a source file
-__/Utils/LoadTextures.c.i:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.i
-.PHONY : __/Utils/LoadTextures.c.i
-
-__/Utils/LoadTextures.s: __/Utils/LoadTextures.c.s
-.PHONY : __/Utils/LoadTextures.s
-
-# target to generate assembly for a file
-__/Utils/LoadTextures.c.s:
-	cd /d C:\Users\user\Documents\Projects\CGame\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\Project.dir\build.make src/Main/CMakeFiles/Project.dir/__/Utils/LoadTextures.c.s
-.PHONY : __/Utils/LoadTextures.c.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
@@ -404,24 +500,36 @@ help:
 	@echo ... __/Engine/Engine.obj
 	@echo ... __/Engine/Engine.i
 	@echo ... __/Engine/Engine.s
+	@echo ... __/Engine/Updates.obj
+	@echo ... __/Engine/Updates.i
+	@echo ... __/Engine/Updates.s
 	@echo ... __/Entity/Entity.obj
 	@echo ... __/Entity/Entity.i
 	@echo ... __/Entity/Entity.s
 	@echo ... __/Game/Game.obj
 	@echo ... __/Game/Game.i
 	@echo ... __/Game/Game.s
-	@echo ... __/MapGen/Map.obj
-	@echo ... __/MapGen/Map.i
-	@echo ... __/MapGen/Map.s
-	@echo ... __/Utils/EngineUpdates.obj
-	@echo ... __/Utils/EngineUpdates.i
-	@echo ... __/Utils/EngineUpdates.s
+	@echo ... __/Game/OnUpdate.obj
+	@echo ... __/Game/OnUpdate.i
+	@echo ... __/Game/OnUpdate.s
+	@echo ... __/Scenes/Scenes.obj
+	@echo ... __/Scenes/Scenes.i
+	@echo ... __/Scenes/Scenes.s
+	@echo ... __/Scenes/ScenesManager.obj
+	@echo ... __/Scenes/ScenesManager.i
+	@echo ... __/Scenes/ScenesManager.s
+	@echo ... __/Textures/LoadTextures.obj
+	@echo ... __/Textures/LoadTextures.i
+	@echo ... __/Textures/LoadTextures.s
+	@echo ... __/Textures/Map.obj
+	@echo ... __/Textures/Map.i
+	@echo ... __/Textures/Map.s
+	@echo ... __/Utils/HashTable.obj
+	@echo ... __/Utils/HashTable.i
+	@echo ... __/Utils/HashTable.s
 	@echo ... __/Utils/Information.obj
 	@echo ... __/Utils/Information.i
 	@echo ... __/Utils/Information.s
-	@echo ... __/Utils/LoadTextures.obj
-	@echo ... __/Utils/LoadTextures.i
-	@echo ... __/Utils/LoadTextures.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

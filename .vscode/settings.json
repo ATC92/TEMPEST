@@ -1,7 +1,7 @@
 {
     "files.associations": {
         "*.rmd": "markdown",
-        "loadtextures.h": "c",
-        "cstring": "cpp"
+        "scenesmanager.h": "c",
+        "textures.h": "c"
     }
 }

@@ -64,7 +64,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/user/Documents/Projects/CGame/build/Debug/src/MapGen/cmake_install.cmake")
+  include("C:/Users/user/Documents/Projects/CGame/build/Debug/src/Textures/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/user/Documents/Projects/CGame/build/Debug/src/Scenes/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT

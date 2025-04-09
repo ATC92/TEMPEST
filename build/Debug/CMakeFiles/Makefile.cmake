@@ -101,7 +101,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Users/user/Documents/Projects/CGame/src/Entity/CMakeLists.txt"
   "C:/Users/user/Documents/Projects/CGame/src/Game/CMakeLists.txt"
   "C:/Users/user/Documents/Projects/CGame/src/Main/CMakeLists.txt"
-  "C:/Users/user/Documents/Projects/CGame/src/MapGen/CMakeLists.txt"
+  "C:/Users/user/Documents/Projects/CGame/src/Scenes/CMakeLists.txt"
+  "C:/Users/user/Documents/Projects/CGame/src/Textures/CMakeLists.txt"
   "C:/Users/user/Documents/Projects/CGame/src/Utils/CMakeLists.txt"
   )
 
@@ -140,7 +141,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/Game/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/Entity/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/Utils/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/MapGen/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/Textures/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/Scenes/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

@@ -5,11 +5,8 @@
 ///< C Libraries
 #include <string.h>
 ///< CGame Libraries
-#include "../MapGen/Map.h"
+#include "../Textures/Textures.h"
 /////////////////////////////////////////////////////////////////////////
-///< Forward Declaration of ListTileSize
-struct _szListTile;
-typedef struct _szListTile ListTileSize;
 /////////////////////////////////////////////////////////////////////////
 /**
  * @brief struct with the enumeration of where is looking the @n `Entity`
@@ -30,23 +27,6 @@ typedef enum _eLooking
     DOWN,
     LEFT
 }eLooking;
-/**
- * @brief struct with all param for the Texture Enitity
- * 
- * ---
- * 
- * @param char*         <NAME>
- * @param int           <ID>
- * @param Texture2D     <Texture>
- * @param cJSON*        <Enitity Parse JSON>
- */
-typedef struct _tEntity
-{
-    char* name;
-    int ID;
-    Texture2D Texture;
-    cJSON* parseJson_Entity;
-}tEntity;
 /////////////////////////////////////////////////////////////////////////
 /**
  * 
@@ -115,10 +95,10 @@ typedef struct _Entity
 {
     Player _player;                 ///< Player struct
     NPC _npc;                       ///< NPC struct
-    tEntity* _tEntity;              ///< List of textures of the entity
+    TileMap* _tileMap;              ///< TileMap of the Entities
     int _eLook;                     ///< Where the entity is looking
+    HashTable* _HT;                 ///< HashTable to save all Textures.
     TypeEntity  _typeEntity;        ///< Type of entity in the ENUM.
-    ListTileSize* _lSize;          ///< Size of the list of cJSON.
 }Entity;
 /////////////////////////////////////////////////////////////////////////
 /**
@@ -134,5 +114,5 @@ typedef struct _Entity
  * 
  * @return @n `Entity`      ///< Struct main with all parameters    
  */
-Entity GenEntity(int,char*,float,float,float,float);
+Entity* GenEntity(int,char*,float,float,float,float);
 

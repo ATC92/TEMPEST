@@ -1,0 +1,45 @@
+\doxysection{Textures.\+h}
+\hypertarget{_textures_8h_source}{}\label{_textures_8h_source}\index{src/Textures/Textures.h@{src/Textures/Textures.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}cJSON.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../Utils/HashTable.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ TILE\_SIZE\ 16}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__s_tile}{\_sTile}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ Image\ \mbox{\hyperlink{struct__s_tile_ae71f400cff479d816705f323db1e677b}{tmImage}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ Texture2D\ \mbox{\hyperlink{struct__s_tile_ae45d1b32842e99c692e24d9a2a13c437}{texture}};\ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ Rectangle\ \mbox{\hyperlink{struct__s_tile_adc3897909242843588d96a609bbc10ea}{tmSize}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ cJSON*\ \mbox{\hyperlink{struct__s_tile_abbbd3a3d3b1404de790c62f05a055b60}{parseTileGen}};\ \ \ \ }
+\DoxyCodeLine{00022\ \}TileMap;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___map_data}{\_MapData}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct___map_data_a5ac083a645d964373f022d03df4849c8}{name}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct___map_data_a2474a5474cbff19523a51eb1de01cda4}{width}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct___map_data_ad12fc34ce789bce6c8a05d8a17138534}{height}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}**\ \mbox{\hyperlink{struct___map_data_ad5da90523835ee1f8a9109c00e0e52ce}{data}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ cJSON*\ \mbox{\hyperlink{struct___map_data_aaf0fd138d65fe0b37e815351525fc643}{parseMapGen}};\ \ \ \ \ }
+\DoxyCodeLine{00033\ \}MapData;}
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \_mapEnum}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ level\_1,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ level\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \}MapEnum;}
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__render_data}{\_renderData}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ MapData*\ \mbox{\hyperlink{struct__render_data_ac17c1dcfd73bda91f54e6d554f3dfd72}{mapsData}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ TileMap*\ \mbox{\hyperlink{struct__render_data_a31b9016404f734bb0e6343cbd2b065b7}{tileMap}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ MapEnum\ \mbox{\hyperlink{struct__render_data_a7d9095dcaa554a8948ddda628898644e}{mapSlctr}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ cJSON*\ \mbox{\hyperlink{struct__render_data_aeee14ca10060ea07c575780b2a780204}{mapRoot}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ HashTable*\ \mbox{\hyperlink{struct__render_data_a02e6895dd918ab677058f268951efbf2}{hashTable}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ Texture2D\ \mbox{\hyperlink{struct__render_data_ae4a473082f084e566a4427abdaa68e89}{emptyTexture}};\ \ \ \ \ }
+\DoxyCodeLine{00053\ \}RenderData;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ FillHashTable(HashTable*,TileMap*);}
+
+\end{DoxyCode}
