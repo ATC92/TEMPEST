@@ -37,50 +37,6 @@ typedef enum _typeEntity
     _NPC
 }TypeEntity;
 /**
- * @brief Structure for Player entity.
- * 
- * ---
- * 
- * @param char*     <NAME>          ///< Name of the entity Enemy
- * @param float     <HEALTH>        ///< Health of the entity Enemy
- * @param float     <ARMOR>         ///< Armor of the entity Enemy
- * @param float     <SPEED>         ///< Speed of the entity Enemy
- * @param float     <EXPERIENCE>    ///< Experience of the entity Enemy
- * @param Vector2   <POSITION>      ///< Position { X , Y }
- */
-typedef struct _Player
-{
-    char* name;         ///< Name of the entity Player
-    float health;       ///< Health of the entity Player
-    float armor;        ///< Armor of the entity Player
-    float speed;        ///< Speed of the entity Player
-    float exp;          ///< Experience of the entity Player
-    Vector2 position;   ///< Vector2D position {X,Y}
-}Player;
-/**
- * @brief Structure for Enemy entity.
- * 
- * ---
- * 
- * @param char*     <NAME>          ///< Name of the entity Enemy
- * @param float     <HEALTH>        ///< Health of the entity Enemy
- * @param float     <ARMOR>         ///< Armor of the entity Enemy
- * @param float     <SPEED>         ///< Speed of the entity Enemy
- * @param float     <CRITICAL>      ///< Critical of the entity Enemy
- * @param float     <EXPERIENCE>    ///< Experience of the entity Enemy
- * @param Vector2   <POSITION>      ///< Position { X , Y }
- */
-typedef struct _npc
-{
-    char* name;         ///< Name of the entity Enemy
-    float health;       ///< Health of the entity Enemy
-    float armor;        ///< Armor of the entity Enemy
-    float speed;        ///< Speed of the entity Enemy
-    float crit;         ///< Critical of the entity Enemy
-    float exp;          ///< Experience of the entity Enemy
-    Vector2 position;   ///< Position {X,Y}
-}NPC;
-/**
  * @brief Main Entity
 
  * ---
@@ -93,8 +49,13 @@ typedef struct _npc
 */
 typedef struct _Entity
 {
-    Player _player;                 ///< Player struct
-    NPC _npc;                       ///< NPC struct
+    char* name;                     ///< Name of the entity Enemy
+    float health;                   ///< Health of the entity Enemy
+    float armor;                    ///< Armor of the entity Enemy
+    float speed;                    ///< Speed of the entity Enemy
+    float crit;                     ///< Critical of the entity Enemy
+    float exp;                      ///< Experience of the entity Enemy
+    Vector2 position;               ///< Position {X,Y}
     TileMap* _tileMap;              ///< TileMap of the Entities
     int _eLook;                     ///< Where the entity is looking
     HashTable* _HT;                 ///< HashTable to save all Textures.

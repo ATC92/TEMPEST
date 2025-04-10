@@ -121,8 +121,8 @@ void RenderPlayer(const Entity* eplayer, const Camera2D _cam)
     };
     Rectangle dest =
     {
-        eplayer->_player.position.x + ((1.f/GetFPS()) * eplayer->_player.speed), 
-        eplayer->_player.position.y + ((1.f/GetFPS()) * eplayer->_player.speed), 
+        eplayer->position.x + ((1.f/GetFPS()) * eplayer->speed), 
+        eplayer->position.y + ((1.f/GetFPS()) * eplayer->speed), 
         (float)TILE_SIZE, (float)TILE_SIZE 
     };
     Vector2 origin = { 0, 0 };

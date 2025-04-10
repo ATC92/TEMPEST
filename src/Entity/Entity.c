@@ -5,21 +5,21 @@ Entity* GenEntity(int _t, char* _n, float _h, float _ar, float _sp, float _crt)
     switch (_t)                                                 ///< Selection of the Type to gen.
     {
         case _PLAYER:
-            _e->_player.name = strdup(_n);
-            _e->_player.health = _h;
-            _e->_player.armor = _ar;
-            _e->_player.speed = _sp;
-            _e->_player.position = (Vector2){0,0};
+            _e->name = strdup(_n);
+            _e->health = _h;
+            _e->armor = _ar;
+            _e->speed = _sp;
+            _e->position = (Vector2){0,0};
             _e->_typeEntity = _PLAYER;
             _e->_HT = CreateHashTable(20);
             break;
         case _NPC:
-            _e->_npc.name = strdup(_n);;
-            _e->_npc.health = _h;
-            _e->_npc.armor = _ar;
-            _e->_npc.crit = _crt;
-            _e->_npc.speed = _sp;
-            _e->_npc.position = (Vector2){0,0};
+            _e->name = strdup(_n);;
+            _e->health = _h;
+            _e->armor = _ar;
+            _e->crit = _crt;
+            _e->speed = _sp;
+            _e->position = (Vector2){0,0};
             _e->_typeEntity = _NPC;
             _e->_HT = CreateHashTable(20);
         break;

@@ -37,7 +37,7 @@ void InitGame(void)
     _slct = level_1;
     /////////////////////////////////////////////////////////////////////////////////////////
     ///< Camera Init 
-    camera.target = eplayer->_player.position;
+    camera.target = eplayer->position;
     camera.zoom = 3.0f;
     camera.rotation = 0.0f;
     camera.offset = (Vector2){ GetScreenWidth()/2.0f, GetScreenHeight()/2.0f };
@@ -77,8 +77,8 @@ void GameUpdateLogic(void)
         UpdateCameraWheel(&camera);
         ///< Update Target
         float smoothFactor = 0.1f;                      ///< Smooth Camera follow (Default: 0.1f, Options: 0.05f o 0.2f)
-        camera.target.x += (eplayer->_player.position.x - camera.target.x) * smoothFactor;
-        camera.target.y += (eplayer->_player.position.y - camera.target.y) * smoothFactor;
+        camera.target.x += (eplayer->position.x - camera.target.x) * smoothFactor;
+        camera.target.y += (eplayer->position.y - camera.target.y) * smoothFactor;
         // Update Movement of Player
         updateMovement(eplayer);
     }

@@ -28,33 +28,33 @@ void updateMovement(Entity* eplayer)
 {
     if(IsKeyDown(KEY_A))
     {
-        eplayer->_player.position.x -= eplayer->_player.speed;
+        eplayer->position.x -= eplayer->speed;
         if(eplayer->_eLook != LEFT)
             eplayer->_eLook = LEFT;
     }
     else if (IsKeyDown(KEY_D))
     {
-        eplayer->_player.position.x += eplayer->_player.speed;
+        eplayer->position.x += eplayer->speed;
         if(eplayer->_eLook != RIGHT)
             eplayer->_eLook = RIGHT;    
     }
     else if(IsKeyDown(KEY_W))
     {
-        eplayer->_player.position.y -= eplayer->_player.speed;
+        eplayer->position.y -= eplayer->speed;
         if(eplayer->_eLook != UP)
             eplayer->_eLook = UP;
     }
     else if(IsKeyDown(KEY_S))
     {
-        eplayer->_player.position.y += eplayer->_player.speed;
+        eplayer->position.y += eplayer->speed;
         if(eplayer->_eLook != DOWN)
             eplayer->_eLook = DOWN;
     }
 
     if(IsKeyDown(KEY_LEFT_SHIFT))
-        eplayer->_player.speed = 2.f;
+        eplayer->speed = 2.f;
     else if(IsKeyReleased(KEY_LEFT_SHIFT))
-        eplayer->_player.speed = 1.5f;
+        eplayer->speed = 1.5f;
 
 }
 
