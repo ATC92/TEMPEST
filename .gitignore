@@ -6,4 +6,3 @@
 # Ignorar carpetas para main
 install/
 #build/
-commands.txt
