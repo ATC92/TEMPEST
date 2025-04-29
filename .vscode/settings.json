@@ -1,7 +1,13 @@
 {
     "files.associations": {
         "*.rmd": "markdown",
-        "scenesmanager.h": "c",
+        "algorithm": "c",
+        "iosfwd": "c",
+        "vector": "c",
+        "xstring": "c",
+        "xutility": "c",
+        "*.m": "c",
+        "loadtextures.h": "c",
         "textures.h": "c"
     }
 }

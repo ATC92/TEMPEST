@@ -22,7 +22,7 @@
 */
 typedef enum _eLooking
 {
-    UP,
+    UP = 1,
     RIGHT,
     DOWN,
     LEFT
@@ -56,10 +56,11 @@ typedef struct _Entity
     float crit;                     ///< Critical of the entity Enemy
     float exp;                      ///< Experience of the entity Enemy
     Vector2 position;               ///< Position {X,Y}
-    TileMap* _tileMap;              ///< TileMap of the Entities
     int _eLook;                     ///< Where the entity is looking
-    HashTable* _HT;                 ///< HashTable to save all Textures.
+    TileMap* _tileMap;              ///< TileMap of the Entities
+    Texture2D* _textureArray;        ///< 
     TypeEntity  _typeEntity;        ///< Type of entity in the ENUM.
+    // HashTable* _HT;                 ///< HashTable to save all Textures.
 }Entity;
 /////////////////////////////////////////////////////////////////////////
 /**

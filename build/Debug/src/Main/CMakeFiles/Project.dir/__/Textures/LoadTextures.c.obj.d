@@ -31,5 +31,4 @@ src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj: \
  C:/msys64/mingw64/include/sec_api/string_s.h \
  C:/msys64/mingw64/include/math.h \
  C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
- C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
- C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h
+ C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h

@@ -47,7 +47,7 @@ ItemHT* SearchItem(HashTable* ht, int id)
 void FillHashTable(HashTable* _HT, TileMap* _TM)
 {
     ///< 
-    int countTiles = 0;
+    int countTiles = 1;
     int tilesX = _TM->tmImage.width / TILE_SIZE;
     int tilesY = _TM->tmImage.height / TILE_SIZE;
     ///<
@@ -72,18 +72,6 @@ void FillHashTable(HashTable* _HT, TileMap* _TM)
 /**
  * 
  */
-bool IsTileEmpty(Image image, int x, int y)
-{
-    for (int i = 0; i < TILE_SIZE; i++)
-    {
-        for (int j = 0; j < TILE_SIZE; j++)
-        {
-            Color pixel = GetImageColor(image, x + i, y + j);
-            if (pixel.a > 0) return false;                          ///< If Something is there, is not empty.
-        }
-    }
-    return true;
-}
 /**
  * 
  */

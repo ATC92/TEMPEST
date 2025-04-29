@@ -19,9 +19,13 @@ cJSON* Load_cJSON(const char*);
 //
 TileMap* LoadMapTextures(char*, const int, const int);
 //
+void FillTexturesEntity(Texture2D*,TileMap*);
+//
 void RenderTileMap(RenderData*,MapEnum);
 //
-void RenderPlayer(const Entity*,const Camera2D);
+void RenderPlayer(const Entity*);
+//
+bool IsTileEmpty(Image,int,int);
 ////////////////////////////////////////////////////////////////
 
 

@@ -6,6 +6,7 @@
 ///< Extern Lib
 #include "raylib.h"
 ///< CGame lib
+#include "../Textures/Map.h"
 /// @brief Item of the HashTable
 /// @param char* key
 /// @param char* value
@@ -41,10 +42,7 @@ void InsertItem(HashTable*,int,Image);
  * @param int                                   ///< ID, is the KEY for search in the HashTable.
  */
 ItemHT* SearchItem(HashTable*,int);
-/**
- * 
- */
-bool IsTileEmpty(Image,int,int);
+
 /**
  * 
  */

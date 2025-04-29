@@ -23,16 +23,18 @@ void InitGame(void)
     ///< Player Gen Textures
     eplayer->_tileMap = LoadMapTextures("assets/TileMap/Tilemap_Entity.png",64,16);
     ///< Fill the HashTable to the Entity Player.
-    FillHashTable(eplayer->_HT,eplayer->_tileMap);
+    FillTexturesEntity(eplayer->_textureArray,eplayer->_tileMap);
     /////////////////////////////////////////////////////////////////////////////////////////
     // Generate the tilemap (16x16 tiles)
-    mapWorld = GenTileMap();
+    mapWorld = LoadInformationMap();
     ///< Init the HashTable's for MapWorld
-    mapWorld->hashTable = CreateHashTable(50);
+    // mapWorld->hashTable = CreateHashTable(50);
     ///< Fill HashTables with TileMap.
-    FillHashTable(mapWorld->hashTable,mapWorld->tileMap);
+    mapWorld->texturesArray = (Texture2D*)calloc(20,sizeof(Texture2D));
+    mapWorld->texturesArray[0] = LoadTexture("assets/Tilemap/EmptyTexture.png");
+    FillTextures(mapWorld);
     ///< Map create with Tiles and Selection of map
-    CreateMapTiles(mapWorld);
+    // CreateMapTiles(mapWorld);
     ///< Selection of the map to load First
     _slct = level_1;
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -56,7 +58,7 @@ void GameUpdateRender(void)
         ///< Map Render with RayLib Render
         RenderTileMap(mapWorld,_slct);
         ///< Player Render
-        RenderPlayer(eplayer,camera);
+        RenderPlayer(eplayer);
         ///< Selection of the map to Render
         _slct = level_2;
         ///< Map Render with RayLib Render
@@ -123,12 +125,20 @@ void DeInitGame(void)
 {
     ///< Delete Map data
     cJSON_Delete(mapWorld->tileMap->parseTileGen);
-    cJSON_Delete(mapWorld->mapRoot);
+    // cJSON_Delete(mapWorld->mapRoot);
     free(mapWorld->tileMap);
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < mapWorld->mapsData[i].height; j++)
+        {
+            free(mapWorld->mapsData[i].data[j]);
+        }
+    }
     free(mapWorld->mapsData);
+    free(mapWorld->tileMap);
     free(mapWorld);
-    FreeHashTable(mapWorld->hashTable);
+    // FreeHashTable(mapWorld->hashTable);
     ///< Delete Player Data
     free(eplayer->_tileMap);
-    FreeHashTable(eplayer->_HT);
+    // FreeHashTable(eplayer->_HT);
 }

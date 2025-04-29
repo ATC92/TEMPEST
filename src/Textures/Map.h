@@ -19,7 +19,7 @@
  * 
  * @return @n `RenderData*` ///< Returns all Textures and MapData loaded.
  */
-RenderData* GenTileMap(void);
+RenderData* LoadInformationMap(void);
 /**
  * @brief Creates the map after loading the texture.
  *        Uses JSON to load all necessary data.
@@ -38,6 +38,13 @@ RenderData* GenTileMap(void);
  * @note @n `cJSON DATA` is an n×n matrix, defined by the `WIDTH` and `HEIGHT` 
  *           values in the JSON.
  */
-void CreateMapTiles(RenderData*);
-
+// void CreateMapTiles(RenderData*);
+/**
+ * 
+ */
+int** LoadMapTiles(char*,int*,int*);
+/**
+ * 
+ */
+void FillTextures(RenderData*);
 

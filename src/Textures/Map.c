@@ -1,72 +1,95 @@
 #include "Map.h"
-RenderData* GenTileMap(void)
+RenderData* LoadInformationMap(void)
 {
     // Var Temp Return
     RenderData* tempData = (RenderData*)calloc(1,sizeof(RenderData));
-    ///< Load cJSON
-    tempData->mapRoot = Load_cJSON("assets/JSON/map.json");
+    ///< Load Maps
+    tempData->mapsData = (MapData*)calloc(2,sizeof(MapData));
+    tempData->mapsData[0].data = LoadMapTiles("assets/Maps/CGame_L1_BG_Layer.csv",&tempData->mapsData->width,&tempData->mapsData->height);
+    tempData->mapsData[1].data = LoadMapTiles("assets/Maps/CGame_L1_UP_Layer.csv",&tempData->mapsData->width,&tempData->mapsData->height);
     tempData->tileMap = LoadMapTextures("assets/TileMap/Tilemap_World.png",96,48);
     tempData->emptyTexture = LoadTexture("assets/TileMap/EmptyTexture.png");
     return tempData;
 }
-void CreateMapTiles(RenderData* _mD)
-{
-    ///< Validate tileMap before use
-    if (!_mD->tileMap) {
-        printf("Error: tileMap is NULL.\n");
-        return;
-    }
-    ///< Allocate memory to _mD->mapsData
-    _mD->mapsData = (MapData*)calloc(2,sizeof(MapData));
-    ///< Allocate memory to _mD->mapsData->Data
-    cJSON* jMaps = cJSON_GetObjectItemCaseSensitive(_mD->mapRoot,"maps");
-    ///< Validate jMaps before use
-    if (!jMaps)
-    {
-        printf("Error: 'maps' key not found in JSON.\n");
-        return;
-    }
-    if (jMaps)
-    {
-        cJSON* map;
-        int i = 0;
-        cJSON_ArrayForEach(map, jMaps)
-        {
-            cJSON* Name = cJSON_GetObjectItemCaseSensitive(map,"Name");
-            cJSON* ID = cJSON_GetObjectItemCaseSensitive(map, "ID");
-            cJSON *width = cJSON_GetObjectItemCaseSensitive(map, "Width");
-            cJSON *height = cJSON_GetObjectItemCaseSensitive(map, "Height");
-            cJSON *data = cJSON_GetObjectItemCaseSensitive(map, "Data");
-            
-            if(Name && cJSON_IsString(Name)         &&
-                ID && cJSON_IsNumber(ID)            &&
-                width && cJSON_IsNumber(width)      &&
-                height && cJSON_IsNumber(height)    && 
-                data)
-            {
-                _mD->mapsData[i].name = strdup(Name->valuestring);              ///< Duplicate Name from the Name cJSON
-                _mD->mapsData[i].width = width->valueint;                       ///< Duplicate Width from the width JSON
-                _mD->mapsData[i].height = height->valueint;                     ///< Duplicate heigth from the heigth JSON
 
-                ///< Allocate Memory to int** data.
-                _mD->mapsData[i].data = (int**)calloc(_mD->mapsData[i].height, sizeof(int*));
-                for (int k = 0; k < _mD->mapsData[i].width; k++)
-                {
-                    _mD->mapsData[i].data[k] = (int*)calloc(_mD->mapsData[i].width, sizeof(int));
-                }
-                ///< Fill the int** Data with values.
-                for (int y = 0; y < _mD->mapsData[i].height; y++)
-                {
-                    cJSON* row = cJSON_GetArrayItem(data,y);
-                    for (int x = 0; x < _mD->mapsData[i].width; x++)
-                    {
-                        cJSON* cell = cJSON_GetArrayItem(row,x);
-                        _mD->mapsData[i].data[y][x] = cell->valueint;
-                    }
-                }
-                i++;
+int** LoadMapTiles(char* path, int* c, int* r)
+{
+    ///< Load file CSV[MAP]
+    FILE* archivo = fopen(path,"r");
+    if (!archivo)
+    {
+        perror("File error.");
+        return NULL;
+    }
+    ///< Read R*C.
+    char b[8192];
+    int filas=0, columnas=0;
+    while (fgets(b,sizeof(b),archivo))
+    {
+        if (filas == 0)
+        {
+            char* copia = strdup(b);
+            char* token = strtok(copia,",");
+            while (token)
+            {
+                columnas++;
+                token = strtok(NULL,",");
+            }
+            free(copia);
+        }
+        filas++;
+    }
+    
+    rewind(archivo);
+
+    //< Matrix creation **.
+    int** mapa = calloc(filas, sizeof(int*));
+    for (int i = 0; i < filas; i++) {
+        mapa[i] = calloc(columnas, sizeof(int));
+    }
+
+    // Fill Matrix
+    int f = 0;
+    while (fgets(b, sizeof(b), archivo) && f < filas) {
+        int c = 0;
+        char* token = strtok(b, ",");
+        while (token && c < columnas) {
+            mapa[f][c] = atoi(token);
+            token = strtok(NULL, ",");
+            c++;
+        }
+        f++;
+    }
+    fclose(archivo);
+
+    if(columnas)*c = columnas;
+    if(filas)*r = filas;
+
+    return mapa;
+}
+
+void FillTextures(RenderData* renderData)
+{
+    ///< 
+    int countTiles = 1;
+    int tilesX = renderData->tileMap->tmImage.width / TILE_SIZE;
+    int tilesY = renderData->tileMap->tmImage.width / TILE_SIZE;
+    ///< 
+    for (int y = 0; y < tilesY; y++)
+    {
+        for (int x = 0; x < tilesX; x++)
+        {
+            int tileX = x * TILE_SIZE;
+            int tileY = y * TILE_SIZE;
+            if (!IsTileEmpty(renderData->tileMap->tmImage, tileX, tileY))
+            {
+                // Extraer tile como subimagen
+                Image tile = ImageFromImage(renderData->tileMap->tmImage, (Rectangle){ tileX, tileY, TILE_SIZE, TILE_SIZE });
+                renderData->texturesArray[countTiles] = LoadTextureFromImage(tile);
+                UnloadImage(tile);
+                countTiles++;
             }
         }
     }
+    UnloadImage(renderData->tileMap->tmImage);
 }
-

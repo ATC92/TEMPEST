@@ -9,19 +9,20 @@ Entity* GenEntity(int _t, char* _n, float _h, float _ar, float _sp, float _crt)
             _e->health = _h;
             _e->armor = _ar;
             _e->speed = _sp;
-            _e->position = (Vector2){0,0};
+            _e->position = (Vector2){10,10};
             _e->_typeEntity = _PLAYER;
-            _e->_HT = CreateHashTable(20);
+            _e->_eLook = 3;
+            _e->_textureArray = (Texture2D*)calloc(5,sizeof(Texture2D));
             break;
         case _NPC:
-            _e->name = strdup(_n);;
+            _e->name = strdup(_n);
             _e->health = _h;
             _e->armor = _ar;
             _e->crit = _crt;
             _e->speed = _sp;
             _e->position = (Vector2){0,0};
             _e->_typeEntity = _NPC;
-            _e->_HT = CreateHashTable(20);
+            _e->_textureArray = (Texture2D*)calloc(5,sizeof(Texture2D));
         break;
         default:
         break;

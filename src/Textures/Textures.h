@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 ///< CGame Lib
-#include "../Utils/HashTable.h"
 ////////////////////////////////////////////////////
 #define TILE_SIZE 16
 ////////////////////////////////////////////////////
@@ -29,7 +28,7 @@ typedef struct _MapData
     int width;              ///< Width of the Map (int).
     int height;             ///< Heigth of the map (int).
     int** data;             ///< Information of the map [(int) x][(int) y], but ptr**.
-    cJSON* parseMapGen;     ///< Struct cJSON with the raw map in JSON format. 
+    // cJSON* parseMapGen;     ///< Struct cJSON with the raw map in JSON format. 
 }MapData;
 /**
  * @brief Enumerate Map, State Machine for the map selector
@@ -47,13 +46,9 @@ typedef struct _renderData
     MapData* mapsData;          ///< Pointer to the map data.
     TileMap* tileMap;           ///< Pointer to the tile data.
     MapEnum mapSlctr;           ///< Enum that selects the current map.
-    cJSON* mapRoot;             ///< Root node of the cJSON map.
-    HashTable* hashTable;       ///< HashTable for all Textures in the loaded TileMap*.
+    // cJSON* mapRoot;             ///< Root node of the cJSON map.
+    // HashTable* hashTable;       ///< HashTable for all Textures in the loaded TileMap*.
+    Texture2D* texturesArray;   ///< 
     Texture2D emptyTexture;     ///< Empty texture.
 }RenderData;
 /////////////////////////////////////////////////////////////////////////////////////
-/**
- * 
- * 
- */
-void FillHashTable(HashTable*,TileMap*);

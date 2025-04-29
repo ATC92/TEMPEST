@@ -70,63 +70,106 @@ TileMap* LoadMapTextures(char* _path,const int w, const int h)
     return tempMapData;
 }
 /**
+ * 
+ */
+void FillTexturesEntity(Texture2D* _TextureList,TileMap* _TileMapPlayer)
+{
+    ///< 
+    int countTiles = 0;
+    int tilesX = _TileMapPlayer->tmImage.width / TILE_SIZE;
+    int tilesY = _TileMapPlayer->tmImage.width / TILE_SIZE;
+    ///< 
+    for (int y = 0; y < tilesY; y++)
+    {
+        for (int x = 0; x < tilesX; x++)
+        {
+            int tileX = x * TILE_SIZE;
+            int tileY = y * TILE_SIZE;
+            if (!IsTileEmpty(_TileMapPlayer->tmImage, tileX, tileY))
+            {
+                // Extraer tile como subimagen
+                Image tile = ImageFromImage(_TileMapPlayer->tmImage, (Rectangle){ tileX, tileY, TILE_SIZE, TILE_SIZE });
+                _TextureList[countTiles] = LoadTextureFromImage(tile);
+                UnloadImage(tile);
+                countTiles++;
+            }
+        }
+    }
+    UnloadImage(_TileMapPlayer->tmImage);
+}
+/**
+ * 
+ */
+bool IsTileEmpty(Image image, int x, int y)
+{
+    for (int i = 0; i < TILE_SIZE; i++)
+    {
+        for (int j = 0; j < TILE_SIZE; j++)
+        {
+            Color pixel = GetImageColor(image, x + i, y + j);
+            if (pixel.a > 0) return false;                          ///< If Something is there, is not empty.
+        }
+    }
+    return true;
+}
+/**
  * @brief Render all the map from the Parse cJSON
  * 
  * @param RenderData*           ///< 
  */
 void RenderTileMap(RenderData* _mD, MapEnum _slct)
 {
-    int tileset_columns = 10;
+    int tileset_columns = 6;
     for (int y = 0; y < _mD->mapsData[_slct].height; y++)
     {
         for (int x = 0; x < _mD->mapsData[_slct].width; x++)
         {
             int tile_id = _mD->mapsData[_slct].data[y][x];
             Rectangle source = {
-                (float)(tile_id % tileset_columns) * TILE_SIZE,
-                (float)(tile_id / tileset_columns) * TILE_SIZE,
-                (float)TILE_SIZE,
-                (float)TILE_SIZE
+                .x = (float)(tile_id % tileset_columns) * TILE_SIZE,
+                .y = (float)(tile_id / tileset_columns) * TILE_SIZE,
+                .width = TILE_SIZE,
+                .height = TILE_SIZE
             };
             Rectangle dest = {
-                (float)(x * TILE_SIZE),
-                (float)(y * TILE_SIZE),
-                (float)TILE_SIZE,
-                (float)TILE_SIZE
+                .x = (float)(x * TILE_SIZE),
+                .y = (float)(y * TILE_SIZE),
+                .width = TILE_SIZE,
+                .height = TILE_SIZE
             };
             Vector2 origin = {0 , 0};
-            if (tile_id >= 0)
+            if (tile_id > 0)
             {
-                // DrawTexturePro(_mD->sTilesData[tile_id].texture, source, dest, origin, 0.0f, WHITE);
-                ItemHT* item= SearchItem(_mD->hashTable,tile_id);
-                DrawTexturePro(item->tile, source, dest, origin, 0.0f, WHITE);
+                DrawTexturePro(_mD->texturesArray[tile_id], source, dest, origin, 0.0f, WHITE);
             }
-            else
-            {
-                DrawTexturePro(_mD->emptyTexture, source, dest, origin, 0.0f, WHITE);
-            }
+            // else
+            // {
+            //     DrawTexturePro(_mD->emptyTexture, source, dest, origin, 0.0f, WHITE);
+            // }
         }
     }
 }
 /**
  * 
  */
-void RenderPlayer(const Entity* eplayer, const Camera2D _cam)
+void RenderPlayer(const Entity* eplayer)
 {
+    int tileset_columns = 4;
     Rectangle source = 
     { 
-        (float)1 * TILE_SIZE,
-        (float)1 * TILE_SIZE, 
-        (float)TILE_SIZE, (float)TILE_SIZE 
+        .x = (float)(eplayer->_eLook % tileset_columns) * TILE_SIZE,
+        .y = (float)(eplayer->_eLook / tileset_columns) * TILE_SIZE,
+        .width = TILE_SIZE,
+        .height = TILE_SIZE
     };
     Rectangle dest =
     {
         eplayer->position.x + ((1.f/GetFPS()) * eplayer->speed), 
         eplayer->position.y + ((1.f/GetFPS()) * eplayer->speed), 
-        (float)TILE_SIZE, (float)TILE_SIZE 
+        (float)TILE_SIZE, 
+        (float)TILE_SIZE 
     };
     Vector2 origin = { 0, 0 };
-    ItemHT* item= SearchItem(eplayer->_HT,eplayer->_eLook);
-    DrawTexturePro(item->tile, source, dest, origin, 0.0f, WHITE);
+    DrawTexturePro(eplayer->_textureArray[eplayer->_eLook], source, dest, origin, 0.0f, WHITE);
 }
 

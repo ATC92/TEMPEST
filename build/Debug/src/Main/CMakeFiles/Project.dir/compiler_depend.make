@@ -13,7 +13,6 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.obj: C:/Users/user/Documents/
   C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
@@ -60,7 +59,6 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.obj: C:/Users/user/Documents
   C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
@@ -98,7 +96,6 @@ src/Main/CMakeFiles/Project.dir/__/Entity/Entity.c.obj: C:/Users/user/Documents/
   _deps/cjson-src/cJSON.h \
   _deps/raylib-src/src/raylib.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -140,7 +137,6 @@ src/Main/CMakeFiles/Project.dir/__/Game/Game.c.obj: C:/Users/user/Documents/Proj
   C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
@@ -185,7 +181,6 @@ src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.obj: C:/Users/user/Documents/
   C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
@@ -224,7 +219,6 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/Scenes.c.obj: C:/Users/user/Documents/
   _deps/cjson-src/cJSON.h \
   _deps/raylib-src/src/raylib.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
@@ -261,7 +255,6 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj: C:/Users/user/Doc
   _deps/cjson-src/cJSON.h \
   _deps/raylib-src/src/raylib.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
@@ -300,7 +293,6 @@ src/Main/CMakeFiles/Project.dir/__/Textures/LoadTextures.c.obj: C:/Users/user/Do
   _deps/raylib-src/src/raylib.h \
   C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -337,7 +329,6 @@ src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj: C:/Users/user/Documents/P
   _deps/cjson-src/cJSON.h \
   _deps/raylib-src/src/raylib.h \
   C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -375,6 +366,9 @@ src/Main/CMakeFiles/Project.dir/__/Textures/Map.c.obj: C:/Users/user/Documents/P
 src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj: C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.c \
   _deps/cjson-src/cJSON.h \
   _deps/raylib-src/src/raylib.h \
+  C:/Users/user/Documents/Projects/CGame/src/Entity/Entity.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
+  C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
@@ -388,13 +382,16 @@ src/Main/CMakeFiles/Project.dir/__/Utils/HashTable.c.obj: C:/Users/user/Document
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/include/limits.h \
   C:/msys64/mingw64/include/malloc.h \
+  C:/msys64/mingw64/include/math.h \
   C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
   C:/msys64/mingw64/include/sec_api/stdio_s.h \
   C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  C:/msys64/mingw64/include/sec_api/string_s.h \
   C:/msys64/mingw64/include/stdarg.h \
   C:/msys64/mingw64/include/stddef.h \
   C:/msys64/mingw64/include/stdio.h \
   C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/string.h \
   C:/msys64/mingw64/include/swprintf.inl \
   C:/msys64/mingw64/include/vadefs.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
@@ -432,7 +429,6 @@ src/Main/CMakeFiles/Project.dir/main.c.obj: C:/Users/user/Documents/Projects/CGa
   C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h \
   C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h \
-  C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h \
   C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
@@ -501,8 +497,6 @@ C:/Users/user/Documents/Projects/CGame/src/Textures/Map.h:
 C:/Users/user/Documents/Projects/CGame/src/Engine/Engine.h:
 
 C:/Users/user/Documents/Projects/CGame/src/Textures/Textures.h:
-
-C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h:
 
@@ -579,3 +573,5 @@ C:/Users/user/Documents/Projects/CGame/src/Main/main.c:
 C:/Users/user/Documents/Projects/CGame/src/Scenes/Scenes.c:
 
 C:/Users/user/Documents/Projects/CGame/src/Textures/LoadTextures.c:
+
+C:/Users/user/Documents/Projects/CGame/src/Utils/HashTable.h:
