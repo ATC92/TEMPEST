@@ -1,6 +1,5 @@
 #pragma once
 ///< Extern Libraries.
-#include "cJSON.h"
 #include "raylib.h"
 ///< Libraries C.
 #include <stdlib.h>
@@ -12,16 +11,13 @@
 #include "Textures.h"
 ////////////////////////////////////////////////////////////////
 ///<
-typedef void (*ProcessItemFunc)(void*, const cJSON*);
 ////////////////////////////////////////////////////////////////
-//
-cJSON* Load_cJSON(const char*);
 //
 TileMap* LoadMapTextures(char*, const int, const int);
 //
 void FillTexturesEntity(Texture2D*,TileMap*);
 //
-void RenderTileMap(RenderData*,MapEnum);
+void RenderTileMap(RenderData*,int);
 //
 void RenderPlayer(const Entity*);
 //

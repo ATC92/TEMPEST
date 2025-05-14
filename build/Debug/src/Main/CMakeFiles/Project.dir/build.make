@@ -283,7 +283,6 @@ C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFile
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/build.make
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: _deps/raylib-build/raylib/libraylib.a
-C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: _deps/cjson-build/libcjson.a
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/linkLibs.rsp
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/objects1.rsp
 C:/Users/user/Documents/Projects/CGame/bin/Debug/Project.exe: src/Main/CMakeFiles/Project.dir/link.txt

@@ -27,8 +27,5 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.obj: \
  C:/msys64/mingw64/include/stdarg.h \
  C:/msys64/mingw64/include/_mingw_stdarg.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
- C:/Users/user/Documents/Projects/CGame/build/Debug/_deps/cjson-src/cJSON.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
- C:/msys64/mingw64/include/stddef.h \
  C:/Users/user/Documents/Projects/CGame/src/Utils/Information.h \
  C:\Users\user\Documents\Projects\CGame\src\Scenes\Scenes.h

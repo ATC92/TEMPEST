@@ -1,7 +1,6 @@
 #pragma once
 ///< Externs Lib.
 #include "raylib.h"
-#include "cJSON.h"
 ///< C/C++ Lib
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,7 +16,6 @@ typedef struct _sTile
     Image tmImage;          ///< Image of the TileMap.
     Texture2D texture;      ///< Texture 2D.
     Rectangle tmSize;       ///< Size of the TileMap.
-    cJSON* parseTileGen;    ///< cJSON Map.
 }TileMap;
 /**
  * @brief MapData, Save information of the map
@@ -46,8 +44,6 @@ typedef struct _renderData
     MapData* mapsData;          ///< Pointer to the map data.
     TileMap* tileMap;           ///< Pointer to the tile data.
     MapEnum mapSlctr;           ///< Enum that selects the current map.
-    // cJSON* mapRoot;             ///< Root node of the cJSON map.
-    // HashTable* hashTable;       ///< HashTable for all Textures in the loaded TileMap*.
     Texture2D* texturesArray;   ///< 
     Texture2D emptyTexture;     ///< Empty texture.
 }RenderData;

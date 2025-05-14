@@ -233,19 +233,6 @@ update_mappings/fast:
 .PHONY : update_mappings/fast
 
 #=============================================================================
-# Target rules for targets named cjson
-
-# Build rule for target.
-cjson: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cjson
-.PHONY : cjson
-
-# fast build rule for target.
-cjson/fast:
-	$(MAKE) $(MAKESILENT) -f _deps\cjson-build\CMakeFiles\cjson.dir\build.make _deps/cjson-build/CMakeFiles/cjson.dir/build
-.PHONY : cjson/fast
-
-#=============================================================================
 # Target rules for targets named Project
 
 # Build rule for target.
@@ -275,7 +262,6 @@ help:
 	@echo ... uninstall
 	@echo ... update_mappings
 	@echo ... Project
-	@echo ... cjson
 	@echo ... glfw
 	@echo ... raylib
 .PHONY : help

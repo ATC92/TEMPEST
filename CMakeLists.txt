@@ -9,22 +9,12 @@ if (CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error=float-conversion")
 endif()
 
-<<<<<<< HEAD
 # Configurar segun el tipo de compilacion
 set(BIN "${CMAKE_SOURCE_DIR}/bin")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${BIN}/${CMAKE_BUILD_TYPE}")
 #${CMAKE_BINARY_DIR}/bin/$<CONFIG>
 
 # Definiciones de compilacion
-=======
-# Configurar salida de binarios según el tipo de compilación
-set(BIN "${CMAKE_SOURCE_DIR}/bin")
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${BIN}/${CMAKE_BUILD_TYPE}")
-#${BIN}/${CMAKE_BUILD_TYPE}
-#${CMAKE_BINARY_DIR}/bin/$<CONFIG>
-
-# Definiciones de compilación
->>>>>>> origin
 add_compile_definitions(ASSETS="${CMAKE_SOURCE_DIR}/assets")
 
 # -----------------------------------------------
@@ -47,28 +37,6 @@ set(BUILD_GAMES OFF CACHE BOOL "" FORCE)
 set(BUILD_TOOLS OFF CACHE BOOL "" FORCE)   
 FetchContent_MakeAvailable(raylib)
 
-####################################################
-##      cJSON
-####################################################
-FetchContent_Declare(
-    cjson
-    GIT_REPOSITORY "https://github.com/DaveGamble/cJSON"
-    GIT_TAG "v1.7.18"
-    GIT_SHALLOW TRUE
-)
-# Configuracion para cJson
-message(STATUS "Descargando cJson...")
-set(CJSON_INSTALL FALSE CACHE INTERNAL "" FORCE)
-set(ENABLE_CJSON_TEST FALSE CACHE INTERNAL "" FORCE)
-set(ENABLE_CJSON_UNINSTALL FALSE CACHE INTERNAL "" FORCE)
-set(ENABLE_CJSON_BUILD_TOOLS FALSE CACHE INTERNAL "" FORCE)
-set(ENABLE_CJSON_BUILD_SHARED_AND_STATIC FALSE CACHE INTERNAL "" FORCE)
-
-FetchContent_MakeAvailable(cjson)
-if (TARGET cjson)
-    set_target_properties(cjson PROPERTIES EXCLUDE_FROM_ALL TRUE EXCLUDE_FROM_DEFAULT_BUILD TRUE)
-endif()
-
 message(STATUS "Librerias onfiguradas correctamente.")
 
 # -----------------------------------------------
@@ -76,9 +44,7 @@ message(STATUS "Librerias onfiguradas correctamente.")
 # -----------------------------------------------
 add_subdirectory(src)
 
-target_link_libraries(Project PRIVATE raylib cjson)
-target_include_directories(Project PRIVATE ${cjson_SOURCE_DIR})
-
+target_link_libraries(Project PRIVATE raylib)
 # -----------------------------------------------
 # Configuracion de instalacion
 # -----------------------------------------------

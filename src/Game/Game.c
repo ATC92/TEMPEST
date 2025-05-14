@@ -27,9 +27,7 @@ void InitGame(void)
     /////////////////////////////////////////////////////////////////////////////////////////
     // Generate the tilemap (16x16 tiles)
     mapWorld = LoadInformationMap();
-    ///< Init the HashTable's for MapWorld
-    // mapWorld->hashTable = CreateHashTable(50);
-    ///< Fill HashTables with TileMap.
+    ///< Fill arrayTexture.
     mapWorld->texturesArray = (Texture2D*)calloc(20,sizeof(Texture2D));
     mapWorld->emptyTexture = LoadTexture("assets/Tilemap/EmptyTexture.png");
     FillTextures(mapWorld);
@@ -46,7 +44,7 @@ void InitGame(void)
     /////////////////////////////////////////////////////////////////////////////////////////
 }
 ////////////////////////////////////////////////////////// 
-/**
+/*
  * 
  */
 void GameUpdateRender(void)
@@ -123,17 +121,6 @@ void GameInformation(void)
  */
 void DeInitGame(void)
 {
-    ///< Delete Map data
-    cJSON_Delete(mapWorld->tileMap->parseTileGen);
-    // cJSON_Delete(mapWorld->mapRoot);
-    free(mapWorld->tileMap);
-    for (int i = 0; i < 2; i++)
-    {
-        for (int j = 0; j < mapWorld->mapsData[i].height; j++)
-        {
-            free(mapWorld->mapsData[i].data[j]);
-        }
-    }
     free(mapWorld->mapsData);
     free(mapWorld->tileMap);
     free(mapWorld);

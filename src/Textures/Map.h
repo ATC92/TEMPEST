@@ -1,6 +1,5 @@
 #pragma once
 ///< Extern Libraries.
-#include "cJSON.h"
 #include "raylib.h"
 ///< Libraries C.
 #include <stdlib.h>

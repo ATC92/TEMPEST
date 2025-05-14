@@ -65,7 +65,7 @@ bool IsTileEmpty(Image image, int x, int y)
  * @param RenderData*           ///<
  * 
  */
-void RenderTileMap(RenderData* _mD, MapEnum _slct)
+void RenderTileMap(RenderData* _mD, int _slct)
 {
     int tileset_columns = 6;
     for (int y = 0; y < _mD->mapsData[_slct].height; y++)
