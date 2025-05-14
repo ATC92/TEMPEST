@@ -6,4 +6,5 @@
 # Ignorar carpetas para main
 install/
 build/
+build/Debug
 bin/
