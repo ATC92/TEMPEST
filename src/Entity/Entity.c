@@ -9,9 +9,9 @@ Entity* GenEntity(int _t, char* _n, float _h, float _ar, float _sp, float _crt)
             _e->health = _h;
             _e->armor = _ar;
             _e->speed = _sp;
-            _e->position = (Vector2){10,10};
+            _e->position = (Vector2){85,120};
             _e->_typeEntity = _PLAYER;
-            _e->_eLook = 3;
+            _e->_eLook = 2;
             _e->_textureArray = (Texture2D*)calloc(5,sizeof(Texture2D));
             break;
         case _NPC:

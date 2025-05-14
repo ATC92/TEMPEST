@@ -22,7 +22,7 @@
 */
 typedef enum _eLooking
 {
-    UP = 1,
+    UP,
     RIGHT,
     DOWN,
     LEFT

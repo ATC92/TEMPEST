@@ -7,8 +7,8 @@ RenderData* LoadInformationMap(void)
     tempData->mapsData = (MapData*)calloc(2,sizeof(MapData));
     tempData->mapsData[0].data = LoadMapTiles("assets/Maps/CGame_L1_BG_Layer.csv",&tempData->mapsData->width,&tempData->mapsData->height);
     tempData->mapsData[1].data = LoadMapTiles("assets/Maps/CGame_L1_UP_Layer.csv",&tempData->mapsData->width,&tempData->mapsData->height);
-    tempData->tileMap = LoadMapTextures("assets/TileMap/Tilemap_World.png",96,48);
-    tempData->emptyTexture = LoadTexture("assets/TileMap/EmptyTexture.png");
+    tempData->tileMap = LoadMapTextures("assets/Tilemap/TiledMapWorld.png",96,48);
+    tempData->emptyTexture = LoadTexture("assets/Tilemap/EmptyTexture.png");
     return tempData;
 }
 
@@ -39,7 +39,6 @@ int** LoadMapTiles(char* path, int* c, int* r)
         }
         filas++;
     }
-    
     rewind(archivo);
 
     //< Matrix creation **.
@@ -71,9 +70,9 @@ int** LoadMapTiles(char* path, int* c, int* r)
 void FillTextures(RenderData* renderData)
 {
     ///< 
-    int countTiles = 1;
+    int countTiles = 0;
     int tilesX = renderData->tileMap->tmImage.width / TILE_SIZE;
-    int tilesY = renderData->tileMap->tmImage.width / TILE_SIZE;
+    int tilesY = renderData->tileMap->tmImage.height / TILE_SIZE;
     ///< 
     for (int y = 0; y < tilesY; y++)
     {

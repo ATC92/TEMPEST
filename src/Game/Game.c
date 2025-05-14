@@ -21,7 +21,7 @@ void InitGame(void)
     ///< Gen player.
     eplayer = GenEntity(_PLAYER, "Hero", 100.f,20.f,1.5f,20.f);
     ///< Player Gen Textures
-    eplayer->_tileMap = LoadMapTextures("assets/TileMap/Tilemap_Entity.png",64,16);
+    eplayer->_tileMap = LoadMapTextures("assets/Tilemap/Tilemap_Entity.png",64,16);
     ///< Fill the HashTable to the Entity Player.
     FillTexturesEntity(eplayer->_textureArray,eplayer->_tileMap);
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@ void InitGame(void)
     // mapWorld->hashTable = CreateHashTable(50);
     ///< Fill HashTables with TileMap.
     mapWorld->texturesArray = (Texture2D*)calloc(20,sizeof(Texture2D));
-    mapWorld->texturesArray[0] = LoadTexture("assets/Tilemap/EmptyTexture.png");
+    mapWorld->emptyTexture = LoadTexture("assets/Tilemap/EmptyTexture.png");
     FillTextures(mapWorld);
     ///< Map create with Tiles and Selection of map
     // CreateMapTiles(mapWorld);
