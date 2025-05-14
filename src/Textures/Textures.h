@@ -11,7 +11,7 @@
 /**
  * @brief sTILE, The space of the world in Tiles
  */
-typedef struct _sTile
+typedef struct _tileMap
 {
     Image tmImage;          ///< Image of the TileMap.
     Texture2D texture;      ///< Texture 2D.

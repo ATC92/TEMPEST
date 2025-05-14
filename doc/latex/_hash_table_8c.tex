@@ -1,0 +1,109 @@
+\doxysection{src/\+Utils/\+Hash\+Table.c File Reference}
+\hypertarget{_hash_table_8c}{}\label{_hash_table_8c}\index{src/Utils/HashTable.c@{src/Utils/HashTable.c}}
+{\ttfamily \#include "{}Hash\+Table.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Textures/\+Textures.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_hash_table_8c_a115269421523b40624f0f082ff73b547}{Create\+Hash\+Table}} (int size)
+\begin{DoxyCompactList}\small\item\em Init \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_hash_table_8c_ad17e002ca84f6fa646b53e5855e47836}{Insert\+Item}} (\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*}ht, int id, Image tile)
+\begin{DoxyCompactList}\small\item\em Insert Item to \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_hash_table_8h_a9513d2081242c8d8c07931ccc57d4841}{Item\+HT}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_hash_table_8c_ae2471ac189db2df49034615712c90675}{Search\+Item}} (\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*}ht, int id)
+\begin{DoxyCompactList}\small\item\em Search item in the \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_hash_table_8c_a29d252eedaf8877ff7fb179aeed0a8e9}{Fill\+Hash\+Table}} (\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{struct___h_t}{\+\_\+\+HT}}, \mbox{\hyperlink{_textures_8h_ae150ae3cbc98b367cb0252b16db62fbb}{Tile\+Map}} \texorpdfstring{$\ast$}{*}\+\_\+\+TM)
+\item 
+void \mbox{\hyperlink{_hash_table_8c_a96c0d3c9d20513b0bd43fe33a2708470}{Print\+Hash\+Table}} (\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{struct___h_t}{\+\_\+\+HT}})
+\item 
+int \mbox{\hyperlink{_hash_table_8c_a963399af02ff033ec61db603279fb570}{Hash\+Function}} (int key, int size)
+\item 
+void \mbox{\hyperlink{_hash_table_8c_a057e9cd51e1189648086945d78129038}{Free\+Item}} (\mbox{\hyperlink{_hash_table_8h_a9513d2081242c8d8c07931ccc57d4841}{Item\+HT}} \texorpdfstring{$\ast$}{*}item)
+\item 
+void \mbox{\hyperlink{_hash_table_8c_ae1af6f4d379c31cd3bcde07de3b09913}{Free\+Hash\+Table}} (\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*}table)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_hash_table_8c_a115269421523b40624f0f082ff73b547}\index{HashTable.c@{HashTable.c}!CreateHashTable@{CreateHashTable}}
+\index{CreateHashTable@{CreateHashTable}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{CreateHashTable()}{CreateHashTable()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_a115269421523b40624f0f082ff73b547} 
+\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*} Create\+Hash\+Table (\begin{DoxyParamCaption}\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Init \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & ///\texorpdfstring{$<$}{<} Size of the \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_hash_table_8c_a29d252eedaf8877ff7fb179aeed0a8e9}\index{HashTable.c@{HashTable.c}!FillHashTable@{FillHashTable}}
+\index{FillHashTable@{FillHashTable}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{FillHashTable()}{FillHashTable()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_a29d252eedaf8877ff7fb179aeed0a8e9} 
+void Fill\+Hash\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{\+\_\+\+HT}{, }\item[{\mbox{\hyperlink{_textures_8h_ae150ae3cbc98b367cb0252b16db62fbb}{Tile\+Map}} \texorpdfstring{$\ast$}{*}}]{\+\_\+\+TM}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<}
+
+\texorpdfstring{$<$}{<}\Hypertarget{_hash_table_8c_ae1af6f4d379c31cd3bcde07de3b09913}\index{HashTable.c@{HashTable.c}!FreeHashTable@{FreeHashTable}}
+\index{FreeHashTable@{FreeHashTable}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{FreeHashTable()}{FreeHashTable()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_ae1af6f4d379c31cd3bcde07de3b09913} 
+void Free\+Hash\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hash_table_8c_a057e9cd51e1189648086945d78129038}\index{HashTable.c@{HashTable.c}!FreeItem@{FreeItem}}
+\index{FreeItem@{FreeItem}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{FreeItem()}{FreeItem()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_a057e9cd51e1189648086945d78129038} 
+void Free\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_hash_table_8h_a9513d2081242c8d8c07931ccc57d4841}{Item\+HT}} \texorpdfstring{$\ast$}{*}}]{item}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hash_table_8c_a963399af02ff033ec61db603279fb570}\index{HashTable.c@{HashTable.c}!HashFunction@{HashFunction}}
+\index{HashFunction@{HashFunction}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{HashFunction()}{HashFunction()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_a963399af02ff033ec61db603279fb570} 
+int Hash\+Function (\begin{DoxyParamCaption}\item[{int}]{key}{, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hash_table_8c_ad17e002ca84f6fa646b53e5855e47836}\index{HashTable.c@{HashTable.c}!InsertItem@{InsertItem}}
+\index{InsertItem@{InsertItem}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{InsertItem()}{InsertItem()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_ad17e002ca84f6fa646b53e5855e47836} 
+void Insert\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{ht}{, }\item[{int}]{id}{, }\item[{Image}]{tile}{}\end{DoxyParamCaption})}
+
+
+
+Insert Item to \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Has\+Table\texorpdfstring{$\ast$}{*}} & ///\texorpdfstring{$<$}{<} Main \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table} \\
+\hline
+{\em int} & ///\texorpdfstring{$<$}{<} ID of the Tile. \\
+\hline
+{\em Texture2D} & ///\texorpdfstring{$<$}{<} Texture2D to save the Tile. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_hash_table_8c_a96c0d3c9d20513b0bd43fe33a2708470}\index{HashTable.c@{HashTable.c}!PrintHashTable@{PrintHashTable}}
+\index{PrintHashTable@{PrintHashTable}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{PrintHashTable()}{PrintHashTable()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_a96c0d3c9d20513b0bd43fe33a2708470} 
+void Print\+Hash\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{\+\_\+\+HT}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hash_table_8c_ae2471ac189db2df49034615712c90675}\index{HashTable.c@{HashTable.c}!SearchItem@{SearchItem}}
+\index{SearchItem@{SearchItem}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{SearchItem()}{SearchItem()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_ae2471ac189db2df49034615712c90675} 
+\mbox{\hyperlink{_hash_table_8h_a9513d2081242c8d8c07931ccc57d4841}{Item\+HT}} \texorpdfstring{$\ast$}{*} Search\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{ht}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Search item in the \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Hash\+Table\texorpdfstring{$\ast$}{*}} & ///\texorpdfstring{$<$}{<} The main \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}. \\
+\hline
+{\em int} & ///\texorpdfstring{$<$}{<} ID, is the KEY for search in the \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table}. \\
+\hline
+\end{DoxyParams}

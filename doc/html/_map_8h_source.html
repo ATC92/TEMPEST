@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CGame<span id="projectnumber">&#160;Alpha 0.02</span>
+   <div id="projectname">CGame<span id="projectnumber">&#160;Alpha 0.03</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,26 +105,32 @@ $(function(){initNavTree('_map_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Map.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;cJSON.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;Textures.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;LoadTextures.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// #define WORLD_TILE_WIDTH 10         // 10 * TILE_WIDTH</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// #define WORLD_TILE_HEIGHT 10        // 10 * TILE_HEIGHT</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>RenderData* GenTileMap(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> CreateMapTiles(RenderData*);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<a href="_map_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_textures_8h.html">Textures.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_load_textures_8h.html">LoadTextures.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// #define WORLD_TILE_WIDTH 10         // 10 * TILE_WIDTH</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// #define WORLD_TILE_HEIGHT 10        // 10 * TILE_HEIGHT</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><a class="code hl_typedef" href="_textures_8h.html#af84787ba027187b9c2fd7a68eeaf6583">RenderData</a>* <a class="code hl_function" href="_map_8h.html#a72b91dc217efbaed0f8a3e18f48b7679">LoadInformationMap</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// void CreateMapTiles(RenderData*);</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">int</span>** <a class="code hl_function" href="_map_8h.html#a3cf6cd09780d190b646728f6e519fe03">LoadMapTiles</a>(<span class="keywordtype">char</span>*,<span class="keywordtype">int</span>*,<span class="keywordtype">int</span>*);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="_map_8h.html#a06038015c72fcf0666d8fa4a7fef55d9">FillTextures</a>(<a class="code hl_typedef" href="_textures_8h.html#af84787ba027187b9c2fd7a68eeaf6583">RenderData</a>*);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="ttc" id="a_load_textures_8h_html"><div class="ttname"><a href="_load_textures_8h.html">LoadTextures.h</a></div></div>
+<div class="ttc" id="a_map_8h_html_a06038015c72fcf0666d8fa4a7fef55d9"><div class="ttname"><a href="_map_8h.html#a06038015c72fcf0666d8fa4a7fef55d9">FillTextures</a></div><div class="ttdeci">void FillTextures(RenderData *)</div><div class="ttdef"><b>Definition</b> Map.c:70</div></div>
+<div class="ttc" id="a_map_8h_html_a3cf6cd09780d190b646728f6e519fe03"><div class="ttname"><a href="_map_8h.html#a3cf6cd09780d190b646728f6e519fe03">LoadMapTiles</a></div><div class="ttdeci">int ** LoadMapTiles(char *, int *, int *)</div><div class="ttdoc">Creates the map after loading the texture. Uses JSON to load all necessary data.</div><div class="ttdef"><b>Definition</b> Map.c:15</div></div>
+<div class="ttc" id="a_map_8h_html_a72b91dc217efbaed0f8a3e18f48b7679"><div class="ttname"><a href="_map_8h.html#a72b91dc217efbaed0f8a3e18f48b7679">LoadInformationMap</a></div><div class="ttdeci">RenderData * LoadInformationMap(void)</div><div class="ttdoc">&lt; Extern Libraries.</div><div class="ttdef"><b>Definition</b> Map.c:2</div></div>
+<div class="ttc" id="a_textures_8h_html"><div class="ttname"><a href="_textures_8h.html">Textures.h</a></div></div>
+<div class="ttc" id="a_textures_8h_html_af84787ba027187b9c2fd7a68eeaf6583"><div class="ttname"><a href="_textures_8h.html#af84787ba027187b9c2fd7a68eeaf6583">RenderData</a></div><div class="ttdeci">struct _renderData RenderData</div><div class="ttdoc">Structure that stores rendering-related data.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_596fb298dc3115998e424d1616e684c4.html">Textures</a></li><li class="navelem"><b>Map.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_596fb298dc3115998e424d1616e684c4.html">Textures</a></li><li class="navelem"><a class="el" href="_map_8h.html">Map.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

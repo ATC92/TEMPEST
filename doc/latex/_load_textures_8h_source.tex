@@ -1,25 +1,25 @@
 \doxysection{Load\+Textures.\+h}
 \hypertarget{_load_textures_8h_source}{}\label{_load_textures_8h_source}\index{src/Textures/LoadTextures.h@{src/Textures/LoadTextures.h}}
-
+\mbox{\hyperlink{_load_textures_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}cJSON.h"{}}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string.h>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <math.h>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../Entity/Entity.h"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Textures.h"{}}}
-\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ void\ (*ProcessItemFunc)(\textcolor{keywordtype}{void}*,\ \textcolor{keyword}{const}\ cJSON*);}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_8h}{../Entity/Entity.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_textures_8h}{Textures.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ \mbox{\hyperlink{_textures_8h_ae150ae3cbc98b367cb0252b16db62fbb}{TileMap}}*\ \mbox{\hyperlink{_load_textures_8h_a652bbb46ac64d97c66fa7684b3c3edb8}{LoadMapTextures}}(\textcolor{keywordtype}{char}*,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int});}
 \DoxyCodeLine{00017\ \textcolor{comment}{//}}
-\DoxyCodeLine{00018\ cJSON*\ Load\_cJSON(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_load_textures_8h_a3c758d0dd087025238b892d17d74cc3b}{FillTexturesEntity}}(Texture2D*,\mbox{\hyperlink{_textures_8h_ae150ae3cbc98b367cb0252b16db62fbb}{TileMap}}*);}
 \DoxyCodeLine{00019\ \textcolor{comment}{//}}
-\DoxyCodeLine{00020\ TileMap*\ LoadMapTextures(\textcolor{keywordtype}{char}*,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_load_textures_8h_a5f690373107fc1fad9f5148f944eadd9}{RenderTileMap}}(\mbox{\hyperlink{_textures_8h_af84787ba027187b9c2fd7a68eeaf6583}{RenderData}}*,\textcolor{keywordtype}{int});}
 \DoxyCodeLine{00021\ \textcolor{comment}{//}}
-\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ RenderTileMap(RenderData*,MapEnum);}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_load_textures_8h_a1dea362b23a0fbc9097099c4e3fbe108}{RenderPlayer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity}}*);}
 \DoxyCodeLine{00023\ \textcolor{comment}{//}}
-\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ RenderPlayer(\textcolor{keyword}{const}\ Entity*,\textcolor{keyword}{const}\ Camera2D);}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_load_textures_8h_aa49c24441bb7cf4f872e670d40738cdc}{IsTileEmpty}}(Image,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
 \DoxyCodeLine{00026\ }
 \DoxyCodeLine{00027\ }
 \DoxyCodeLine{00028\ }

@@ -1,0 +1,152 @@
+\doxysection{src/\+Scenes/\+Scenes\+Manager.h File Reference}
+\hypertarget{_scenes_manager_8h}{}\label{_scenes_manager_8h}\index{src/Scenes/ScenesManager.h@{src/Scenes/ScenesManager.h}}
+{\ttfamily \#include "{}stdio.\+h"{}}\newline
+{\ttfamily \#include "{}stdlib.\+h"{}}\newline
+{\ttfamily \#include "{}string.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Textures/\+Textures.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Utils/\+Information.\+h"{}}\newline
+{\ttfamily \#include "{}Scenes.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__inf}{\+\_\+inf}}
+\item 
+struct \mbox{\hyperlink{struct__scene}{\+\_\+scene}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfb}{\+\_\+scn}} \mbox{\hyperlink{_scenes_manager_8h_ac04c3ecfce63a343ff1f06e47a3583b6}{Manager\+Scenes}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} C/\+C++ Lib \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct__inf}{\+\_\+inf}} \mbox{\hyperlink{_scenes_manager_8h_afbaf39965fda51f97d472e51a1172610}{Information\+Scene}}
+\item 
+typedef struct \mbox{\hyperlink{struct__scene}{\+\_\+scene}} \mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfb}{\+\_\+scn}} \{ \newline
+\mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1019d7bf06467a28a33ebfee4ba7a129}{Main\+Menu}}
+, \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1a362957db534fe7601248004c792962}{Game\+State}}
+, \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba5dcc094b7eb841671f165e3d5e1ccc43}{Option\+Menu}}
+, \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba517dd7c9c4a7dbef3687667ebbd9c450}{Configuration\+Menu}}
+, \newline
+\mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1cd2c29cb20edb0c7c287501dd72ee56}{Load\+Screen}}
+ \}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} C/\+C++ Lib \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_scenes_manager_8h_a7280505dc5e2296bf63d79506a852973}{Init\+Scenes}} (void)
+\item 
+\mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_scenes_manager_8h_af7de9b3791f720d2acefd0950503ccdd}{Create\+Scene}} (char \texorpdfstring{$\ast$}{*}, char \texorpdfstring{$\ast$}{*}, char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{_scenes_manager_8h_ac04c3ecfce63a343ff1f06e47a3583b6}{Manager\+Scenes}})
+\item 
+void \mbox{\hyperlink{_scenes_manager_8h_a5ec8ea61de853b52909eaa4b5b81b10e}{Change\+Scene}} ()
+\item 
+\mbox{\hyperlink{_scenes_manager_8h_afbaf39965fda51f97d472e51a1172610}{Information\+Scene}} \mbox{\hyperlink{_scenes_manager_8h_ac65f4680933e2cca7853fa1b8c5fe422}{Get\+Current\+Scene}} (\mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_scenes_manager_8h_aea2df0bedfc3b26121d7706c651076e2}{scenes}}
+\begin{DoxyCompactList}\small\item\em Global Scenes Manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_scenes_manager_8h_afbaf39965fda51f97d472e51a1172610}\index{ScenesManager.h@{ScenesManager.h}!InformationScene@{InformationScene}}
+\index{InformationScene@{InformationScene}!ScenesManager.h@{ScenesManager.h}}
+\doxysubsubsection{\texorpdfstring{InformationScene}{InformationScene}}
+{\footnotesize\ttfamily \label{_scenes_manager_8h_afbaf39965fda51f97d472e51a1172610} 
+typedef struct \mbox{\hyperlink{struct__inf}{\+\_\+inf}} \mbox{\hyperlink{_scenes_manager_8h_afbaf39965fda51f97d472e51a1172610}{Information\+Scene}}}
+
+\Hypertarget{_scenes_manager_8h_ac04c3ecfce63a343ff1f06e47a3583b6}\index{ScenesManager.h@{ScenesManager.h}!ManagerScenes@{ManagerScenes}}
+\index{ManagerScenes@{ManagerScenes}!ScenesManager.h@{ScenesManager.h}}
+\doxysubsubsection{\texorpdfstring{ManagerScenes}{ManagerScenes}}
+{\footnotesize\ttfamily \label{_scenes_manager_8h_ac04c3ecfce63a343ff1f06e47a3583b6} 
+typedef enum \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfb}{\+\_\+scn}} \mbox{\hyperlink{_scenes_manager_8h_ac04c3ecfce63a343ff1f06e47a3583b6}{Manager\+Scenes}}}
+
+
+
+\texorpdfstring{$<$}{<} C/\+C++ Lib 
+
+\texorpdfstring{$<$}{<} CGame Lib \Hypertarget{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}\index{ScenesManager.h@{ScenesManager.h}!Scene@{Scene}}
+\index{Scene@{Scene}!ScenesManager.h@{ScenesManager.h}}
+\doxysubsubsection{\texorpdfstring{Scene}{Scene}}
+{\footnotesize\ttfamily \label{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465} 
+typedef struct \mbox{\hyperlink{struct__scene}{\+\_\+scene}} \mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfb}\index{ScenesManager.h@{ScenesManager.h}!\_scn@{\_scn}}
+\index{\_scn@{\_scn}!ScenesManager.h@{ScenesManager.h}}
+\doxysubsubsection{\texorpdfstring{\_scn}{\_scn}}
+{\footnotesize\ttfamily \label{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfb} 
+enum \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfb}{\+\_\+scn}}}
+
+
+
+\texorpdfstring{$<$}{<} C/\+C++ Lib 
+
+\texorpdfstring{$<$}{<} CGame Lib \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MainMenu@{MainMenu}!ScenesManager.h@{ScenesManager.h}}\index{ScenesManager.h@{ScenesManager.h}!MainMenu@{MainMenu}}}\Hypertarget{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1019d7bf06467a28a33ebfee4ba7a129}\label{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1019d7bf06467a28a33ebfee4ba7a129} 
+Main\+Menu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GameState@{GameState}!ScenesManager.h@{ScenesManager.h}}\index{ScenesManager.h@{ScenesManager.h}!GameState@{GameState}}}\Hypertarget{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1a362957db534fe7601248004c792962}\label{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1a362957db534fe7601248004c792962} 
+Game\+State&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OptionMenu@{OptionMenu}!ScenesManager.h@{ScenesManager.h}}\index{ScenesManager.h@{ScenesManager.h}!OptionMenu@{OptionMenu}}}\Hypertarget{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba5dcc094b7eb841671f165e3d5e1ccc43}\label{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba5dcc094b7eb841671f165e3d5e1ccc43} 
+Option\+Menu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConfigurationMenu@{ConfigurationMenu}!ScenesManager.h@{ScenesManager.h}}\index{ScenesManager.h@{ScenesManager.h}!ConfigurationMenu@{ConfigurationMenu}}}\Hypertarget{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba517dd7c9c4a7dbef3687667ebbd9c450}\label{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba517dd7c9c4a7dbef3687667ebbd9c450} 
+Configuration\+Menu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LoadScreen@{LoadScreen}!ScenesManager.h@{ScenesManager.h}}\index{ScenesManager.h@{ScenesManager.h}!LoadScreen@{LoadScreen}}}\Hypertarget{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1cd2c29cb20edb0c7c287501dd72ee56}\label{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1cd2c29cb20edb0c7c287501dd72ee56} 
+Load\+Screen&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_scenes_manager_8h_a5ec8ea61de853b52909eaa4b5b81b10e}\index{ScenesManager.h@{ScenesManager.h}!ChangeScene@{ChangeScene}}
+\index{ChangeScene@{ChangeScene}!ScenesManager.h@{ScenesManager.h}}
+\doxysubsubsection{\texorpdfstring{ChangeScene()}{ChangeScene()}}
+{\footnotesize\ttfamily \label{_scenes_manager_8h_a5ec8ea61de853b52909eaa4b5b81b10e} 
+void Change\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_scenes_manager_8h_af7de9b3791f720d2acefd0950503ccdd}\index{ScenesManager.h@{ScenesManager.h}!CreateScene@{CreateScene}}
+\index{CreateScene@{CreateScene}!ScenesManager.h@{ScenesManager.h}}
+\doxysubsubsection{\texorpdfstring{CreateScene()}{CreateScene()}}
+{\footnotesize\ttfamily \label{_scenes_manager_8h_af7de9b3791f720d2acefd0950503ccdd} 
+\mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}} \texorpdfstring{$\ast$}{*} Create\+Scene (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{inf}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{LOG}{, }\item[{\mbox{\hyperlink{_scenes_manager_8h_ac04c3ecfce63a343ff1f06e47a3583b6}{Manager\+Scenes}}}]{type}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_scenes_manager_8h_ac65f4680933e2cca7853fa1b8c5fe422}\index{ScenesManager.h@{ScenesManager.h}!GetCurrentScene@{GetCurrentScene}}
+\index{GetCurrentScene@{GetCurrentScene}!ScenesManager.h@{ScenesManager.h}}
+\doxysubsubsection{\texorpdfstring{GetCurrentScene()}{GetCurrentScene()}}
+{\footnotesize\ttfamily \label{_scenes_manager_8h_ac65f4680933e2cca7853fa1b8c5fe422} 
+\mbox{\hyperlink{_scenes_manager_8h_afbaf39965fda51f97d472e51a1172610}{Information\+Scene}} Get\+Current\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}}}]{\+\_\+ms}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_scenes_manager_8h_a7280505dc5e2296bf63d79506a852973}\index{ScenesManager.h@{ScenesManager.h}!InitScenes@{InitScenes}}
+\index{InitScenes@{InitScenes}!ScenesManager.h@{ScenesManager.h}}
+\doxysubsubsection{\texorpdfstring{InitScenes()}{InitScenes()}}
+{\footnotesize\ttfamily \label{_scenes_manager_8h_a7280505dc5e2296bf63d79506a852973} 
+void Init\+Scenes (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Create Scenes Manager Memory
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_scenes_manager_8h_aea2df0bedfc3b26121d7706c651076e2}\index{ScenesManager.h@{ScenesManager.h}!scenes@{scenes}}
+\index{scenes@{scenes}!ScenesManager.h@{ScenesManager.h}}
+\doxysubsubsection{\texorpdfstring{scenes}{scenes}}
+{\footnotesize\ttfamily \label{_scenes_manager_8h_aea2df0bedfc3b26121d7706c651076e2} 
+\mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}}\texorpdfstring{$\ast$}{*} scenes\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Global Scenes Manager. 
+

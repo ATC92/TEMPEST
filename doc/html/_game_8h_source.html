@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CGame<span id="projectnumber">&#160;Alpha 0.02</span>
+   <div id="projectname">CGame<span id="projectnumber">&#160;Alpha 0.03</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,31 +105,44 @@ $(function(){initNavTree('_game_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Game.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_game_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;raymath.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;OnUpdate.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;../Entity/Entity.h&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;../Textures/Map.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;../Textures/LoadTextures.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;../Utils/Information.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;../Scenes/ScenesManager.h&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;../Scenes/Scenes.h&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> InitGame(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> GameUpdateRender(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> GameUpdateLogic(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> GameInformation(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> GameUpdateScene(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> DeInitGame(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_on_update_8h.html">OnUpdate.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_8h.html">../Entity/Entity.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_map_8h.html">../Textures/Map.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_load_textures_8h.html">../Textures/LoadTextures.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_information_8h.html">../Utils/Information.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_scenes_manager_8h.html">../Scenes/ScenesManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_scenes_8h.html">../Scenes/Scenes.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="_game_8h.html#ad05ce539d29b849ef066482e2284a93f">InitGame</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> <a class="code hl_function" href="_game_8h.html#a9febcdf22c50389d2c27d23ebe9f24ab">GameUpdateRender</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> <a class="code hl_function" href="_game_8h.html#a5cda1643c7541c435a3fb25edf47a069">GameUpdateLogic</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> <a class="code hl_function" href="_game_8h.html#a9a7a572593626f97c28644c4f1ad01bd">GameInformation</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> <a class="code hl_function" href="_game_8h.html#abb6c4e59b29b092fd64da1cac87b8a3d">GameUpdateScene</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> <a class="code hl_function" href="_game_8h.html#a6d66dbb9fb3205cc1cc2a19d83e8ae43">DeInitGame</a>(<span class="keywordtype">void</span>);</div>
+<div class="ttc" id="a_entity_8h_html"><div class="ttname"><a href="_entity_8h.html">Entity.h</a></div></div>
+<div class="ttc" id="a_game_8h_html_a5cda1643c7541c435a3fb25edf47a069"><div class="ttname"><a href="_game_8h.html#a5cda1643c7541c435a3fb25edf47a069">GameUpdateLogic</a></div><div class="ttdeci">void GameUpdateLogic(void)</div><div class="ttdef"><b>Definition</b> Game.c:72</div></div>
+<div class="ttc" id="a_game_8h_html_a6d66dbb9fb3205cc1cc2a19d83e8ae43"><div class="ttname"><a href="_game_8h.html#a6d66dbb9fb3205cc1cc2a19d83e8ae43">DeInitGame</a></div><div class="ttdeci">void DeInitGame(void)</div><div class="ttdef"><b>Definition</b> Game.c:122</div></div>
+<div class="ttc" id="a_game_8h_html_a9a7a572593626f97c28644c4f1ad01bd"><div class="ttname"><a href="_game_8h.html#a9a7a572593626f97c28644c4f1ad01bd">GameInformation</a></div><div class="ttdeci">void GameInformation(void)</div><div class="ttdef"><b>Definition</b> Game.c:113</div></div>
+<div class="ttc" id="a_game_8h_html_a9febcdf22c50389d2c27d23ebe9f24ab"><div class="ttname"><a href="_game_8h.html#a9febcdf22c50389d2c27d23ebe9f24ab">GameUpdateRender</a></div><div class="ttdeci">void GameUpdateRender(void)</div><div class="ttdef"><b>Definition</b> Game.c:50</div></div>
+<div class="ttc" id="a_game_8h_html_abb6c4e59b29b092fd64da1cac87b8a3d"><div class="ttname"><a href="_game_8h.html#abb6c4e59b29b092fd64da1cac87b8a3d">GameUpdateScene</a></div><div class="ttdeci">void GameUpdateScene(void)</div><div class="ttdef"><b>Definition</b> Game.c:89</div></div>
+<div class="ttc" id="a_game_8h_html_ad05ce539d29b849ef066482e2284a93f"><div class="ttname"><a href="_game_8h.html#ad05ce539d29b849ef066482e2284a93f">InitGame</a></div><div class="ttdeci">void InitGame(void)</div><div class="ttdoc">&lt; C/C++Lib</div><div class="ttdef"><b>Definition</b> Game.c:18</div></div>
+<div class="ttc" id="a_information_8h_html"><div class="ttname"><a href="_information_8h.html">Information.h</a></div></div>
+<div class="ttc" id="a_load_textures_8h_html"><div class="ttname"><a href="_load_textures_8h.html">LoadTextures.h</a></div></div>
+<div class="ttc" id="a_map_8h_html"><div class="ttname"><a href="_map_8h.html">Map.h</a></div></div>
+<div class="ttc" id="a_on_update_8h_html"><div class="ttname"><a href="_on_update_8h.html">OnUpdate.h</a></div></div>
+<div class="ttc" id="a_scenes_8h_html"><div class="ttname"><a href="_scenes_8h.html">Scenes.h</a></div></div>
+<div class="ttc" id="a_scenes_manager_8h_html"><div class="ttname"><a href="_scenes_manager_8h.html">ScenesManager.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b43036362fece0f978c3c8156df55d19.html">Game</a></li><li class="navelem"><b>Game.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b43036362fece0f978c3c8156df55d19.html">Game</a></li><li class="navelem"><a class="el" href="_game_8h.html">Game.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['infscene_0',['infScene',['../struct__scene.html#a0bc131877368dd3f2115c506f38f46da',1,'_scene']]]
+  ['frameheight_0',['frameHeight',['../struct__btt.html#a56bc3cb64fa74f13ecdf031d44e15a78',1,'_btt']]]
 ];

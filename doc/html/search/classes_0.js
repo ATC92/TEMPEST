@@ -5,10 +5,9 @@ var searchData=
   ['_5fht_2',['_HT',['../struct___h_t.html',1,'']]],
   ['_5finf_3',['_inf',['../struct__inf.html',1,'']]],
   ['_5fitem_4',['_item',['../struct__item.html',1,'']]],
-  ['_5fmapdata_5',['_MapData',['../struct___map_data.html',1,'']]],
-  ['_5fnpc_6',['_npc',['../struct__npc.html',1,'']]],
-  ['_5fplayer_7',['_Player',['../struct___player.html',1,'']]],
-  ['_5frenderdata_8',['_renderData',['../struct__render_data.html',1,'']]],
-  ['_5fscene_9',['_scene',['../struct__scene.html',1,'']]],
-  ['_5fstile_10',['_sTile',['../struct__s_tile.html',1,'']]]
+  ['_5fm4_5',['_m4',['../struct__m4.html',1,'']]],
+  ['_5fmapdata_6',['_MapData',['../struct___map_data.html',1,'']]],
+  ['_5frenderdata_7',['_renderData',['../struct__render_data.html',1,'']]],
+  ['_5fscene_8',['_scene',['../struct__scene.html',1,'']]],
+  ['_5ftilemap_9',['_tileMap',['../struct__tile_map.html',1,'']]]
 ];

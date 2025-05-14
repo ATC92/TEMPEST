@@ -13,6 +13,9 @@ typedef enum _state
     MOUSE_OVER,
     PRESSED
 }ButtonState;
+/**
+ * @brief Struct Button
+ */
 typedef struct _btt
 {
     char* name;

@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CGame<span id="projectnumber">&#160;Alpha 0.02</span>
+   <div id="projectname">CGame<span id="projectnumber">&#160;Alpha 0.03</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,47 +105,63 @@ $(function(){initNavTree('_hash_table_8h_source.html',''); initResizable(true); 
   <div class="headertitle"><div class="title">HashTable.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_hash_table_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct__item.html">   12</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct__item.html">_item</a></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> id;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Texture2D tile;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}ItemHT;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_map_8h.html">../Textures/Map.h</a>&quot;</span></div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct__item.html">   13</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct__item.html">_item</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct__item.html#a7441ef0865bcb3db9b8064dd7375c1ea">   15</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct__item.html#a7441ef0865bcb3db9b8064dd7375c1ea">id</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct__item.html#a8408cc62d24b8cae62bd8ab140075223">   16</a></span>    Texture2D <a class="code hl_variable" href="struct__item.html#a8408cc62d24b8cae62bd8ab140075223">tile</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="_hash_table_8h.html#a9513d2081242c8d8c07931ccc57d4841">   17</a></span>}<a class="code hl_typedef" href="_hash_table_8h.html#a9513d2081242c8d8c07931ccc57d4841">ItemHT</a>;</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct___h_t.html">   18</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct___h_t.html">_HT</a></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ItemHT** items;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> size;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> count;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}HashTable;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_hash_table_8h.html#a9513d2081242c8d8c07931ccc57d4841">   18</a></span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct___h_t.html">   19</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct___h_t.html">_HT</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct___h_t.html#a14760de91e3362d461beb583e33aac41">   21</a></span>    <a class="code hl_typedef" href="_hash_table_8h.html#a9513d2081242c8d8c07931ccc57d4841">ItemHT</a>** <a class="code hl_variable" href="struct___h_t.html#a14760de91e3362d461beb583e33aac41">items</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct___h_t.html#a439227feff9d7f55384e8780cfc2eb82">   22</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct___h_t.html#a439227feff9d7f55384e8780cfc2eb82">size</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct___h_t.html#ad43c3812e6d13e0518d9f8b8f463ffcf">   23</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct___h_t.html#ad43c3812e6d13e0518d9f8b8f463ffcf">count</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="_hash_table_8h.html#a9bdecaf1a5ecc19ffcd58a4efab6dc9e">   24</a></span>}<a class="code hl_typedef" href="_hash_table_8h.html#a9bdecaf1a5ecc19ffcd58a4efab6dc9e">HashTable</a>;</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>HashTable* CreateHashTable(<span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">void</span> InsertItem(HashTable*,<span class="keywordtype">int</span>,Image);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>ItemHT* SearchItem(HashTable*,<span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">bool</span> IsTileEmpty(Image,<span class="keywordtype">int</span>,<span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordtype">void</span> PrintHashTable(HashTable*);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">int</span> HashFunction(<span class="keywordtype">int</span>,<span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keywordtype">void</span> FreeItem(ItemHT*);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keywordtype">void</span> FreeHashTable(HashTable*);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="ttc" id="astruct___h_t_html"><div class="ttname"><a href="struct___h_t.html">_HT</a></div><div class="ttdoc">HashTable Main struct.</div><div class="ttdef"><b>Definition</b> HashTable.h:19</div></div>
-<div class="ttc" id="astruct__item_html"><div class="ttname"><a href="struct__item.html">_item</a></div><div class="ttdoc">&lt; C/C++ Lib</div><div class="ttdef"><b>Definition</b> HashTable.h:13</div></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_hash_table_8h.html#a9bdecaf1a5ecc19ffcd58a4efab6dc9e">   25</a></span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><a class="code hl_typedef" href="_hash_table_8h.html#a9bdecaf1a5ecc19ffcd58a4efab6dc9e">HashTable</a>* <a class="code hl_function" href="_hash_table_8h.html#ada65f8a4046b12ef2734d32c4a38474a">CreateHashTable</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> <a class="code hl_function" href="_hash_table_8h.html#a296c52e71f93b4e93683d36a13a64dfc">InsertItem</a>(<a class="code hl_typedef" href="_hash_table_8h.html#a9bdecaf1a5ecc19ffcd58a4efab6dc9e">HashTable</a>*,<span class="keywordtype">int</span>,Image);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><a class="code hl_typedef" href="_hash_table_8h.html#a9513d2081242c8d8c07931ccc57d4841">ItemHT</a>* <a class="code hl_function" href="_hash_table_8h.html#ac6c44ca614cf1fe7d51b2931b7e370bc">SearchItem</a>(<a class="code hl_typedef" href="_hash_table_8h.html#a9bdecaf1a5ecc19ffcd58a4efab6dc9e">HashTable</a>*,<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> <a class="code hl_function" href="_hash_table_8h.html#af1e6e29a74d8b30fa271c127cfcae3d9">PrintHashTable</a>(<a class="code hl_typedef" href="_hash_table_8h.html#a9bdecaf1a5ecc19ffcd58a4efab6dc9e">HashTable</a>*);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">int</span> <a class="code hl_function" href="_hash_table_8h.html#a6ae2ea46d9d782eea847cb5ba6e1b22b">HashFunction</a>(<span class="keywordtype">int</span>,<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> <a class="code hl_function" href="_hash_table_8h.html#a8e9268db62b44fc060e35c3875110325">FreeItem</a>(<a class="code hl_typedef" href="_hash_table_8h.html#a9513d2081242c8d8c07931ccc57d4841">ItemHT</a>*);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> <a class="code hl_function" href="_hash_table_8h.html#aa14444ad29385c2add51d51630c8f8ac">FreeHashTable</a>(<a class="code hl_typedef" href="_hash_table_8h.html#a9bdecaf1a5ecc19ffcd58a4efab6dc9e">HashTable</a>*);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="ttc" id="a_hash_table_8h_html_a296c52e71f93b4e93683d36a13a64dfc"><div class="ttname"><a href="_hash_table_8h.html#a296c52e71f93b4e93683d36a13a64dfc">InsertItem</a></div><div class="ttdeci">void InsertItem(HashTable *, int, Image)</div><div class="ttdoc">Insert Item to HashTable.</div><div class="ttdef"><b>Definition</b> HashTable.c:18</div></div>
+<div class="ttc" id="a_hash_table_8h_html_a6ae2ea46d9d782eea847cb5ba6e1b22b"><div class="ttname"><a href="_hash_table_8h.html#a6ae2ea46d9d782eea847cb5ba6e1b22b">HashFunction</a></div><div class="ttdeci">int HashFunction(int, int)</div><div class="ttdef"><b>Definition</b> HashTable.c:94</div></div>
+<div class="ttc" id="a_hash_table_8h_html_a8e9268db62b44fc060e35c3875110325"><div class="ttname"><a href="_hash_table_8h.html#a8e9268db62b44fc060e35c3875110325">FreeItem</a></div><div class="ttdeci">void FreeItem(ItemHT *)</div><div class="ttdef"><b>Definition</b> HashTable.c:101</div></div>
+<div class="ttc" id="a_hash_table_8h_html_a9513d2081242c8d8c07931ccc57d4841"><div class="ttname"><a href="_hash_table_8h.html#a9513d2081242c8d8c07931ccc57d4841">ItemHT</a></div><div class="ttdeci">struct _item ItemHT</div><div class="ttdoc">&lt; C/C++ Lib</div></div>
+<div class="ttc" id="a_hash_table_8h_html_a9bdecaf1a5ecc19ffcd58a4efab6dc9e"><div class="ttname"><a href="_hash_table_8h.html#a9bdecaf1a5ecc19ffcd58a4efab6dc9e">HashTable</a></div><div class="ttdeci">struct _HT HashTable</div><div class="ttdoc">HashTable Main struct.</div></div>
+<div class="ttc" id="a_hash_table_8h_html_aa14444ad29385c2add51d51630c8f8ac"><div class="ttname"><a href="_hash_table_8h.html#aa14444ad29385c2add51d51630c8f8ac">FreeHashTable</a></div><div class="ttdeci">void FreeHashTable(HashTable *)</div><div class="ttdef"><b>Definition</b> HashTable.c:110</div></div>
+<div class="ttc" id="a_hash_table_8h_html_ac6c44ca614cf1fe7d51b2931b7e370bc"><div class="ttname"><a href="_hash_table_8h.html#ac6c44ca614cf1fe7d51b2931b7e370bc">SearchItem</a></div><div class="ttdeci">ItemHT * SearchItem(HashTable *, int)</div><div class="ttdoc">Search item in the HashTable.</div><div class="ttdef"><b>Definition</b> HashTable.c:34</div></div>
+<div class="ttc" id="a_hash_table_8h_html_ada65f8a4046b12ef2734d32c4a38474a"><div class="ttname"><a href="_hash_table_8h.html#ada65f8a4046b12ef2734d32c4a38474a">CreateHashTable</a></div><div class="ttdeci">HashTable * CreateHashTable(int)</div><div class="ttdoc">Init HashTable.</div><div class="ttdef"><b>Definition</b> HashTable.c:6</div></div>
+<div class="ttc" id="a_hash_table_8h_html_af1e6e29a74d8b30fa271c127cfcae3d9"><div class="ttname"><a href="_hash_table_8h.html#af1e6e29a74d8b30fa271c127cfcae3d9">PrintHashTable</a></div><div class="ttdeci">void PrintHashTable(HashTable *)</div><div class="ttdef"><b>Definition</b> HashTable.c:78</div></div>
+<div class="ttc" id="a_map_8h_html"><div class="ttname"><a href="_map_8h.html">Map.h</a></div></div>
+<div class="ttc" id="astruct___h_t_html"><div class="ttname"><a href="struct___h_t.html">_HT</a></div><div class="ttdoc">HashTable Main struct.</div><div class="ttdef"><b>Definition</b> HashTable.h:20</div></div>
+<div class="ttc" id="astruct___h_t_html_a14760de91e3362d461beb583e33aac41"><div class="ttname"><a href="struct___h_t.html#a14760de91e3362d461beb583e33aac41">_HT::items</a></div><div class="ttdeci">ItemHT ** items</div><div class="ttdef"><b>Definition</b> HashTable.h:21</div></div>
+<div class="ttc" id="astruct___h_t_html_a439227feff9d7f55384e8780cfc2eb82"><div class="ttname"><a href="struct___h_t.html#a439227feff9d7f55384e8780cfc2eb82">_HT::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition</b> HashTable.h:22</div></div>
+<div class="ttc" id="astruct___h_t_html_ad43c3812e6d13e0518d9f8b8f463ffcf"><div class="ttname"><a href="struct___h_t.html#ad43c3812e6d13e0518d9f8b8f463ffcf">_HT::count</a></div><div class="ttdeci">int count</div><div class="ttdef"><b>Definition</b> HashTable.h:23</div></div>
+<div class="ttc" id="astruct__item_html"><div class="ttname"><a href="struct__item.html">_item</a></div><div class="ttdoc">&lt; C/C++ Lib</div><div class="ttdef"><b>Definition</b> HashTable.h:14</div></div>
+<div class="ttc" id="astruct__item_html_a7441ef0865bcb3db9b8064dd7375c1ea"><div class="ttname"><a href="struct__item.html#a7441ef0865bcb3db9b8064dd7375c1ea">_item::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition</b> HashTable.h:15</div></div>
+<div class="ttc" id="astruct__item_html_a8408cc62d24b8cae62bd8ab140075223"><div class="ttname"><a href="struct__item.html#a8408cc62d24b8cae62bd8ab140075223">_item::tile</a></div><div class="ttdeci">Texture2D tile</div><div class="ttdef"><b>Definition</b> HashTable.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a7363e98f9e0bdd87618633653859815.html">Utils</a></li><li class="navelem"><b>HashTable.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a7363e98f9e0bdd87618633653859815.html">Utils</a></li><li class="navelem"><a class="el" href="_hash_table_8h.html">HashTable.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
