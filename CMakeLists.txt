@@ -9,12 +9,22 @@ if (CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error=float-conversion")
 endif()
 
+<<<<<<< HEAD
 # Configurar segun el tipo de compilacion
 set(BIN "${CMAKE_SOURCE_DIR}/bin")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${BIN}/${CMAKE_BUILD_TYPE}")
 #${CMAKE_BINARY_DIR}/bin/$<CONFIG>
 
 # Definiciones de compilacion
+=======
+# Configurar salida de binarios según el tipo de compilación
+set(BIN "${CMAKE_SOURCE_DIR}/bin")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${BIN}/${CMAKE_BUILD_TYPE}")
+#${BIN}/${CMAKE_BUILD_TYPE}
+#${CMAKE_BINARY_DIR}/bin/$<CONFIG>
+
+# Definiciones de compilación
+>>>>>>> origin
 add_compile_definitions(ASSETS="${CMAKE_SOURCE_DIR}/assets")
 
 # -----------------------------------------------
@@ -81,8 +91,8 @@ install(TARGETS Project
 # Install cJSON header file
 install(FILES "${cjson_SOURCE_DIR}/cJSON.h" DESTINATION include/cjson)
 
-install(DIRECTORY "${CMAKE_SOURCE_DIR}/assets" DESTINATION bin)
-install(FILES "${CMAKE_SOURCE_DIR}/README.md" DESTINATION bin)
+install(DIRECTORY "${CMAKE_SOURCE_DIR}/assets" DESTINATION .)
+install(FILES "${CMAKE_SOURCE_DIR}/README.md" DESTINATION .)
 
 # -----------------------------------------------
 # Configuracion de empaquetado con CPack (Solo en Release)
