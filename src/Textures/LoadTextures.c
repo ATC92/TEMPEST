@@ -1,12 +1,15 @@
 #include "LoadTextures.h"
-
+//////////////////////////////////////////////////////////////////////////////////////
 /**
- * @brief Generate an array of tiles (sTile*).
+ * LoadMapTextures
+ * @brief Generate a struct TileMap with the information of the map.
  * 
- * Parses a cJSON object to create an array of tiles.
+ * Load Image, Texture, Size of the area of the image.
  *
- * @param json Parsed cJSON object.
- * @return @n `sTile*` Pointer to the generated array of tiles.
+ * @param char* _path //< Path of the Imagen.
+ * @param const int w //< &point reference.
+ * @param const int h //< &point reference.
+ * @return @n 'TileMap' pointer.
  */
 TileMap* LoadMapTextures(char* _path,const int w, const int h)
 {
@@ -17,7 +20,12 @@ TileMap* LoadMapTextures(char* _path,const int w, const int h)
     return tempMapData;
 }
 /**
+ * FillTexturesEntity
+ * @brief Fill Texture2D* array for load all textures for Entity struct [Init size textures = 20 slots]
  * 
+ * @param Texture2D* _TextureList //< Array pointer for all textures.
+ * @param TileMap* _TileMapPlayer //< TileMap of the player, contains all information of the TileAtlas.
+ * @return @n 'void'.
  */
 void FillTexturesEntity(Texture2D* _TextureList,TileMap* _TileMapPlayer)
 {
@@ -45,7 +53,44 @@ void FillTexturesEntity(Texture2D* _TextureList,TileMap* _TileMapPlayer)
     UnloadImage(_TileMapPlayer->tmImage);
 }
 /**
+ * FillTextures
+ * @brief Fill textures array for the Map. [Init size textures = 20 slots]
  * 
+ * @param RenderData* renderData //< Strcut main for all information of the RenderData.
+ * @return 'Void'.
+ */
+void FillTextures(RenderData* renderData)
+{
+    int countTiles = 0;
+    int tilesX = renderData->tileMap->tmImage.width / TILE_SIZE;
+    int tilesY = renderData->tileMap->tmImage.height / TILE_SIZE; 
+    for (int y = 0; y < tilesY; y++)
+    {
+        for (int x = 0; x < tilesX; x++)
+        {
+            int tileX = x * TILE_SIZE;
+            int tileY = y * TILE_SIZE;
+            if (!IsTileEmpty(renderData->tileMap->tmImage, tileX, tileY))
+            {
+                // Extract tile as a subimage.
+                Image tile = ImageFromImage(renderData->tileMap->tmImage, (Rectangle){ tileX, tileY, TILE_SIZE, TILE_SIZE });
+                renderData->texturesArray[countTiles] = LoadTextureFromImage(tile);
+                UnloadImage(tile);
+                countTiles++;
+            }
+        }
+    }
+    UnloadImage(renderData->tileMap->tmImage);
+}
+/**
+ * @brief Validate if the tile is empty.
+ *
+ * Checks whether the tile in the given image (TileAtlas) at position `(x, y)` is empty.
+ *
+ * @param image Image to validate from the TileAtlas.
+ * @param x     Initial position on the X axis.
+ * @param y     Initial position on the Y axis.
+ * @return true if the tile is empty, false if there is something.
  */
 bool IsTileEmpty(Image image, int x, int y)
 {
@@ -60,14 +105,16 @@ bool IsTileEmpty(Image image, int x, int y)
     return true;
 }
 /**
- * @brief Render all the map from the Parse cJSON
+ * @brief Render map from the data information.
  * 
- * @param RenderData*           ///<
+ * Take all the information of the int** map information.
+ * 
+ * @param RenderData* 
  * 
  */
 void RenderTileMap(RenderData* _mD, int _slct)
 {
-    int tileset_columns = 6;
+    int tileset_columns = 5;
     for (int y = 0; y < _mD->mapsData[_slct].height; y++)
     {
         for (int x = 0; x < _mD->mapsData[_slct].width; x++)

@@ -66,8 +66,6 @@ void GameUpdateRender(void)
 }
 /**
  * 
- *
- * 
  */
 void GameUpdateLogic(void)
 {
@@ -129,3 +127,5 @@ void DeInitGame(void)
     free(eplayer->_tileMap);
     // FreeHashTable(eplayer->_HT);
 }
+
+

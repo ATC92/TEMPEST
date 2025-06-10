@@ -18,6 +18,7 @@ int** LoadMapTiles(char* path, int* c, int* r)
     FILE* archivo = fopen(path,"r");
     if (!archivo)
     {
+        printf("%s | ",path);
         perror("File error.");
         return NULL;
     }
@@ -67,28 +68,3 @@ int** LoadMapTiles(char* path, int* c, int* r)
     return mapa;
 }
 
-void FillTextures(RenderData* renderData)
-{
-    ///< 
-    int countTiles = 0;
-    int tilesX = renderData->tileMap->tmImage.width / TILE_SIZE;
-    int tilesY = renderData->tileMap->tmImage.height / TILE_SIZE;
-    ///< 
-    for (int y = 0; y < tilesY; y++)
-    {
-        for (int x = 0; x < tilesX; x++)
-        {
-            int tileX = x * TILE_SIZE;
-            int tileY = y * TILE_SIZE;
-            if (!IsTileEmpty(renderData->tileMap->tmImage, tileX, tileY))
-            {
-                // Extraer tile como subimagen
-                Image tile = ImageFromImage(renderData->tileMap->tmImage, (Rectangle){ tileX, tileY, TILE_SIZE, TILE_SIZE });
-                renderData->texturesArray[countTiles] = LoadTextureFromImage(tile);
-                UnloadImage(tile);
-                countTiles++;
-            }
-        }
-    }
-    UnloadImage(renderData->tileMap->tmImage);
-}

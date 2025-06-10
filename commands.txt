@@ -1,5 +1,9 @@
-///< Debug version build/Debug
+///< Debug version Windows build/Debug
 cmake -G"MinGW Makefiles" ../.. -DCMAKE_BUILD_TYPE=Debug
+cmake --build build/Debug --target Project
+
+///< Debug Version Unix
+cmake -G"Unix Makefiles" ../.. -DCMAKE_BUILD_TYPE=Debug
 cmake --build build/Debug --target Project
 
 ///< Release version

@@ -42,8 +42,5 @@ RenderData* LoadInformationMap(void);
  * 
  */
 int** LoadMapTiles(char*,int*,int*);
-/**
- * 
- */
-void FillTextures(RenderData*);
+
 

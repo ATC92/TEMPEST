@@ -14,6 +14,10 @@
 ////////////////////////////////////////////////////////////////
 //
 TileMap* LoadMapTextures(char*, const int, const int);
+/**
+ * 
+ */
+void FillTextures(RenderData*);
 //
 void FillTexturesEntity(Texture2D*,TileMap*);
 //
