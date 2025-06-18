@@ -2,7 +2,7 @@
 #include "../Game/Game.h"
 int main(void)
 {
-    InitWindow(1250, 950, "Project V-Beta");        ///< Set Name of the window
+    InitWindow(1440, 900, "Project V-Beta");        ///< Set Name of the window
     SetTargetFPS(75);                               ///< Set FPS
     InitEngine();                                   ///< Init Engine
     while (!WindowShouldClose())                    ///< Main loop for the game

@@ -13,7 +13,7 @@
 #include "../Textures/LoadTextures.h"
 #include "../Utils/Information.h"
 #include "../Scenes/ScenesManager.h"
-#include "../Scenes/Scenes.h"
+#include "../Scenes/MenuScene.h"
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
 void InitGame(void);

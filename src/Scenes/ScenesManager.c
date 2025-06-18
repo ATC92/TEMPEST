@@ -9,7 +9,6 @@ void InitScenes(void)
                         "Menu GUI of the game",
                         "Only 1 button (Texture2D)",
                         MainMenu);
-    
 }
 
 Scene* CreateScene(char* name, char* inf, char* LOG, ManagerScenes type)

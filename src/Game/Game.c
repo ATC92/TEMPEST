@@ -122,6 +122,13 @@ void DeInitGame(void)
     free(mapWorld->mapsData);
     free(mapWorld->tileMap);
     free(mapWorld);
+    // mapWorld->texturesArray.
+    // int i =0;
+    // while (mapWorld->texturesArray[i] != NULL)
+    // {
+        
+    // }
+    
     // FreeHashTable(mapWorld->hashTable);
     ///< Delete Player Data
     free(eplayer->_tileMap);
