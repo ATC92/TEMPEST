@@ -1,5 +1,5 @@
 #include "Updates.h"
-
+//////////////////////////////////////////////////////////
 void RenderCurrentScene(ManagerScenes type)
 {
     switch (type)
@@ -11,6 +11,7 @@ void RenderCurrentScene(ManagerScenes type)
         GameUpdateRender();
         break;
     case OptionMenu:
+        //OptiomMenuRender();
         break;
     case ConfigurationMenu:
         break;
@@ -19,3 +20,6 @@ void RenderCurrentScene(ManagerScenes type)
         break;
     }
 }
+//////////////////////////////////////////////////////////
+
+

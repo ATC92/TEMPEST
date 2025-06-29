@@ -8,38 +8,29 @@
 ///< Libraries CGame
 #include "Textures.h"
 #include "LoadTextures.h"
-///< TILE TEXTURE SIZE
-// #define WORLD_TILE_WIDTH 10         // 10 * TILE_WIDTH
-// #define WORLD_TILE_HEIGHT 10        // 10 * TILE_HEIGHT
+//////////////////////////////////////////////////////////////////
 /**
- * @brief Generate Tiles for the Map, Using cJSON.
+ * @brief Load all information about the map.
  * 
- * @param void
+ * This function loads the map data, tile map textures, and empty texture.
+ * It returns a pointer to a RenderData structure containing all the loaded information.
  * 
- * @return @n `RenderData*` ///< Returns all Textures and MapData loaded.
+ * @param `void`
+ * 
+ * @return RenderData* Pointer to the RenderData structure containing map data and textures.
  */
 RenderData* LoadInformationMap(void);
 /**
- * @brief Creates the map after loading the texture.
- *        Uses JSON to load all necessary data.
+ * @brief Load map tiles from a CSV file.
  * 
- *        @n - cJSON `NAME`
+ * This function reads a CSV file containing map tile data and returns a 2D array of integers representing the map.
+ * It also sets the number of columns and rows in the map.
  * 
- *        @n - cJSON `ID`
+ * @param path Path to the CSV file containing map tile data.
+ * @param c Pointer to an integer where the number of columns will be stored.
+ * @param r Pointer to an integer where the number of rows will be stored.
  * 
- *        @n - cJSON `WIDTH`
- * 
- *        @n - cJSON `HEIGHT`
- * 
- *        @n - cJSON `DATA`
- * 
- * @return void
- * @note @n `cJSON DATA` is an n×n matrix, defined by the `WIDTH` and `HEIGHT` 
- *           values in the JSON.
- */
-// void CreateMapTiles(RenderData*);
-/**
- * 
+ * @return int** Pointer to a 2D array of integers representing the map tiles.
  */
 int** LoadMapTiles(char*,int*,int*);
 

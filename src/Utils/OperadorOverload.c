@@ -1,8 +1,7 @@
 #include "OperadorOverload.h"
-
+//////////////////////////////////////////////////////////////////
 Vector2 OperadorOverload(Vector2 init, Vector2 final, char operator)
 {
-    Vector2 pos = {0};
     switch (operator)
     {
         case '+':
@@ -15,5 +14,23 @@ Vector2 OperadorOverload(Vector2 init, Vector2 final, char operator)
         
         default:
             break;
+    };
+    return (Vector2){0,0};  ///< Return zero vector if operator is not recognized
+}
+//////////////////////////////////////////////////////////////////
+bool OperadorOverloadBool(Vector2 init, Vector2 final, char operator)
+{
+    switch (operator)
+    {
+        case '<':
+            return (init.x < final.x) && (init.y < final.y);
+        case '>':
+            return (init.x > final.x) && (init.y > final.y);
+        case '=':
+            return (init.x == final.x) && (init.y == final.y);
+        default:
+            return false;
     }
 }
+//////////////////////////////////////////////////////////////////
+

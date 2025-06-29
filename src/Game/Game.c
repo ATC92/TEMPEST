@@ -10,11 +10,9 @@ RenderData* mapWorld;
 MapEnum _slct;
 /// @brief Main Entity for the player.
 Entity* eplayer;
-
+/// @brief Enemy Entity
+Entity* eEnemy;
 //////////////////////////////////////////////////////////
-/**
- * 
- */
 void InitGame(void)
 {
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -22,8 +20,16 @@ void InitGame(void)
     eplayer = GenEntity(_PLAYER, "Hero", 100.f,20.f,1.5f,20.f);
     ///< Player Gen Textures
     eplayer->_tileMap = LoadMapTextures("assets/Tilemap/Tilemap_Entity.png",64,16);
-    ///< Fill the HashTable to the Entity Player.
+    ///< Fill arrayTextures of the Entity Player.
     FillTexturesEntity(eplayer->_textureArray,eplayer->_tileMap);
+
+    ///< Enemy
+    eEnemy = GenEntity(_ENEMY, "Enemy", 100.f,20.f,1.5f,20.f);
+    ///< Enemy Gen Textures
+    eEnemy->_tileMap = LoadMapTextures("assets/Tilemap/Tilemap_Entity.png",64,16);
+    ///< Fill arrayTextures of the Entity Enemy.
+    FillTexturesEntity(eEnemy->_textureArray,eEnemy->_tileMap);
+
     /////////////////////////////////////////////////////////////////////////////////////////
     // Generate the tilemap (16x16 tiles)
     mapWorld = LoadInformationMap();
@@ -31,8 +37,6 @@ void InitGame(void)
     mapWorld->texturesArray = (Texture2D*)calloc(20,sizeof(Texture2D));
     mapWorld->emptyTexture = LoadTexture("assets/Tilemap/EmptyTexture.png");
     FillTextures(mapWorld);
-    ///< Map create with Tiles and Selection of map
-    // CreateMapTiles(mapWorld);
     ///< Selection of the map to load First
     _slct = level_1;
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -44,46 +48,54 @@ void InitGame(void)
     /////////////////////////////////////////////////////////////////////////////////////////
 }
 ////////////////////////////////////////////////////////// 
-/*
- * 
- */
 void GameUpdateRender(void)
 {
     BeginMode2D(camera);                    ///< Enter 2D Mode
     {
         ///< Selection of the map to Render
         _slct = level_1;
-        ///< Map Render with RayLib Render
+        ///< Map Render
         RenderTileMap(mapWorld,_slct);
         ///< Player Render
         RenderPlayer(eplayer);
+        RenderPlayer(eEnemy);
         ///< Selection of the map to Render
         _slct = level_2;
-        ///< Map Render with RayLib Render
+        ///< Map Render
         RenderTileMap(mapWorld,_slct);
     }
     EndMode2D();                            ///< Close 2D Mode
 }
-/**
- * 
- */
+//////////////////////////////////////////////////////////
 void GameUpdateLogic(void)
 {
-    if(scenes->infScene.type == GameState)
+    switch (scenes->infScene.type)
     {
-        ///< WheelUpdates
-        UpdateCameraWheel(&camera);
-        ///< Update Target
-        float smoothFactor = 0.1f;                      ///< Smooth Camera follow (Default: 0.1f, Options: 0.05f o 0.2f)
-        camera.target.x += (eplayer->position.x - camera.target.x) * smoothFactor;
-        camera.target.y += (eplayer->position.y - camera.target.y) * smoothFactor;
-        // Update Movement of Player
-        updateMovement(eplayer);
+        case GameState:
+                ///< Preview Position
+            eplayer->prev_position = eplayer->position;
+            
+            /// Collision Detection
+            UpdateCollision(eplayer, eEnemy);
+            
+            // Update Movement of Player
+            updateMovement(eplayer);
+
+            /// Update CollisionBox Movement
+            UpdateCollisionMovement(eplayer);
+            UpdateCollisionMovement(eEnemy);
+
+            ///< WheelUpdates
+            float smoothFactor = 0.1f;                      ///< Smooth Camera follow (Default: 0.1f, Options: 0.05f o 0.2f)
+            UpdateCameraWheel(&camera);
+            camera.target.x += (eplayer->position.x - camera.target.x) * smoothFactor;
+            camera.target.y += (eplayer->position.y - camera.target.y) * smoothFactor;
+            break;            
+        default:
+            break;
     }
 }
-/**
- * 
- */
+//////////////////////////////////////////////////////////
 void GameUpdateScene(void)
 {
     if(IsKeyDown(KEY_Y))
@@ -95,7 +107,7 @@ void GameUpdateScene(void)
     {
         scenes->infScene.type = GameState;
     }
-    else if(IsKeyDown(KEY_I))
+    else if(IsKeyDown(KEY_ESCAPE))
     {
         scenes->infScene.type = OptionMenu;
     }
@@ -105,33 +117,26 @@ void GameUpdateScene(void)
     }
 }
 //////////////////////////////////////////////////////////
-/**
- * 
- */
+//////////////////////////////////////////////////////////
 void GameInformation(void)
 {
     ///< Rectangle for the information of the camera
     DrawInformationCamera(camera);
 }
 //////////////////////////////////////////////////////////
-/**
- * 
- */
 void DeInitGame(void)
 {
     for (int i=0; i < 20; i++)
         UnloadTexture(mapWorld->texturesArray[i]);
-
         
     free(mapWorld->mapsData);
     free(mapWorld->tileMap);
-    // mapWorld->texturesArray.
-    
     free(mapWorld);
-    // FreeHashTable(mapWorld->hashTable);
+
     ///< Delete Player Data
     free(eplayer->_tileMap);
-    // FreeHashTable(eplayer->_HT);
 }
+//////////////////////////////////////////////////////////
+
 
 

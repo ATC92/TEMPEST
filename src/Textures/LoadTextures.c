@@ -1,16 +1,5 @@
 #include "LoadTextures.h"
 //////////////////////////////////////////////////////////////////////////////////////
-/**
- * LoadMapTextures
- * @brief Generate a struct TileMap with the information of the map.
- * 
- * Load Image, Texture, Size of the area of the image.
- *
- * @param char* _path //< Path of the Imagen.
- * @param const int w //< &point reference.
- * @param const int h //< &point reference.
- * @return @n 'TileMap' pointer.
- */
 TileMap* LoadMapTextures(char* _path,const int w, const int h)
 {
     TileMap* tempMapData = (TileMap*)calloc(1,sizeof(TileMap));
@@ -19,14 +8,7 @@ TileMap* LoadMapTextures(char* _path,const int w, const int h)
     tempMapData->tmSize = (Rectangle){0,0,w,h};
     return tempMapData;
 }
-/**
- * FillTexturesEntity
- * @brief Fill Texture2D* array for load all textures for Entity struct [Init size textures = 20 slots]
- * 
- * @param Texture2D* _TextureList //< Array pointer for all textures.
- * @param TileMap* _TileMapPlayer //< TileMap of the player, contains all information of the TileAtlas.
- * @return @n 'void'.
- */
+//////////////////////////////////////////////////////////////////
 void FillTexturesEntity(Texture2D* _TextureList,TileMap* _TileMapPlayer)
 {
     ///< 
@@ -52,13 +34,7 @@ void FillTexturesEntity(Texture2D* _TextureList,TileMap* _TileMapPlayer)
     }
     UnloadImage(_TileMapPlayer->tmImage);
 }
-/**
- * FillTextures
- * @brief Fill textures array for the Map. [Init size textures = 20 slots]
- * 
- * @param RenderData* renderData //< Strcut main for all information of the RenderData.
- * @return 'Void'.
- */
+//////////////////////////////////////////////////////////////////
 void FillTextures(RenderData* renderData)
 {
     int countTiles = 0;
@@ -82,16 +58,7 @@ void FillTextures(RenderData* renderData)
     }
     UnloadImage(renderData->tileMap->tmImage);
 }
-/**
- * @brief Validate if the tile is empty.
- *
- * Checks whether the tile in the given image (TileAtlas) at position `(x, y)` is empty.
- *
- * @param image Image to validate from the TileAtlas.
- * @param x     Initial position on the X axis.
- * @param y     Initial position on the Y axis.
- * @return true if the tile is empty, false if there is something.
- */
+//////////////////////////////////////////////////////////////////
 bool IsTileEmpty(Image image, int x, int y)
 {
     for (int i = 0; i < TILE_SIZE; i++)
@@ -104,14 +71,7 @@ bool IsTileEmpty(Image image, int x, int y)
     }
     return true;
 }
-/**
- * @brief Render map from the data information.
- * 
- * Take all the information of the int** map information.
- * 
- * @param RenderData* 
- * 
- */
+//////////////////////////////////////////////////////////////////
 void RenderTileMap(RenderData* _mD, int _slct)
 {
     int tileset_columns = 5;
@@ -144,11 +104,18 @@ void RenderTileMap(RenderData* _mD, int _slct)
         }
     }
 }
-/**
- * 
- */
+//////////////////////////////////////////////////////////////////
 void RenderPlayer(const Entity* eplayer)
 {
+    DrawRectangleLines(
+    eplayer->_rect.x,
+    eplayer->_rect.y,
+    eplayer->_rect.width,
+    eplayer->_rect.height,
+    RED); // Draw collision box for debugging
+    // Draw the player texture based on the direction they are looking
+
+
     int tileset_columns = 4;
     Rectangle source = 
     { 
@@ -159,8 +126,8 @@ void RenderPlayer(const Entity* eplayer)
     };
     Rectangle dest =
     {
-        eplayer->position.x + ((1.f/GetFPS()) * eplayer->speed), 
-        eplayer->position.y + ((1.f/GetFPS()) * eplayer->speed), 
+        eplayer->position.x + ((1.f/GetFPS()) * eplayer->velocity.x), 
+        eplayer->position.y + ((1.f/GetFPS()) * eplayer->velocity.y), 
         (float)TILE_SIZE, 
         (float)TILE_SIZE 
     };

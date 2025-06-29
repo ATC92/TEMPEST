@@ -1,11 +1,11 @@
 #include "MenuScene.h"
 #include "ScenesManager.h"
-
+//////////////////////////////////////////////////////////
 Button* button;
 Font* fontType;
 Vector2 mousePoint = { 0.0f, 0.0f };
 Shader invert;
-
+//////////////////////////////////////////////////////////
 void MainMenuGUI(void)
 {
     mousePoint = GetMousePosition();
@@ -65,7 +65,7 @@ void MainMenuGUI(void)
         DrawTextEx(*fontType,"Iniciar Juego",foo,40,0,BLACK);
     }
 }
-
+//////////////////////////////////////////////////////////
 void InitGUI(void)
 {
     ///< Load Shaders
@@ -79,7 +79,7 @@ void InitGUI(void)
     // button
     button = CreateButton("assets/Sounds/UI/click-b.wav","assets/UI/UI_TILES/Extra/Double/button_rectangle_depth_line.png","assets/UI/UI_TILES/Extra/Double/button_rectangle_line.png");
 }
-
+//////////////////////////////////////////////////////////
 Button* CreateButton(const char* soundPath,const char* texturePath, const char* texturePath2)
 {
     Button* bttTemp = (Button*)calloc(1,sizeof(Button));
@@ -113,3 +113,6 @@ Button* CreateButton(const char* soundPath,const char* texturePath, const char* 
     bttTemp->state = NORMAL;
     return bttTemp;
 }
+//////////////////////////////////////////////////////////
+
+

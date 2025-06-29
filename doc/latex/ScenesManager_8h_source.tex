@@ -10,35 +10,35 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../Utils/Information.h"{}}}
 \DoxyCodeLine{00009\ \textcolor{comment}{//\ \#include\ "{}MenuScene.h"{}}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \_scn}
-\DoxyCodeLine{00015\ \{}
-\DoxyCodeLine{00016\ \ \ \ \ MainMenu,}
-\DoxyCodeLine{00017\ \ \ \ \ GameState,}
-\DoxyCodeLine{00018\ \ \ \ \ OptionMenu,}
-\DoxyCodeLine{00019\ \ \ \ \ ConfigurationMenu,}
-\DoxyCodeLine{00020\ \ \ \ \ LoadScreen}
-\DoxyCodeLine{00021\ \}ManagerScenes;}
-\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__inf}{\_inf}}}
-\DoxyCodeLine{00023\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{char}*\ Name;}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{char}*\ information;}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}*\ LOG;}
-\DoxyCodeLine{00027\ \ \ \ \ ManagerScenes\ type;}
-\DoxyCodeLine{00028\ \}InformationScene;}
-\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__scene}{\_scene}}}
-\DoxyCodeLine{00033\ \{}
-\DoxyCodeLine{00034\ \ \ \ \ InformationScene\ \mbox{\hyperlink{struct__scene_a0bc131877368dd3f2115c506f38f46da}{infScene}};}
-\DoxyCodeLine{00037\ \}Scene;}
-\DoxyCodeLine{00040\ \textcolor{keyword}{extern}\ Scene*\ scenes;}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ InitScenes(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{00044\ Scene*\ CreateScene(\textcolor{keywordtype}{char}*,\textcolor{keywordtype}{char}*,\textcolor{keywordtype}{char}*,ManagerScenes);}
-\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ ChangeScene();}
-\DoxyCodeLine{00046\ InformationScene\ GetCurrentScene(Scene);}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \_scn}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ MainMenu,}
+\DoxyCodeLine{00030\ \ \ \ \ GameState,}
+\DoxyCodeLine{00031\ \ \ \ \ OptionMenu,}
+\DoxyCodeLine{00032\ \ \ \ \ ConfigurationMenu,}
+\DoxyCodeLine{00033\ \ \ \ \ LoadScreen}
+\DoxyCodeLine{00034\ \}ManagerScenes;}
+\DoxyCodeLine{00051\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__inf}{\_inf}}}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{char}*\ Name;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{char}*\ information;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{char}*\ LOG;}
+\DoxyCodeLine{00056\ \ \ \ \ ManagerScenes\ type;}
+\DoxyCodeLine{00057\ \}\mbox{\hyperlink{struct__inf}{InformationScene}};}
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__scene}{\_scene}}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{struct__inf}{InformationScene}}\ \mbox{\hyperlink{struct__scene_a0bc131877368dd3f2115c506f38f46da}{infScene}};}
+\DoxyCodeLine{00078\ \}\mbox{\hyperlink{struct__scene}{Scene}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct__scene}{Scene}}*\ scenes;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ InitScenes(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00113\ \mbox{\hyperlink{struct__scene}{Scene}}*\ CreateScene(\textcolor{keywordtype}{char}*,\textcolor{keywordtype}{char}*,\textcolor{keywordtype}{char}*,ManagerScenes);}
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{void}\ ChangeScene(ManagerScenes);}
+\DoxyCodeLine{00138\ \mbox{\hyperlink{struct__inf}{InformationScene}}\ GetCurrentScene(\mbox{\hyperlink{struct__scene}{Scene}});}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ }
 
 \end{DoxyCode}

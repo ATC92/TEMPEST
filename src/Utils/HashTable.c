@@ -1,8 +1,6 @@
 #include "HashTable.h"
 #include "../Textures/Textures.h"
-/**
- * 
- */
+//////////////////////////////////////////////////////////////////
 HashTable* CreateHashTable(int size)
 {
     // Creates a new HashTable.
@@ -12,9 +10,7 @@ HashTable* CreateHashTable(int size)
     table->items = (ItemHT**)calloc(table->size, sizeof(ItemHT*));
     return table;
 }
-/**
- * 
- */
+//////////////////////////////////////////////////////////////////
 void InsertItem(HashTable* ht, int id, Image tile)
 {
     ItemHT* item = (ItemHT*)calloc(1,sizeof(ItemHT));
@@ -28,9 +24,7 @@ void InsertItem(HashTable* ht, int id, Image tile)
         ht->count++;
     ht->items[index] = item;
 }
-/**
- * 
- */
+//////////////////////////////////////////////////////////////////
 ItemHT* SearchItem(HashTable* ht, int id)
 {
     int index = HashFunction(id, ht->size);
@@ -41,9 +35,7 @@ ItemHT* SearchItem(HashTable* ht, int id)
     }
     return NULL;
 }
-/**
- * 
- */
+//////////////////////////////////////////////////////////////////
 void FillHashTable(HashTable* _HT, TileMap* _TM)
 {
     ///< 
@@ -69,44 +61,19 @@ void FillHashTable(HashTable* _HT, TileMap* _TM)
     }
     UnloadImage(_TM->tmImage);
 }
-/**
- * 
- */
-/**
- * 
- */
-void PrintHashTable(HashTable* _HT)
-{
-    for (int i = 0; i < _HT->size; i++)
-    {
-        if (_HT->items[i] != NULL)
-        {
-            if (IsTextureValid(_HT->items[i]->tile))
-                printf("\nItem: %d | ID: %d | Valid Texture", i, _HT->items[i]->id);
-            else
-                printf("\nItem: %d | ID: %d | Invalid Texture", i, _HT->items[i]->id);
-        }
-    }
-}
-/**
- * 
- */
+//////////////////////////////////////////////////////////////////
 int HashFunction(int key, int size)
 {
     return key % size;
 }
-/**
- * 
- */
+//////////////////////////////////////////////////////////////////
 void FreeItem(ItemHT* item)
 {
     // Frees an item.
     UnloadTexture(item->tile);
     free(item);
 }
-/**
- * 
- */
+//////////////////////////////////////////////////////////////////
 void FreeHashTable(HashTable* table)
 {
     // Frees the table.
@@ -119,3 +86,6 @@ void FreeHashTable(HashTable* table)
     free(table->items);
     free(table);
 }
+//////////////////////////////////////////////////////////////////
+
+

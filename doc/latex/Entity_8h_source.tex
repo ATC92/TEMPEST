@@ -6,7 +6,7 @@
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string.h>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Textures/Textures.h"{}}}
-\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00009\ }
 \DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \_eLooking}
 \DoxyCodeLine{00023\ \{}
 \DoxyCodeLine{00024\ \ \ \ \ UP,}
@@ -14,29 +14,29 @@
 \DoxyCodeLine{00026\ \ \ \ \ DOWN,}
 \DoxyCodeLine{00027\ \ \ \ \ LEFT}
 \DoxyCodeLine{00028\ \}eLooking;}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \_typeEntity}
-\DoxyCodeLine{00034\ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \_PLAYER,}
-\DoxyCodeLine{00036\ \ \ \ \ \_NPC}
-\DoxyCodeLine{00037\ \}TypeEntity;}
-\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__Entity}{\_Entity}}}
-\DoxyCodeLine{00050\ \{}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct__Entity_a5ac083a645d964373f022d03df4849c8}{name}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__Entity_a735461fa6550997a7a0ad0cbc1802bd5}{health}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__Entity_a894e00faaac5ecfdd262a67bad220577}{armor}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__Entity_a7f7e4724cf57d59513b39c5ecc81adc8}{speed}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__Entity_a5dbe05d2519f4da001e24a5cc8a1cfe5}{crit}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__Entity_a7667975e620decc0333502a2d0f73ca1}{exp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00057\ \ \ \ \ Vector2\ \mbox{\hyperlink{struct__Entity_a568c4f7cea202cebb7430ebac674107a}{position}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct__Entity_acb5f51ccccbe524bc1765c11113faeff}{\_eLook}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00059\ \ \ \ \ TileMap*\ \mbox{\hyperlink{struct__Entity_a78ba1010334b34add3e17d90dadb5782}{\_tileMap}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00060\ \ \ \ \ Texture2D*\ \_textureArray;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00061\ \ \ \ \ TypeEntity\ \ \mbox{\hyperlink{struct__Entity_a8c795e7c290f3dfec9845aabeebe99c7}{\_typeEntity}};\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ HashTable*\ \_HT;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ///<\ HashTable\ to\ save\ all\ Textures.}}
-\DoxyCodeLine{00063\ \}Entity;}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00078\ Entity*\ GenEntity(\textcolor{keywordtype}{int},\textcolor{keywordtype}{char}*,\textcolor{keywordtype}{float},\textcolor{keywordtype}{float},\textcolor{keywordtype}{float},\textcolor{keywordtype}{float});}
-\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \_typeEntity}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \_PLAYER,}
+\DoxyCodeLine{00044\ \ \ \ \ \_ENEMY}
+\DoxyCodeLine{00045\ \}TypeEntity;}
+\DoxyCodeLine{00057\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__Entity}{\_Entity}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct__Entity_a5ac083a645d964373f022d03df4849c8}{name}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__Entity_a735461fa6550997a7a0ad0cbc1802bd5}{health}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__Entity_a894e00faaac5ecfdd262a67bad220577}{armor}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__Entity_a7f7e4724cf57d59513b39c5ecc81adc8}{speed}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__Entity_a5dbe05d2519f4da001e24a5cc8a1cfe5}{crit}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__Entity_a7667975e620decc0333502a2d0f73ca1}{exp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct__Entity_acb5f51ccccbe524bc1765c11113faeff}{\_eLook}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ Vector2\ \mbox{\hyperlink{struct__Entity_a568c4f7cea202cebb7430ebac674107a}{position}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ Vector2\ \mbox{\hyperlink{struct__Entity_a8c1e64ef84868b1f249c6b0b9bbb459a}{prev\_position}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ Vector2\ \mbox{\hyperlink{struct__Entity_ab173eafbd76f9d340b5dd1accfeb27e7}{velocity}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{struct__tileMap}{TileMap}}*\ \mbox{\hyperlink{struct__Entity_a78ba1010334b34add3e17d90dadb5782}{\_tileMap}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ Texture2D*\ \mbox{\hyperlink{struct__Entity_a588485231ce334cbe54fa1d6ac1bd744}{\_textureArray}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ TypeEntity\ \ \mbox{\hyperlink{struct__Entity_a8c795e7c290f3dfec9845aabeebe99c7}{\_typeEntity}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ Rectangle\ \mbox{\hyperlink{struct__Entity_a9355a14fa6453dfe7b8bb5e776ff9c8a}{\_rect}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \}\mbox{\hyperlink{struct__Entity}{Entity}};}
+\DoxyCodeLine{00091\ \mbox{\hyperlink{struct__Entity}{Entity}}*\ GenEntity(\textcolor{keywordtype}{int},\textcolor{keywordtype}{char}*,\textcolor{keywordtype}{float},\textcolor{keywordtype}{float},\textcolor{keywordtype}{float},\textcolor{keywordtype}{float});}
+\DoxyCodeLine{00092\ }
 
 \end{DoxyCode}

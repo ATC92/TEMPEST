@@ -1,5 +1,6 @@
 #include "../Engine/Engine.h"
 #include "../Game/Game.h"
+//////////////////////////////////////////////////////////////////
 int main(void)
 {
     InitWindow(1440, 900, "Project V-Beta");        ///< Set Name of the window
@@ -17,3 +18,4 @@ int main(void)
     CloseWindow();                                  ///< Close Window OpenGL Context
     return EXIT_SUCCESS;                            ///< Close main correctly
 }
+//////////////////////////////////////////////////////////////////

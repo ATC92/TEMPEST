@@ -30,21 +30,30 @@ float {\bfseries crit}
 \Hypertarget{struct__Entity_a7667975e620decc0333502a2d0f73ca1}\label{struct__Entity_a7667975e620decc0333502a2d0f73ca1} 
 float {\bfseries exp}
 \begin{DoxyCompactList}\small\item\em Experience of the entity Enemy. \end{DoxyCompactList}\item 
-\Hypertarget{struct__Entity_a568c4f7cea202cebb7430ebac674107a}\label{struct__Entity_a568c4f7cea202cebb7430ebac674107a} 
-Vector2 {\bfseries position}
-\begin{DoxyCompactList}\small\item\em Position \{X,Y\}. \end{DoxyCompactList}\item 
 \Hypertarget{struct__Entity_acb5f51ccccbe524bc1765c11113faeff}\label{struct__Entity_acb5f51ccccbe524bc1765c11113faeff} 
 int {\bfseries \+\_\+e\+Look}
 \begin{DoxyCompactList}\small\item\em Where the entity is looking. \end{DoxyCompactList}\item 
+\Hypertarget{struct__Entity_a568c4f7cea202cebb7430ebac674107a}\label{struct__Entity_a568c4f7cea202cebb7430ebac674107a} 
+Vector2 {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Position \{X,Y\}. \end{DoxyCompactList}\item 
+\Hypertarget{struct__Entity_a8c1e64ef84868b1f249c6b0b9bbb459a}\label{struct__Entity_a8c1e64ef84868b1f249c6b0b9bbb459a} 
+Vector2 {\bfseries prev\+\_\+position}
+\begin{DoxyCompactList}\small\item\em Previous Position \{X,Y\}. \end{DoxyCompactList}\item 
+\Hypertarget{struct__Entity_ab173eafbd76f9d340b5dd1accfeb27e7}\label{struct__Entity_ab173eafbd76f9d340b5dd1accfeb27e7} 
+Vector2 {\bfseries velocity}
+\begin{DoxyCompactList}\small\item\em Velocity of the Entity. \end{DoxyCompactList}\item 
 \Hypertarget{struct__Entity_a78ba1010334b34add3e17d90dadb5782}\label{struct__Entity_a78ba1010334b34add3e17d90dadb5782} 
 \mbox{\hyperlink{struct__tileMap}{Tile\+Map}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+tile\+Map}
 \begin{DoxyCompactList}\small\item\em Tile\+Map of the Entities. \end{DoxyCompactList}\item 
 \Hypertarget{struct__Entity_a588485231ce334cbe54fa1d6ac1bd744}\label{struct__Entity_a588485231ce334cbe54fa1d6ac1bd744} 
 Texture2D \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+texture\+Array}
-\item 
+\begin{DoxyCompactList}\small\item\em Array of Textures of the Entity. \end{DoxyCompactList}\item 
 \Hypertarget{struct__Entity_a8c795e7c290f3dfec9845aabeebe99c7}\label{struct__Entity_a8c795e7c290f3dfec9845aabeebe99c7} 
 Type\+Entity {\bfseries \+\_\+type\+Entity}
-\begin{DoxyCompactList}\small\item\em Type of entity in the ENUM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Type of entity in the ENUM. \end{DoxyCompactList}\item 
+\Hypertarget{struct__Entity_a9355a14fa6453dfe7b8bb5e776ff9c8a}\label{struct__Entity_a9355a14fa6453dfe7b8bb5e776ff9c8a} 
+Rectangle {\bfseries \+\_\+rect}
+\begin{DoxyCompactList}\small\item\em Rectangle of the Entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -55,13 +64,13 @@ Main Entity.
 
 Contain\+: 
 \begin{DoxyParams}{Parameters}
-{\em Player} & ///\texorpdfstring{$<$}{<} Player struct \\
+{\em Player} & Player struct \\
 \hline
-{\em NPC} & ///\texorpdfstring{$<$}{<} NPC struct \\
+{\em NPC} & NPC struct \\
 \hline
-{\em e\+Looking} & ///\texorpdfstring{$<$}{<} Where is the Entity looking \\
+{\em e\+Looking} & Where is the Entity looking \\
 \hline
-{\em t\+Entity} & ///\texorpdfstring{$<$}{<} List of textures of the entity \\
+{\em t\+Entity} & List of textures of the entity \\
 \hline
 \end{DoxyParams}
 

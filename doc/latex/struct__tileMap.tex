@@ -2,7 +2,7 @@
 \hypertarget{struct__tileMap}{}\label{struct__tileMap}\index{\_tileMap@{\_tileMap}}
 
 
-s\+TILE, The space of the world in Tiles  
+Tile\+Map, Save information of the Tile\+Map.  
 
 
 
@@ -24,7 +24,13 @@ Rectangle {\bfseries tm\+Size}
 
 
 \doxysubsection{Detailed Description}
-s\+TILE, The space of the world in Tiles 
+Tile\+Map, Save information of the Tile\+Map. 
+
+This struct represents a tile map in the game. It contains an image of the tile map, a texture for rendering, and a rectangle representing the size of the tile map.
+
+{\ttfamily tm\+Image} Image of the Tile\+Map \textbackslash{} {\ttfamily texture} Texture 2D \textbackslash{} {\ttfamily tm\+Size} Size of the Tile\+Map
+
+This struct is used to store the tile map image and its associated texture, which can be used for rendering the tile map in the game. The {\ttfamily tm\+Size} rectangle defines the dimensions of the tile map. The {\ttfamily tm\+Image} field holds the raw image data, while the {\ttfamily texture} field is used for rendering the tile map efficiently. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

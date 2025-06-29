@@ -1,5 +1,5 @@
 #include "Information.h"
-
+//////////////////////////////////////////////////////////////////
 void DrawInformationCamera(Camera2D camera)
 {
     DrawRectangle(5,5,330,120,Fade(SKYBLUE, 0.5f));
@@ -10,3 +10,6 @@ void DrawInformationCamera(Camera2D camera)
 
     DrawText(TextFormat("FPS: [%d FPS]", GetFPS()), 15, 50, 15, GRAY);
 }
+//////////////////////////////////////////////////////////////////
+
+

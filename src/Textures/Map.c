@@ -1,4 +1,5 @@
 #include "Map.h"
+//////////////////////////////////////////////////////////////////
 RenderData* LoadInformationMap(void)
 {
     // Var Temp Return
@@ -11,7 +12,7 @@ RenderData* LoadInformationMap(void)
     tempData->emptyTexture = LoadTexture("assets/Tilemap/EmptyTexture.png");
     return tempData;
 }
-
+//////////////////////////////////////////////////////////////////
 int** LoadMapTiles(char* path, int* c, int* r)
 {
     ///< Load file CSV[MAP]
@@ -67,4 +68,6 @@ int** LoadMapTiles(char* path, int* c, int* r)
 
     return mapa;
 }
+//////////////////////////////////////////////////////////////////
+
 

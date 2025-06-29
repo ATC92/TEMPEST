@@ -2,7 +2,7 @@
 \hypertarget{struct__renderData}{}\label{struct__renderData}\index{\_renderData@{\_renderData}}
 
 
-Structure that stores rendering-\/related data.  
+Render\+Data, Struct that holds all the data for rendering the map.  
 
 
 
@@ -23,14 +23,18 @@ Map\+Enum {\bfseries map\+Slctr}
 \begin{DoxyCompactList}\small\item\em Enum that selects the current map. \end{DoxyCompactList}\item 
 \Hypertarget{struct__renderData_a0ba5f1921f67571fee86da66f1f493a3}\label{struct__renderData_a0ba5f1921f67571fee86da66f1f493a3} 
 Texture2D \texorpdfstring{$\ast$}{*} {\bfseries textures\+Array}
-\item 
+\begin{DoxyCompactList}\small\item\em Textures array used for rendering the map. \end{DoxyCompactList}\item 
 \Hypertarget{struct__renderData_ae4a473082f084e566a4427abdaa68e89}\label{struct__renderData_ae4a473082f084e566a4427abdaa68e89} 
 Texture2D {\bfseries empty\+Texture}
 \begin{DoxyCompactList}\small\item\em Empty texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Structure that stores rendering-\/related data. 
+Render\+Data, Struct that holds all the data for rendering the map. 
+
+This struct contains all the necessary data for rendering the map in the game. It includes a pointer to the map data, a pointer to the tile map, an enum to select the current map, and an array of textures used for rendering.
+
+{\ttfamily maps\+Data} Pointer to the map data \textbackslash{} {\ttfamily tile\+Map} Pointer to the tile data \textbackslash{} {\ttfamily map\+Slctr} Enum that selects the current map \textbackslash{} {\ttfamily textures\+Array} Array of textures used for rendering the map \textbackslash{} {\ttfamily empty\+Texture} Empty texture used for rendering empty tiles 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

@@ -2,7 +2,7 @@
 \hypertarget{struct__MapData}{}\label{struct__MapData}\index{\_MapData@{\_MapData}}
 
 
-Map\+Data, Save information of the map.  
+Map\+Data, Save information of the Map.  
 
 
 
@@ -27,7 +27,13 @@ int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} {\bfseries data}
 
 
 \doxysubsection{Detailed Description}
-Map\+Data, Save information of the map. 
+Map\+Data, Save information of the Map. 
+
+This struct represents the data of a map in the game. It contains the name of the level, its dimensions (width and height), and a 2D array of integers representing the map data.
+
+{\ttfamily name} Name of the Level \textbackslash{} {\ttfamily width} Width of the Map (int) \textbackslash{} {\ttfamily height} Height of the map (int) \textbackslash{} {\ttfamily data} Information of the map \mbox{[}(int) x\mbox{]}\mbox{[}(int) y\mbox{]}, but ptr\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}.
+
+This struct is used to store the map\textquotesingle{}s metadata, including its name and dimensions, as well as the actual map data represented as a 2D array of integers. The {\ttfamily data} field is a pointer to a dynamically allocated 2D array, allowing for flexible map sizes and easy access to individual tiles. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

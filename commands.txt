@@ -1,10 +1,10 @@
 ///< Debug version Windows build/Debug
 cmake -G"MinGW Makefiles" ../.. -DCMAKE_BUILD_TYPE=Debug
-cmake --build build/Debug --target Project
+cmake --build build/Debug --target Project -j 8
 
 ///< Debug Version Unix
 cmake -G"Unix Makefiles" ../.. -DCMAKE_BUILD_TYPE=Debug
-cmake --build build/Debug --target Project
+cmake --build build/Debug --target Project -j 8
 
 ///< Release version
 cmake -G"MinGW Makefiles" -B build/Release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install
