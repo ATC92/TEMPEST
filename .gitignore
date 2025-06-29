@@ -8,3 +8,5 @@ install/
 build/
 build/Debug
 bin/
+.vscode/
+.vscode-test/
