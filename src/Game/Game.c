@@ -17,11 +17,7 @@ void InitGame(void)
 {
     /////////////////////////////////////////////////////////////////////////////////////////
     ///< Gen player.
-<<<<<<< HEAD
     eplayer = GenEntity(_PLAYER, "Hero", 100.f,20.f,120.f,0.f);
-=======
-    eplayer = GenEntity(_PLAYER, "Hero", 100.f,20.f,1.5f,20.f);
->>>>>>> origin/main
     ///< Player Gen Textures
     eplayer->_tileMap = LoadMapTextures("assets/Tilemap/Tilemap_Entity.png",64,16);
     ///< Fill arrayTextures of the Entity Player.
@@ -46,15 +42,9 @@ void InitGame(void)
     /////////////////////////////////////////////////////////////////////////////////////////
     ///< Camera Init 
     camera.target = eplayer->position;
-<<<<<<< HEAD
     camera.zoom = 4.0f;
     camera.rotation = 0.0f;
     camera.offset = (Vector2){ (float)GetScreenWidth()/2.0f, (float)GetScreenHeight()/2.0f };
-=======
-    camera.zoom = 3.0f;
-    camera.rotation = 0.0f;
-    camera.offset = (Vector2){ GetScreenWidth()/2.0f, GetScreenHeight()/2.0f };
->>>>>>> origin/main
     /////////////////////////////////////////////////////////////////////////////////////////
 }
 ////////////////////////////////////////////////////////// 
@@ -66,10 +56,7 @@ void GameUpdateRender(void)
         _slct = level_1;
         ///< Map Render
         RenderTileMap(mapWorld,_slct);
-<<<<<<< HEAD
         DrawRectangleLinesEx(mapWorld->mapsData[0].size, 2.0f, RED);
-=======
->>>>>>> origin/main
         ///< Player Render
         RenderPlayer(eplayer);
         RenderPlayer(eEnemy);
@@ -81,7 +68,6 @@ void GameUpdateRender(void)
     EndMode2D();                            ///< Close 2D Mode
 }
 //////////////////////////////////////////////////////////
-<<<<<<< HEAD
 void GameUpdateLogic(float dt)
 {
     switch (scenes->infScene.type)
@@ -101,32 +87,12 @@ void GameUpdateLogic(float dt)
             /// Update CollisionBox Movement
             SyncCollisionBox(eEnemy);
             SyncCollisionBox(eplayer);
-=======
-void GameUpdateLogic(void)
-{
-    switch (scenes->infScene.type)
-    {
-        case GameState:
-                ///< Preview Position
-            eplayer->prev_position = eplayer->position;
-            
-            /// Collision Detection
-            UpdateCollision(eplayer, eEnemy);
-            
-            // Update Movement of Player
-            updateMovement(eplayer);
-
-            /// Update CollisionBox Movement
-            UpdateCollisionMovement(eplayer);
-            UpdateCollisionMovement(eEnemy);
->>>>>>> origin/main
 
             ///< WheelUpdates
             float smoothFactor = 0.1f;                      ///< Smooth Camera follow (Default: 0.1f, Options: 0.05f o 0.2f)
             UpdateCameraWheel(&camera);
             camera.target.x += (eplayer->position.x - camera.target.x) * smoothFactor;
             camera.target.y += (eplayer->position.y - camera.target.y) * smoothFactor;
-<<<<<<< HEAD
 
             ///< Lock camera to a zone
             LockCameraToZone(&camera, mapWorld->mapsData[0].size);
@@ -134,9 +100,6 @@ void GameUpdateLogic(void)
             ///< Save Prev Position of the player
             eplayer->prev_position = eplayer->position;
             break;  
-=======
-            break;            
->>>>>>> origin/main
         default:
             break;
     }
@@ -144,7 +107,6 @@ void GameUpdateLogic(void)
 //////////////////////////////////////////////////////////
 void GameUpdateScene(void)
 {
-<<<<<<< HEAD
     ///< Check if the player pressed the Escape key
     ///< To open or close the Option Menu
     if(IsKeyDown(KEY_ESCAPE) && scenes->infScene.type != MainMenu)
@@ -173,32 +135,6 @@ void GameInformation(void)
     DrawInformationCamera(camera);
     DrawLinesMidScreen();
     #endif
-=======
-    if(IsKeyDown(KEY_Y))
-    {
-        PlaySound(button->sound);
-        scenes->infScene.type = MainMenu;
-    }
-    else if (IsKeyDown(KEY_U))
-    {
-        scenes->infScene.type = GameState;
-    }
-    else if(IsKeyDown(KEY_ESCAPE))
-    {
-        scenes->infScene.type = OptionMenu;
-    }
-    else if(IsKeyDown(KEY_O))
-    {
-        scenes->infScene.type = ConfigurationMenu;
-    }
-}
-//////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////
-void GameInformation(void)
-{
-    ///< Rectangle for the information of the camera
-    DrawInformationCamera(camera);
->>>>>>> origin/main
 }
 //////////////////////////////////////////////////////////
 void DeInitGame(void)

@@ -10,18 +10,11 @@ void RenderCurrentScene(ManagerScenes type)
     case GameState:
         GameUpdateRender();
         break;
-<<<<<<< HEAD
     case LoadingScreen:
         SimulateLoading(3);
         scenes->infScene.type = GameState;
         break;
     case OptionMenu:
-=======
-    case OptionMenu:
-        //OptiomMenuRender();
-        break;
-    case ConfigurationMenu:
->>>>>>> origin/main
         break;
     default:
         perror("Error with Render Current Scene.");
@@ -30,7 +23,3 @@ void RenderCurrentScene(ManagerScenes type)
 }
 //////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main

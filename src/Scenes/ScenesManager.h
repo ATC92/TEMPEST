@@ -4,11 +4,7 @@
 #include "stdlib.h"
 #include "string.h"
 ///< CGame Lib
-<<<<<<< HEAD
 #include "../Components/Textures.h"
-=======
-#include "../Textures/Textures.h"
->>>>>>> origin/main
 #include "../Utils/Information.h"
 // #include "MenuScene.h"
 //////////////////////////////////////////////////////////////////
@@ -34,11 +30,7 @@ typedef enum _scn
     GameState,
     OptionMenu,
     ConfigurationMenu,
-<<<<<<< HEAD
     LoadingScreen
-=======
-    LoadScreen
->>>>>>> origin/main
 }ManagerScenes;
 /**
  * @brief Information of the Scene
@@ -59,11 +51,6 @@ typedef enum _scn
 typedef struct _inf
 {
     char* Name;
-<<<<<<< HEAD
-=======
-    char* information;
-    char* LOG;
->>>>>>> origin/main
     ManagerScenes type;
 }InformationScene;
 /**
@@ -83,10 +70,7 @@ typedef struct _inf
  */
 typedef struct _scene
 {
-<<<<<<< HEAD
     bool* ActivedScenes;
-=======
->>>>>>> origin/main
     InformationScene infScene;
     ///< Texturas o GUI
     ///< Size of the Scene
@@ -109,22 +93,12 @@ extern Scene* scenes;
  * 
  * @return void
  */
-<<<<<<< HEAD
 void InitScenesManager(void);
-=======
-void InitScenes(void);
->>>>>>> origin/main
 /**
  * @brief Create a new Scene
  * 
  * This function creates a new scene with the specified name, information, log, and type.
  * 
- * @param name        Name of the scene
-<<<<<<< HEAD
-=======
- * @param inf         Information about the scene
- * @param LOG         Log message for the scene
->>>>>>> origin/main
  * @param type        Type of the scene (ManagerScenes)
  * 
  * @return Scene*    Pointer to the newly created scene
@@ -132,11 +106,7 @@ void InitScenes(void);
  * This function allocates memory for a new scene, initializes its fields,
  * and returns a pointer to the scene.
  */
-<<<<<<< HEAD
-Scene* CreateScene(char*,ManagerScenes);
-=======
-Scene* CreateScene(char*,char*,char*,ManagerScenes);
->>>>>>> origin/main
+Scene* CreateScene(ManagerScenes type);
 /**
  * @brief Change the current scene
  * 
@@ -147,7 +117,7 @@ Scene* CreateScene(char*,char*,char*,ManagerScenes);
  * This function updates the `scenes` variable to point to the new scene,
  * effectively changing the game's current state.
  */
-void ChangeScene(ManagerScenes);
+void ChangeScene(ManagerScenes next);
 /**
  * @brief Get the current scene
  * 
@@ -161,7 +131,7 @@ void ChangeScene(ManagerScenes);
  * which includes the name, information, log, and type of the scene.
  * 
  */
-InformationScene GetCurrentScene(Scene);
+InformationScene GetCurrentScene(Scene current);
 
 
 

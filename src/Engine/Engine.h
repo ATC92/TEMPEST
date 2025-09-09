@@ -1,5 +1,4 @@
 #pragma once
-<<<<<<< HEAD
 //< C/C++ Libraries
 //< CGame Libraries
 #include "../Game/Game.h"
@@ -7,11 +6,6 @@
 //< RayLib Libraries
 ///
 ///
-=======
-//
-#include "../Game/Game.h"
-#include "Updates.h"
->>>>>>> origin/main
 /**
  * @brief Initialize the game engine
  * This function sets up the audio device, initializes scenes, GUI, and the game.
@@ -25,7 +19,6 @@
  */
 void InitEngine();
 /**
-<<<<<<< HEAD
  * @brief Updates the game engine
  * This function updates the game logic and scene.
  * 
@@ -37,8 +30,6 @@ void InitEngine();
  */
 void EngineUpdate(float dt);
 /**
-=======
->>>>>>> origin/main
  * @brief Renders the game scene
  * This function is responsible for rendering the current game scene.
  * 
@@ -48,11 +39,7 @@ void EngineUpdate(float dt);
  * 
  * @note It calls the function to render the current scene and displays game information such as FPS and player position.
  */
-<<<<<<< HEAD
 void EngineRender();
-=======
-void GameRender();
->>>>>>> origin/main
 /**
  * @brief De-initializes the game engine
  * This function cleans up resources used by the game engine.
@@ -64,20 +51,6 @@ void GameRender();
  * @note It closes the audio device and de-initializes the game.
  */
 void DeInitEngine();
-<<<<<<< HEAD
-=======
-/**
- * @brief Updates the game engine
- * This function updates the game logic and scene.
- * 
- * @param `None`
- * 
- * @return `void`
- * 
- * @note It handles the game update logic, including player movement and mouse wheel interactions, and updates the game scene.
- */
-void EngineUpdate();
->>>>>>> origin/main
 
 
 

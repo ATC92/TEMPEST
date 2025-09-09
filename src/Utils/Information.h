@@ -9,12 +9,8 @@
  * 
  * @return 'Void'.
  */
-<<<<<<< HEAD
 void DrawInformationCamera(Camera2D);
 /**
  * @brief 
  */
 void DrawLinesMidScreen();
-=======
-void DrawInformationCamera(Camera2D);
->>>>>>> origin/main

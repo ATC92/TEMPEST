@@ -3,18 +3,12 @@
 ///< CGame Lib
 #include "../Scenes/ScenesManager.h"
 #include "../Scenes/MenuScene.h"
-<<<<<<< HEAD
 #include "../Scenes/LoadingScene.h"
 #include "../Game/Game.h"
 ///< Extern Lib
 ///////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////
-=======
-#include "../Game/Game.h"
-///< Extern Lib
-///////////////////////////////////////////////////////////////
->>>>>>> origin/main
 /**
  * @brief Render Current Scene Function
  * This function renders the current scene based on the provided scene type.
@@ -29,8 +23,4 @@ void RenderCurrentScene(ManagerScenes);
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
 //////////////////////////////////////////////////////////

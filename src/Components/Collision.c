@@ -26,7 +26,4 @@ bool SystemAABBMid(Entity* Source, Entity* Target, bool r)
     return Collision;
 }
 
-
-
-
 //////////////////////////////////////////////////////////
