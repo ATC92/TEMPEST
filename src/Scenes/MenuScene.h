@@ -4,10 +4,16 @@
 #include <stdlib.h>
 #include <string.h>
 ///< CGame Lib
+<<<<<<< HEAD
 #include "../Components/Textures.h"
 #include "../Utils/Information.h"
 #include "../Engine/Updates.h"
 #include "../Utils/Fonts.h"
+=======
+#include "../Textures/Textures.h"
+#include "../Utils/Information.h"
+#include "../Utils/OperadorOverload.h"
+>>>>>>> origin/main
 ///////////////////////////////////////////////////////////////
 /**
  * @brief ButtonState

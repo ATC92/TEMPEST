@@ -8,12 +8,18 @@
 #include "raymath.h"
 ///< CGame Lib
 #include "OnUpdate.h"
+<<<<<<< HEAD
 #include "../Utils/Vector.h"
 #include "../Components/Entity.h"
 #include "../Components/Map.h"
 #include "../Components/Collision.h"
 #include "../Utils/Algorithms.h"
 #include "../Components/LoadTextures.h"
+=======
+#include "../Entity/Entity.h"
+#include "../Textures/Map.h"
+#include "../Textures/LoadTextures.h"
+>>>>>>> origin/main
 #include "../Utils/Information.h"
 #include "../Scenes/ScenesManager.h"
 #include "../Scenes/MenuScene.h"
@@ -42,12 +48,20 @@ void GameUpdateRender(void);
  * @brief Game Update Logic Function
  * This function updates the game logic, including player movement and collision detection.
  * 
+<<<<<<< HEAD
  * @param `float` Delta time for frame-independent movement
+=======
+ * @param `void`
+>>>>>>> origin/main
  * 
  * @return `void`
  * 
  */
+<<<<<<< HEAD
 void GameUpdateLogic(float dt);
+=======
+void GameUpdateLogic(void);
+>>>>>>> origin/main
 /**
  * @brief Game Information Function
  * This function displays game information, such as camera details.

@@ -2,13 +2,23 @@
 #include "ScenesManager.h"
 //////////////////////////////////////////////////////////
 Button* button;
+<<<<<<< HEAD
+=======
+Font* fontType;
+>>>>>>> origin/main
 Vector2 mousePoint = { 0.0f, 0.0f };
 Shader invert;
 //////////////////////////////////////////////////////////
 void MainMenuGUI(void)
 {
     mousePoint = GetMousePosition();
+<<<<<<< HEAD
     button->sourceButton.y = (float)button->state * button->frameHeight;
+=======
+
+    button->sourceButton.y = button->state * button->frameHeight;
+
+>>>>>>> origin/main
     DrawTextureRec
     (
         button->Texture[0],
@@ -16,6 +26,10 @@ void MainMenuGUI(void)
         button->position,
         WHITE
     );
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
     ///< Text
     Vector2 bar = MeasureTextEx(*fontType, "Iniciar Juego", 40, 0);
     Vector2 foo =
@@ -23,6 +37,10 @@ void MainMenuGUI(void)
         .x = (button->position.x + button->sourceButton.width / 2) - bar.x / 2,
         .y = (button->position.y + button->sourceButton.height / 2) - bar.y / 2
     };
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
     if (CheckCollisionPointRec(mousePoint,button->boundingBox))
     {
         BeginShaderMode(invert);
@@ -38,10 +56,27 @@ void MainMenuGUI(void)
             if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
             {
                 ClearBackground(WHITE);
+<<<<<<< HEAD
                 PlaySound(button->sound);
                 scenes->infScene.type = LoadingScreen; ///< Change Scene to Loading Screen
                 WaitTime(1);
             }
+=======
+                printf("\nError");
+//                 DrawTextureRec
+//                 (
+//                     button->Texture[1],
+//                     button->sourceButton,
+//                     button->position,
+//                     WHITE
+//                 );
+                // DrawTextEx(*fontType,"Iniciar Juego",foo,40,0,BLACK);
+                PlaySound(button->sound);
+                scenes->infScene.type = GameState;
+                WaitTime(1);
+            }
+
+>>>>>>> origin/main
         EndShaderMode();
     }
     else
@@ -54,7 +89,11 @@ void MainMenuGUI(void)
 void InitGUI(void)
 {
     ///< Load Shaders
+<<<<<<< HEAD
     invert = LoadShader(NULL, "src/Shaders/invert.fs");
+=======
+    invert = LoadShader(NULL, "src/Externs/invert.fs");
+>>>>>>> origin/main
     if (!IsShaderValid(invert)) TraceLog(LOG_ERROR, "Shader Invalid");
     ///< Create and load Font texture
     fontType = (Font*)calloc(1,sizeof(Font));
@@ -76,8 +115,13 @@ Button* CreateButton(const char* soundPath,const char* texturePath, const char* 
     /// Bounds
     bttTemp->position = (Vector2)
     {
+<<<<<<< HEAD
         (float)GetScreenWidth()/2.0f - (float)bttTemp->Texture[0].width/2.0f, 
         (float)GetScreenHeight()/2.0f - (float)bttTemp->Texture[0].height/NUM_FRAMES/2.0f,
+=======
+        GetScreenWidth()/2.0f - bttTemp->Texture[0].width/2.0f, 
+        GetScreenHeight()/2.0f - bttTemp->Texture[0].height/NUM_FRAMES/2.0f,
+>>>>>>> origin/main
     };
 
 

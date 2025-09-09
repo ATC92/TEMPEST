@@ -11,6 +11,7 @@ void DrawInformationCamera(Camera2D camera)
     DrawText(TextFormat("FPS: [%d FPS]", GetFPS()), 15, 50, 15, GRAY);
 }
 //////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
 void DrawLinesMidScreen()
 {
     int centerX = GetScreenWidth() / 2;
@@ -18,4 +19,7 @@ void DrawLinesMidScreen()
     DrawLine(centerX, 0, centerX, GetScreenHeight() , RED);
     DrawLine(0, centerY, GetScreenWidth(), centerY, RED);
 }
+=======
+
+>>>>>>> origin/main
 

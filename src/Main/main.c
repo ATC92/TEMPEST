@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////
 int main(void)
 {
+<<<<<<< HEAD
     int MonitorWidth = GetMonitorWidth(0);
     int MonitorHeight = GetMonitorHeight(0);
     float dt = 0.0f;   ///< Delta Time
@@ -17,13 +18,28 @@ int main(void)
         BeginDrawing();                             ///< || Start Drawing, RayLib Context
             ClearBackground(RAYWHITE);              ///< Give a color to the Background
             EngineRender();                           ///< Game Engine Render
+=======
+    InitWindow(1440, 900, "Project V-Beta");        ///< Set Name of the window
+    SetTargetFPS(75);                               ///< Set FPS
+    InitEngine();                                   ///< Init Engine
+    while (!WindowShouldClose())                    ///< Main loop for the game
+    {
+        EngineUpdate();                             ///< Game Engine Update
+        BeginDrawing();                             ///< || Start Drawing, RayLib Context
+            ClearBackground(RAYWHITE);              ///< Give a color to the Background
+            GameRender();                           ///< Game Engine Render
+>>>>>>> origin/main
         EndDrawing();                               ///< || End Drawing, RalyLib Context
     }
     DeInitEngine();                                 ///< De-Init Game Engine
     CloseWindow();                                  ///< Close Window OpenGL Context
     return EXIT_SUCCESS;                            ///< Close main correctly
 }
+<<<<<<< HEAD
 //////////////////////////////////////////////////////////////////
 
 
 
+=======
+//////////////////////////////////////////////////////////////////
+>>>>>>> origin/main

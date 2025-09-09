@@ -3,12 +3,18 @@
 #include <math.h>
 ///< Extern Libraries
 #include "raylib.h"
+<<<<<<< HEAD
 #include "raymath.h"
 ///< CGame Lib
 #include "../Components/Entity.h"
 #include "../Components/Collision.h"
 #include "../Engine/Engine.h"
 // #include "Game.h"
+=======
+///< CGame Lib
+#include "../Entity/Entity.h"
+#include "Game.h"
+>>>>>>> origin/main
 /**
  * @brief Mouse Wheel Update
  * 
@@ -21,21 +27,35 @@ void UpdateCameraWheel(Camera2D*);
  * @brief Movement update and Looking of the player
  * 
  * @param Entity*           ///< Player Entity reference
+<<<<<<< HEAD
  * @param float             ///< Delta Time for frame-independent movement
  * 
  * @return @n `Void`
  */
 void UpdateMovement(Entity*,float);
+=======
+ * 
+ * @return @n `Void`
+ */
+void updateMovement(Entity*);
+>>>>>>> origin/main
 /**
  * @brief Update Collision between two entities
  * 
  * @param Entity* eplayer   ///< The Entity Player
  * @param Entity* eEnemy    ///< The Entity Enemy
+<<<<<<< HEAD
  * @param float dt        ///< Delta Time for frame-independent movement
  * 
  * @return @n `Bool`
  */
 bool IsColliding(Entity*,Entity*,float);
+=======
+ * 
+ * @return @n `Void`
+ */
+void UpdateCollision(Entity*,Entity*);
+>>>>>>> origin/main
 /**
  * @brief Update the collision movement of the entity
  * 
@@ -43,6 +63,7 @@ bool IsColliding(Entity*,Entity*,float);
  * 
  * @return @n `Void`
  */
+<<<<<<< HEAD
 void SyncCollisionBox(Entity*);
 /**
  * @brief Resolve the collision of the entity with a rectangle
@@ -71,5 +92,17 @@ void ClampPlayerToMap(Entity*,Rectangle);
  * 
  */
 void LockCameraToZone(Camera2D*,Rectangle);
+=======
+void UpdateCollisionMovement(Entity*);
+/**
+ * @brief Resolve the collision between two entities
+ * 
+ * @param Entity* eplayer   ///< The Entity Player
+ * @param Entity* eEnemy    ///< The Entity Enemy
+ * 
+ * @return @n `Void`
+ */
+void ResolveCollision(Entity*,Entity*);
+>>>>>>> origin/main
 
 
