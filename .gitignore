@@ -1,0 +1,12 @@
+#Ignorar archivos de compilacion, depuracion.
+*.log
+*.tmp
+*.swp
+
+# Ignorar carpetas para main
+install/
+build/
+build/Debug
+bin/
+.vscode/
+.vscode-test/
