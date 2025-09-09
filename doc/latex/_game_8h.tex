@@ -1,0 +1,101 @@
+\doxysection{src/\+Game/\+Game.h File Reference}
+\hypertarget{_game_8h}{}\label{_game_8h}\index{src/Game/Game.h@{src/Game/Game.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+{\ttfamily \#include "{}raymath.\+h"{}}\newline
+{\ttfamily \#include "{}On\+Update.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Entity/\+Entity.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Textures/\+Map.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Textures/\+Load\+Textures.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Utils/\+Information.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Scenes/\+Scenes\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Scenes/\+Scenes.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_game_8h_ad05ce539d29b849ef066482e2284a93f}{Init\+Game}} (void)
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} C/\+C++\+Lib \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_game_8h_a9febcdf22c50389d2c27d23ebe9f24ab}{Game\+Update\+Render}} (void)
+\item 
+void \mbox{\hyperlink{_game_8h_a5cda1643c7541c435a3fb25edf47a069}{Game\+Update\+Logic}} (void)
+\item 
+void \mbox{\hyperlink{_game_8h_a9a7a572593626f97c28644c4f1ad01bd}{Game\+Information}} (void)
+\item 
+void \mbox{\hyperlink{_game_8h_abb6c4e59b29b092fd64da1cac87b8a3d}{Game\+Update\+Scene}} (void)
+\item 
+void \mbox{\hyperlink{_game_8h_a6d66dbb9fb3205cc1cc2a19d83e8ae43}{De\+Init\+Game}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_game_8h_a6d66dbb9fb3205cc1cc2a19d83e8ae43}\index{Game.h@{Game.h}!DeInitGame@{DeInitGame}}
+\index{DeInitGame@{DeInitGame}!Game.h@{Game.h}}
+\doxysubsubsection{\texorpdfstring{DeInitGame()}{DeInitGame()}}
+{\footnotesize\ttfamily \label{_game_8h_a6d66dbb9fb3205cc1cc2a19d83e8ae43} 
+void De\+Init\+Game (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Delete Player Data\Hypertarget{_game_8h_a9a7a572593626f97c28644c4f1ad01bd}\index{Game.h@{Game.h}!GameInformation@{GameInformation}}
+\index{GameInformation@{GameInformation}!Game.h@{Game.h}}
+\doxysubsubsection{\texorpdfstring{GameInformation()}{GameInformation()}}
+{\footnotesize\ttfamily \label{_game_8h_a9a7a572593626f97c28644c4f1ad01bd} 
+void Game\+Information (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Rectangle for the information of the camera\Hypertarget{_game_8h_a5cda1643c7541c435a3fb25edf47a069}\index{Game.h@{Game.h}!GameUpdateLogic@{GameUpdateLogic}}
+\index{GameUpdateLogic@{GameUpdateLogic}!Game.h@{Game.h}}
+\doxysubsubsection{\texorpdfstring{GameUpdateLogic()}{GameUpdateLogic()}}
+{\footnotesize\ttfamily \label{_game_8h_a5cda1643c7541c435a3fb25edf47a069} 
+void Game\+Update\+Logic (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Wheel\+Updates
+
+\texorpdfstring{$<$}{<} Update Target
+
+\texorpdfstring{$<$}{<} Smooth Camera follow (Default\+: 0.\+1f, Options\+: 0.\+05f o 0.\+2f)\Hypertarget{_game_8h_a9febcdf22c50389d2c27d23ebe9f24ab}\index{Game.h@{Game.h}!GameUpdateRender@{GameUpdateRender}}
+\index{GameUpdateRender@{GameUpdateRender}!Game.h@{Game.h}}
+\doxysubsubsection{\texorpdfstring{GameUpdateRender()}{GameUpdateRender()}}
+{\footnotesize\ttfamily \label{_game_8h_a9febcdf22c50389d2c27d23ebe9f24ab} 
+void Game\+Update\+Render (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Enter 2D Mode
+
+\texorpdfstring{$<$}{<} Selection of the map to Render
+
+\texorpdfstring{$<$}{<} Map Render with Ray\+Lib Render
+
+\texorpdfstring{$<$}{<} Player Render
+
+\texorpdfstring{$<$}{<} Selection of the map to Render
+
+\texorpdfstring{$<$}{<} Map Render with Ray\+Lib Render
+
+\texorpdfstring{$<$}{<} Close 2D Mode\Hypertarget{_game_8h_abb6c4e59b29b092fd64da1cac87b8a3d}\index{Game.h@{Game.h}!GameUpdateScene@{GameUpdateScene}}
+\index{GameUpdateScene@{GameUpdateScene}!Game.h@{Game.h}}
+\doxysubsubsection{\texorpdfstring{GameUpdateScene()}{GameUpdateScene()}}
+{\footnotesize\ttfamily \label{_game_8h_abb6c4e59b29b092fd64da1cac87b8a3d} 
+void Game\+Update\+Scene (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_game_8h_ad05ce539d29b849ef066482e2284a93f}\index{Game.h@{Game.h}!InitGame@{InitGame}}
+\index{InitGame@{InitGame}!Game.h@{Game.h}}
+\doxysubsubsection{\texorpdfstring{InitGame()}{InitGame()}}
+{\footnotesize\ttfamily \label{_game_8h_ad05ce539d29b849ef066482e2284a93f} 
+void Init\+Game (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+\texorpdfstring{$<$}{<} C/\+C++\+Lib 
+
+\texorpdfstring{$<$}{<} Extern Lib \texorpdfstring{$<$}{<} CGame Lib \texorpdfstring{$<$}{<} Gen player.
+
+\texorpdfstring{$<$}{<} Player Gen Textures
+
+\texorpdfstring{$<$}{<} Fill the \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table} to the \doxylink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity} Player.
+
+\texorpdfstring{$<$}{<} Fill array\+Texture.
+
+\texorpdfstring{$<$}{<} Map create with Tiles and Selection of map
+
+\texorpdfstring{$<$}{<} Selection of the map to load First
+
+\texorpdfstring{$<$}{<} Camera Init

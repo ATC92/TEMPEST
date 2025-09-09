@@ -1,0 +1,19 @@
+\doxysection{Transforms.\+h}
+\hypertarget{Transforms_8h_source}{}\label{Transforms_8h_source}\index{src/Utils/Transforms.h@{src/Utils/Transforms.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__m4}{\_m4}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ matrix[4][4];}
+\DoxyCodeLine{00017\ \}\mbox{\hyperlink{struct__m4}{Mat4}};}
+\DoxyCodeLine{00029\ \mbox{\hyperlink{struct__m4}{Mat4}}\ matrixIdentity(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{struct__m4}{Mat4}}\ m\ =\ \{0\};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ m.matrix[i][i]\ =\ 1.0f;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ m;}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}

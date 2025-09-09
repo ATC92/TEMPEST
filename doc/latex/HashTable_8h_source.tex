@@ -1,0 +1,33 @@
+\doxysection{Hash\+Table.\+h}
+\hypertarget{HashTable_8h_source}{}\label{HashTable_8h_source}\index{src/Utils/HashTable.h@{src/Utils/HashTable.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../Textures/Map.h"{}}\(\backslash\)}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__item}{\_item}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00023\ \ \ \ \ Texture2D\ tile;}
+\DoxyCodeLine{00024\ \}\mbox{\hyperlink{struct__item}{ItemHT}};}
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__HT}{\_HT}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{struct__item}{ItemHT}}**\ items;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ size;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ count;}
+\DoxyCodeLine{00041\ \}\mbox{\hyperlink{struct__HT}{HashTable}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00057\ \mbox{\hyperlink{struct__HT}{HashTable}}*\ CreateHashTable(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ InsertItem(\mbox{\hyperlink{struct__HT}{HashTable}}*,\textcolor{keywordtype}{int},Image);}
+\DoxyCodeLine{00085\ \mbox{\hyperlink{struct__item}{ItemHT}}*\ SearchItem(\mbox{\hyperlink{struct__HT}{HashTable}}*,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ FillHashTable(\mbox{\hyperlink{struct__HT}{HashTable}}*,\mbox{\hyperlink{struct__tileMap}{TileMap}}*);}
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{int}\ HashFunction(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{void}\ FreeItem(\mbox{\hyperlink{struct__item}{ItemHT}}*);}
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ FreeHashTable(\mbox{\hyperlink{struct__HT}{HashTable}}*);}
+\DoxyCodeLine{00135\ }
+
+\end{DoxyCode}

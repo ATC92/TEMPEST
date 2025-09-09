@@ -1,0 +1,34 @@
+\doxysection{Hash\+Table.\+h}
+\hypertarget{_hash_table_8h_source}{}\label{_hash_table_8h_source}\index{src/Utils/HashTable.h@{src/Utils/HashTable.h}}
+\mbox{\hyperlink{_hash_table_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_8h}{../Textures/Map.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__item}{\_item}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct__item_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
+\DoxyCodeLine{00016\ \ \ \ \ Texture2D\ \mbox{\hyperlink{struct__item_a8408cc62d24b8cae62bd8ab140075223}{tile}};}
+\DoxyCodeLine{00017\ \}\mbox{\hyperlink{_hash_table_8h_a9513d2081242c8d8c07931ccc57d4841}{ItemHT}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___h_t}{\_HT}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{_hash_table_8h_a9513d2081242c8d8c07931ccc57d4841}{ItemHT}}**\ \mbox{\hyperlink{struct___h_t_a14760de91e3362d461beb583e33aac41}{items}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct___h_t_a439227feff9d7f55384e8780cfc2eb82}{size}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct___h_t_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}};}
+\DoxyCodeLine{00024\ \}\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{HashTable}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{HashTable}}*\ \mbox{\hyperlink{_hash_table_8h_ada65f8a4046b12ef2734d32c4a38474a}{CreateHashTable}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_hash_table_8h_a296c52e71f93b4e93683d36a13a64dfc}{InsertItem}}(\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{HashTable}}*,\textcolor{keywordtype}{int},Image);}
+\DoxyCodeLine{00044\ \mbox{\hyperlink{_hash_table_8h_a9513d2081242c8d8c07931ccc57d4841}{ItemHT}}*\ \mbox{\hyperlink{_hash_table_8h_ac6c44ca614cf1fe7d51b2931b7e370bc}{SearchItem}}(\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{HashTable}}*,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_hash_table_8h_af1e6e29a74d8b30fa271c127cfcae3d9}{PrintHashTable}}(\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{HashTable}}*);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_hash_table_8h_a6ae2ea46d9d782eea847cb5ba6e1b22b}{HashFunction}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_hash_table_8h_a8e9268db62b44fc060e35c3875110325}{FreeItem}}(\mbox{\hyperlink{_hash_table_8h_a9513d2081242c8d8c07931ccc57d4841}{ItemHT}}*);}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_hash_table_8h_aa14444ad29385c2add51d51630c8f8ac}{FreeHashTable}}(\mbox{\hyperlink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{HashTable}}*);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+
+\end{DoxyCode}

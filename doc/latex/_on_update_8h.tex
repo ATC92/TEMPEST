@@ -1,0 +1,68 @@
+\doxysection{src/\+Game/\+On\+Update.h File Reference}
+\hypertarget{_on_update_8h}{}\label{_on_update_8h}\index{src/Game/OnUpdate.h@{src/Game/OnUpdate.h}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Entity/\+Entity.\+h"{}}\newline
+{\ttfamily \#include "{}Game.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_on_update_8h_a61d141d18d4570fb5a4d52a1ea6c2ec9}{Update\+Camera\+Wheel}} (Camera2D \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} C/\+C++ Libraries \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_on_update_8h_aa0110fc52bb779c5efe5a4fae33e0c99}{update\+Movement}} (\mbox{\hyperlink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Update Movement of the \doxylink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity} Player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_on_update_8h_a61d141d18d4570fb5a4d52a1ea6c2ec9}\index{OnUpdate.h@{OnUpdate.h}!UpdateCameraWheel@{UpdateCameraWheel}}
+\index{UpdateCameraWheel@{UpdateCameraWheel}!OnUpdate.h@{OnUpdate.h}}
+\doxysubsubsection{\texorpdfstring{UpdateCameraWheel()}{UpdateCameraWheel()}}
+{\footnotesize\ttfamily \label{_on_update_8h_a61d141d18d4570fb5a4d52a1ea6c2ec9} 
+void Update\+Camera\+Wheel (\begin{DoxyParamCaption}\item[{Camera2D \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})}
+
+
+
+\texorpdfstring{$<$}{<} C/\+C++ Libraries 
+
+\texorpdfstring{$<$}{<} Extern Libraries \texorpdfstring{$<$}{<} CGame Lib \texorpdfstring{$<$}{<} Updates the wheel camera \mbox{[}Camera 2D\texorpdfstring{$\ast$}{*}\mbox{]}
+
+\texorpdfstring{$<$}{<} C/\+C++ Libraries
+
+
+\begin{DoxyParams}{Parameters}
+{\em Camera2\+D\texorpdfstring{$\ast$}{*}} & ///\texorpdfstring{$<$}{<} Camera 2D reference\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ {\ttfamily Void} 
+\end{DoxyReturn}
+\Hypertarget{_on_update_8h_aa0110fc52bb779c5efe5a4fae33e0c99}\index{OnUpdate.h@{OnUpdate.h}!updateMovement@{updateMovement}}
+\index{updateMovement@{updateMovement}!OnUpdate.h@{OnUpdate.h}}
+\doxysubsubsection{\texorpdfstring{updateMovement()}{updateMovement()}}
+{\footnotesize\ttfamily \label{_on_update_8h_aa0110fc52bb779c5efe5a4fae33e0c99} 
+void update\+Movement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity}} \texorpdfstring{$\ast$}{*}}]{eplayer}{}\end{DoxyParamCaption})}
+
+
+
+Update Movement of the \doxylink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity} Player. 
+
+\begin{DoxyNote}{Note}
+This will update the position in the game 2D. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em Entity\texorpdfstring{$\ast$}{*}} & ///\texorpdfstring{$<$}{<} The \doxylink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity}\\
+\hline
+\end{DoxyParams}
+Update Movement of the \doxylink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity} Player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Entity\texorpdfstring{$\ast$}{*}} & ///\texorpdfstring{$<$}{<} Player \doxylink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity} reference\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ {\ttfamily Void} 
+\end{DoxyReturn}

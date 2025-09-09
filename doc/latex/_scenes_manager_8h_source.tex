@@ -1,0 +1,44 @@
+\doxysection{Scenes\+Manager.\+h}
+\hypertarget{_scenes_manager_8h_source}{}\label{_scenes_manager_8h_source}\index{src/Scenes/ScenesManager.h@{src/Scenes/ScenesManager.h}}
+\mbox{\hyperlink{_scenes_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}stdio.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}stdlib.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}string.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_textures_8h}{../Textures/Textures.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_information_8h}{../Utils/Information.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_scenes_8h}{Scenes.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfb}{\_scn}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1019d7bf06467a28a33ebfee4ba7a129}{MainMenu}},}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1a362957db534fe7601248004c792962}{GameState}},}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba5dcc094b7eb841671f165e3d5e1ccc43}{OptionMenu}},}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba517dd7c9c4a7dbef3687667ebbd9c450}{ConfigurationMenu}},}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{_scenes_manager_8h_afeedf540b4f05f09d01a1fd2e3eaabfba1cd2c29cb20edb0c7c287501dd72ee56}{LoadScreen}}}
+\DoxyCodeLine{00021\ \}\mbox{\hyperlink{_scenes_manager_8h_ac04c3ecfce63a343ff1f06e47a3583b6}{ManagerScenes}};}
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__inf}{\_inf}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct__inf_a5e6182c030324511dd82e9fa1a0ab071}{Name}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct__inf_a8c9db52f63032e622ac97e359ee1af64}{information}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct__inf_a6535e15045d6fcc99dc24bfd64413542}{LOG}};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{_scenes_manager_8h_ac04c3ecfce63a343ff1f06e47a3583b6}{ManagerScenes}}\ \mbox{\hyperlink{struct__inf_a796b590f3e3643d326c74d0acdc3ec43}{type}};}
+\DoxyCodeLine{00028\ \}\mbox{\hyperlink{_scenes_manager_8h_afbaf39965fda51f97d472e51a1172610}{InformationScene}};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__scene}{\_scene}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{_scenes_manager_8h_afbaf39965fda51f97d472e51a1172610}{InformationScene}}\ \mbox{\hyperlink{struct__scene_a0bc131877368dd3f2115c506f38f46da}{infScene}};}
+\DoxyCodeLine{00037\ \}\mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}};}
+\DoxyCodeLine{00040\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}}*\ \mbox{\hyperlink{_scenes_manager_8c_aea2df0bedfc3b26121d7706c651076e2}{scenes}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_scenes_manager_8h_a7280505dc5e2296bf63d79506a852973}{InitScenes}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00044\ \mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}}*\ \mbox{\hyperlink{_scenes_manager_8h_af7de9b3791f720d2acefd0950503ccdd}{CreateScene}}(\textcolor{keywordtype}{char}*,\textcolor{keywordtype}{char}*,\textcolor{keywordtype}{char}*,\mbox{\hyperlink{_scenes_manager_8h_ac04c3ecfce63a343ff1f06e47a3583b6}{ManagerScenes}});}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_scenes_manager_8h_a5ec8ea61de853b52909eaa4b5b81b10e}{ChangeScene}}();}
+\DoxyCodeLine{00046\ \mbox{\hyperlink{_scenes_manager_8h_afbaf39965fda51f97d472e51a1172610}{InformationScene}}\ \mbox{\hyperlink{_scenes_manager_8h_ac65f4680933e2cca7853fa1b8c5fe422}{GetCurrentScene}}(\mbox{\hyperlink{_scenes_manager_8h_a4bdab1cd62c7c9ca3772b07c59606465}{Scene}});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+
+\end{DoxyCode}

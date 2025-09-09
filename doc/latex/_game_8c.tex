@@ -1,0 +1,143 @@
+\doxysection{src/\+Game/\+Game.c File Reference}
+\hypertarget{_game_8c}{}\label{_game_8c}\index{src/Game/Game.c@{src/Game/Game.c}}
+{\ttfamily \#include "{}Game.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_game_8c_ad05ce539d29b849ef066482e2284a93f}{Init\+Game}} (void)
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} C/\+C++\+Lib \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_game_8c_a9febcdf22c50389d2c27d23ebe9f24ab}{Game\+Update\+Render}} (void)
+\item 
+void \mbox{\hyperlink{_game_8c_a5cda1643c7541c435a3fb25edf47a069}{Game\+Update\+Logic}} (void)
+\item 
+void \mbox{\hyperlink{_game_8c_abb6c4e59b29b092fd64da1cac87b8a3d}{Game\+Update\+Scene}} (void)
+\item 
+void \mbox{\hyperlink{_game_8c_a9a7a572593626f97c28644c4f1ad01bd}{Game\+Information}} (void)
+\item 
+void \mbox{\hyperlink{_game_8c_a6d66dbb9fb3205cc1cc2a19d83e8ae43}{De\+Init\+Game}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Camera2D \mbox{\hyperlink{_game_8c_a2104321f3e01d1f85c8054cda5ad149c}{camera}} = \{0\}
+\begin{DoxyCompactList}\small\item\em Main Camera for the game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_textures_8h_af84787ba027187b9c2fd7a68eeaf6583}{Render\+Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_game_8c_a07e94fc57227018f63fde4a8e453afc1}{map\+World}}
+\begin{DoxyCompactList}\small\item\em Main map world generator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_textures_8h_aeb1e260512e794a82e1c97edc9114597}{Map\+Enum}} \mbox{\hyperlink{_game_8c_ab860a943a68143cd87d1f8045db78f41}{\+\_\+slct}}
+\begin{DoxyCompactList}\small\item\em Map enumerator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_game_8c_ade43fe18423934c5de45264ceabb9b1b}{eplayer}}
+\begin{DoxyCompactList}\small\item\em Main \doxylink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity} for the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_game_8c_a6d66dbb9fb3205cc1cc2a19d83e8ae43}\index{Game.c@{Game.c}!DeInitGame@{DeInitGame}}
+\index{DeInitGame@{DeInitGame}!Game.c@{Game.c}}
+\doxysubsubsection{\texorpdfstring{DeInitGame()}{DeInitGame()}}
+{\footnotesize\ttfamily \label{_game_8c_a6d66dbb9fb3205cc1cc2a19d83e8ae43} 
+void De\+Init\+Game (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Delete Player Data\Hypertarget{_game_8c_a9a7a572593626f97c28644c4f1ad01bd}\index{Game.c@{Game.c}!GameInformation@{GameInformation}}
+\index{GameInformation@{GameInformation}!Game.c@{Game.c}}
+\doxysubsubsection{\texorpdfstring{GameInformation()}{GameInformation()}}
+{\footnotesize\ttfamily \label{_game_8c_a9a7a572593626f97c28644c4f1ad01bd} 
+void Game\+Information (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Rectangle for the information of the camera\Hypertarget{_game_8c_a5cda1643c7541c435a3fb25edf47a069}\index{Game.c@{Game.c}!GameUpdateLogic@{GameUpdateLogic}}
+\index{GameUpdateLogic@{GameUpdateLogic}!Game.c@{Game.c}}
+\doxysubsubsection{\texorpdfstring{GameUpdateLogic()}{GameUpdateLogic()}}
+{\footnotesize\ttfamily \label{_game_8c_a5cda1643c7541c435a3fb25edf47a069} 
+void Game\+Update\+Logic (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Wheel\+Updates
+
+\texorpdfstring{$<$}{<} Update Target
+
+\texorpdfstring{$<$}{<} Smooth Camera follow (Default\+: 0.\+1f, Options\+: 0.\+05f o 0.\+2f)\Hypertarget{_game_8c_a9febcdf22c50389d2c27d23ebe9f24ab}\index{Game.c@{Game.c}!GameUpdateRender@{GameUpdateRender}}
+\index{GameUpdateRender@{GameUpdateRender}!Game.c@{Game.c}}
+\doxysubsubsection{\texorpdfstring{GameUpdateRender()}{GameUpdateRender()}}
+{\footnotesize\ttfamily \label{_game_8c_a9febcdf22c50389d2c27d23ebe9f24ab} 
+void Game\+Update\+Render (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Enter 2D Mode
+
+\texorpdfstring{$<$}{<} Selection of the map to Render
+
+\texorpdfstring{$<$}{<} Map Render with Ray\+Lib Render
+
+\texorpdfstring{$<$}{<} Player Render
+
+\texorpdfstring{$<$}{<} Selection of the map to Render
+
+\texorpdfstring{$<$}{<} Map Render with Ray\+Lib Render
+
+\texorpdfstring{$<$}{<} Close 2D Mode\Hypertarget{_game_8c_abb6c4e59b29b092fd64da1cac87b8a3d}\index{Game.c@{Game.c}!GameUpdateScene@{GameUpdateScene}}
+\index{GameUpdateScene@{GameUpdateScene}!Game.c@{Game.c}}
+\doxysubsubsection{\texorpdfstring{GameUpdateScene()}{GameUpdateScene()}}
+{\footnotesize\ttfamily \label{_game_8c_abb6c4e59b29b092fd64da1cac87b8a3d} 
+void Game\+Update\+Scene (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_game_8c_ad05ce539d29b849ef066482e2284a93f}\index{Game.c@{Game.c}!InitGame@{InitGame}}
+\index{InitGame@{InitGame}!Game.c@{Game.c}}
+\doxysubsubsection{\texorpdfstring{InitGame()}{InitGame()}}
+{\footnotesize\ttfamily \label{_game_8c_ad05ce539d29b849ef066482e2284a93f} 
+void Init\+Game (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+\texorpdfstring{$<$}{<} C/\+C++\+Lib 
+
+\texorpdfstring{$<$}{<} Extern Lib \texorpdfstring{$<$}{<} CGame Lib \texorpdfstring{$<$}{<} Gen player.
+
+\texorpdfstring{$<$}{<} Player Gen Textures
+
+\texorpdfstring{$<$}{<} Fill the \doxylink{_hash_table_8h_a9bdecaf1a5ecc19ffcd58a4efab6dc9e}{Hash\+Table} to the \doxylink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity} Player.
+
+\texorpdfstring{$<$}{<} Fill array\+Texture.
+
+\texorpdfstring{$<$}{<} Map create with Tiles and Selection of map
+
+\texorpdfstring{$<$}{<} Selection of the map to load First
+
+\texorpdfstring{$<$}{<} Camera Init
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_game_8c_ab860a943a68143cd87d1f8045db78f41}\index{Game.c@{Game.c}!\_slct@{\_slct}}
+\index{\_slct@{\_slct}!Game.c@{Game.c}}
+\doxysubsubsection{\texorpdfstring{\_slct}{\_slct}}
+{\footnotesize\ttfamily \label{_game_8c_ab860a943a68143cd87d1f8045db78f41} 
+\mbox{\hyperlink{_textures_8h_aeb1e260512e794a82e1c97edc9114597}{Map\+Enum}} \+\_\+slct}
+
+
+
+Map enumerator. 
+
+\Hypertarget{_game_8c_a2104321f3e01d1f85c8054cda5ad149c}\index{Game.c@{Game.c}!camera@{camera}}
+\index{camera@{camera}!Game.c@{Game.c}}
+\doxysubsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily \label{_game_8c_a2104321f3e01d1f85c8054cda5ad149c} 
+Camera2D camera = \{0\}}
+
+
+
+Main Camera for the game. 
+
+\texorpdfstring{$<$}{<} Definition of Global Variables Global Variables \Hypertarget{_game_8c_ade43fe18423934c5de45264ceabb9b1b}\index{Game.c@{Game.c}!eplayer@{eplayer}}
+\index{eplayer@{eplayer}!Game.c@{Game.c}}
+\doxysubsubsection{\texorpdfstring{eplayer}{eplayer}}
+{\footnotesize\ttfamily \label{_game_8c_ade43fe18423934c5de45264ceabb9b1b} 
+\mbox{\hyperlink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity}}\texorpdfstring{$\ast$}{*} eplayer}
+
+
+
+Main \doxylink{_entity_8h_a88bccc76704ed1a036c3500da8c42bcc}{Entity} for the player. 
+
+\Hypertarget{_game_8c_a07e94fc57227018f63fde4a8e453afc1}\index{Game.c@{Game.c}!mapWorld@{mapWorld}}
+\index{mapWorld@{mapWorld}!Game.c@{Game.c}}
+\doxysubsubsection{\texorpdfstring{mapWorld}{mapWorld}}
+{\footnotesize\ttfamily \label{_game_8c_a07e94fc57227018f63fde4a8e453afc1} 
+\mbox{\hyperlink{_textures_8h_af84787ba027187b9c2fd7a68eeaf6583}{Render\+Data}}\texorpdfstring{$\ast$}{*} map\+World}
+
+
+
+Main map world generator. 
+
