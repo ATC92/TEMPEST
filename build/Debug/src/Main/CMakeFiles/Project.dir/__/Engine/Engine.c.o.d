@@ -76,11 +76,14 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.o: \
  /home/atc/Documents/CGame/src/Engine/../Game/../Components/LoadTextures.h \
  /home/atc/Documents/CGame/src/Engine/../Game/../Utils/Algorithms.h \
  /home/atc/Documents/CGame/src/Engine/../Game/../Utils/Information.h \
+ /home/atc/Documents/CGame/src/Engine/../Game/../Utils/../Components/Mouse.h \
  /home/atc/Documents/CGame/src/Engine/../Game/../Scenes/ScenesManager.h \
- /home/atc/Documents/CGame/src/Engine/../Game/../Scenes/../Utils/Information.h \
  /home/atc/Documents/CGame/src/Engine/../Game/../Scenes/MenuScene.h \
- /home/atc/Documents/CGame/src/Engine/../Game/../Scenes/../Engine/Updates.h \
- /home/atc/Documents/CGame/src/Engine/../Game/../Scenes/../Engine/../Scenes/LoadingScene.h \
+ /home/atc/Documents/CGame/src/Engine/../Game/../Scenes/../Components/Button.h \
+ /home/atc/Documents/CGame/src/Engine/../Game/../Scenes/../Components/Sound.h \
+ /home/atc/Documents/CGame/src/Engine/../Game/../Scenes/../Utils/Fonts.h \
+ /home/atc/Documents/CGame/src/Engine/Updates.h \
+ /home/atc/Documents/CGame/src/Engine/../Scenes/LoadingScene.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
@@ -93,5 +96,4 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.o: \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdatomic.h \
- /home/atc/Documents/CGame/src/Engine/../Game/../Scenes/../Engine/../Scenes/../Utils/Fonts.h \
- /home/atc/Documents/CGame/src/Engine/../Game/../Scenes/../Engine/../Scenes/../Utils/Information.h
+ /home/atc/Documents/CGame/src/Engine/../Scenes/OptionMenuScene.h

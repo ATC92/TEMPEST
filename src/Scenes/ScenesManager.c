@@ -11,19 +11,19 @@ void InitScenesManager(void)
 Scene* CreateScene(ManagerScenes type)
 {
     Scene* sc = (Scene*)calloc(1,sizeof(Scene));
-    sc->infScene.type = type;
+    sc->typeScene = type;
     sc->ActivedScenes = (bool*)calloc(5, sizeof(bool)); // Initialize all scenes as inactive
     return sc;
 }
 //////////////////////////////////////////////////////////
 void ChangeScene(ManagerScenes next)
 {
-    scenes->infScene.type = next;
+    scenes->typeScene = next;
 }
 //////////////////////////////////////////////////////////
-InformationScene GetCurrentScene(Scene current)
+int GetCurrentScene(Scene current)
 {
-    return current.infScene;
+    return current.typeScene;
 }
 //////////////////////////////////////////////////////////
 

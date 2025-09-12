@@ -88,11 +88,13 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o: \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/Updates.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/ScenesManager.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Utils/Information.h \
+ /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Utils/../Components/Mouse.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/MenuScene.h \
+ /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Components/Button.h \
+ /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Components/Sound.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Utils/Fonts.h \
+ /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/OptionMenuScene.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Utils/Vector.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Components/Map.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Components/LoadTextures.h \
- /home/atc/Documents/CGame/src/Scenes/../Game/../Utils/Algorithms.h \
- /home/atc/Documents/CGame/src/Scenes/../Game/../Utils/Information.h \
- /home/atc/Documents/CGame/src/Scenes/../Utils/Information.h
+ /home/atc/Documents/CGame/src/Scenes/../Game/../Utils/Algorithms.h

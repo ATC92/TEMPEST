@@ -9,6 +9,8 @@ void DrawInformationCamera(Camera2D camera)
     DrawText(TextFormat("Camera Zoom: %06.2f ", camera.zoom),15,30,14,YELLOW);
 
     DrawText(TextFormat("FPS: [%d FPS]", GetFPS()), 15, 50, 15, GRAY);
+
+    DrawText(TextFormat("Mouse Position: [x: %.2f Y: %.2f]",mouse.x,mouse.y), 15, 80,14, YELLOW);
 }
 //////////////////////////////////////////////////////////////////
 void DrawLinesMidScreen()

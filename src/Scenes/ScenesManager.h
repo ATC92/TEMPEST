@@ -30,29 +30,9 @@ typedef enum _scn
     GameState,
     OptionMenu,
     ConfigurationMenu,
-    LoadingScreen
+    LoadingScreen,
+    EXIT_GAME
 }ManagerScenes;
-/**
- * @brief Information of the Scene
- * 
- * ---
- * 
- * Contains:
- * 
- * @c Name          Name of the Scene \\
- * @c information   Information of the Scene \\
- * @c LOG           Log of the Scene \\
- * @c type          Type of the Scene (ManagerScenes)
- * 
- * This struct holds the information about a scene in the game.
- * It includes the name, a description, a log message, and the type of scene.
- * The type is defined by the ManagerScenes enum.
- */
-typedef struct _inf
-{
-    char* Name;
-    ManagerScenes type;
-}InformationScene;
 /**
  * @brief Scene Struct
  * 
@@ -71,9 +51,7 @@ typedef struct _inf
 typedef struct _scene
 {
     bool* ActivedScenes;
-    InformationScene infScene;
-    ///< Texturas o GUI
-    ///< Size of the Scene
+    ManagerScenes typeScene;
 }Scene;
 //////////////////////////////////////////////////////////////////
 /**
@@ -125,13 +103,13 @@ void ChangeScene(ManagerScenes next);
  * 
  * @param Scene        The current scene (Scene)
  * 
- * @return InformationScene   The information of the current scene
+ * @return Int          ID of the Scene.
  * 
  * This function returns the `InformationScene` struct associated with the current scene,
  * which includes the name, information, log, and type of the scene.
  * 
  */
-InformationScene GetCurrentScene(Scene current);
+int GetCurrentScene(Scene current);
 
 
 

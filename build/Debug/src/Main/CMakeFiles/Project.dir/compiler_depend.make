@@ -293,6 +293,63 @@ src/Main/CMakeFiles/Project.dir/__/Components/Map.c.o: /home/atc/Documents/CGame
   /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
   /usr/lib/gcc/x86_64-linux-gnu/14/include/stddef.h
 
+src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.o: /home/atc/Documents/CGame/src/Components/Mouse.c \
+  _deps/raylib-src/src/raylib.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
+  /usr/include/stdc-predef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h
+
+src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.o: /home/atc/Documents/CGame/src/Components/Sound.c \
+  _deps/raylib-src/src/raylib.h \
+  /home/atc/Documents/CGame/src/Components/Sound.h \
+  /usr/include/alloca.h \
+  /usr/include/endian.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdlib.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
+  /usr/lib/gcc/x86_64-linux-gnu/14/include/stddef.h
+
 src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.o: /home/atc/Documents/CGame/src/Engine/Engine.c \
   _deps/raylib-src/src/raylib.h \
   _deps/raylib-src/src/raymath.h \
@@ -302,19 +359,21 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.o: /home/atc/Documents/CGame/
   /home/atc/Documents/CGame/src/Components/LoadTextures.h \
   /home/atc/Documents/CGame/src/Components/Map.h \
   /home/atc/Documents/CGame/src/Components/Textures.h \
+  /home/atc/Documents/CGame/src/Components/Button.h \
+  /home/atc/Documents/CGame/src/Components/Sound.h \
   /home/atc/Documents/CGame/src/Utils/Fonts.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
-  /home/atc/Documents/CGame/src/Scenes/LoadingScene.h \
-  /home/atc/Documents/CGame/src/Engine/Updates.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Scenes/MenuScene.h \
   /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
   /home/atc/Documents/CGame/src/Utils/Algorithms.h \
   /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Utils/Vector.h \
   /home/atc/Documents/CGame/src/Game/Game.h \
   /home/atc/Documents/CGame/src/Game/OnUpdate.h \
+  /home/atc/Documents/CGame/src/Scenes/LoadingScene.h \
+  /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.h \
   /home/atc/Documents/CGame/src/Engine/Engine.h \
+  /home/atc/Documents/CGame/src/Engine/Updates.h \
   /usr/include/alloca.h \
   /usr/include/endian.h \
   /usr/include/features-time64.h \
@@ -403,6 +462,8 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Engine.c.o: /home/atc/Documents/CGame/
 src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.o: /home/atc/Documents/CGame/src/Engine/Updates.c \
   _deps/raylib-src/src/raylib.h \
   _deps/raylib-src/src/raymath.h \
+  /home/atc/Documents/CGame/src/Components/Button.h \
+  /home/atc/Documents/CGame/src/Components/Sound.h \
   /home/atc/Documents/CGame/src/Components/Textures.h \
   /home/atc/Documents/CGame/src/Utils/VecMath.h \
   /home/atc/Documents/CGame/src/Components/Collision.h \
@@ -411,14 +472,15 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.o: /home/atc/Documents/CGame
   /home/atc/Documents/CGame/src/Components/Map.h \
   /home/atc/Documents/CGame/src/Engine/Engine.h \
   /home/atc/Documents/CGame/src/Utils/Algorithms.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Utils/Vector.h \
   /home/atc/Documents/CGame/src/Game/Game.h \
   /home/atc/Documents/CGame/src/Game/OnUpdate.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
   /home/atc/Documents/CGame/src/Utils/Fonts.h \
   /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Scenes/LoadingScene.h \
   /home/atc/Documents/CGame/src/Scenes/MenuScene.h \
+  /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.h \
   /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
   /home/atc/Documents/CGame/src/Engine/Updates.h \
   /usr/include/alloca.h \
@@ -515,15 +577,18 @@ src/Main/CMakeFiles/Project.dir/__/Game/Game.c.o: /home/atc/Documents/CGame/src/
   /home/atc/Documents/CGame/src/Components/LoadTextures.h \
   /home/atc/Documents/CGame/src/Components/Map.h \
   /home/atc/Documents/CGame/src/Components/Textures.h \
+  /home/atc/Documents/CGame/src/Components/Button.h \
+  /home/atc/Documents/CGame/src/Components/Sound.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
   /home/atc/Documents/CGame/src/Utils/Fonts.h \
   /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Scenes/LoadingScene.h \
   /home/atc/Documents/CGame/src/Scenes/MenuScene.h \
+  /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.h \
   /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
   /home/atc/Documents/CGame/src/Engine/Engine.h \
   /home/atc/Documents/CGame/src/Engine/Updates.h \
   /home/atc/Documents/CGame/src/Utils/Algorithms.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Utils/Vector.h \
   /home/atc/Documents/CGame/src/Game/Game.h \
   /home/atc/Documents/CGame/src/Game/OnUpdate.h \
@@ -621,18 +686,20 @@ src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.o: /home/atc/Documents/CGame/
   /home/atc/Documents/CGame/src/Components/Textures.h \
   /home/atc/Documents/CGame/src/Components/LoadTextures.h \
   /home/atc/Documents/CGame/src/Components/Map.h \
+  /home/atc/Documents/CGame/src/Components/Button.h \
+  /home/atc/Documents/CGame/src/Components/Sound.h \
   /home/atc/Documents/CGame/src/Utils/Fonts.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
-  /home/atc/Documents/CGame/src/Scenes/LoadingScene.h \
-  /home/atc/Documents/CGame/src/Engine/Updates.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Scenes/MenuScene.h \
   /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
   /home/atc/Documents/CGame/src/Utils/Algorithms.h \
   /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Utils/Vector.h \
   /home/atc/Documents/CGame/src/Game/Game.h \
+  /home/atc/Documents/CGame/src/Scenes/LoadingScene.h \
+  /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.h \
   /home/atc/Documents/CGame/src/Engine/Engine.h \
+  /home/atc/Documents/CGame/src/Engine/Updates.h \
   /home/atc/Documents/CGame/src/Game/OnUpdate.h \
   /usr/include/alloca.h \
   /usr/include/endian.h \
@@ -728,18 +795,20 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o: /home/atc/Documents/
   /home/atc/Documents/CGame/src/Components/LoadTextures.h \
   /home/atc/Documents/CGame/src/Components/Map.h \
   /home/atc/Documents/CGame/src/Components/Textures.h \
+  /home/atc/Documents/CGame/src/Components/Button.h \
+  /home/atc/Documents/CGame/src/Components/Sound.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
   /home/atc/Documents/CGame/src/Utils/Fonts.h \
   /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Scenes/MenuScene.h \
+  /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.h \
   /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
   /home/atc/Documents/CGame/src/Engine/Engine.h \
   /home/atc/Documents/CGame/src/Engine/Updates.h \
   /home/atc/Documents/CGame/src/Utils/Algorithms.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Utils/Vector.h \
   /home/atc/Documents/CGame/src/Game/Game.h \
   /home/atc/Documents/CGame/src/Game/OnUpdate.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Scenes/LoadingScene.h \
   /usr/include/alloca.h \
   /usr/include/endian.h \
@@ -828,71 +897,40 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o: /home/atc/Documents/
 
 src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o: /home/atc/Documents/CGame/src/Scenes/MenuScene.c \
   _deps/raylib-src/src/raylib.h \
-  _deps/raylib-src/src/raymath.h \
+  /home/atc/Documents/CGame/src/Components/Button.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
+  /home/atc/Documents/CGame/src/Components/Sound.h \
   /home/atc/Documents/CGame/src/Components/Textures.h \
-  /home/atc/Documents/CGame/src/Utils/VecMath.h \
-  /home/atc/Documents/CGame/src/Components/Collision.h \
-  /home/atc/Documents/CGame/src/Components/Entity.h \
-  /home/atc/Documents/CGame/src/Components/LoadTextures.h \
-  /home/atc/Documents/CGame/src/Components/Map.h \
-  /home/atc/Documents/CGame/src/Engine/Engine.h \
-  /home/atc/Documents/CGame/src/Utils/Algorithms.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
-  /home/atc/Documents/CGame/src/Utils/Vector.h \
-  /home/atc/Documents/CGame/src/Game/Game.h \
-  /home/atc/Documents/CGame/src/Game/OnUpdate.h \
   /home/atc/Documents/CGame/src/Utils/Fonts.h \
   /home/atc/Documents/CGame/src/Utils/Information.h \
-  /home/atc/Documents/CGame/src/Scenes/LoadingScene.h \
-  /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
-  /home/atc/Documents/CGame/src/Engine/Updates.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Scenes/MenuScene.h \
+  /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
   /usr/include/alloca.h \
   /usr/include/endian.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
-  /usr/include/math.h \
-  /usr/include/pthread.h \
-  /usr/include/sched.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
-  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
-  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
-  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
-  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
-  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
-  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
-  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
-  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
-  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
-  /usr/include/x86_64-linux-gnu/bits/sched.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
-  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
-  /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -909,12 +947,8 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o: /home/atc/Documents/CGa
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
   /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -927,15 +961,84 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o: /home/atc/Documents/CGa
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
-  /usr/lib/gcc/x86_64-linux-gnu/14/include/float.h \
   /usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h \
-  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdatomic.h \
+  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
+  /usr/lib/gcc/x86_64-linux-gnu/14/include/stddef.h
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o: /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.c \
+  _deps/raylib-src/src/raylib.h \
+  /home/atc/Documents/CGame/src/Components/Button.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
+  /home/atc/Documents/CGame/src/Components/Sound.h \
+  /home/atc/Documents/CGame/src/Components/Textures.h \
+  /home/atc/Documents/CGame/src/Utils/Fonts.h \
+  /home/atc/Documents/CGame/src/Utils/Information.h \
+  /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.h \
+  /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
+  /usr/include/alloca.h \
+  /usr/include/endian.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
   /usr/lib/gcc/x86_64-linux-gnu/14/include/stddef.h
 
 src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o: /home/atc/Documents/CGame/src/Scenes/ScenesManager.c \
   _deps/raylib-src/src/raylib.h \
   /home/atc/Documents/CGame/src/Components/Textures.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
   /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
   /usr/include/alloca.h \
@@ -1050,6 +1153,7 @@ src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.o: /home/atc/Documents/CGame/sr
 
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.o: /home/atc/Documents/CGame/src/Utils/Information.c \
   _deps/raylib-src/src/raylib.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
   /home/atc/Documents/CGame/src/Utils/Information.h \
   /usr/include/stdc-predef.h \
   /usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h \
@@ -1064,19 +1168,21 @@ src/Main/CMakeFiles/Project.dir/main.c.o: /home/atc/Documents/CGame/src/Main/mai
   /home/atc/Documents/CGame/src/Components/LoadTextures.h \
   /home/atc/Documents/CGame/src/Components/Map.h \
   /home/atc/Documents/CGame/src/Components/Textures.h \
+  /home/atc/Documents/CGame/src/Components/Button.h \
+  /home/atc/Documents/CGame/src/Components/Sound.h \
   /home/atc/Documents/CGame/src/Utils/Fonts.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
-  /home/atc/Documents/CGame/src/Scenes/LoadingScene.h \
-  /home/atc/Documents/CGame/src/Engine/Updates.h \
-  /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Scenes/MenuScene.h \
   /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
+  /home/atc/Documents/CGame/src/Components/Mouse.h \
   /home/atc/Documents/CGame/src/Utils/Algorithms.h \
   /home/atc/Documents/CGame/src/Utils/Information.h \
   /home/atc/Documents/CGame/src/Utils/Vector.h \
   /home/atc/Documents/CGame/src/Game/Game.h \
   /home/atc/Documents/CGame/src/Game/OnUpdate.h \
+  /home/atc/Documents/CGame/src/Scenes/LoadingScene.h \
+  /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.h \
   /home/atc/Documents/CGame/src/Engine/Engine.h \
+  /home/atc/Documents/CGame/src/Engine/Updates.h \
   /usr/include/alloca.h \
   /usr/include/endian.h \
   /usr/include/features-time64.h \
@@ -1189,21 +1295,31 @@ src/Main/CMakeFiles/Project.dir/main.c.o: /home/atc/Documents/CGame/src/Main/mai
 
 /usr/include/pthread.h:
 
-/home/atc/Documents/CGame/src/Game/OnUpdate.h:
+/home/atc/Documents/CGame/src/Engine/Updates.h:
 
-/home/atc/Documents/CGame/src/Utils/Vector.h:
+/home/atc/Documents/CGame/src/Scenes/LoadingScene.h:
 
 /home/atc/Documents/CGame/src/Scenes/ScenesManager.h:
 
 /home/atc/Documents/CGame/src/Scenes/MenuScene.h:
 
-/home/atc/Documents/CGame/src/Engine/Updates.h:
+/home/atc/Documents/CGame/src/Utils/Vector.h:
 
-/home/atc/Documents/CGame/src/Scenes/LoadingScene.h:
+/home/atc/Documents/CGame/src/Components/Button.h:
 
 _deps/raylib-src/src/raymath.h:
 
 /home/atc/Documents/CGame/src/Engine/Engine.c:
+
+/home/atc/Documents/CGame/src/Components/Sound.h:
+
+/home/atc/Documents/CGame/src/Game/OnUpdate.h:
+
+/home/atc/Documents/CGame/src/Components/Sound.c:
+
+/home/atc/Documents/CGame/src/Scenes/OptionMenuScene.c:
+
+/home/atc/Documents/CGame/src/Components/Mouse.c:
 
 /usr/lib/gcc/x86_64-linux-gnu/14/include/stddef.h:
 
@@ -1218,6 +1334,8 @@ _deps/raylib-src/src/raymath.h:
 /home/atc/Documents/CGame/src/Utils/Fonts.c:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
+
+/home/atc/Documents/CGame/src/Scenes/OptionMenuScene.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
@@ -1392,6 +1510,8 @@ _deps/raylib-src/src/raylib.h:
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h:
+
+/home/atc/Documents/CGame/src/Components/Mouse.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 

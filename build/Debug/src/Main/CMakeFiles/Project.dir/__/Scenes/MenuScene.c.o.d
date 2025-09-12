@@ -53,46 +53,12 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/atc/Documents/CGame/src/Scenes/../Components/Textures.h \
+ /home/atc/Documents/CGame/src/Scenes/../Components/Mouse.h \
  /home/atc/Documents/CGame/build/Debug/_deps/raylib-src/src/raylib.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
- /home/atc/Documents/CGame/src/Scenes/../Utils/Information.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/Updates.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/ScenesManager.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Utils/Information.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/LoadingScene.h \
- /usr/include/pthread.h /usr/include/sched.h \
- /usr/include/x86_64-linux-gnu/bits/sched.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
- /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
- /usr/include/x86_64-linux-gnu/bits/time.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
- /usr/include/x86_64-linux-gnu/bits/setjmp.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
- /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
- /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
- /usr/lib/gcc/x86_64-linux-gnu/14/include/stdatomic.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/Game.h \
- /home/atc/Documents/CGame/build/Debug/_deps/raylib-src/src/raymath.h \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
- /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
- /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
- /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
- /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
- /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/OnUpdate.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/../Components/Entity.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/../Components/Collision.h \
- /usr/lib/gcc/x86_64-linux-gnu/14/include/float.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/../Components/../Utils/VecMath.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/../Engine/Engine.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/../Utils/Vector.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/../Components/Map.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/../Components/LoadTextures.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/../Utils/Algorithms.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Game/../Utils/Information.h \
- /home/atc/Documents/CGame/src/Scenes/../Engine/../Scenes/../Utils/Fonts.h
+ /home/atc/Documents/CGame/src/Scenes/../Components/Button.h \
+ /home/atc/Documents/CGame/src/Scenes/../Components/Sound.h \
+ /home/atc/Documents/CGame/src/Scenes/../Utils/Fonts.h \
+ /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
+ /home/atc/Documents/CGame/src/Scenes/../Components/Textures.h \
+ /home/atc/Documents/CGame/src/Scenes/../Utils/Information.h

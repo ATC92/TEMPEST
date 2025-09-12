@@ -8,16 +8,19 @@
 #include "../Game/Game.h"
 #include "../Utils/Fonts.h"
 #include "../Utils/Information.h"
-
-//////////////////////////////////////////////////////////
-extern atomic_bool dataLoaded;
-extern atomic_int dataProgress;
-extern pthread_t loadThread;
 /////////////////////////////////////s/////////////////////
 /**
  * 
  */
-void SimulateLoading(float seconds);
+void InitLoadingScene(float sec);
+/**
+ * 
+ */
+void UpdateLoadingScene(void);
+/**
+ * 
+ */
+void DestroyLoadingScene(void);
 //////////////////////////////////////////////////////////
 
 

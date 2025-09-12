@@ -13,11 +13,11 @@ Entity* eplayer;
 /// @brief Enemy Entity
 Entity* eEnemy;
 //////////////////////////////////////////////////////////
-void InitGame(void)
+void InitGameScene(void)
 {
     /////////////////////////////////////////////////////////////////////////////////////////
     ///< Gen player.
-    eplayer = GenEntity(_PLAYER, "Hero", 100.f,20.f,120.f,0.f);
+    eplayer = GenEntity(_PLAYER, "Hero", 100.f,20.f,90.f,0.f);
     ///< Player Gen Textures
     eplayer->_tileMap = LoadMapTextures("assets/Tilemap/Tilemap_Entity.png",64,16);
     ///< Fill arrayTextures of the Entity Player.
@@ -48,7 +48,7 @@ void InitGame(void)
     /////////////////////////////////////////////////////////////////////////////////////////
 }
 ////////////////////////////////////////////////////////// 
-void GameUpdateRender(void)
+void UpdateGameRender(void)
 {
     BeginMode2D(camera);                    ///< Enter 2D Mode
     {
@@ -68,9 +68,9 @@ void GameUpdateRender(void)
     EndMode2D();                            ///< Close 2D Mode
 }
 //////////////////////////////////////////////////////////
-void GameUpdateLogic(float dt)
+void UpdateGameLogic(float dt)
 {
-    switch (scenes->infScene.type)
+    switch (scenes->typeScene)
     {
         ///< Game State
         case GameState:
@@ -105,24 +105,24 @@ void GameUpdateLogic(float dt)
     }
 }
 //////////////////////////////////////////////////////////
-void GameUpdateScene(void)
+void UpdateGameScene(void)
 {
     ///< Check if the player pressed the Escape key
     ///< To open or close the Option Menu
-    if(IsKeyDown(KEY_ESCAPE) && scenes->infScene.type != MainMenu)
+    if(IsKeyPressed(KEY_ESCAPE) && scenes->typeScene != MainMenu)
     {
-        if(scenes->ActivedScenes[OptionMenu] == false)
+        if(scenes->ActivedScenes[ConfigurationMenu] == false)
         {
-            PlaySound(button->sound);                   ///< Play Sound when is pressed
-            scenes->ActivedScenes[OptionMenu] = true;    ///< Open Option Menu
-            scenes->infScene.type = OptionMenu;         ///< Change Scene to Option Menu
+            PlaySound(sounds[0]);                   ///< Play Sound when is pressed
+            scenes->ActivedScenes[ConfigurationMenu] = true;    ///< Open Option Menu
+            scenes->typeScene = ConfigurationMenu;         ///< Change Scene to Option Menu
             WaitTime(0.15);
         }
         else
         {
-            PlaySound(button->sound);                   ///< Play Sound when is pressed
-            scenes->ActivedScenes[OptionMenu] = false;   ///< Close Option Menu
-            scenes->infScene.type = GameState;          ///< Change Scene to Game State
+            PlaySound(sounds[0]);                   ///< Play Sound when is pressed
+            scenes->ActivedScenes[ConfigurationMenu] = false;   ///< Close Option Menu
+            scenes->typeScene = GameState;          ///< Change Scene to Game State
             WaitTime(0.15);
         }
     }
@@ -137,7 +137,7 @@ void GameInformation(void)
     #endif
 }
 //////////////////////////////////////////////////////////
-void DeInitGame(void)
+void DestroyGameScene(void)
 {
     for (int i=0; i < 20; i++)
         UnloadTexture(mapWorld->texturesArray[i]);

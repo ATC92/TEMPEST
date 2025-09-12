@@ -57,4 +57,5 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o: \
  /home/atc/Documents/CGame/src/Scenes/../Components/Textures.h \
  /home/atc/Documents/CGame/build/Debug/_deps/raylib-src/src/raylib.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
- /home/atc/Documents/CGame/src/Scenes/../Utils/Information.h
+ /home/atc/Documents/CGame/src/Scenes/../Utils/Information.h \
+ /home/atc/Documents/CGame/src/Scenes/../Utils/../Components/Mouse.h

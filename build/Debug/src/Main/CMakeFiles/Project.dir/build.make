@@ -195,10 +195,38 @@ src/Main/CMakeFiles/Project.dir/__/Components/Map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Components/Map.c.s"
 	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atc/Documents/CGame/src/Components/Map.c -o CMakeFiles/Project.dir/__/Components/Map.c.s
 
+src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.o: src/Main/CMakeFiles/Project.dir/flags.make
+src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.o: /home/atc/Documents/CGame/src/Components/Mouse.c
+src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.o: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.o"
+	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.o -MF CMakeFiles/Project.dir/__/Components/Mouse.c.o.d -o CMakeFiles/Project.dir/__/Components/Mouse.c.o -c /home/atc/Documents/CGame/src/Components/Mouse.c
+
+src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Components/Mouse.c.i"
+	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atc/Documents/CGame/src/Components/Mouse.c > CMakeFiles/Project.dir/__/Components/Mouse.c.i
+
+src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Components/Mouse.c.s"
+	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atc/Documents/CGame/src/Components/Mouse.c -o CMakeFiles/Project.dir/__/Components/Mouse.c.s
+
+src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.o: src/Main/CMakeFiles/Project.dir/flags.make
+src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.o: /home/atc/Documents/CGame/src/Components/Sound.c
+src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.o: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.o"
+	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.o -MF CMakeFiles/Project.dir/__/Components/Sound.c.o.d -o CMakeFiles/Project.dir/__/Components/Sound.c.o -c /home/atc/Documents/CGame/src/Components/Sound.c
+
+src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Components/Sound.c.i"
+	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atc/Documents/CGame/src/Components/Sound.c > CMakeFiles/Project.dir/__/Components/Sound.c.i
+
+src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Components/Sound.c.s"
+	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atc/Documents/CGame/src/Components/Sound.c -o CMakeFiles/Project.dir/__/Components/Sound.c.s
+
 src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.o: src/Main/CMakeFiles/Project.dir/flags.make
 src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.o: /home/atc/Documents/CGame/src/Utils/Fonts.c
 src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.o: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.o"
 	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.o -MF CMakeFiles/Project.dir/__/Utils/Fonts.c.o.d -o CMakeFiles/Project.dir/__/Utils/Fonts.c.o -c /home/atc/Documents/CGame/src/Utils/Fonts.c
 
 src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.i: cmake_force
@@ -212,7 +240,7 @@ src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.s: cmake_force
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.o: src/Main/CMakeFiles/Project.dir/flags.make
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.o: /home/atc/Documents/CGame/src/Utils/Information.c
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.o: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.o"
 	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.o -MF CMakeFiles/Project.dir/__/Utils/Information.c.o.d -o CMakeFiles/Project.dir/__/Utils/Information.c.o -c /home/atc/Documents/CGame/src/Utils/Information.c
 
 src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.i: cmake_force
@@ -226,7 +254,7 @@ src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.s: cmake_force
 src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o: src/Main/CMakeFiles/Project.dir/flags.make
 src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o: /home/atc/Documents/CGame/src/Scenes/LoadingScene.c
 src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o"
 	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o -MF CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o.d -o CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o -c /home/atc/Documents/CGame/src/Scenes/LoadingScene.c
 
 src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.i: cmake_force
@@ -240,7 +268,7 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.s: cmake_force
 src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o: src/Main/CMakeFiles/Project.dir/flags.make
 src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o: /home/atc/Documents/CGame/src/Scenes/MenuScene.c
 src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o"
 	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o -MF CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o.d -o CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o -c /home/atc/Documents/CGame/src/Scenes/MenuScene.c
 
 src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.i: cmake_force
@@ -251,10 +279,24 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Scenes/MenuScene.c.s"
 	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atc/Documents/CGame/src/Scenes/MenuScene.c -o CMakeFiles/Project.dir/__/Scenes/MenuScene.c.s
 
+src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o: src/Main/CMakeFiles/Project.dir/flags.make
+src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o: /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.c
+src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o"
+	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o -MF CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o.d -o CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o -c /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.c
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.i"
+	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.c > CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.i
+
+src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.s"
+	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atc/Documents/CGame/src/Scenes/OptionMenuScene.c -o CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.s
+
 src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o: src/Main/CMakeFiles/Project.dir/flags.make
 src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o: /home/atc/Documents/CGame/src/Scenes/ScenesManager.c
 src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o: src/Main/CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o"
 	cd /home/atc/Documents/CGame/build/Debug/src/Main && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o -MF CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o.d -o CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o -c /home/atc/Documents/CGame/src/Scenes/ScenesManager.c
 
 src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.i: cmake_force
@@ -276,10 +318,13 @@ Project_OBJECTS = \
 "CMakeFiles/Project.dir/__/Components/Entity.c.o" \
 "CMakeFiles/Project.dir/__/Components/LoadTextures.c.o" \
 "CMakeFiles/Project.dir/__/Components/Map.c.o" \
+"CMakeFiles/Project.dir/__/Components/Mouse.c.o" \
+"CMakeFiles/Project.dir/__/Components/Sound.c.o" \
 "CMakeFiles/Project.dir/__/Utils/Fonts.c.o" \
 "CMakeFiles/Project.dir/__/Utils/Information.c.o" \
 "CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o" \
 "CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o" \
+"CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o" \
 "CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o"
 
 # External object files for target Project
@@ -294,10 +339,13 @@ Project_EXTERNAL_OBJECTS =
 /home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Components/Entity.c.o
 /home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Components/LoadTextures.c.o
 /home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Components/Map.c.o
+/home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.o
+/home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.o
 /home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.o
 /home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.o
 /home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o
 /home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o
+/home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o
 /home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.o
 /home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/build.make
 /home/atc/Documents/CGame/bin/Debug/Project: _deps/raylib-build/raylib/libraylib.a
@@ -307,7 +355,7 @@ Project_EXTERNAL_OBJECTS =
 /home/atc/Documents/CGame/bin/Debug/Project: /usr/lib/x86_64-linux-gnu/librt.a
 /home/atc/Documents/CGame/bin/Debug/Project: /usr/lib/x86_64-linux-gnu/libm.so
 /home/atc/Documents/CGame/bin/Debug/Project: src/Main/CMakeFiles/Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking C executable /home/atc/Documents/CGame/bin/Debug/Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/atc/Documents/CGame/build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking C executable /home/atc/Documents/CGame/bin/Debug/Project"
 	cd /home/atc/Documents/CGame/build/Debug/src/Main && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -17,6 +17,7 @@
 #include "../Utils/Information.h"
 #include "../Scenes/ScenesManager.h"
 #include "../Scenes/MenuScene.h"
+#include "../Components/Sound.h"
 /////////////////////////////////////////////////////
 /**
  * @brief Init Game Function
@@ -27,7 +28,7 @@
  * @return `void`
  * 
  */
-void InitGame(void);
+void InitGameScene(void);
 /**
  * @brief Game Update Render Function
  * This function handles the rendering of the game, including the map and entities.
@@ -37,7 +38,7 @@ void InitGame(void);
  * @return `void`
  * 
  */
-void GameUpdateRender(void);
+void UpdateGameRender(void);
 /**
  * @brief Game Update Logic Function
  * This function updates the game logic, including player movement and collision detection.
@@ -47,7 +48,17 @@ void GameUpdateRender(void);
  * @return `void`
  * 
  */
-void GameUpdateLogic(float dt);
+void UpdateGameLogic(float dt);
+/**
+ * @brief Game Update Scene Function
+ * This function updates the game scene based on user input.
+ * 
+ * @param `void`
+ * 
+ * @return `void`
+ * 
+ */
+void UpdateGameScene(void);
 /**
  * @brief Game Information Function
  * This function displays game information, such as camera details.
@@ -59,16 +70,6 @@ void GameUpdateLogic(float dt);
  */
 void GameInformation(void);
 /**
- * @brief Game Update Scene Function
- * This function updates the game scene based on user input.
- * 
- * @param `void`
- * 
- * @return `void`
- * 
- */
-void GameUpdateScene(void);
-/**
  * @brief Deinitialize Game Function
  * This function deinitializes the game, freeing resources and textures.
  * 
@@ -77,7 +78,7 @@ void GameUpdateScene(void);
  * @return `void`
  * 
  */
-void DeInitGame(void);
+void DestroyGameScene(void);
 
 
 

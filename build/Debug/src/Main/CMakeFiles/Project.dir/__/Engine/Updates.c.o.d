@@ -59,7 +59,10 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.o: \
  /home/atc/Documents/CGame/build/Debug/_deps/raylib-src/src/raylib.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Utils/Information.h \
+ /home/atc/Documents/CGame/src/Engine/../Scenes/../Utils/../Components/Mouse.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/MenuScene.h \
+ /home/atc/Documents/CGame/src/Engine/../Scenes/../Components/Button.h \
+ /home/atc/Documents/CGame/src/Engine/../Scenes/../Components/Sound.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Utils/Fonts.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/LoadingScene.h \
  /usr/include/pthread.h /usr/include/sched.h \
@@ -95,4 +98,4 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.o: \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Components/Map.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Components/LoadTextures.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Utils/Algorithms.h \
- /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Utils/Information.h
+ /home/atc/Documents/CGame/src/Engine/../Scenes/OptionMenuScene.h

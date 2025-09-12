@@ -291,6 +291,54 @@ __/Components/Map.c.s:
 	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Map.c.s
 .PHONY : __/Components/Map.c.s
 
+__/Components/Mouse.o: __/Components/Mouse.c.o
+.PHONY : __/Components/Mouse.o
+
+# target to build an object file
+__/Components/Mouse.c.o:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.o
+.PHONY : __/Components/Mouse.c.o
+
+__/Components/Mouse.i: __/Components/Mouse.c.i
+.PHONY : __/Components/Mouse.i
+
+# target to preprocess a source file
+__/Components/Mouse.c.i:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.i
+.PHONY : __/Components/Mouse.c.i
+
+__/Components/Mouse.s: __/Components/Mouse.c.s
+.PHONY : __/Components/Mouse.s
+
+# target to generate assembly for a file
+__/Components/Mouse.c.s:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.s
+.PHONY : __/Components/Mouse.c.s
+
+__/Components/Sound.o: __/Components/Sound.c.o
+.PHONY : __/Components/Sound.o
+
+# target to build an object file
+__/Components/Sound.c.o:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.o
+.PHONY : __/Components/Sound.c.o
+
+__/Components/Sound.i: __/Components/Sound.c.i
+.PHONY : __/Components/Sound.i
+
+# target to preprocess a source file
+__/Components/Sound.c.i:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.i
+.PHONY : __/Components/Sound.c.i
+
+__/Components/Sound.s: __/Components/Sound.c.s
+.PHONY : __/Components/Sound.s
+
+# target to generate assembly for a file
+__/Components/Sound.c.s:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.s
+.PHONY : __/Components/Sound.c.s
+
 __/Engine/Engine.o: __/Engine/Engine.c.o
 .PHONY : __/Engine/Engine.o
 
@@ -435,6 +483,30 @@ __/Scenes/MenuScene.c.s:
 	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.s
 .PHONY : __/Scenes/MenuScene.c.s
 
+__/Scenes/OptionMenuScene.o: __/Scenes/OptionMenuScene.c.o
+.PHONY : __/Scenes/OptionMenuScene.o
+
+# target to build an object file
+__/Scenes/OptionMenuScene.c.o:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.o
+.PHONY : __/Scenes/OptionMenuScene.c.o
+
+__/Scenes/OptionMenuScene.i: __/Scenes/OptionMenuScene.c.i
+.PHONY : __/Scenes/OptionMenuScene.i
+
+# target to preprocess a source file
+__/Scenes/OptionMenuScene.c.i:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.i
+.PHONY : __/Scenes/OptionMenuScene.c.i
+
+__/Scenes/OptionMenuScene.s: __/Scenes/OptionMenuScene.c.s
+.PHONY : __/Scenes/OptionMenuScene.s
+
+# target to generate assembly for a file
+__/Scenes/OptionMenuScene.c.s:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Scenes/OptionMenuScene.c.s
+.PHONY : __/Scenes/OptionMenuScene.c.s
+
 __/Scenes/ScenesManager.o: __/Scenes/ScenesManager.c.o
 .PHONY : __/Scenes/ScenesManager.o
 
@@ -558,6 +630,12 @@ help:
 	@echo "... __/Components/Map.o"
 	@echo "... __/Components/Map.i"
 	@echo "... __/Components/Map.s"
+	@echo "... __/Components/Mouse.o"
+	@echo "... __/Components/Mouse.i"
+	@echo "... __/Components/Mouse.s"
+	@echo "... __/Components/Sound.o"
+	@echo "... __/Components/Sound.i"
+	@echo "... __/Components/Sound.s"
 	@echo "... __/Engine/Engine.o"
 	@echo "... __/Engine/Engine.i"
 	@echo "... __/Engine/Engine.s"
@@ -576,6 +654,9 @@ help:
 	@echo "... __/Scenes/MenuScene.o"
 	@echo "... __/Scenes/MenuScene.i"
 	@echo "... __/Scenes/MenuScene.s"
+	@echo "... __/Scenes/OptionMenuScene.o"
+	@echo "... __/Scenes/OptionMenuScene.i"
+	@echo "... __/Scenes/OptionMenuScene.s"
 	@echo "... __/Scenes/ScenesManager.o"
 	@echo "... __/Scenes/ScenesManager.i"
 	@echo "... __/Scenes/ScenesManager.s"

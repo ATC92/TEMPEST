@@ -1,25 +1,33 @@
 #include "Engine.h"
 //////////////////////////////////////////////////////////
-const float FIXED_DT = 1 / 60.0f; ///< Fixed Delta Time for consistent updates
 //////////////////////////////////////////////////////////
 void InitEngine()
 {
+    //////////////////////////////////////////////////////////
+    ///< FLAGS FOR THE ENGINE
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE);    
+    
+    //////////////////////////////////////////////////////////
     ///< Init audio device
     InitAudioDevice();
     ///< Set exit key
     SetExitKey(0);
     ///< Init Scenes Manager
     InitScenesManager();
-    ///< Init GUI
-    InitGUI();
+    ///< Init MenuGUI
+    InitMenuScene();
+    ///< Init Loading Scene
+    InitLoadingScene(4);
+    ///< OptionMenuScene
+    InitOptionMenuScene();
     ///< Init Game
-    InitGame();
+    InitGameScene();
 }
 //////////////////////////////////////////////////////////
 void EngineRender()
 {
     ///< Render current Scene/
-    RenderCurrentScene(scenes->infScene.type);
+    RenderCurrentScene(scenes->typeScene);
     ///< Show information of the game 
     ///< FPS, Position of the player, etc.
     GameInformation();
@@ -27,18 +35,24 @@ void EngineRender()
 //////////////////////////////////////////////////////////
 void EngineUpdate(float dt)
 {
+    ///< Update EngineFlags
+    UpdateEngineFlags();
     ///< GameUpdateLogic | Movement of Player and MouseWheel
-    GameUpdateLogic(dt);
+    UpdateGameLogic(dt);
     ///< UpdateGameScene
-    GameUpdateScene();
+    UpdateGameScene();
 }
 //////////////////////////////////////////////////////////
 void DeInitEngine()
 {
     ///< Audio Close
     CloseAudioDevice();
-    ///< Game Close
-    DeInitGame();
+    ///< Game Scene Close
+    DestroyGameScene();
+    ///< Menu Scene Close
+    DestroyMenuScene();
+    ///< Loading Scene Close
+    DestroyLoadingScene();
 }
 //////////////////////////////////////////////////////////
 

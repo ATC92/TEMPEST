@@ -5,21 +5,27 @@ void RenderCurrentScene(ManagerScenes type)
     switch (type)
     {
     case MainMenu:
-        MainMenuGUI();
+        UpdateMenuScene();
         break;
     case GameState:
-        GameUpdateRender();
+        UpdateGameRender();
         break;
     case LoadingScreen:
-        SimulateLoading(3);
-        scenes->infScene.type = GameState;
+        UpdateLoadingScene();
+        scenes->typeScene = GameState;
+        break;
+    case ConfigurationMenu:
         break;
     case OptionMenu:
+        UpdateOptionMenuScene();
         break;
     default:
         perror("Error with Render Current Scene.");
         break;
     }
+}
+void UpdateEngineFlags(void)
+{
 }
 //////////////////////////////////////////////////////////
 
