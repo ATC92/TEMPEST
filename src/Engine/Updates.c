@@ -19,6 +19,9 @@ void RenderCurrentScene(ManagerScenes type)
     case OptionMenu:
         UpdateOptionMenuScene();
         break;
+    case BestiaryScene:
+        UpdateBestiaryScene();
+        break;
     default:
         perror("Error with Render Current Scene.");
         break;

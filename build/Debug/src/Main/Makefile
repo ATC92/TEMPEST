@@ -195,6 +195,30 @@ Project/fast:
 	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/build
 .PHONY : Project/fast
 
+__/Components/Button.o: __/Components/Button.c.o
+.PHONY : __/Components/Button.o
+
+# target to build an object file
+__/Components/Button.c.o:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Button.c.o
+.PHONY : __/Components/Button.c.o
+
+__/Components/Button.i: __/Components/Button.c.i
+.PHONY : __/Components/Button.i
+
+# target to preprocess a source file
+__/Components/Button.c.i:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Button.c.i
+.PHONY : __/Components/Button.c.i
+
+__/Components/Button.s: __/Components/Button.c.s
+.PHONY : __/Components/Button.s
+
+# target to generate assembly for a file
+__/Components/Button.c.s:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Button.c.s
+.PHONY : __/Components/Button.c.s
+
 __/Components/Collision.o: __/Components/Collision.c.o
 .PHONY : __/Components/Collision.o
 
@@ -242,6 +266,30 @@ __/Components/Entity.s: __/Components/Entity.c.s
 __/Components/Entity.c.s:
 	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Entity.c.s
 .PHONY : __/Components/Entity.c.s
+
+__/Components/Fonts.o: __/Components/Fonts.c.o
+.PHONY : __/Components/Fonts.o
+
+# target to build an object file
+__/Components/Fonts.c.o:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Fonts.c.o
+.PHONY : __/Components/Fonts.c.o
+
+__/Components/Fonts.i: __/Components/Fonts.c.i
+.PHONY : __/Components/Fonts.i
+
+# target to preprocess a source file
+__/Components/Fonts.c.i:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Fonts.c.i
+.PHONY : __/Components/Fonts.c.i
+
+__/Components/Fonts.s: __/Components/Fonts.c.s
+.PHONY : __/Components/Fonts.s
+
+# target to generate assembly for a file
+__/Components/Fonts.c.s:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Fonts.c.s
+.PHONY : __/Components/Fonts.c.s
 
 __/Components/LoadTextures.o: __/Components/LoadTextures.c.o
 .PHONY : __/Components/LoadTextures.o
@@ -315,6 +363,30 @@ __/Components/Mouse.c.s:
 	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Mouse.c.s
 .PHONY : __/Components/Mouse.c.s
 
+__/Components/Shaders.o: __/Components/Shaders.c.o
+.PHONY : __/Components/Shaders.o
+
+# target to build an object file
+__/Components/Shaders.c.o:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Shaders.c.o
+.PHONY : __/Components/Shaders.c.o
+
+__/Components/Shaders.i: __/Components/Shaders.c.i
+.PHONY : __/Components/Shaders.i
+
+# target to preprocess a source file
+__/Components/Shaders.c.i:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Shaders.c.i
+.PHONY : __/Components/Shaders.c.i
+
+__/Components/Shaders.s: __/Components/Shaders.c.s
+.PHONY : __/Components/Shaders.s
+
+# target to generate assembly for a file
+__/Components/Shaders.c.s:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Shaders.c.s
+.PHONY : __/Components/Shaders.c.s
+
 __/Components/Sound.o: __/Components/Sound.c.o
 .PHONY : __/Components/Sound.o
 
@@ -338,6 +410,30 @@ __/Components/Sound.s: __/Components/Sound.c.s
 __/Components/Sound.c.s:
 	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Components/Sound.c.s
 .PHONY : __/Components/Sound.c.s
+
+__/Engine/Config.o: __/Engine/Config.c.o
+.PHONY : __/Engine/Config.o
+
+# target to build an object file
+__/Engine/Config.c.o:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Engine/Config.c.o
+.PHONY : __/Engine/Config.c.o
+
+__/Engine/Config.i: __/Engine/Config.c.i
+.PHONY : __/Engine/Config.i
+
+# target to preprocess a source file
+__/Engine/Config.c.i:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Engine/Config.c.i
+.PHONY : __/Engine/Config.c.i
+
+__/Engine/Config.s: __/Engine/Config.c.s
+.PHONY : __/Engine/Config.s
+
+# target to generate assembly for a file
+__/Engine/Config.c.s:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Engine/Config.c.s
+.PHONY : __/Engine/Config.c.s
 
 __/Engine/Engine.o: __/Engine/Engine.c.o
 .PHONY : __/Engine/Engine.o
@@ -435,6 +531,30 @@ __/Game/OnUpdate.c.s:
 	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Game/OnUpdate.c.s
 .PHONY : __/Game/OnUpdate.c.s
 
+__/Scenes/BestiaryScene.o: __/Scenes/BestiaryScene.c.o
+.PHONY : __/Scenes/BestiaryScene.o
+
+# target to build an object file
+__/Scenes/BestiaryScene.c.o:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Scenes/BestiaryScene.c.o
+.PHONY : __/Scenes/BestiaryScene.c.o
+
+__/Scenes/BestiaryScene.i: __/Scenes/BestiaryScene.c.i
+.PHONY : __/Scenes/BestiaryScene.i
+
+# target to preprocess a source file
+__/Scenes/BestiaryScene.c.i:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Scenes/BestiaryScene.c.i
+.PHONY : __/Scenes/BestiaryScene.c.i
+
+__/Scenes/BestiaryScene.s: __/Scenes/BestiaryScene.c.s
+.PHONY : __/Scenes/BestiaryScene.s
+
+# target to generate assembly for a file
+__/Scenes/BestiaryScene.c.s:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Scenes/BestiaryScene.c.s
+.PHONY : __/Scenes/BestiaryScene.c.s
+
 __/Scenes/LoadingScene.o: __/Scenes/LoadingScene.c.o
 .PHONY : __/Scenes/LoadingScene.o
 
@@ -531,30 +651,6 @@ __/Scenes/ScenesManager.c.s:
 	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Scenes/ScenesManager.c.s
 .PHONY : __/Scenes/ScenesManager.c.s
 
-__/Utils/Fonts.o: __/Utils/Fonts.c.o
-.PHONY : __/Utils/Fonts.o
-
-# target to build an object file
-__/Utils/Fonts.c.o:
-	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.o
-.PHONY : __/Utils/Fonts.c.o
-
-__/Utils/Fonts.i: __/Utils/Fonts.c.i
-.PHONY : __/Utils/Fonts.i
-
-# target to preprocess a source file
-__/Utils/Fonts.c.i:
-	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.i
-.PHONY : __/Utils/Fonts.c.i
-
-__/Utils/Fonts.s: __/Utils/Fonts.c.s
-.PHONY : __/Utils/Fonts.s
-
-# target to generate assembly for a file
-__/Utils/Fonts.c.s:
-	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Utils/Fonts.c.s
-.PHONY : __/Utils/Fonts.c.s
-
 __/Utils/Information.o: __/Utils/Information.c.o
 .PHONY : __/Utils/Information.o
 
@@ -578,6 +674,30 @@ __/Utils/Information.s: __/Utils/Information.c.s
 __/Utils/Information.c.s:
 	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Utils/Information.c.s
 .PHONY : __/Utils/Information.c.s
+
+__/Utils/Scale.o: __/Utils/Scale.c.o
+.PHONY : __/Utils/Scale.o
+
+# target to build an object file
+__/Utils/Scale.c.o:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Utils/Scale.c.o
+.PHONY : __/Utils/Scale.c.o
+
+__/Utils/Scale.i: __/Utils/Scale.c.i
+.PHONY : __/Utils/Scale.i
+
+# target to preprocess a source file
+__/Utils/Scale.c.i:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Utils/Scale.c.i
+.PHONY : __/Utils/Scale.c.i
+
+__/Utils/Scale.s: __/Utils/Scale.c.s
+.PHONY : __/Utils/Scale.s
+
+# target to generate assembly for a file
+__/Utils/Scale.c.s:
+	cd /home/atc/Documents/CGame/build/Debug && $(MAKE) $(MAKESILENT) -f src/Main/CMakeFiles/Project.dir/build.make src/Main/CMakeFiles/Project.dir/__/Utils/Scale.c.s
+.PHONY : __/Utils/Scale.c.s
 
 main.o: main.c.o
 .PHONY : main.o
@@ -618,12 +738,18 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... Project"
+	@echo "... __/Components/Button.o"
+	@echo "... __/Components/Button.i"
+	@echo "... __/Components/Button.s"
 	@echo "... __/Components/Collision.o"
 	@echo "... __/Components/Collision.i"
 	@echo "... __/Components/Collision.s"
 	@echo "... __/Components/Entity.o"
 	@echo "... __/Components/Entity.i"
 	@echo "... __/Components/Entity.s"
+	@echo "... __/Components/Fonts.o"
+	@echo "... __/Components/Fonts.i"
+	@echo "... __/Components/Fonts.s"
 	@echo "... __/Components/LoadTextures.o"
 	@echo "... __/Components/LoadTextures.i"
 	@echo "... __/Components/LoadTextures.s"
@@ -633,9 +759,15 @@ help:
 	@echo "... __/Components/Mouse.o"
 	@echo "... __/Components/Mouse.i"
 	@echo "... __/Components/Mouse.s"
+	@echo "... __/Components/Shaders.o"
+	@echo "... __/Components/Shaders.i"
+	@echo "... __/Components/Shaders.s"
 	@echo "... __/Components/Sound.o"
 	@echo "... __/Components/Sound.i"
 	@echo "... __/Components/Sound.s"
+	@echo "... __/Engine/Config.o"
+	@echo "... __/Engine/Config.i"
+	@echo "... __/Engine/Config.s"
 	@echo "... __/Engine/Engine.o"
 	@echo "... __/Engine/Engine.i"
 	@echo "... __/Engine/Engine.s"
@@ -648,6 +780,9 @@ help:
 	@echo "... __/Game/OnUpdate.o"
 	@echo "... __/Game/OnUpdate.i"
 	@echo "... __/Game/OnUpdate.s"
+	@echo "... __/Scenes/BestiaryScene.o"
+	@echo "... __/Scenes/BestiaryScene.i"
+	@echo "... __/Scenes/BestiaryScene.s"
 	@echo "... __/Scenes/LoadingScene.o"
 	@echo "... __/Scenes/LoadingScene.i"
 	@echo "... __/Scenes/LoadingScene.s"
@@ -660,12 +795,12 @@ help:
 	@echo "... __/Scenes/ScenesManager.o"
 	@echo "... __/Scenes/ScenesManager.i"
 	@echo "... __/Scenes/ScenesManager.s"
-	@echo "... __/Utils/Fonts.o"
-	@echo "... __/Utils/Fonts.i"
-	@echo "... __/Utils/Fonts.s"
 	@echo "... __/Utils/Information.o"
 	@echo "... __/Utils/Information.i"
 	@echo "... __/Utils/Information.s"
+	@echo "... __/Utils/Scale.o"
+	@echo "... __/Utils/Scale.i"
+	@echo "... __/Utils/Scale.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

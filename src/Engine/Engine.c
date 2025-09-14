@@ -8,24 +8,36 @@ void InitEngine()
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);    
     
     //////////////////////////////////////////////////////////
-    ///< Init audio device
-    InitAudioDevice();
+    ///< Init Scale
+    InitScale();
+    ///< Mouse Init
+    InitMouse();
+    ///< Init Fonts
+    InitFont();
+    ///< Init Shaders
+    InitShaders();
     ///< Set exit key
     SetExitKey(0);
+    ///< Init audio device
+    InitAudioDevice();
     ///< Init Scenes Manager
     InitScenesManager();
     ///< Init MenuGUI
     InitMenuScene();
     ///< Init Loading Scene
     InitLoadingScene(4);
-    ///< OptionMenuScene
+    ///< Init OptionMenuScene
     InitOptionMenuScene();
+    ///< Init BestiaryScene
+    InitBestiaryScene(); 
     ///< Init Game
     InitGameScene();
 }
 //////////////////////////////////////////////////////////
 void EngineRender()
 {
+    ///< MousePosition
+    UpdateMousePosition();
     ///< Render current Scene/
     RenderCurrentScene(scenes->typeScene);
     ///< Show information of the game 
@@ -43,7 +55,7 @@ void EngineUpdate(float dt)
     UpdateGameScene();
 }
 //////////////////////////////////////////////////////////
-void DeInitEngine()
+void DestroyEngine()
 {
     ///< Audio Close
     CloseAudioDevice();
@@ -53,6 +65,9 @@ void DeInitEngine()
     DestroyMenuScene();
     ///< Loading Scene Close
     DestroyLoadingScene();
+
+    ///< Save Comfiguration
+    // SaveConfig(gameConfig,"assets/config.txt");
 }
 //////////////////////////////////////////////////////////
 

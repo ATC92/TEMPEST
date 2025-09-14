@@ -57,8 +57,10 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/MenuScene.c.o: \
  /home/atc/Documents/CGame/build/Debug/_deps/raylib-src/src/raylib.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
  /home/atc/Documents/CGame/src/Scenes/../Components/Button.h \
+ /home/atc/Documents/CGame/src/Scenes/../Components/../Scenes/ScenesManager.h \
+ /home/atc/Documents/CGame/src/Scenes/../Components/../Scenes/../Components/Textures.h \
+ /home/atc/Documents/CGame/src/Scenes/../Components/../Scenes/../Utils/Information.h \
+ /home/atc/Documents/CGame/src/Scenes/../Components/../Components/Shaders.h \
+ /home/atc/Documents/CGame/src/Scenes/../Components/../Utils/Scale.h \
  /home/atc/Documents/CGame/src/Scenes/../Components/Sound.h \
- /home/atc/Documents/CGame/src/Scenes/../Utils/Fonts.h \
- /home/atc/Documents/CGame/src/Scenes/ScenesManager.h \
- /home/atc/Documents/CGame/src/Scenes/../Components/Textures.h \
- /home/atc/Documents/CGame/src/Scenes/../Utils/Information.h
+ /home/atc/Documents/CGame/src/Scenes/../Components/Fonts.h

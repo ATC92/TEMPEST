@@ -9,4 +9,8 @@ extern Vector2 mouse;
  * 
  */
 void InitMouse(void);
+/**
+ * 
+ */
+void UpdateMousePosition(void);
 ///////////////////////////////////////////////////////////////

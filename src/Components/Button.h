@@ -1,10 +1,16 @@
+////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-
+////////////////////////////////////////////////////////////////////////////////////////////
+///< C/C++ Lib
 #include <stdlib.h>
-
+///< CGame Lib
+#include "../Scenes/ScenesManager.h"
+#include "../Components/Shaders.h"
+#include "../Utils/Scale.h"
+#include "Sound.h"
+///< RayLib
 #include "raylib.h"
-
-
+////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * @brief ButtonState
  * 
@@ -39,25 +45,19 @@ typedef enum _state
  */
 typedef struct _btt
 {
-    bool action;                ///< Pressed
-    float frameHeight;          ///< FrameHight
-    ButtonState state;          ///< Estate of the button
-    Texture2D* Texture;          ///< Textures
-    Sound sound;                ///< Spound when is pressed
-    Vector2 position;           ///< Position
-    Rectangle boundingBox;      ///< CollisiomBox position.
-    Rectangle sourceButton;     ///< Size of the button in Rectangle
+    bool action;                    ///< Pressed
+    float frameHeight;              ///< FrameHight
+    ButtonState state;              ///< Estate of the button
+    Texture2D* Texture;             ///< Textures
+    Sound sound;                    ///< Spound when is pressed
+    Vector2 position;               ///< Position
+    Rectangle boundingBox;          ///< CollisiomBox position.
+    Rectangle sourceButton;         ///< Size of the button in Rectangle
+    Rectangle destinationButton;    ///< Helps for scalin.
 }Button;
-///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
 #define NUM_FRAMES 3
-/**
- * @brief button
- * This is a global pointer to a Button structure that represents the main menu button.
- * It is used to handle the button's state, textures, sound, and interactions in the main menu GUI.
- * It is initialized in the `InitGUI` function and used in the `MainMenuGUI` function to render the button and handle user interactions.
- */
-// extern Button* btt_StartGame;
-///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * @brief CreateButton
  * This function creates a button with specified textures and sound.
@@ -70,33 +70,15 @@ typedef struct _btt
  * 
  * @note This function allocates memory for a Button structure, loads the specified textures and sound, 
  * and initializes the button's properties such as position, bounding box, and source rectangle.
+ */
+Button* CreateButton(const char* texturePath, const char* texturePath2, Vector2 pos);
+/**
  * 
  */
-static inline Button* CreateButton(const char* texturePath, const char* texturePath2, Vector2 pos)
-{
-    Button* bttTemp = (Button*)calloc(1,sizeof(Button));
-    // bttTemp->sound = LoadSound(soundPath);
-    bttTemp->Texture = (Texture2D*)calloc(2,sizeof(Texture2D));
-    bttTemp->Texture[0] = LoadTexture(texturePath);
-    bttTemp->Texture[1] = LoadTexture(texturePath2);
-    
-    /// Bounds
-    bttTemp->position = pos;
+void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene, float s, bool action);
+/**
+ * 
+ */
+void DrawButton(Button* button, const char* text, Vector2 posFoo, Font font);
 
-
-    /// Source rectangle
-    bttTemp->sourceButton = (Rectangle){0,0, (float)bttTemp->Texture[0].width, (float)bttTemp->Texture[0].height};
-
-    ///
-    bttTemp->boundingBox = (Rectangle)
-    {
-        .x = bttTemp->position.x,
-        .y = bttTemp->position.y,
-        .width = bttTemp->sourceButton.width,
-        .height = bttTemp->sourceButton.height
-    };
-
-    bttTemp->action = false;
-    bttTemp->state = NORMAL;
-    return bttTemp;
-}
+////////////////////////////////////////////////////////////////////////////////////////////

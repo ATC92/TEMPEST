@@ -33,8 +33,8 @@ void InitOptionMenuScene(void)
     ///< Button creation (DOT)
     float midScreenButton = {(float)GetScreenWidth() / 2 - (float)temp.width / 2.0f};
     float midScreenDot = {(float)GetScreenWidth() / 2 - (float)tempDot.width / 2.0f};
-    btt_dot = CreateButton(pathT1,pathT2,(Vector2){midScreenDot - 200,350.f});
-    btt_dot->action = false;
+    btt_dot = CreateButton(pathT1,pathT2,(Vector2){midScreenDot - 300,350.f});
+    btt_dot->action = gameConfig.fullscreen ? true : false;
     ///< Button creation Return
     btt_Return = CreateButton(pathT3,pathT4,(Vector2){midScreenButton,800.f});
     bar = MeasureTextEx(*fontType, "Regresar", 40, 0);
@@ -47,6 +47,9 @@ void InitOptionMenuScene(void)
 
 void UpdateOptionMenuScene(void)
 {
+    ///< Position for Text Dot
+    Vector2 pos = (Vector2){(float)GetScreenWidth() / 2 - 250.f , btt_dot->position.y + 15};
+    ///< BackGround
     DrawTexturePro
     (
         bg,
@@ -56,32 +59,35 @@ void UpdateOptionMenuScene(void)
         0,
         WHITE
     );
+    ///< Mouse Position
     mouse = GetMousePosition();
-    DrawTextureRec(btt_Return->Texture[0],btt_Return->sourceButton,btt_Return->position,WHITE);
-    if(btt_dot->action == true)
-        DrawTextureRec(btt_dot->Texture[1],btt_dot->sourceButton,btt_dot->position,WHITE);
-    else
-        DrawTextureRec(btt_dot->Texture[0],btt_dot->sourceButton,btt_dot->position,WHITE);
+    ///< DrawButtons
+    DrawButton(btt_Return,"Regresar",foo,*fontType);
+    DrawButton(btt_dot,"Activar/Desactivar pantalla completa",pos,*fontType);
+    // DrawTextEx(*fontType,"Activar/Desactivar pantalla completa",pos,40,0,WHITE);
+    DrawTexturePro(btt_dot->Texture[btt_dot->action ? true : false], btt_dot->sourceButton,btt_dot->destinationButton, (Vector2){0,0}, 0, WHITE);
+    ///< Reset all States
+    btt_Return->state = NORMAL;
+    btt_dot->state = NORMAL;
+    /**
+     * Button for Return to MainMenuScene
+     */
     if (CheckCollisionPointRec(mouse,btt_Return->boundingBox))
     {
-        BeginShaderMode(invert);
-            btt_Return->state = MOUSE_OVER;
-            DrawTextureRec(btt_Return->Texture[1], btt_Return->sourceButton, btt_Return->position, WHITE );
-            DrawTextEx(*fontType,"Regresar",foo,40,0,BLACK);
-        EndShaderMode();
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
-        {
-            // ClearBackground(WHITE);
-            PlaySound(sounds[0]);
-            scenes->typeScene = MainMenu; ///< Change Scene to MainMenu Scene
-            WaitTime(.1);
-        }
+        AccionButton(btt_Return,*fontType,"Regresar",Invert,foo,MainMenu,0.1f,true);
+        // DrawTextEx(*fontType,"Activar/Desactivar pantalla completa",pos,40,0,WHITE);
     }
+    /**
+     * Button to Togle FullScreen.
+     */
     else if(CheckCollisionPointRec(mouse,btt_dot->boundingBox))
     {
-        BeginShaderMode(invert);
-            btt_dot->state = MOUSE_OVER;
-        EndShaderMode();
+        AccionButton(btt_dot,*fontType,"Activar/Desactivar pantalla completa",Invert,pos,OptionMenu,0.1f,false);
+        // BeginShaderMode(invert);
+        //     btt_dot->state = MOUSE_OVER;
+        //     DrawTextEx(*fontType,"Activar/Desactivar pantalla completa",pos,40,0,BLACK);
+        // EndShaderMode();
+        // DrawTextEx(*fontType,"Regresar",foo,40,0,BLACK);
         if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
             startTime = GetTime();
@@ -90,20 +96,15 @@ void UpdateOptionMenuScene(void)
         if(waitingCooldown && (GetTime() - startTime) >= 0.1)
         {
             PlaySound(sounds[0]);
-            DrawTextureRec(btt_dot->Texture[1],btt_dot->sourceButton,btt_dot->position,WHITE);
             ToggleFullscreen();
-            btt_dot->action = !btt_dot->action;
-
+            btt_dot->action = IsWindowState(FLAG_FULLSCREEN_MODE) ? true : false;
+            gameConfig.fullscreen = (int)btt_dot->action;
+            SaveConfig(gameConfig, CONFIG_FILE);
             waitingCooldown = false;
         }
     }
-    else
-    {
-        btt_Return->state = NORMAL;
-        DrawTextEx(*fontType,"Regresar",foo,40,0,BLACK);
-    }
-
 }
+
 void DestroyOptionMenuScene(void)
 {
 

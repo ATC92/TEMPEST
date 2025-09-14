@@ -1,8 +1,12 @@
 #pragma once
 //< C/C++ Libraries
 //< CGame Libraries
+#include "../Components/Shaders.h"
+#include "../Utils/Scale.h"
 #include "../Game/Game.h"
+
 #include "Updates.h"
+#include "Config.h"
 //< RayLib Libraries
 ///
 ///
@@ -50,7 +54,7 @@ void EngineRender();
  * 
  * @note It closes the audio device and de-initializes the game.
  */
-void DeInitEngine();
+void DestroyEngine();
 
 
 

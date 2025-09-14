@@ -45,7 +45,7 @@ void UpdateMovement(Entity* eplayer, float dt)
 
     if(IsKeyDown(KEY_LEFT_SHIFT))
     {
-        eplayer->speed = 110.f; // Increase speed when shift is held
+        eplayer->speed = 120.f; // Increase speed when shift is held
     }
     else if(IsKeyReleased(KEY_LEFT_SHIFT))
     {

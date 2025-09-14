@@ -1,24 +1,17 @@
 #include "MenuScene.h"
 //////////////////////////////////////////////////////////
-///< Private Declaration
+///< Public declarations
+///< Private declarations
 static Button* btt_StartGame;
 static Button* btt_Option;
 static Button* btt_Exit;
-static Shader invert;
+static Button* btt_Bestiary;
 static Vector2* bar;
 static Vector2* foo;
 static Texture2D bg;
 //////////////////////////////////////////////////////////
 void InitMenuScene(void)
 {
-    ///< Load Shaders
-    invert = LoadShader(NULL, "src/Shaders/invert.fs");
-    if (!IsShaderValid(invert)) TraceLog(LOG_ERROR, "Shader Invalid");
-    ///< Create and load Font texture
-    fontType = (Font*)calloc(1,sizeof(Font));
-    *fontType = LoadFontEx("assets/Font/04B.ttf",20,NULL,0);
-    if(!IsFontValid(*fontType))
-        return;
     // Information for the Buttons (Path)
     char* pathT1 = "assets/UI/button_rectangle_depth_line.png";
     char* pathT2 = "assets/UI/button_rectangle_line.png";
@@ -27,10 +20,16 @@ void InitMenuScene(void)
     ///< Texture Temp
     Texture2D temp = LoadTexture("assets/UI/button_rectangle_depth_line.png");
     ///< Creation of 3 buttons
+    CustomScale(1.f);
     float midScrenTexture = {(float)GetScreenWidth() / 2 - (float)temp.width / 2.0f};
     btt_StartGame = CreateButton(pathT1,pathT2,(Vector2){midScrenTexture, 480.f});
     btt_Option = CreateButton(pathT1,pathT2,(Vector2){midScrenTexture, 650.f});
     btt_Exit =  CreateButton(pathT1,pathT2,(Vector2){midScrenTexture, 830.f});
+    ///< BestiaryButton
+    Vector2 posBes = {.x =1700, .y = 90};
+    CustomScale(.5f);
+    btt_Bestiary = CreateButton("assets/UI/BookInformation.png","assets/UI/BookInformation.png",posBes);
+    CustomScale(1.f);
     ///< Text for btt_StartGame
     bar = (Vector2*)calloc(3,sizeof(Vector2));
     foo = (Vector2*)calloc(3,sizeof(Vector2));
@@ -38,106 +37,85 @@ void InitMenuScene(void)
     ///< Kill Texture Temp
     UnloadTexture(temp);
 
+
     bar[0] = MeasureTextEx(*fontType, "Iniciar Juego", 40, 0);
     bar[1] = MeasureTextEx(*fontType, "Opciones",40,0);
     bar[2] = MeasureTextEx(*fontType, "Salir",40,0);
     foo[0] = (Vector2)
     {
-        .x = (btt_StartGame->position.x + btt_StartGame->sourceButton.width / 2) - bar[0].x / 2,
-        .y = (btt_StartGame->position.y + btt_StartGame->sourceButton.height / 2) - bar[0].y / 2
+        .x = (btt_StartGame->destinationButton.x + btt_StartGame->destinationButton.width / 2) - bar[0].x / 2,
+        .y = (btt_StartGame->destinationButton.y + btt_StartGame->sourceButton.height / 2) - bar[0].y / 2
     };
     foo[1] = (Vector2)
     {
-        .x = (btt_Option->position.x + btt_Option->sourceButton.width / 2) - bar[1].x / 2,
-        .y = (btt_Option->position.y + btt_Option->sourceButton.height / 2) - bar[1].y / 2
+        .x = (btt_Option->destinationButton.x + btt_Option->destinationButton.width / 2) - bar[1].x / 2,
+        .y = (btt_Option->destinationButton.y + btt_Option->destinationButton.height / 2) - bar[1].y / 2
     };
     foo[2] = (Vector2)
     {
-        .x = (btt_Exit->position.x + btt_Exit->sourceButton.width / 2) - bar[2].x / 2,
-        .y = (btt_Exit->position.y + btt_Exit->sourceButton.height / 2) - bar[2].y / 2
+        .x = (btt_Exit->destinationButton.x + btt_Exit->destinationButton.width / 2) - bar[2].x / 2,
+        .y = (btt_Exit->destinationButton.y + btt_Exit->destinationButton.height / 2) - bar[2].y / 2
     };
-    /// Mouse Init
-    InitMouse();
+
+    ///< Texture Bestuary
+    // Rectangle source = {
+    //     .height = (float)btt_Bestiary->Texture->height,
+    //     .width = (float)btt_Bestiary->Texture->width,
+    //     .x = 0,
+    //     .y = 0
+    // };
+
+    // Rectangle dest = {
+    //     btt_Bestiary->position.x,
+    //     btt_Bestiary->position.y,
+    //     source.width * scale.ScaleUniform,
+    //     source.height * scale.ScaleUniform
+    // };
+    
+
+    // btt_Bestiary->destinationButton = dest;
     ///< Init Sounds
     InitSoundGame();
 }
 //////////////////////////////////////////////////////////
 void UpdateMenuScene(void)
 {
-    DrawTexturePro(bg,
-    (Rectangle){.x=0,.y=0,.height=(float)bg.height,.width=(float)bg.width},
-    (Rectangle){.x=0,.y=0,.height = (float)GetScreenHeight(),.width= (float)GetScreenWidth()},
-    (Vector2){0,0},
-    0,
-    WHITE);
-    mouse = GetMousePosition();
-    btt_StartGame->sourceButton.y = (float)btt_StartGame->state * btt_StartGame->frameHeight;
-    
-    ///< Buttons
-    ///< Butotn Start.
-    DrawTextureRec(btt_StartGame->Texture[0], btt_StartGame->sourceButton, btt_StartGame->position, WHITE );
-    ///< Button Options.
-    DrawTextureRec(btt_Option->Texture[0], btt_Option->sourceButton, btt_Option->position, WHITE);
-    ///< Button Exit
-    DrawTextureRec(btt_Exit->Texture[0], btt_Exit->sourceButton, btt_Exit->position, WHITE);
-
-    if (CheckCollisionPointRec(mouse,btt_StartGame->boundingBox))
+    ///< BackGround
+    DrawTexturePro(bg, (Rectangle){.x=0,.y=0,.height=(float)bg.height,.width=(float)bg.width}, (Rectangle){.x=0,.y=0,.height = (float)GetScreenHeight(),.width= (float)GetScreenWidth()}, (Vector2){0,0}, 0, WHITE);
+    /// Button Bestiary
+    BeginShaderMode(shaders[Outline]);
+        DrawTexturePro(btt_Bestiary->Texture[0], btt_Bestiary->sourceButton, btt_Bestiary->destinationButton, (Vector2){0,0}, 0.0f, WHITE);
+    EndShaderMode();
+    ///< Reset all states
+    btt_StartGame->state = NORMAL;
+    btt_Option->state = NORMAL;
+    btt_Exit->state = NORMAL;
+    btt_Bestiary->state = NORMAL;
+    ///!<---- Buttons Draw -->
+    DrawButton(btt_StartGame,"Iniciar Juego",foo[0],*fontType);
+    DrawButton(btt_Option,"Opciones",foo[1],*fontType);
+    DrawButton(btt_Exit,"Salir",foo[2],*fontType);
+    ///!<---- Collision logic -->
+    if (CheckCollisionPointRec(mouse,btt_StartGame->destinationButton))
     {
-        BeginShaderMode(invert);
-            btt_StartGame->state = MOUSE_OVER;
-            DrawTextureRec(btt_StartGame->Texture[1], btt_StartGame->sourceButton, btt_StartGame->position, WHITE );
-            DrawTextEx(*fontType,"Iniciar Juego",foo[0],40,0,BLACK);
-        EndShaderMode();
-        DrawTextEx(*fontType,"Opciones",foo[1],40,0,BLACK);
-        DrawTextEx(*fontType,"Salir",foo[2],40,0,BLACK);
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
-        {
-            // ClearBackground(WHITE);
-            PlaySound(sounds[0]);
-            scenes->typeScene = LoadingScreen; ///< Change Scene to Loading Screen
-            WaitTime(0.1);
-        }
+        AccionButton(btt_StartGame,*fontType,"Iniciar Juego",Invert,foo[0],GameState,0.1f,true);
     }
-    else if(CheckCollisionPointRec(mouse, btt_Option->boundingBox))
+    else if(CheckCollisionPointRec(mouse, btt_Option->destinationButton))
     {
-        BeginShaderMode(invert);
-            btt_Option->state = MOUSE_OVER;
-            DrawTextureRec(btt_Option->Texture[1], btt_Option->sourceButton, btt_Option->position, WHITE);
-            DrawTextEx(*fontType,"Opciones",foo[1],40,0,BLACK);
-        EndShaderMode();
-        DrawTextEx(*fontType,"Iniciar Juego",foo[0],40,0,BLACK);
-        DrawTextEx(*fontType,"Salir",foo[2],40,0,BLACK);
+        AccionButton(btt_Option,*fontType,"Opciones",Invert,foo[1],OptionMenu,0.1f,true);
+    }
+    else if(CheckCollisionPointRec(mouse, btt_Exit->destinationButton))
+    {
+        AccionButton(btt_Exit,*fontType,"Salir",Invert,foo[2],EXIT_GAME,0.1f,true);
+    }
+    else if(CheckCollisionPointRec(mouse,btt_Bestiary->destinationButton))
+    {
         if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
         {
-            // ClearBackground(WHITE);
             PlaySound(sounds[0]);
-            scenes->typeScene = OptionMenu;
+            scenes->typeScene = BestiaryScene;
             WaitTime(0.1);
         }
-    }
-    else if(CheckCollisionPointRec(mouse, btt_Exit->boundingBox))
-    {
-        BeginShaderMode(invert);
-            btt_Exit->state = MOUSE_OVER;
-            DrawTextureRec(btt_Exit->Texture[1], btt_Exit->sourceButton, btt_Exit->position, WHITE);
-            DrawTextEx(*fontType,"Salir",foo[2],40,0,BLACK);
-        EndShaderMode();
-        DrawTextEx(*fontType,"Iniciar Juego",foo[0],40,0,BLACK);
-        DrawTextEx(*fontType,"Opciones",foo[1],40,0,BLACK);
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
-        {
-            // ClearBackground(WHITE);
-            PlaySound(sounds[0]);
-            scenes->typeScene = EXIT_GAME;
-            WaitTime(0.1);
-        }
-    }
-    else
-    {
-        btt_StartGame->state = NORMAL;
-        DrawTextEx(*fontType,"Iniciar Juego",foo[0],40,0,BLACK);
-        DrawTextEx(*fontType,"Opciones",foo[1],40,0,BLACK);
-        DrawTextEx(*fontType,"Salir",foo[2],40,0,BLACK);
     }
 }
 

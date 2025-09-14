@@ -71,6 +71,8 @@ src/Main/CMakeFiles/Project.dir/__/Game/Game.c.o: \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/float.h \
  /home/atc/Documents/CGame/src/Game/../Components/../Utils/VecMath.h \
  /home/atc/Documents/CGame/src/Game/../Engine/Engine.h \
+ /home/atc/Documents/CGame/src/Game/../Engine/../Components/Shaders.h \
+ /home/atc/Documents/CGame/src/Game/../Engine/../Utils/Scale.h \
  /home/atc/Documents/CGame/src/Game/../Engine/Updates.h \
  /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/ScenesManager.h \
  /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/../Utils/Information.h \
@@ -78,7 +80,7 @@ src/Main/CMakeFiles/Project.dir/__/Game/Game.c.o: \
  /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/MenuScene.h \
  /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/../Components/Button.h \
  /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/../Components/Sound.h \
- /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/../Utils/Fonts.h \
+ /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/../Components/Fonts.h \
  /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/LoadingScene.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
@@ -92,7 +94,9 @@ src/Main/CMakeFiles/Project.dir/__/Game/Game.c.o: \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdatomic.h \
+ /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/BestiaryScene.h \
  /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/OptionMenuScene.h \
+ /home/atc/Documents/CGame/src/Game/../Engine/../Scenes/../Engine/Config.h \
  /home/atc/Documents/CGame/src/Game/../Utils/Vector.h \
  /home/atc/Documents/CGame/src/Game/../Components/Map.h \
  /home/atc/Documents/CGame/src/Game/../Components/LoadTextures.h \

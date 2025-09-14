@@ -62,8 +62,10 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.o: \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Utils/../Components/Mouse.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/MenuScene.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Components/Button.h \
+ /home/atc/Documents/CGame/src/Engine/../Scenes/../Components/../Components/Shaders.h \
+ /home/atc/Documents/CGame/src/Engine/../Scenes/../Components/../Utils/Scale.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Components/Sound.h \
- /home/atc/Documents/CGame/src/Engine/../Scenes/../Utils/Fonts.h \
+ /home/atc/Documents/CGame/src/Engine/../Scenes/../Components/Fonts.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/LoadingScene.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
@@ -94,8 +96,10 @@ src/Main/CMakeFiles/Project.dir/__/Engine/Updates.c.o: \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/float.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Components/../Utils/VecMath.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Engine/Engine.h \
+ /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Engine/Config.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Utils/Vector.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Components/Map.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Components/LoadTextures.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/../Game/../Utils/Algorithms.h \
+ /home/atc/Documents/CGame/src/Engine/../Scenes/BestiaryScene.h \
  /home/atc/Documents/CGame/src/Engine/../Scenes/OptionMenuScene.h

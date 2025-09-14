@@ -31,6 +31,7 @@ typedef enum _scn
     OptionMenu,
     ConfigurationMenu,
     LoadingScreen,
+    BestiaryScene,
     EXIT_GAME
 }ManagerScenes;
 /**

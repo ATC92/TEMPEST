@@ -42,21 +42,17 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o: \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdatomic.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
- /home/atc/Documents/CGame/src/Scenes/../Game/Game.h /usr/include/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /home/atc/Documents/CGame/src/Scenes/../Utils/Information.h \
+ /home/atc/Documents/CGame/src/Scenes/../Utils/../Components/Mouse.h \
+ /home/atc/Documents/CGame/build/Debug/_deps/raylib-src/src/raylib.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
+ /home/atc/Documents/CGame/src/Scenes/../Components/Fonts.h \
+ /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
@@ -66,8 +62,16 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/string.h /usr/include/strings.h \
- /home/atc/Documents/CGame/build/Debug/_deps/raylib-src/src/raylib.h \
+ /home/atc/Documents/CGame/src/Scenes/../Game/Game.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h /usr/include/string.h \
+ /usr/include/strings.h \
  /home/atc/Documents/CGame/build/Debug/_deps/raylib-src/src/raymath.h \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -85,15 +89,16 @@ src/Main/CMakeFiles/Project.dir/__/Scenes/LoadingScene.c.o: \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/float.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Components/../Utils/VecMath.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/Engine.h \
+ /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Components/Shaders.h \
+ /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Utils/Scale.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/Updates.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/ScenesManager.h \
- /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Utils/Information.h \
- /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Utils/../Components/Mouse.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/MenuScene.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Components/Button.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Components/Sound.h \
- /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Utils/Fonts.h \
+ /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/BestiaryScene.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/OptionMenuScene.h \
+ /home/atc/Documents/CGame/src/Scenes/../Game/../Engine/../Scenes/../Engine/Config.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Utils/Vector.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Components/Map.h \
  /home/atc/Documents/CGame/src/Scenes/../Game/../Components/LoadTextures.h \

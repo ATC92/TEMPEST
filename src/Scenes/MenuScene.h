@@ -7,7 +7,8 @@
 #include "../Components/Mouse.h"
 #include "../Components/Button.h"
 #include "../Components/Sound.h"
-#include "../Utils/Fonts.h"
+#include "../Components/Fonts.h"
+#include "../Utils/Scale.h"
 #include "ScenesManager.h"
 ///////////////////////////////////////////////////////////////
 /**
