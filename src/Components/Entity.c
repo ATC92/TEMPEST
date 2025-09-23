@@ -15,7 +15,7 @@ Entity* GenEntity(int _t, char* _n, float _h, float _ar, float _sp, float _crt)
             _e->prev_position = (Vector2){0,0};                             ///< Previous Position of the Entity
             _e->velocity = (Vector2){0,0};                                  ///< Velocity of the Entity
             _e->_typeEntity = _PLAYER;                                      ///< Type of Entity             
-            _e->_rect = (Rectangle){0,0,16,16};                             ///< CollisionBox RECT of the Entity
+            _e->_rect = (Rectangle){0,0,.width=16,.height=16};                             ///< CollisionBox RECT of the Entity
             _e->_eLook = 2;                                                 ///< Where the entity is looking (Default: DOWN)
             _e->_textureArray = (Texture2D*)calloc(5,sizeof(Texture2D));    ///< Array of Textures of the Entity
             _e->_vectorColision = (Rectangle*)calloc(4,sizeof(Rectangle));  ///< Vector of Collision Rectangles
@@ -29,7 +29,7 @@ Entity* GenEntity(int _t, char* _n, float _h, float _ar, float _sp, float _crt)
             _e->position = (Vector2){150,150};                              ///< Position of the Entity
             _e->prev_position = (Vector2){0,0};                             ///< Previous Position of the Entity
             _e->_typeEntity = _ENEMY;                                       ///< Type of Entity 
-            _e->_rect = (Rectangle){0,0,16,16};                             ///< CollisionBox RECT of the Entity
+            _e->_rect = (Rectangle){0,0,.width = 16,.height=16};                             ///< CollisionBox RECT of the Entity
             _e->_textureArray = (Texture2D*)calloc(5,sizeof(Texture2D));    ///< Array of Textures of the Entity
             break;
         default:

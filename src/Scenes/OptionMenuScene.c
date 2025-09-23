@@ -21,7 +21,7 @@ void InitOptionMenuScene(void)
     if(!IsFontValid(*fontType))
         return;
     ///< BackGround
-    bg = LoadTexture("assets/BackGrounds/OptionMenu.png");
+    bg = LoadTexture("assets/BackGrounds/Vorealis.png");
     // Information for the Buttons (Path)
     char* pathT1 = "assets/UI/check_round_grey.png";
     char* pathT2 = "assets/UI/check_round_round_circle.png";
@@ -62,8 +62,8 @@ void UpdateOptionMenuScene(void)
     ///< Mouse Position
     mouse = GetMousePosition();
     ///< DrawButtons
-    DrawButton(btt_Return,"Regresar",foo,*fontType);
-    DrawButton(btt_dot,"Activar/Desactivar pantalla completa",pos,*fontType);
+    DrawButton(btt_Return,"Regresar",foo,*fontType,BLACK);
+    DrawButton(btt_dot,"Activar/Desactivar pantalla completa",pos,*fontType,WHITE);
     // DrawTextEx(*fontType,"Activar/Desactivar pantalla completa",pos,40,0,WHITE);
     DrawTexturePro(btt_dot->Texture[btt_dot->action ? true : false], btt_dot->sourceButton,btt_dot->destinationButton, (Vector2){0,0}, 0, WHITE);
     ///< Reset all States
@@ -74,7 +74,7 @@ void UpdateOptionMenuScene(void)
      */
     if (CheckCollisionPointRec(mouse,btt_Return->boundingBox))
     {
-        AccionButton(btt_Return,*fontType,"Regresar",Invert,foo,MainMenu,0.1f,true);
+        AccionButton(btt_Return,*fontType,"Regresar",Invert,foo,MainMenu,0.1f,true,WHITE);
         // DrawTextEx(*fontType,"Activar/Desactivar pantalla completa",pos,40,0,WHITE);
     }
     /**
@@ -82,7 +82,7 @@ void UpdateOptionMenuScene(void)
      */
     else if(CheckCollisionPointRec(mouse,btt_dot->boundingBox))
     {
-        AccionButton(btt_dot,*fontType,"Activar/Desactivar pantalla completa",Invert,pos,OptionMenu,0.1f,false);
+        AccionButton(btt_dot,*fontType,"Activar/Desactivar pantalla completa",Invert,pos,OptionMenu,0.1f,false, WHITE);
         // BeginShaderMode(invert);
         //     btt_dot->state = MOUSE_OVER;
         //     DrawTextEx(*fontType,"Activar/Desactivar pantalla completa",pos,40,0,BLACK);

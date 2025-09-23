@@ -75,10 +75,10 @@ Button* CreateButton(const char* texturePath, const char* texturePath2, Vector2 
 /**
  * 
  */
-void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene, float s, bool action);
+void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene, float s, bool action, Color c);
 /**
  * 
  */
-void DrawButton(Button* button, const char* text, Vector2 posFoo, Font font);
+void DrawButton(Button* button, const char* text, Vector2 posFoo, Font font, Color c);
 
 ////////////////////////////////////////////////////////////////////////////////////////////

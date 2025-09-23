@@ -6,17 +6,27 @@ static Button* btt_StartGame;
 static Button* btt_Option;
 static Button* btt_Exit;
 static Button* btt_Bestiary;
+static float scrollBackGround;
 static Vector2* bar;
 static Vector2* foo;
 static Texture2D bg;
+static Texture2D Logo;
 //////////////////////////////////////////////////////////
 void InitMenuScene(void)
 {
+    ///< Load Logo
+    if(IsPathFile("assets/Icons/Tempest_LOGO_Letras.png"))
+        Logo = LoadTexture("assets/Icons/Tempest_LOGO_Letras.png");
+    else
+        perror("\nERROR NOT LOAD LOGO FILE");
+
+    ///< Scroll BG 
+    scrollBackGround = 0.f;
     // Information for the Buttons (Path)
     char* pathT1 = "assets/UI/button_rectangle_depth_line.png";
     char* pathT2 = "assets/UI/button_rectangle_line.png";
     ///< BackGround
-    bg = LoadTexture("assets/BackGrounds/MainMenu.png");
+    bg = LoadTexture("assets/BackGrounds/Plains.png");
     ///< Texture Temp
     Texture2D temp = LoadTexture("assets/UI/button_rectangle_depth_line.png");
     ///< Creation of 3 buttons
@@ -38,6 +48,7 @@ void InitMenuScene(void)
     UnloadTexture(temp);
 
 
+    ///< Font for buttons
     bar[0] = MeasureTextEx(*fontType, "Iniciar Juego", 40, 0);
     bar[1] = MeasureTextEx(*fontType, "Opciones",40,0);
     bar[2] = MeasureTextEx(*fontType, "Salir",40,0);
@@ -56,57 +67,54 @@ void InitMenuScene(void)
         .x = (btt_Exit->destinationButton.x + btt_Exit->destinationButton.width / 2) - bar[2].x / 2,
         .y = (btt_Exit->destinationButton.y + btt_Exit->destinationButton.height / 2) - bar[2].y / 2
     };
-
-    ///< Texture Bestuary
-    // Rectangle source = {
-    //     .height = (float)btt_Bestiary->Texture->height,
-    //     .width = (float)btt_Bestiary->Texture->width,
-    //     .x = 0,
-    //     .y = 0
-    // };
-
-    // Rectangle dest = {
-    //     btt_Bestiary->position.x,
-    //     btt_Bestiary->position.y,
-    //     source.width * scale.ScaleUniform,
-    //     source.height * scale.ScaleUniform
-    // };
-    
-
-    // btt_Bestiary->destinationButton = dest;
     ///< Init Sounds
     InitSoundGame();
 }
 //////////////////////////////////////////////////////////
 void UpdateMenuScene(void)
 {
+    ///< Scroll Backbround
+    scrollBackGround -= 1.f;
+    if(scrollBackGround <= -bg.width + 229.5)
+        scrollBackGround = 0;
     ///< BackGround
-    DrawTexturePro(bg, (Rectangle){.x=0,.y=0,.height=(float)bg.height,.width=(float)bg.width}, (Rectangle){.x=0,.y=0,.height = (float)GetScreenHeight(),.width= (float)GetScreenWidth()}, (Vector2){0,0}, 0, WHITE);
+    DrawTextureEx(bg,(Vector2){scrollBackGround, 0}, 0.f, 0.9f,WHITE);
+    DrawTextureEx(bg,(Vector2){scrollBackGround + bg.width - 229.5, 0}, 0.f, 0.9f,WHITE);
     /// Button Bestiary
     BeginShaderMode(shaders[Outline]);
         DrawTexturePro(btt_Bestiary->Texture[0], btt_Bestiary->sourceButton, btt_Bestiary->destinationButton, (Vector2){0,0}, 0.0f, WHITE);
     EndShaderMode();
+    ///< Logo Creation
+    CustomScale(0.5f);
+    DrawTexturePro(
+        Logo,
+        (Rectangle){.x=0,.y=0,.width=(float)Logo.width,.height=(float)Logo.height},
+        (Rectangle){.x = ((float)GetScreenWidth() / 2) - ((float)Logo.width), .y=100.f, .width = (float)Logo.width * scale.ScaleUniform,.height=(float)Logo.height * scale.ScaleUniform},
+        (Vector2){0,0},
+        0,
+        WHITE);
+    CustomScale(1.f);
     ///< Reset all states
     btt_StartGame->state = NORMAL;
     btt_Option->state = NORMAL;
     btt_Exit->state = NORMAL;
     btt_Bestiary->state = NORMAL;
     ///!<---- Buttons Draw -->
-    DrawButton(btt_StartGame,"Iniciar Juego",foo[0],*fontType);
-    DrawButton(btt_Option,"Opciones",foo[1],*fontType);
-    DrawButton(btt_Exit,"Salir",foo[2],*fontType);
+    DrawButton(btt_StartGame,"Iniciar Juego",foo[0],*fontType, BLACK);
+    DrawButton(btt_Option,"Opciones",foo[1],*fontType, BLACK);
+    DrawButton(btt_Exit,"Salir",foo[2],*fontType, BLACK);
     ///!<---- Collision logic -->
     if (CheckCollisionPointRec(mouse,btt_StartGame->destinationButton))
     {
-        AccionButton(btt_StartGame,*fontType,"Iniciar Juego",Invert,foo[0],GameState,0.1f,true);
+        AccionButton(btt_StartGame,*fontType,"Iniciar Juego",Invert,foo[0],GameState,0.1f,true, WHITE);
     }
     else if(CheckCollisionPointRec(mouse, btt_Option->destinationButton))
     {
-        AccionButton(btt_Option,*fontType,"Opciones",Invert,foo[1],OptionMenu,0.1f,true);
+        AccionButton(btt_Option,*fontType,"Opciones",Invert,foo[1],OptionMenu,0.1f,true,WHITE);
     }
     else if(CheckCollisionPointRec(mouse, btt_Exit->destinationButton))
     {
-        AccionButton(btt_Exit,*fontType,"Salir",Invert,foo[2],EXIT_GAME,0.1f,true);
+        AccionButton(btt_Exit,*fontType,"Salir",Invert,foo[2],EXIT_GAME,0.1f,true,WHITE);
     }
     else if(CheckCollisionPointRec(mouse,btt_Bestiary->destinationButton))
     {

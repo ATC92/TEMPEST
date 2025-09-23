@@ -12,7 +12,6 @@ Button* CreateButton(const char* texturePath, const char* texturePath2, Vector2 
     /// Bounds
     bttTemp->position = pos;
 
-
     /// Source rectangle
     bttTemp->sourceButton = (Rectangle){0,0, (float)bttTemp->Texture[0].width, (float)bttTemp->Texture[0].height};
 
@@ -36,11 +35,11 @@ Button* CreateButton(const char* texturePath, const char* texturePath2, Vector2 
     bttTemp->state = NORMAL;
     return bttTemp;
 }
-void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene, float s, bool action)
+void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene, float s, bool action, Color c)
 {
     button->state = MOUSE_OVER;
     BeginShaderMode(shaders[type]);
-        DrawTexturePro(button->Texture[1],button->sourceButton,button->destinationButton,(Vector2){0,0},0,WHITE);
+        DrawTexturePro(button->Texture[1],button->sourceButton,button->destinationButton,(Vector2){0,0},0,c);
         DrawTextEx(font,text,posFoo,40,0,BLACK);
     EndShaderMode();
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && action)
@@ -50,9 +49,9 @@ void AccionButton(Button* button, Font font, const char* text,TypeShader type,Ve
         WaitTime(s);
     }
 }
-void DrawButton(Button* button, const char* text, Vector2 posFoo, Font font)
+void DrawButton(Button* button, const char* text, Vector2 posFoo, Font font, Color c)
 {
     DrawTexturePro(button->Texture[0],button->sourceButton,button->destinationButton,(Vector2){0,0},0,WHITE);
-    DrawTextEx(font, text, posFoo, 40, 0, BLACK);
+    DrawTextEx(font, text, posFoo, 40, 0, c);
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
