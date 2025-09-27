@@ -11,6 +11,9 @@ For now, I will update it as time and the project progress. Since it is a person
 ## Version
 #### Alpha V0.2.0
 
+## Changelog
+You can see all updates and changes. [HERE](CHANGELOG.md).
+
 ## Features
 - 2D Gameplay: The game offers a two-dimensional experience, focusing on classic gameplay mechanics and visual style.
 
