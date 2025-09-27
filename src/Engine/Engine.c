@@ -1,13 +1,17 @@
-#include "Engine.h"
 //////////////////////////////////////////////////////////
+#include "Engine.h"
 //////////////////////////////////////////////////////////
 void InitEngine()
 {
     //////////////////////////////////////////////////////////
     ///< FLAGS FOR THE ENGINE
-    SetConfigFlags(FLAG_WINDOW_RESIZABLE);    
-    
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE);        
+    ///< Set exit key
+    SetExitKey(0);
+    ///<    Init audio device <RayLib Context>
+    InitAudioDevice();
     //////////////////////////////////////////////////////////
+    ///!<---------- Init Components ---------->
     ///< Init Scale
     InitScale();
     ///< Mouse Init
@@ -16,10 +20,11 @@ void InitEngine()
     InitFont();
     ///< Init Shaders
     InitShaders();
-    ///< Set exit key
-    SetExitKey(0);
-    ///< Init audio device
-    InitAudioDevice();
+    ///< Init Sounds && Music
+    InitSounds();
+    InitMusic();
+    //////////////////////////////////////////////////////////
+    ///!<---------- Init Scenes ---------->
     ///< Init Scenes Manager
     InitScenesManager();
     ///< Init MenuGUI
@@ -36,6 +41,8 @@ void InitEngine()
 //////////////////////////////////////////////////////////
 void EngineRender()
 {
+    ///< Frame to Animation
+    UpdateAnimation(&eplayer->spriteAnimation[eplayer->_eLook],eplayer->isMooving);
     ///< MousePosition
     UpdateMousePosition();
     ///< Render current Scene/
@@ -46,28 +53,43 @@ void EngineRender()
 }
 //////////////////////////////////////////////////////////
 void EngineUpdate(float dt)
-{
+{   
     ///< Update EngineFlags
     UpdateEngineFlags();
     ///< GameUpdateLogic | Movement of Player and MouseWheel
     UpdateGameLogic(dt);
     ///< UpdateGameScene
     UpdateGameScene();
+    ///< 
+    UpdateMusicScene(scenes->typeScene);
 }
 //////////////////////////////////////////////////////////
 void DestroyEngine()
 {
-    ///< Audio Close
-    CloseAudioDevice();
+    ///!<---------- Free Memory and Close Scenes ---------->
     ///< Game Scene Close
     DestroyGameScene();
     ///< Menu Scene Close
     DestroyMenuScene();
     ///< Loading Scene Close
     DestroyLoadingScene();
+    ///< OptionMenuScene Close
+    DestroyOptionMenuScene();
+    ///< BestiaryScene Close
+    DestroyBestiaryScene();
+    ///!<---------- Free Memory and Close Components ---------->    
+    ///< Free Fonts
+    DestroyFont();
+    ///< Free Shaders
+    DestroyShaders();
+    ///< Destroy Audio && Music
+    DestroySounds();
+    DestroyMusic();
+    ///<    Audio Close <RayLib Context>
+    CloseAudioDevice();
 
     ///< Save Comfiguration
-    // SaveConfig(gameConfig,"assets/config.txt");
+    SaveConfig(gameConfig,"assets/config.txt");
 }
 //////////////////////////////////////////////////////////
 

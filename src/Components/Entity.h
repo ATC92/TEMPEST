@@ -4,6 +4,7 @@
 ///< C Libraries
 #include <string.h>
 ///< CGame Libraries
+#include "../Components/animation.h"
 #include "Textures.h"
 /////////////////////////////////////////////////////////////////////////
 /**
@@ -15,15 +16,15 @@
  * 
  * Contains:
  * - @c UP        = 0
- * - @c RIGHT     = 1
- * - @c DOWN      = 3
- * - @c LEFT      = 4
+ * - @c DOWN      = 1
+ * - @c RIGHT     = 2
+ * - @c LEFT      = 3
  */
 typedef enum _eLooking
 {
     UP,
-    RIGHT,
     DOWN,
+    RIGHT,
     LEFT
 }eLooking;
 /**
@@ -56,21 +57,23 @@ typedef enum _typeEntity
 */
 typedef struct _Entity
 {
-    char* name;                     ///< Name of the entity
-    float health;                   ///< Health of the entity
-    float armor;                    ///< Armor of the entity
-    float speed;                    ///< Speed of the entity
-    float crit;                     ///< Critical of the entity
-    float exp;                      ///< Experience of the entity
-    int _eLook;                     ///< Where the entity is looking
-    Vector2 position;               ///< Position {X,Y}
-    Vector2 prev_position;          ///< Previous Position {X,Y}
-    Vector2 velocity;               ///< Velocity of the Entity
-    TileMap* _tileMap;              ///< TileMap of the Entities
-    Texture2D* _textureArray;       ///< Array of Textures of the Entity 
-    TypeEntity  _typeEntity;        ///< Type of entity in the ENUM.
-    Rectangle _rect;                ///< Rectangle of the Entity
-    Rectangle* _vectorColision;      ///< Vector of Collision Rectangles
+    char* name;                             ///< Name of the entity
+    float health;                           ///< Health of the entity
+    float armor;                            ///< Armor of the entity
+    float speed;                            ///< Speed of the entity
+    float crit;                             ///< Critical of the entity
+    float exp;                              ///< Experience of the entity
+    int _eLook;                             ///< Where the entity is looking
+    int sizeArrayTextures;                  ///< Size of the array of textures
+    bool isMooving;                         ///< Is the entity moving?
+    Vector2 position;                       ///< Position {X,Y}
+    Vector2 prev_position;                  ///< Previous Position {X,Y}
+    Vector2 velocity;                       ///< Velocity of the Entity
+    TileMap* _tileMap;                      ///< TileMap of the Entities
+    SpriteAnimation* spriteAnimation;       ///< Sprite Animation of Entities
+    Texture2D* _textureArray;               ///< Array of Textures of the Entity 
+    TypeEntity  _typeEntity;                ///< Type of entity in the ENUM.
+    Rectangle _rect;                        ///< Rectangle of the Entity
 }Entity;
 /**
  * @brief Generation of entity atributes

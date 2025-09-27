@@ -3,10 +3,11 @@
 //////////////////////////////////////////////////////////
 ///< Public declaration
 Shader* shaders;
+static size_t totalShaders;
 //////////////////////////////////////////////////////////
 void InitShaders(void)
 {
-    size_t totalShaders = 2;
+    totalShaders = 2;
     ///< Load Shaders
     Shader invert = LoadShader(NULL, "src/Shaders/invert.fs");
     Shader outline = LoadShader(NULL,"src/Shaders/outline.fs");
@@ -25,3 +26,10 @@ void InitShaders(void)
     shaders[0] = invert;
     shaders[1] = outline;
 }
+void DestroyShaders(void)
+{
+    for(size_t i = 0; i < totalShaders; i++)
+        UnloadShader(shaders[i]);
+    free(shaders);
+}
+//////////////////////////////////////////////////////////

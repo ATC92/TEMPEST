@@ -32,12 +32,10 @@ Button* CreateButton(const char* texturePath, const char* texturePath2, Vector2 
     };
 
     bttTemp->action = false;
-    bttTemp->state = NORMAL;
     return bttTemp;
 }
-void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene, float s, bool action, Color c)
+void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene,MusicType prev,MusicType next,float s, bool action, Color c)
 {
-    button->state = MOUSE_OVER;
     BeginShaderMode(shaders[type]);
         DrawTexturePro(button->Texture[1],button->sourceButton,button->destinationButton,(Vector2){0,0},0,c);
         DrawTextEx(font,text,posFoo,40,0,BLACK);
@@ -46,6 +44,8 @@ void AccionButton(Button* button, Font font, const char* text,TypeShader type,Ve
     {
         PlaySound(sounds[0]);
         scenes->typeScene = nextScene;
+        if(prev != MS_NONE && next != MS_NONE)
+            ChangeMusic(prev,next);
         WaitTime(s);
     }
 }

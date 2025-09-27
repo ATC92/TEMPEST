@@ -26,13 +26,13 @@
  */
 typedef enum _scn
 {
-    MainMenu,
-    GameState,
-    OptionMenu,
-    ConfigurationMenu,
-    LoadingScreen,
-    BestiaryScene,
-    EXIT_GAME
+    sMAINMENU,
+    sGAMESTATE,
+    sOPTIONMENU,
+    sCONFIGURATIONMENU,
+    sLOADSCREEN,
+    sBESTIARY,
+    sEXIT_GAME
 }ManagerScenes;
 /**
  * @brief Scene Struct
@@ -53,6 +53,7 @@ typedef struct _scene
 {
     bool* ActivedScenes;
     ManagerScenes typeScene;
+    ManagerScenes previousScene;
 }Scene;
 //////////////////////////////////////////////////////////////////
 /**

@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stddef.h>
 ///< CGame Lib
 #include "../Components/Mouse.h"
 #include "../Components/Button.h"

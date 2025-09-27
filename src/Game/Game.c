@@ -19,16 +19,22 @@ void InitGameScene(void)
     ///< Gen player.
     eplayer = GenEntity(_PLAYER, "Hero", 100.f,20.f,90.f,0.f);
     ///< Player Gen Textures
-    eplayer->_tileMap = LoadMapTextures("assets/Tilemap/Tilemap_Entity.png",64,16);
+    // eplayer->_tileMap = LoadMapTextures("assets/Tilemap/Tilemap_Entity.png",64,16);
     ///< Fill arrayTextures of the Entity Player.
-    FillTexturesEntity(eplayer->_textureArray,eplayer->_tileMap);
+    // eplayer->sizeArrayTextures = FillTexturesEntity(eplayer->_textureArray,eplayer->_tileMap);
+    eplayer->spriteAnimation = (SpriteAnimation*)calloc(4,sizeof(SpriteAnimation));
+    eplayer->spriteAnimation[0] = CreateSpriteAnimation("assets/Entities/_aSimon/BackWalk/SimonUp.png",      0,4,0.1f,0.1f);
+    eplayer->spriteAnimation[1] = CreateSpriteAnimation("assets/Entities/_aSimon/FrontWalk/SimonDown.png",   0,4,0.1f,0.1f);
+    eplayer->spriteAnimation[2] = CreateSpriteAnimation("assets/Entities/_aSimon/SideWalk/SimonSideR.png",   0,3,0.1f,0.1f);
+    eplayer->spriteAnimation[3] = CreateSpriteAnimation("assets/Entities/_aSimon/SideWalk/SimonSideL.png",   0,3,0.1f,0.1f);
 
+    ///< Set initial position of the player
     ///< Enemy
     eEnemy = GenEntity(_ENEMY, "Enemy", 100.f,20.f,1.5f,20.f);
     ///< Enemy Gen Textures
     eEnemy->_tileMap = LoadMapTextures("assets/Tilemap/Tilemap_Entity.png",64,16);
     ///< Fill arrayTextures of the Entity Enemy.
-    FillTexturesEntity(eEnemy->_textureArray,eEnemy->_tileMap);
+    eEnemy->sizeArrayTextures = FillTexturesEntity(eEnemy->_textureArray,eEnemy->_tileMap);
 
     /////////////////////////////////////////////////////////////////////////////////////////
     // Generate the tilemap (16x16 tiles)
@@ -36,7 +42,7 @@ void InitGameScene(void)
     ///< Fill arrayTexture.
     mapWorld->texturesArray = (Texture2D*)calloc(20,sizeof(Texture2D));
     mapWorld->emptyTexture = LoadTexture("assets/Tilemap/EmptyTexture.png");
-    FillTextures(mapWorld);
+    mapWorld->sizeArrayTextures = FillTextures(mapWorld);
     ///< Selection of the map to load First
     _slct = level_1;
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +65,7 @@ void UpdateGameRender(void)
         DrawRectangleLinesEx(mapWorld->mapsData[0].size, 2.0f, RED);
         ///< Player Render
         RenderPlayer(eplayer);
-        RenderPlayer(eEnemy);
+        // RenderPlayer(eEnemy);
         ///< Selection of the map to Render
         _slct = level_2;
         ///< Map Render
@@ -73,10 +79,11 @@ void UpdateGameLogic(float dt)
     switch (scenes->typeScene)
     {
         ///< Game State
-        case GameState:
+        case sGAMESTATE:
             
             /// Movement and Collision
             UpdateMovement(eplayer,dt);
+            
 
             /// Collision System
             SystemAABBMid(eplayer,eEnemy,true);
@@ -109,21 +116,20 @@ void UpdateGameScene(void)
 {
     ///< Check if the player pressed the Escape key
     ///< To open or close the Option Menu
-    if(IsKeyPressed(KEY_ESCAPE) && scenes->typeScene != MainMenu)
+    if(IsKeyPressed(KEY_ESCAPE) && scenes->typeScene != sMAINMENU)
     {
-        if(scenes->ActivedScenes[ConfigurationMenu] == false)
+        if(scenes->previousScene != sOPTIONMENU)
         {
-            PlaySound(sounds[0]);                   ///< Play Sound when is pressed
-            scenes->ActivedScenes[ConfigurationMenu] = true;    ///< Open Option Menu
-            scenes->typeScene = ConfigurationMenu;         ///< Change Scene to Option Menu
-            WaitTime(0.15);
+            PlaySound(sounds[0]);                                   ///< Play Sound when is pressed
+            scenes->typeScene = sOPTIONMENU;                  ///< Change Scene to Option Menu
+            scenes->previousScene = sGAMESTATE;                      ///< Save Previous Scene
+            // WaitTime(0.1);
         }
         else
         {
-            PlaySound(sounds[0]);                   ///< Play Sound when is pressed
-            scenes->ActivedScenes[ConfigurationMenu] = false;   ///< Close Option Menu
-            scenes->typeScene = GameState;          ///< Change Scene to Game State
-            WaitTime(0.15);
+            PlaySound(sounds[0]);                                   ///< Play Sound when is pressed
+            scenes->typeScene = sGAMESTATE;                          ///< Change Scene to Game State
+            scenes->previousScene = sOPTIONMENU;              ///< Save Previous Scene
         }
     }
 }
@@ -142,13 +148,26 @@ void DestroyGameScene(void)
     for (int i=0; i < 20; i++)
         UnloadTexture(mapWorld->texturesArray[i]);
         
+    UnloadTexture(mapWorld->emptyTexture);
     free(mapWorld->mapsData);
     free(mapWorld->tileMap);
     free(mapWorld);
 
     ///< Delete Player Data
     free(eplayer->_tileMap);
-}
+    for(int i=0; i<eplayer->sizeArrayTextures; i++)
+        UnloadTexture(eplayer->_textureArray[i]);
+    free(eplayer->_textureArray);
+    free(eplayer);
+    ///< Delete Enemy None Data
+    free(eEnemy->_tileMap);
+    for(int i=0; i<eEnemy->sizeArrayTextures; i++)
+        UnloadTexture(eEnemy->_textureArray[i]);
+    free(eEnemy->_textureArray);
+    free(eEnemy);
+
+
+}   
 //////////////////////////////////////////////////////////
 
 

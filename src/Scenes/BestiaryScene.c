@@ -84,11 +84,10 @@ void UpdateBestiaryScene(void)
     DrawTexturePro(bg,source,dest,(Vector2){0,0},0.f,WHITE);
     DrawTexturePro(Enemy,sourceE,destE,(Vector2){0,0},0.f,WHITE);
     DrawTextEx(*fontType,"Bestiary", (Vector2){800, 90}, 80,0,BLACK);
-    btt_Return->state = NORMAL;
     DrawButton(btt_Return,"Regresar",foo,*fontType, BLACK);
     /*!<--- CollisionBox Logic */
     if(CheckCollisionPointRec(mouse,btt_Return->destinationButton))
-        AccionButton(btt_Return,*fontType,"Regresar",Invert,foo,MainMenu,0.1f,true,WHITE);
+        AccionButton(btt_Return,*fontType,"Regresar",S_INVERT,foo,sMAINMENU,MS_NONE,MS_NONE,0.1f,true,WHITE);
 }
 void DestroyBestiaryScene(void)
 {

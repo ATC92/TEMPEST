@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-///< CGame Lib
+///< TEMPEST Lib
+#include "../Components/Sound.h"
 ///< RayLib
 ////////////////////////////////////////////////////////////////////////////
 #define CONFIG_FILE ASSETS "/config.txt"

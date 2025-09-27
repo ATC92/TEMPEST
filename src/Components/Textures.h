@@ -88,6 +88,7 @@ typedef struct _renderData
     MapData* mapsData;          ///< Pointer to the map data.
     TileMap* tileMap;           ///< Pointer to the tile data.
     MapEnum mapSlctr;           ///< Enum that selects the current map.
+    int sizeArrayTextures;      ///< Size of the textures array.
     Texture2D* texturesArray;   ///< Textures array used for rendering the map.
     Texture2D emptyTexture;     ///< Empty texture.
 }RenderData;

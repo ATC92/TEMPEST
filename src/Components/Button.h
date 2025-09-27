@@ -12,22 +12,6 @@
 #include "raylib.h"
 ////////////////////////////////////////////////////////////////////////////////////////////
 /**
- * @brief ButtonState
- * 
- * This enum defines the possible states of a button in the GUI.
- * 
- * The states are:
- * - @c NORMAL: The button is in its default state. \\
- * - @c MOUSE_OVER: The button is hovered by the mouse. \\
- * - @c PRESSED: The button is currently pressed.
- */
-typedef enum _state
-{
-    NORMAL,
-    MOUSE_OVER,
-    PRESSED
-}ButtonState;
-/**
  * @brief Button
  * This struct represents a button in the GUI.
  * 
@@ -47,7 +31,6 @@ typedef struct _btt
 {
     bool action;                    ///< Pressed
     float frameHeight;              ///< FrameHight
-    ButtonState state;              ///< Estate of the button
     Texture2D* Texture;             ///< Textures
     Sound sound;                    ///< Spound when is pressed
     Vector2 position;               ///< Position
@@ -73,11 +56,40 @@ typedef struct _btt
  */
 Button* CreateButton(const char* texturePath, const char* texturePath2, Vector2 pos);
 /**
+ * @brief AccionButton
+ * This function handles the action of a button when it is pressed.
+ * 
+ * @param `button` A pointer to the Button structure representing the button.
+ * @param `font` The font used for rendering the button text.
+ * @param `text` The text displayed on the button.
+ * @param `type` The type of shader effect to apply when the button is pressed.
+ * @param `posFoo` The position where the button text is drawn.
+ * @param `nextScene` The scene to switch to when the button is pressed.
+ * @param `prev` The previous music type before the button action.
+ * @param `next` The next music type after the button action.
+ * @param `s` A float value that may represent a scaling factor or duration.
+ * @param `action` A boolean indicating whether the button action should be executed.
+ * @param `c` The color used for rendering the button text.
+ * 
+ * @return `void`
+ * 
+ * @note This function checks if the button is pressed, plays the associated sound, applies a shader effect,
  * 
  */
-void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene, float s, bool action, Color c);
+void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene,MusicType prev,MusicType next,float s, bool action, Color c);
 /**
+ * @brief DrawButton
+ * This function draws a button on the screen with the specified text and style.
  * 
+ * @param `button` A pointer to the Button structure representing the button to be drawn.
+ * @param `text` The text to be displayed on the button.
+ * @param `posFoo` The position where the button text is drawn.
+ * @param `font` The font used for rendering the button text.
+ * @param `c` The color used for rendering the button text.
+ * 
+ * @return `void`
+ * 
+ * @note This function draws the button's texture and text on the screen, applying the specified font and color.
  */
 void DrawButton(Button* button, const char* text, Vector2 posFoo, Font font, Color c);
 

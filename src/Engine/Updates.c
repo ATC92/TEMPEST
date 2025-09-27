@@ -4,22 +4,21 @@ void RenderCurrentScene(ManagerScenes type)
 {
     switch (type)
     {
-    case MainMenu:
+    case sMAINMENU:
         UpdateMenuScene();
         break;
-    case GameState:
+    case sGAMESTATE:
         UpdateGameRender();
         break;
-    case LoadingScreen:
+    case sLOADSCREEN:
         UpdateLoadingScene();
-        scenes->typeScene = GameState;
         break;
-    case ConfigurationMenu:
+    case sCONFIGURATIONMENU:
         break;
-    case OptionMenu:
+    case sOPTIONMENU:
         UpdateOptionMenuScene();
         break;
-    case BestiaryScene:
+    case sBESTIARY:
         UpdateBestiaryScene();
         break;
     default:

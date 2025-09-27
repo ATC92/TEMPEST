@@ -16,9 +16,8 @@ Entity* GenEntity(int _t, char* _n, float _h, float _ar, float _sp, float _crt)
             _e->velocity = (Vector2){0,0};                                  ///< Velocity of the Entity
             _e->_typeEntity = _PLAYER;                                      ///< Type of Entity             
             _e->_rect = (Rectangle){0,0,.width=16,.height=16};                             ///< CollisionBox RECT of the Entity
-            _e->_eLook = 2;                                                 ///< Where the entity is looking (Default: DOWN)
+            _e->_eLook = DOWN;                                                 ///< Where the entity is looking (Default: DOWN)
             _e->_textureArray = (Texture2D*)calloc(5,sizeof(Texture2D));    ///< Array of Textures of the Entity
-            _e->_vectorColision = (Rectangle*)calloc(4,sizeof(Rectangle));  ///< Vector of Collision Rectangles
             break;
         case _ENEMY:
             _e->name = strdup(_n);                                          ///< Name of the Entity

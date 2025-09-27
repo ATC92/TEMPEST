@@ -34,12 +34,12 @@ TileMap* LoadMapTextures(char*, const int, const int);
  * 
  * @param renderData Pointer to the RenderData structure containing the tile map image and textures array.
  * 
- * @return 'Void'.
+ * @return 'int'.
  * 
  * This function iterates through the tile map image, extracts non-empty tiles as subimages, and loads them into the textures array.
  * It also unloads the original tile map image after processing.
  */
-void FillTextures(RenderData*);
+int FillTextures(RenderData*);
 /**
  * @brief Fill Texture2D* array for load all textures for Entity struct.
  * 
@@ -48,12 +48,12 @@ void FillTextures(RenderData*);
  * @param _TextureList Pointer to the Texture2D array where textures will be stored.
  * @param _TileMapPlayer Pointer to the TileMap structure containing the player's tile map image
  * 
- * @return 'void'.
+ * @return 'int', the number of textures loaded into the array.
  * 
  * This function iterates through the tile map image, extracts non-empty tiles as subimages, and loads them into the Texture2D array.
  * It also unloads the original tile map image after processing.
  */
-void FillTexturesEntity(Texture2D*,TileMap*);
+int FillTexturesEntity(Texture2D*,TileMap*);
 /**
  * @brief Render map from the data information.
  * 

@@ -6,13 +6,18 @@ GameConfig gameConfig;
 ////////////////////////////////////////////////////////////////////////////
 void SaveConfig(GameConfig cfg, const char* filename)
 {
-    
+    ///!<---------- Open File ---------->
     FILE* f = fopen(filename, "w");
-    if (!f) {
-        perror("Error al abrir config.txt");
+    if (!f)
+    {
+        TraceLog(LOG_FATAL, "Could not open config file for SAVE: %s", filename);
+        // perror("Error al abrir config.txt");
         return;
     }
+    ///!<---------- Update Config before saving ---------->
+    cfg.volume = masterVolume;              // Update volume before saving
 
+    ///!<---------- Writing Config ---------->
     fprintf(f, "fullscreen=%d\n", cfg.fullscreen);
     fprintf(f, "width=%d\n", cfg.width);
     fprintf(f, "height=%d\n", cfg.height);
@@ -26,7 +31,8 @@ GameConfig LoadConfig(const char* filename)
     FILE* f = fopen(filename, "r");
     if (!f)
     {
-        perror("ERRO Config.txt");
+        TraceLog(LOG_FATAL, "Could not open config file for LOAD: %s", filename);
+        // perror("Error al abrir config.txt");
         return cfg;
     }
 
@@ -42,6 +48,10 @@ GameConfig LoadConfig(const char* filename)
             else if (strcmp(key, "volume") == 0) cfg.volume = (float)atof(value);
         }
     }
+
+    ///!<----------- Update Values for global variables ---------->
+    masterVolume = cfg.volume;              // Update masterVolume with loaded volume
+    
 
     fclose(f);
     return cfg;

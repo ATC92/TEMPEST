@@ -17,28 +17,28 @@ void UpdateMovement(Entity* eplayer, float dt)
     if(IsKeyDown(KEY_A))
     {
         eplayer->position.x -= eplayer->speed * dt;
-        // eplayer->velocity.x = -eplayer->speed;
+        eplayer->isMooving = true;
         if(eplayer->_eLook != LEFT)
             eplayer->_eLook = LEFT;
     }
     else if (IsKeyDown(KEY_D))
     {
         eplayer->position.x += eplayer->speed * dt;
-        // eplayer->velocity.x = eplayer->speed;
+        eplayer->isMooving = true;
         if(eplayer->_eLook != RIGHT)
             eplayer->_eLook = RIGHT;
     }
     else if(IsKeyDown(KEY_W))
     {
         eplayer->position.y -= eplayer->speed * dt;
-        // eplayer->velocity.y = -eplayer->speed;
+        eplayer->isMooving = true;
         if(eplayer->_eLook != UP)
             eplayer->_eLook = UP;
     }
     else if(IsKeyDown(KEY_S))
     {   
         eplayer->position.y += eplayer->speed * dt;
-        // eplayer->velocity.y = eplayer->speed;
+        eplayer->isMooving = true;
         if(eplayer->_eLook != DOWN)
             eplayer->_eLook = DOWN;
     }
@@ -51,6 +51,12 @@ void UpdateMovement(Entity* eplayer, float dt)
     {
         eplayer->speed = 90.f; // Reset speed when shift is released
     }
+
+    if (IsKeyReleased(KEY_A) || IsKeyReleased(KEY_D) || IsKeyReleased(KEY_W) || IsKeyReleased(KEY_S))
+    {
+        eplayer->isMooving = false;
+    }
+    
 }
 //////////////////////////////////////////////////////////
 void SyncCollisionBox(Entity* entiy)

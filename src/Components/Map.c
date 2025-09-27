@@ -7,9 +7,9 @@ RenderData* LoadInformationMap(void)
     ///< Load Maps
     tempData->mapsData = (MapData*)calloc(2,sizeof(MapData));
     tempData->mapsData[0].data = LoadMapTiles("assets/Maps/CGame_L1_BG_Layer.csv",&tempData->mapsData[0].width,&tempData->mapsData[0].height);
-    tempData->mapsData[0].size = (Rectangle){0,0,tempData->mapsData[0].width * 16, tempData->mapsData[0].height * 16};
+    tempData->mapsData[0].size = (Rectangle){0,0,(float)tempData->mapsData[0].width * 16, (float)tempData->mapsData[0].height * 16};
     tempData->mapsData[1].data = LoadMapTiles("assets/Maps/CGame_L1_UP_Layer.csv",&tempData->mapsData[1].width,&tempData->mapsData[1].height);
-    tempData->mapsData[1].size = (Rectangle){0,0,tempData->mapsData[1].width * 16, tempData->mapsData[1].height * 16};
+    tempData->mapsData[1].size = (Rectangle){0,0,(float)tempData->mapsData[1].width * 16, (float)tempData->mapsData[1].height * 16};
     tempData->tileMap = LoadMapTextures("assets/Tilemap/TiledMapWorld.png",96,48);
     tempData->emptyTexture = LoadTexture("assets/Tilemap/EmptyTexture.png");
     return tempData;
@@ -46,9 +46,9 @@ int** LoadMapTiles(char* path, int* c, int* r)
     rewind(archivo);
 
     //< Matrix creation **.
-    int** mapa = calloc(filas, sizeof(int*));
+    int** mapa = calloc((size_t)filas, sizeof(int*));
     for (int i = 0; i < filas; i++)
-        mapa[i] = calloc(columnas, sizeof(int));
+        mapa[i] = calloc((size_t)columnas, sizeof(int));
     // Fill Matrix
     int f = 0;
     while (fgets(b, sizeof(b), archivo) && f < filas)

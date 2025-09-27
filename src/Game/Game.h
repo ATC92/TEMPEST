@@ -8,16 +8,23 @@
 #include "raymath.h"
 ///< CGame Lib
 #include "OnUpdate.h"
-#include "../Utils/Vector.h"
-#include "../Components/Entity.h"
+
 #include "../Components/Map.h"
+#include "../Components/Sound.h"
+#include "../Components/Entity.h"
+#include "../Components/animation.h"
 #include "../Components/Collision.h"
-#include "../Utils/Algorithms.h"
 #include "../Components/LoadTextures.h"
+
+#include "../Utils/Vector.h"
+#include "../Utils/Algorithms.h"
 #include "../Utils/Information.h"
+
 #include "../Scenes/ScenesManager.h"
 #include "../Scenes/MenuScene.h"
-#include "../Components/Sound.h"
+/////////////////////////////////////////////////////
+///< Public Definitions
+extern Entity* eplayer;
 /////////////////////////////////////////////////////
 /**
  * @brief Init Game Function

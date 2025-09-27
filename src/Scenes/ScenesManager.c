@@ -5,7 +5,7 @@ Scene* scenes;
 void InitScenesManager(void)
 {
     ///< Create Scenes Manager Memory
-    scenes = CreateScene(MainMenu);
+    scenes = CreateScene(sMAINMENU);
 }
 //////////////////////////////////////////////////////////
 Scene* CreateScene(ManagerScenes type)

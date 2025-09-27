@@ -2,6 +2,7 @@
 //< C/C++ Libraries
 //< CGame Libraries
 #include "../Components/Shaders.h"
+#include "../Components/animation.h"
 #include "../Utils/Scale.h"
 #include "../Game/Game.h"
 

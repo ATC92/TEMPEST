@@ -8,20 +8,16 @@ int main(void)
     float dt = 0.0f;                                            ///< Delta Time Init
     InitWindow(gameConfig.height, gameConfig.width, "Project V-Beta");          ///< Set Name of the window
     if(gameConfig.fullscreen == 1)
-    {
-        
+    {   
         SetWindowSize(GetMonitorWidth(0),GetMonitorHeight(0));
         ToggleFullscreen();
     }
-    else
-    {
-        SetWindowSize(gameConfig.width,gameConfig.height);
-    }
+    else SetWindowSize(gameConfig.width,gameConfig.height);
     SetTargetFPS(60);                                           ///< Set FPS
     InitEngine();                                               ///< Init Engine
     while (!WindowShouldClose())                                ///< Main loop for the game
     {
-        if(scenes->typeScene == EXIT_GAME)
+        if(scenes->typeScene == sEXIT_GAME)
             break;
         dt = GetFrameTime();                                    ///< Get Delta Time
         EngineUpdate(dt);                                       ///< Game Engine Update
