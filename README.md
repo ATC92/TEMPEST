@@ -3,7 +3,7 @@
 The game is natively created in pure C, using RayLib and cJSON.  
 For now, I will update it as time and the project progress. Since it is a personal project, it will be developed at a slow pace.
 
-### Know our main caracter
+### ¡Meet our protagonist!
 ## Simon
 
 ![SIMON](assets/Entities/_aSimon/PortraitAndShowcase/ShowCase.gif)
