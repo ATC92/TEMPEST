@@ -10,3 +10,9 @@ build/Debug
 bin/
 .vscode/
 .vscode-test/
+
+# Ignorar archivos del sistema
+comands.txt
+.DS_Store
+Doxyfile
+valgrinf-log.txt
