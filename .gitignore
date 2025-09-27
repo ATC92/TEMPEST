@@ -10,9 +10,10 @@ build/Debug
 bin/
 .vscode/
 .vscode-test/
+GDD/TEMPEST.odt
 
 # Ignorar archivos del sistema
-comands.txt
+commands.txt
 .DS_Store
 Doxyfile
 valgrinf-log.txt
