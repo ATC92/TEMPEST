@@ -1,11 +1,9 @@
 //////////////////////////////////////////////////////////
 #pragma once
 //////////////////////////////////////////////////////////
-///< C/C++ Lib
-#include <stdlib.h>
-///< CGame Lib
-///< Raylib
-#include "raylib.h"
+///< TEMPEST Lib
+#include "../Engine/Flags.h"
+
 //////////////////////////////////////////////////////////
 ///< Public definition
 extern Shader* shaders;
@@ -13,7 +11,9 @@ extern Shader* shaders;
 typedef enum _typeShader
 {
     S_INVERT,
-    S_OUTLINE
+    S_OUTLINE,
+    S_BLUR,
+    S_SHIELDGLOW
 }TypeShader;
 //////////////////////////////////////////////////////////
 /**

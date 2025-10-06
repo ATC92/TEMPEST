@@ -1,16 +1,17 @@
 //////////////////////////////////////////////////////////////////////////////
 #pragma once
 //////////////////////////////////////////////////////////////////////////////
-///< C/C++ Lib
 ///< TEMPEST Lib
+#include "../Engine/Flags.h"
+
 #include "../Components/Mouse.h"
 #include "../Components/Sound.h"
 #include "../Components/Fonts.h"
 #include "../Components/Button.h"
 #include "../Engine/Config.h"
+#include "../Game/Game.h"
 #include "ScenesManager.h"
-///< RayLib
-#include "raylib.h"
+#include "AuxScenes.h"
 //////////////////////////////////////////////////////////////////////////////
 /**
  * @brief Initialize the Options Menu scene

@@ -23,6 +23,15 @@ set(BUILD_GAMES    OFF CACHE BOOL "" FORCE)
 set(BUILD_TOOLS    OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(raylib)
 
+# --- Silenciar todos los warnings de Raylib ---
+# Detecta el compilador y aplica las flags correctas solo a la librería raylib
+
+if (CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(raylib PRIVATE -w)
+elseif (MSVC)
+    target_compile_options(raylib PRIVATE /W0)
+endif()
+
 # --- 3. Añadir ejecutable desde src/ ---
 add_subdirectory(src)  # Aquí se define el target "Project"
 

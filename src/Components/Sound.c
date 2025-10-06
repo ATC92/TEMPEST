@@ -4,7 +4,7 @@
 ///< Public declarations
 Sound* sounds;
 Music* music;
-MusicType currentMusic = MS_NONE;
+MusicType currentMusic;
 bool fading = false;
 float masterVolume = 1.0f;
 ///< Private declarations
@@ -18,12 +18,17 @@ void InitSounds(void)
 {
     ///!<---------- Sounds Paths ---------->
     char* soundPath = "assets/FX/UI/click-b.wav";
-    ///< Memory allocation for the sounds 
-    sounds = (Sound*)calloc(1,sizeof(Sound));
-    ///!<-------- Loading Sounds ---------->
-    sounds[0] = LoadSound(soundPath);
     ///< Total Sounds loaded
     totalSounds = 1;
+    ///< Memory allocation for the sounds 
+    sounds = (Sound*)calloc(totalSounds,sizeof(Sound));
+    Sound guiClick= LoadSound(soundPath);
+    ///!<-------- Loading Sounds ---------->
+    if(!IsSoundValid(guiClick))
+        TraceLog(LOG_ERROR,"Sound not loaded: [%s]",soundPath);
+    else
+        sounds[0] = guiClick;
+
 }
 void DestroySounds(void)
 {
@@ -38,30 +43,33 @@ void InitMusic(void)
     ///!<---------- Music Paths ---------->
     char* musicPathMainMenu = "assets/FX/Music/fantasy_music/Intro.mp3";
     char* musicPathGameState = "assets/FX/Music/fantasy_music/Adventure.mp3";
-    ///< Memory allocation for the music 
-    music = (Music*)calloc(2,sizeof(Music));
-    ///!<-------- Loading Music ---------->
-    music[0] = LoadMusicStream(musicPathMainMenu);
-    music[1] = LoadMusicStream(musicPathGameState);
-    ///!< TraceLog for debug
-    if(!IsMusicValid(music[0]))
-        TraceLog(LOG_ERROR, "Music [0] not valid, %s",musicPathMainMenu);
-    if(!IsMusicValid(music[1]))
-        TraceLog(LOG_ERROR, "Music [1] not valid, %s",musicPathGameState); 
     ///< Total Music loaded
     totalMusic = 2;
+    currentMusic = MS_MAINMENU;
+    ///< Memory allocation for the music 
+    music = (Music*)calloc(totalMusic,sizeof(Music));
+    Music mMainMenu = LoadMusicStream(musicPathMainMenu);
+    Music mGameState = LoadMusicStream(musicPathGameState);
+    ///!<-------- Loading Music ---------->
+    if(!IsMusicValid(mMainMenu))
+        TraceLog(LOG_ERROR, "Music [0] not valid, %s",musicPathMainMenu);
+    else 
+        music[0] = mMainMenu;
+    if(!IsMusicValid(mGameState))
+        TraceLog(LOG_ERROR, "Music [1] not valid, %s",musicPathGameState); 
+    else 
+        music[1] = mGameState;
+
 }
-void ChangeMusic(MusicType actualSong, MusicType nextSong)
+void ChangeMusic()
 {
-    if(actualSong != MS_NONE && nextSong != MS_NONE)
-    {
-        targetVolume = 0.0f;
-        fading = true;
-    }
+    targetVolume = 0.0f;
+    fading = true;
 }
 void UpdateMusicScene(ManagerScenes typeScene)
 {
-    SetMusicVolume(music[currentMusic], masterVolume);
+    if(currentMusic != MS_NONE)
+        SetMusicVolume(music[currentMusic], masterVolume);
     switch(typeScene)
     {
         case sGAMESTATE:
@@ -82,7 +90,12 @@ void UpdateMusicScene(ManagerScenes typeScene)
             currentMusic = scenes->previousScene == sMAINMENU ? MS_MAINMENU : MS_GAMESTATE;
             UpdateMusicStream(music[currentMusic]);
             break;
+        case sBESTIARY:
+            currentMusic = MS_MAINMENU;
+            UpdateMusicStream(music[currentMusic]);
+            break;
         default:
+            // TraceLog(LOG_FATAL,"Error, Music problem: [%d]",currentMusic);
             break;
     }
 }
@@ -105,7 +118,8 @@ void FaidingMusic(MusicType currentMusic, MusicType nextMusic)
                 SetMusicVolume(music[currentMusic], musicVolume);
         } else {
             ///< We are at target volume
-            if (targetVolume == 0.0f) {
+            if (targetVolume == 0.0f)
+            {
                 ///< End of fade out, switch music
                 if (currentMusic != MS_NONE) StopMusicStream(music[currentMusic]);
                 currentMusic = nextMusic;
@@ -114,7 +128,8 @@ void FaidingMusic(MusicType currentMusic, MusicType nextMusic)
                     SetMusicVolume(music[currentMusic], 0.0f);
                 }
                 targetVolume = 1.0f;
-            } else {
+            } else 
+            {
                 ///< End of fade in
                 fading = false;
             }
@@ -125,5 +140,6 @@ void DestroyMusic(void)
 {
     for(size_t i=0; i<totalMusic; i++)
         UnloadMusicStream(music[i]);
+    free(music);
 }
 //////////////////////////////////////////////////////////

@@ -11,6 +11,7 @@ bin/
 .vscode/
 .vscode-test/
 GDD/TEMPEST.odt
+raylib-examples/
 
 # Ignorar archivos del sistema
 commands.txt

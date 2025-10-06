@@ -1,14 +1,16 @@
+//////////////////////////////////////////////////////////
 #pragma once
-//< C/C++ Libraries
-//< CGame Libraries
+//////////////////////////////////////////////////////////
+//< TEMPEST Libraries
 #include "../Components/Shaders.h"
 #include "../Components/animation.h"
 #include "../Utils/Scale.h"
 #include "../Game/Game.h"
 
-#include "Updates.h"
+#include "Flags.h"
 #include "Config.h"
-//< RayLib Libraries
+#include "Updates.h"
+//////////////////////////////////////////////////////////
 ///
 ///
 /**

@@ -1,59 +1,47 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "Game.h"
-
-///< Definition of Global Variables
-///< Global Variables
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///!<------- Private declarations
 /// @brief Main Camera for the game.
-Camera2D camera = {0};
+static Camera2D camera = {0};
 /// @brief Main map world generator.
-RenderData* mapWorld;
+static RenderData* mapWorld;
 /// @brief Map enumerator
-MapEnum _slct;
-/// @brief Main Entity for the player.
+static MapEnum _slct;
+//--------------------------------------------------------
+///!<------- Public declarations
+/// Main Entity for the player.
 Entity* eplayer;
-/// @brief Enemy Entity
-Entity* eEnemy;
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void InitGameScene(void)
 {
     /////////////////////////////////////////////////////////////////////////////////////////
     ///< Gen player.
-    eplayer = GenEntity(_PLAYER, "Hero", 100.f,20.f,90.f,0.f);
-    ///< Player Gen Textures
-    // eplayer->_tileMap = LoadMapTextures("assets/Tilemap/Tilemap_Entity.png",64,16);
-    ///< Fill arrayTextures of the Entity Player.
-    // eplayer->sizeArrayTextures = FillTexturesEntity(eplayer->_textureArray,eplayer->_tileMap);
+    eplayer = GenEntity(_PLAYER, "Hero",90);
+    ///< Create SpriteAnimation for PlayerEntity.
     eplayer->spriteAnimation = (SpriteAnimation*)calloc(4,sizeof(SpriteAnimation));
-    eplayer->spriteAnimation[0] = CreateSpriteAnimation("assets/Entities/_aSimon/BackWalk/SimonUp.png",      0,4,0.1f,0.1f);
-    eplayer->spriteAnimation[1] = CreateSpriteAnimation("assets/Entities/_aSimon/FrontWalk/SimonDown.png",   0,4,0.1f,0.1f);
-    eplayer->spriteAnimation[2] = CreateSpriteAnimation("assets/Entities/_aSimon/SideWalk/SimonSideR.png",   0,3,0.1f,0.1f);
-    eplayer->spriteAnimation[3] = CreateSpriteAnimation("assets/Entities/_aSimon/SideWalk/SimonSideL.png",   0,3,0.1f,0.1f);
-
-    ///< Set initial position of the player
-    ///< Enemy
-    eEnemy = GenEntity(_ENEMY, "Enemy", 100.f,20.f,1.5f,20.f);
-    ///< Enemy Gen Textures
-    eEnemy->_tileMap = LoadMapTextures("assets/Tilemap/Tilemap_Entity.png",64,16);
-    ///< Fill arrayTextures of the Entity Enemy.
-    eEnemy->sizeArrayTextures = FillTexturesEntity(eEnemy->_textureArray,eEnemy->_tileMap);
-
+    eplayer->spriteAnimation[UP]    = CreateSpriteAnimation("assets/Entities/_aSimon/BackWalk/SimonUp.png",      0,4,0.1f,0.1f,A_LOOP);
+    eplayer->spriteAnimation[DOWN]  = CreateSpriteAnimation("assets/Entities/_aSimon/FrontWalk/SimonDown.png",   0,4,0.1f,0.1f,A_LOOP);
+    eplayer->spriteAnimation[RIGHT] = CreateSpriteAnimation("assets/Entities/_aSimon/SideWalk/SimonSideR.png",   0,3,0.1f,0.1f,A_LOOP);
+    eplayer->spriteAnimation[LEFT]  = CreateSpriteAnimation("assets/Entities/_aSimon/SideWalk/SimonSideL.png",   0,3,0.1f,0.1f,A_LOOP);
     /////////////////////////////////////////////////////////////////////////////////////////
     // Generate the tilemap (16x16 tiles)
     mapWorld = LoadInformationMap();
     ///< Fill arrayTexture.
     mapWorld->texturesArray = (Texture2D*)calloc(20,sizeof(Texture2D));
-    mapWorld->emptyTexture = LoadTexture("assets/Tilemap/EmptyTexture.png");
+    // mapWorld->emptyTexture = LoadTexture("assets/Tilemap/EmptyTexture.png");
     mapWorld->sizeArrayTextures = FillTextures(mapWorld);
     ///< Selection of the map to load First
     _slct = level_1;
     /////////////////////////////////////////////////////////////////////////////////////////
     ///< Camera Init 
-    camera.target = eplayer->position;
+    camera.target = (Vector2){ eplayer->sizeRect.x + eplayer->sizeRect.width/2, eplayer->sizeRect.y + eplayer->sizeRect.height/2 };
     camera.zoom = 4.0f;
     camera.rotation = 0.0f;
     camera.offset = (Vector2){ (float)GetScreenWidth()/2.0f, (float)GetScreenHeight()/2.0f };
     /////////////////////////////////////////////////////////////////////////////////////////
 }
-////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 void UpdateGameRender(void)
 {
     BeginMode2D(camera);                    ///< Enter 2D Mode
@@ -62,7 +50,7 @@ void UpdateGameRender(void)
         _slct = level_1;
         ///< Map Render
         RenderTileMap(mapWorld,_slct);
-        DrawRectangleLinesEx(mapWorld->mapsData[0].size, 2.0f, RED);
+        
         ///< Player Render
         RenderPlayer(eplayer);
         // RenderPlayer(eEnemy);
@@ -70,70 +58,76 @@ void UpdateGameRender(void)
         _slct = level_2;
         ///< Map Render
         RenderTileMap(mapWorld,_slct);
+
+#if DEBUG
+    DrawRectangleLinesEx(mapWorld->mapsData[0].size, 2.0f, RED);
+#endif
+
     }
     EndMode2D();                            ///< Close 2D Mode
 }
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void UpdateGameLogic(float dt)
 {
-    switch (scenes->typeScene)
+    if(scenes->typeScene == sGAMESTATE)
     {
-        ///< Game State
-        case sGAMESTATE:
-            
-            /// Movement and Collision
-            UpdateMovement(eplayer,dt);
-            
+        /// Movement and Collision
+        UpdateMovement(eplayer,dt);
+        /// Collision System
+        // SystemAABBMid(eplayer,eEnemy,true);
+        /// Collision with Rectangle
+        ClampPlayerToMap(eplayer,mapWorld->mapsData[0].size);
+        /// Update CollisionBox Movement
+        // SyncCollisionBox(eEnemy);
+        SyncCollisionBox(eplayer);
+        ///< WheelUpdates
+        UpdateCameraWheel(&camera);
 
-            /// Collision System
-            SystemAABBMid(eplayer,eEnemy,true);
-
-            /// Collision with Rectangle
-            ClampPlayerToMap(eplayer,mapWorld->mapsData[0].size);
-            
-            /// Update CollisionBox Movement
-            SyncCollisionBox(eEnemy);
-            SyncCollisionBox(eplayer);
-
-            ///< WheelUpdates
-            float smoothFactor = 0.1f;                      ///< Smooth Camera follow (Default: 0.1f, Options: 0.05f o 0.2f)
-            UpdateCameraWheel(&camera);
-            camera.target.x += (eplayer->position.x - camera.target.x) * smoothFactor;
-            camera.target.y += (eplayer->position.y - camera.target.y) * smoothFactor;
-
-            ///< Lock camera to a zone
-            LockCameraToZone(&camera, mapWorld->mapsData[0].size);
-
-            ///< Save Prev Position of the player
-            eplayer->prev_position = eplayer->position;
-            break;  
-        default:
-            break;
-    }
+        ///!<--------- Smooth Camera follow
+        ///< If you want a more rigid camera, increase the < smoothFactor > value.
+        ///< If you want a more fluid camera, decrease the < smoothFactor > value.
+        float smoothFactor = 0.15f;                      ///< Smooth Camera follow (Default: 0.1f, Options: 0.05f o 0.2f)
+        camera.target.x += (eplayer->sizeRect.x + eplayer->sizeRect.width/2 - camera.target.x) * smoothFactor;
+        camera.target.y += (eplayer->sizeRect.y + eplayer->sizeRect.height/2 - camera.target.y) * smoothFactor;
+        ///< Lock camera to a zone
+        LockCameraToZone(&camera, mapWorld->mapsData[0].size);
+        ///< Save Prev Position of the player
+        eplayer->prev_position = eplayer->position;
+    }   
 }
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void UpdateGameScene(void)
 {
     ///< Check if the player pressed the Escape key
-    ///< To open or close the Option Menu
-    if(IsKeyPressed(KEY_ESCAPE) && scenes->typeScene != sMAINMENU)
+    if(IsKeyPressed(KEY_ESCAPE) && scenes->typeScene != sMAINMENU && scenes->typeScene != sLOADSCREEN)
     {
-        if(scenes->previousScene != sOPTIONMENU)
+        if(scenes->typeScene == sGAMESTATE)
         {
-            PlaySound(sounds[0]);                                   ///< Play Sound when is pressed
-            scenes->typeScene = sOPTIONMENU;                  ///< Change Scene to Option Menu
-            scenes->previousScene = sGAMESTATE;                      ///< Save Previous Scene
-            // WaitTime(0.1);
+            PlaySound(sounds[0]);                                       ///< Play Sound when is pressed
+            scenes->typeScene = sOPTIONMENU;                            ///< Change Scene to Option Menu
+            scenes->previousScene = sGAMESTATE;                         ///< Save Previous Scene
         }
-        else
+        else if(scenes->typeScene == sOPTIONMENU && scenes->previousScene != sMAINMENU)
         {
-            PlaySound(sounds[0]);                                   ///< Play Sound when is pressed
-            scenes->typeScene = sGAMESTATE;                          ///< Change Scene to Game State
-            scenes->previousScene = sOPTIONMENU;              ///< Save Previous Scene
+            PlaySound(sounds[0]);
+            scenes->typeScene = sGAMESTATE;
+            scenes->previousScene = sOPTIONMENU;
+        }
+        else if(scenes->typeScene == sOPTIONMENU && scenes->previousScene == sMAINMENU)
+        {
+            PlaySound(sounds[0]);
+            scenes->typeScene = sMAINMENU;
+            scenes->previousScene = sOPTIONMENU;
+        }
+        else if(scenes->typeScene == sBESTIARY && scenes->previousScene == sMAINMENU)
+        {
+            PlaySound(sounds[0]);
+            scenes->typeScene = sMAINMENU;
+            scenes->previousScene = sBESTIARY;
         }
     }
 }
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void GameInformation(void)
 {
     ///< Rectangle for the information of the camera
@@ -142,33 +136,32 @@ void GameInformation(void)
     DrawLinesMidScreen();
     #endif
 }
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void DestroyGameScene(void)
 {
     for (int i=0; i < 20; i++)
-        UnloadTexture(mapWorld->texturesArray[i]);
-        
+    {
+        if(IsTextureValid(mapWorld->texturesArray[i]))
+        {
+            UnloadTexture(mapWorld->texturesArray[i]);
+            mapWorld->texturesArray[i] = (Texture2D){0};
+        }
+    }
+    free(mapWorld->texturesArray);
     UnloadTexture(mapWorld->emptyTexture);
     free(mapWorld->mapsData);
-    free(mapWorld->tileMap);
     free(mapWorld);
 
     ///< Delete Player Data
-    free(eplayer->_tileMap);
-    for(int i=0; i<eplayer->sizeArrayTextures; i++)
-        UnloadTexture(eplayer->_textureArray[i]);
-    free(eplayer->_textureArray);
+    for (size_t i = 0; i < 4; i++)
+    {
+        UnloadTexture(eplayer->spriteAnimation[i].spriteSheet);
+    }
+    free(eplayer->spriteAnimation);
     free(eplayer);
-    ///< Delete Enemy None Data
-    free(eEnemy->_tileMap);
-    for(int i=0; i<eEnemy->sizeArrayTextures; i++)
-        UnloadTexture(eEnemy->_textureArray[i]);
-    free(eEnemy->_textureArray);
-    free(eEnemy);
-
-
+    // free(eplayer->name);
 }   
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

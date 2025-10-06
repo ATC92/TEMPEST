@@ -1,12 +1,7 @@
 #pragma once
-///< C/C++Lib
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-///< Extern Lib
-#include "raylib.h"
-#include "raymath.h"
-///< CGame Lib
+///< TEMPEST Lib
+#include "../Engine/Flags.h"
+
 #include "OnUpdate.h"
 
 #include "../Components/Map.h"
@@ -17,7 +12,6 @@
 #include "../Components/LoadTextures.h"
 
 #include "../Utils/Vector.h"
-#include "../Utils/Algorithms.h"
 #include "../Utils/Information.h"
 
 #include "../Scenes/ScenesManager.h"

@@ -1,9 +1,7 @@
 #pragma once
-///< Extern Libraries
-#include "raylib.h"
-///< C Libraries
-#include <string.h>
-///< CGame Libraries
+///< TEMPEST Lib
+#include "../Engine/Flags.h"
+
 #include "../Components/animation.h"
 #include "Textures.h"
 /////////////////////////////////////////////////////////////////////////
@@ -42,7 +40,9 @@ typedef enum _eLooking
 typedef enum _typeEntity
 {
     _PLAYER,
-    _ENEMY
+    _ENEMY,
+    _NPC,
+    _BOSS
 }TypeEntity;
 /**
  * @brief Main Entity
@@ -58,34 +58,25 @@ typedef enum _typeEntity
 typedef struct _Entity
 {
     char* name;                             ///< Name of the entity
-    float health;                           ///< Health of the entity
-    float armor;                            ///< Armor of the entity
-    float speed;                            ///< Speed of the entity
-    float crit;                             ///< Critical of the entity
-    float exp;                              ///< Experience of the entity
-    int _eLook;                             ///< Where the entity is looking
     int sizeArrayTextures;                  ///< Size of the array of textures
+    uint8_t speed;                          ///< Speed of the Entity
     bool isMooving;                         ///< Is the entity moving?
+    eLooking eLook;                         ///< Where the entity is looking
     Vector2 position;                       ///< Position {X,Y}
     Vector2 prev_position;                  ///< Previous Position {X,Y}
     Vector2 velocity;                       ///< Velocity of the Entity
-    TileMap* _tileMap;                      ///< TileMap of the Entities
     SpriteAnimation* spriteAnimation;       ///< Sprite Animation of Entities
-    Texture2D* _textureArray;               ///< Array of Textures of the Entity 
-    TypeEntity  _typeEntity;                ///< Type of entity in the ENUM.
-    Rectangle _rect;                        ///< Rectangle of the Entity
+    TypeEntity  typeEntity;                 ///< Type of entity in the ENUM.
+    Rectangle sizeRect;                     ///< Rectangle of the Entity
 }Entity;
 /**
  * @brief Generation of entity atributes
  * 
  * ---
  * 
- * @param int       _t      ///< Type of the Entity (Player or Enemy)
+ * @param TypeEntity       _t      ///< Type of the Entity (Player or Enemy)
  * @param char*     _n      ///< Name of the Entity
- * @param float     _h      ///< Health of the Entity
- * @param float     _ar     ///< Armor of the Entity
- * @param float     _sp     ///< Speed of the Entity
- * @param float     _crt    ///< Critical of the Entity
+ * @param uint8_t   _sp     ///< Speed of the Entity
  * 
  * @return @n `Entity`      ///< Struct main with all parameters    
  * 
@@ -93,5 +84,5 @@ typedef struct _Entity
  *       The type of entity is determined by the first parameter.
  *       If the type is _PLAYER, it generates a player entity.
  */
-Entity* GenEntity(int TypeEntity,char* Name,float Health,float Armor,float Speed,float Critical);
+Entity* GenEntity(TypeEntity TypeEntity,char* Name, uint8_t _s);
 

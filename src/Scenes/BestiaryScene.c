@@ -1,99 +1,78 @@
-///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "BestiaryScene.h"
-///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///< Public declarations
+SpriteAnimation scrollVeyx;
 ///< Private declarations
-static Button* btt_Return;
-static Vector2 bar, foo;
-static Texture2D bg, Enemy;
-static Rectangle source, dest;
-static Rectangle sourceE, destE;
-///////////////////////////////////////////////////////////
+static bool scrollAnimation;
+///< KeysDraw
+static Button* btt_ESC;
+static Texture2D k_ESC;
+static Vector2 foo;
+static Vector2 barESC;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void InitBestiaryScene(void)
 {
-    ///< Background
-    char* pathBG = "assets/UI/Pergamino.png";
-    char* pathEnemy = "assets/Enemies/Golem.png";
-    if(IsPathFile(pathBG) || IsPathFile(pathEnemy))
-    {
-        bg = LoadTexture(pathBG);
-        Enemy = LoadTexture(pathEnemy);
-    }
-    else 
-        perror("ERROR: LoadBackGround Texture");
-
-    source = (Rectangle)
-    {
-        .x = 0,
-        .y = 0,
-        .width = (float)bg.width,
-        .height = (float)bg.height
-    };
-    // CustomScale(1f);
-    dest = (Rectangle)
-    {
-        .x = ((float)GetScreenWidth() / 2) - ((float)bg.width / 2),
-        .y = 0,
-        .width = (float)bg.width * scale.ScaleUniform,
-        .height = (float)bg.height * scale.ScaleScreen
-    };
-    ////< enemies
-    sourceE = (Rectangle)
-    {
-        .x = 0,
-        .y = 0,
-        .width = (float)Enemy.width,
-        .height = (float)Enemy.height
-    };
-    CustomScale(3.5f);
-    // CustomScale(1f);
-    destE = (Rectangle)
-    {
-        .x = 550,
-        .y =  200,
-        .width = (float)Enemy.width * scale.ScaleUniform,
-        .height = (float)Enemy.height * scale.ScaleUniform
-    };
+    /* !<--- Bestiary LoadingTextures ---> */
+    k_ESC = LoadTexture("assets/UI/Keys/White/ESC.png");
+    /* !<--- Button Creation ---> */
+    barESC = MeasureTextEx(fontType,"Regresar",30,0);
+    CustomScale(2.f);
+    btt_ESC = CreateButton("assets/UI/Keys/White/ESC.png","assets/UI/Keys/White/ESC.png",(Vector2){
+        .x = (float)GetScreenWidth() - (float)k_ESC.width * scale.ScaleUniform - 10 - barESC.x,
+        .y = (float)GetScreenHeight() - (float)k_ESC.height * scale.ScaleUniform- 10,});
     CustomScale(1.f);
-    /* !<--- Bestiary Menu|GUI ---> */
-    ///< Textures path for the Buttons (Path)
-    char* pathT1 = "assets/UI/button_rectangle_depth_line.png";
-    char* pathT2 = "assets/UI/button_rectangle_line.png";
-    ///< Texture temp for bttreturn;
-    Texture2D temp = LoadTexture(pathT1);
-    ///< Position btt_Return
-    float midScrenTexture = {(float)GetScreenWidth() / 2 - (float)temp.width / 2.0f};
-    ///< Button Return
-    btt_Return = CreateButton(pathT1,pathT2,(Vector2){midScrenTexture,850.f});
-    bar = MeasureTextEx(*fontType,"Regresar",40,0);
     foo = (Vector2)
     {
-        .x = (btt_Return->destinationButton.x + btt_Return->destinationButton.width / 2) - bar.x / 2,
-        .y = (btt_Return->destinationButton.y + btt_Return->destinationButton.height / 2) - bar.y / 2
+        .x = (btt_ESC->destinationButton.x + btt_ESC->destinationButton.width / 2) + barESC.x/6,
+        .y = (btt_ESC->destinationButton.y + btt_ESC->destinationButton.height / 2) - barESC.y / 2
     };
-
-    ///< Enemies to Load (IMG DEMO)
-    ///< Positions
-    ///< Text's
-    ///< Scale (Posibility)
-
+    btt_ESC->boundingBox = (Rectangle)
+    {
+        .x = btt_ESC->destinationButton.x,
+        .y = btt_ESC->destinationButton.y,
+        .width = btt_ESC->destinationButton.width + barESC.x,
+        .height = btt_ESC->destinationButton.height
+    };
+    ///!<--- Scroll Bestiary ---->
+    scrollVeyx = CreateSpriteAnimation("assets/UI/Scroll/OpenScroll/Scroll_SpriteSheet.png",0,10,0.01f,0.1f,A_ONESHOT);
+    /* !<--- Bestiary Menu|GUI ---> */    
+    /* !<--- Bestiary Components ---> */    
+    scrollAnimation = false;
+    UnloadTexture(k_ESC);
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void UpdateBestiaryScene(void)
 {
     ClearBackground(GRAY);
-    DrawTexturePro(bg,source,dest,(Vector2){0,0},0.f,WHITE);
-    DrawTexturePro(Enemy,sourceE,destE,(Vector2){0,0},0.f,WHITE);
-    DrawTextEx(*fontType,"Bestiary", (Vector2){800, 90}, 80,0,BLACK);
-    DrawButton(btt_Return,"Regresar",foo,*fontType, BLACK);
+#if DEBUG
+    DrawRectangleLinesEx(btt_ESC->boundingBox,2.f,RED);
+#endif
+    ///< Animation Scroll
+    CustomScale(3.1f);
+        DrawSpriteAnimationPro(&scrollVeyx,(Vector2){(float)GetScreenWidth() / 2 - (494/2)*3.1f , -45},0,(Vector2){0,0},WHITE,11,494.f,377.f);
+    CustomScale(1.f);
+    ///< If animation still working
+    if(scrollVeyx.cur == scrollVeyx.last)
+        scrollAnimation = true;
+    if(scrollAnimation)
+    {
+        DrawButton(btt_ESC,"Regresar",foo,fontType,30, BLACK);
+        DrawTextEx(fontType,"Bestiary", (Vector2){800, 90}, 80,0,BLACK);
+        scrollAnimation = false;
+    }
     /*!<--- CollisionBox Logic */
-    if(CheckCollisionPointRec(mouse,btt_Return->destinationButton))
-        AccionButton(btt_Return,*fontType,"Regresar",S_INVERT,foo,sMAINMENU,MS_NONE,MS_NONE,0.1f,true,WHITE);
+    if(CheckCollisionPointRec(mouse,btt_ESC->boundingBox))
+        AccionButton(btt_ESC,fontType,"Regresar",S_INVERT,foo,sMAINMENU,MS_NONE,MS_NONE,0.1f,30.f,true,WHITE,BLACK);
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void DestroyBestiaryScene(void)
 {
-    UnloadTexture(btt_Return->Texture[0]);
-    UnloadTexture(btt_Return->Texture[1]);
+    for(size_t i=0; i<2; i++)
+        UnloadTexture(btt_ESC->Texture[i]);
+    
+    free(btt_ESC->Texture);
 
-    free(btt_Return);
+    free(btt_ESC);
 }
 ///////////////////////////////////////////////////////////

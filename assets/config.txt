@@ -1,4 +1,4 @@
 fullscreen=1
 width=1920
 height=1080
-volume=0.235000
+volume=0.194444

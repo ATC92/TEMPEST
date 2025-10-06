@@ -34,24 +34,24 @@ Button* CreateButton(const char* texturePath, const char* texturePath2, Vector2 
     bttTemp->action = false;
     return bttTemp;
 }
-void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene,MusicType prev,MusicType next,float s, bool action, Color c)
+void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene,MusicType prev,MusicType next,float s, float fontSize, bool action, Color c, Color fontColor)
 {
     BeginShaderMode(shaders[type]);
         DrawTexturePro(button->Texture[1],button->sourceButton,button->destinationButton,(Vector2){0,0},0,c);
-        DrawTextEx(font,text,posFoo,40,0,BLACK);
+        DrawTextEx(font,text,posFoo,fontSize,0,fontColor);
     EndShaderMode();
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && action)
     {
         PlaySound(sounds[0]);
-        scenes->typeScene = nextScene;
+        ChangeScene(nextScene);
         if(prev != MS_NONE && next != MS_NONE)
-            ChangeMusic(prev,next);
+            ChangeMusic();
         WaitTime(s);
     }
 }
-void DrawButton(Button* button, const char* text, Vector2 posFoo, Font font, Color c)
+void DrawButton(Button* button, const char* text, Vector2 posFoo, Font font,float fontSize, Color c)
 {
-    DrawTexturePro(button->Texture[0],button->sourceButton,button->destinationButton,(Vector2){0,0},0,WHITE);
-    DrawTextEx(font, text, posFoo, 40, 0, c);
+    DrawTexturePro(button->Texture[0],button->sourceButton, button->destinationButton,(Vector2){0,0},0,WHITE);
+    DrawTextEx(font, text, posFoo, fontSize, 0, c);
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////

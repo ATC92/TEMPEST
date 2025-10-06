@@ -1,32 +1,12 @@
 #pragma once
-///< Extern Libraries.
-#include "raylib.h"
-///< Libraries C.
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-///< Libraries CGame
+///< TEMPEST Lib
+#include "../Engine/Flags.h"
+
 #include "Entity.h"
 #include "Textures.h"
 ////////////////////////////////////////////////////////////////
 ///<
 ////////////////////////////////////////////////////////////////
-/**
- * @brief Load map textures from the file.
- * 
- * This function loads a tile map from a specified file path and initializes its texture and size.
- * 
- * @param _path Path to the tile map image file.
- * @param w Width of the tile map.
- * @param h Height of the tile map.
- * 
- * @return TileMap* Pointer to the loaded TileMap structure.
- * 
- * This function allocates memory for a TileMap structure, loads the image from the specified path,
- * creates a texture from the image, and sets the size of the tile map. It returns a pointer to the TileMap structure.
- */
-TileMap* LoadMapTextures(char*, const int, const int);
 /**
  * @brief Fill textures array for the Map.
  * 
@@ -40,20 +20,6 @@ TileMap* LoadMapTextures(char*, const int, const int);
  * It also unloads the original tile map image after processing.
  */
 int FillTextures(RenderData*);
-/**
- * @brief Fill Texture2D* array for load all textures for Entity struct.
- * 
- * This function fills the Texture2D array with textures extracted from the player's tile map.
- * 
- * @param _TextureList Pointer to the Texture2D array where textures will be stored.
- * @param _TileMapPlayer Pointer to the TileMap structure containing the player's tile map image
- * 
- * @return 'int', the number of textures loaded into the array.
- * 
- * This function iterates through the tile map image, extracts non-empty tiles as subimages, and loads them into the Texture2D array.
- * It also unloads the original tile map image after processing.
- */
-int FillTexturesEntity(Texture2D*,TileMap*);
 /**
  * @brief Render map from the data information.
  * 

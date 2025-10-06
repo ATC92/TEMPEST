@@ -1,12 +1,9 @@
 ///////////////////////////////////////////////////////////////
 #pragma once
 ///////////////////////////////////////////////////////////////
-///< C/C++ Lib
-#include <stdlib.h>
 ///< TEMPEST Lib
+#include "../Engine/Flags.h"
 #include "../Scenes/ScenesManager.h"
-///< Raylib
-#include "raylib.h"
 ///////////////////////////////////////////////////////////////
 typedef enum _MusicType
 {
@@ -60,14 +57,11 @@ void InitMusic(void);
  * @brief Change the currently playing music track.
  * This function stops the current track and starts a new one.
  * 
- * @param actualSong The index of the currently playing song.
- * @param nextSong The index of the next song to play.
- * 
  * @return void
  * 
  * @note Ensure that the indices provided are valid.
  */
-void ChangeMusic(MusicType actualSong, MusicType nextSong);
+void ChangeMusic();
 /**
  * @brief Handle the fading effect between music tracks.
  * This function gradually decreases the volume of the current track

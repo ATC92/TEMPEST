@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////
 RenderData* LoadInformationMap(void)
 {
-    // Var Temp Return
+    ///< Allocate Memory to RenderData.
     RenderData* tempData = (RenderData*)calloc(1,sizeof(RenderData));
     ///< Load Maps
     tempData->mapsData = (MapData*)calloc(2,sizeof(MapData));
@@ -10,7 +10,9 @@ RenderData* LoadInformationMap(void)
     tempData->mapsData[0].size = (Rectangle){0,0,(float)tempData->mapsData[0].width * 16, (float)tempData->mapsData[0].height * 16};
     tempData->mapsData[1].data = LoadMapTiles("assets/Maps/CGame_L1_UP_Layer.csv",&tempData->mapsData[1].width,&tempData->mapsData[1].height);
     tempData->mapsData[1].size = (Rectangle){0,0,(float)tempData->mapsData[1].width * 16, (float)tempData->mapsData[1].height * 16};
-    tempData->tileMap = LoadMapTextures("assets/Tilemap/TiledMapWorld.png",96,48);
+    ///< Load Textures
+    ///<    TileMap && EmptyTexture
+    tempData->tileMapTex = LoadTexture("assets/Tilemap/TiledMapWorld.png");
     tempData->emptyTexture = LoadTexture("assets/Tilemap/EmptyTexture.png");
     return tempData;
 }

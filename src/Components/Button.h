@@ -1,15 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 ////////////////////////////////////////////////////////////////////////////////////////////
-///< C/C++ Lib
-#include <stdlib.h>
-///< CGame Lib
+///< TEMPEST Lib
+#include "../Engine/Flags.h"
+
 #include "../Scenes/ScenesManager.h"
 #include "../Components/Shaders.h"
 #include "../Utils/Scale.h"
 #include "Sound.h"
-///< RayLib
-#include "raylib.h"
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * @brief Button
@@ -32,7 +31,6 @@ typedef struct _btt
     bool action;                    ///< Pressed
     float frameHeight;              ///< FrameHight
     Texture2D* Texture;             ///< Textures
-    Sound sound;                    ///< Spound when is pressed
     Vector2 position;               ///< Position
     Rectangle boundingBox;          ///< CollisiomBox position.
     Rectangle sourceButton;         ///< Size of the button in Rectangle
@@ -76,7 +74,7 @@ Button* CreateButton(const char* texturePath, const char* texturePath2, Vector2 
  * @note This function checks if the button is pressed, plays the associated sound, applies a shader effect,
  * 
  */
-void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene,MusicType prev,MusicType next,float s, bool action, Color c);
+void AccionButton(Button* button, Font font, const char* text,TypeShader type,Vector2 posFoo, ManagerScenes nextScene,MusicType prev,MusicType next,float s, float fontSize, bool action, Color c, Color fontColor);
 /**
  * @brief DrawButton
  * This function draws a button on the screen with the specified text and style.
@@ -91,6 +89,6 @@ void AccionButton(Button* button, Font font, const char* text,TypeShader type,Ve
  * 
  * @note This function draws the button's texture and text on the screen, applying the specified font and color.
  */
-void DrawButton(Button* button, const char* text, Vector2 posFoo, Font font, Color c);
+void DrawButton(Button* button, const char* text, Vector2 posFoo, Font font, float fontSize, Color c);
 
 ////////////////////////////////////////////////////////////////////////////////////////////

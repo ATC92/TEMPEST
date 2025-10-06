@@ -1,6 +1,6 @@
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "Engine.h"
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void InitEngine()
 {
     //////////////////////////////////////////////////////////
@@ -30,45 +30,53 @@ void InitEngine()
     ///< Init MenuGUI
     InitMenuScene();
     ///< Init Loading Scene
-    InitLoadingScene(4);
+    InitLoadingScene(2);
     ///< Init OptionMenuScene
     InitOptionMenuScene();
     ///< Init BestiaryScene
     InitBestiaryScene(); 
-    ///< Init Game
-    InitGameScene();
 }
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void EngineRender()
 {
-    ///< Frame to Animation
-    UpdateAnimation(&eplayer->spriteAnimation[eplayer->_eLook],eplayer->isMooving);
+    if(scenes->typeScene == sGAMESTATE)
+    {
+        ///< Frame to Animation
+        UpdateAnimation(&eplayer->spriteAnimation[eplayer->eLook],eplayer->isMooving);
+    }
+    else if(scenes->typeScene == sBESTIARY)
+    {
+        UpdateAnimation(&scrollVeyx,true);
+    }
     ///< MousePosition
     UpdateMousePosition();
     ///< Render current Scene/
     RenderCurrentScene(scenes->typeScene);
-    ///< Show information of the game 
-    ///< FPS, Position of the player, etc.
+    ///< Show information of the game < FPS, Position of the player, etc >
     GameInformation();
+    ///< Draw MouseCursor
+    DrawTextureEx(cursor,mouse,0.f,3.f,WHITE);
+#if DEBUG
+    DrawRectangleLines((int)mouse.x,(int)mouse.y,(int)(cursor.width * 3),(int)(cursor.height * 3),RED);
+#endif
 }
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void EngineUpdate(float dt)
 {   
-    ///< Update EngineFlags
-    UpdateEngineFlags();
     ///< GameUpdateLogic | Movement of Player and MouseWheel
     UpdateGameLogic(dt);
-    ///< UpdateGameScene
+    ///< UpduateGameScene
     UpdateGameScene();
     ///< 
     UpdateMusicScene(scenes->typeScene);
 }
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void DestroyEngine()
 {
     ///!<---------- Free Memory and Close Scenes ---------->
     ///< Game Scene Close
-    DestroyGameScene();
+    if(IsGameInit)
+        DestroyGameScene();
     ///< Menu Scene Close
     DestroyMenuScene();
     ///< Loading Scene Close
@@ -77,11 +85,15 @@ void DestroyEngine()
     DestroyOptionMenuScene();
     ///< BestiaryScene Close
     DestroyBestiaryScene();
+    ///< Destroy ScenesManager
+    DestroyScenes();
     ///!<---------- Free Memory and Close Components ---------->    
     ///< Free Fonts
     DestroyFont();
     ///< Free Shaders
     DestroyShaders();
+    //< Destroy Mouse
+    DestroyMouse();
     ///< Destroy Audio && Music
     DestroySounds();
     DestroyMusic();
@@ -91,5 +103,5 @@ void DestroyEngine()
     ///< Save Comfiguration
     SaveConfig(gameConfig,"assets/config.txt");
 }
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -7,9 +7,11 @@
 ///< CGame Lib
 #include "../Components/Mouse.h"
 #include "../Components/Button.h"
+#include "../Components/animation.h"
 #include "../Components/Sound.h"
 #include "../Components/Fonts.h"
 #include "../Utils/Scale.h"
+#include "BestiaryScene.h"
 #include "ScenesManager.h"
 ///////////////////////////////////////////////////////////////
 /**

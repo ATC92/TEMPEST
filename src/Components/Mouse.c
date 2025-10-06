@@ -1,14 +1,23 @@
 ///////////////////////////////////////////////////////////////
 #include "Mouse.h"
 ///////////////////////////////////////////////////////////////
+///< Public Declarations
 Vector2 mouse;
+Texture2D cursor;
 ///////////////////////////////////////////////////////////////
 void InitMouse(void)
 {
     mouse = (Vector2){0.f,0.f};
+    HideCursor();
+    cursor = LoadTexture("assets/UI/Cursor/Pointer_2.png");
 }
 void UpdateMousePosition(void)
 {
     mouse = GetMousePosition();
 }
+void DestroyMouse(void)
+{
+    UnloadTexture(cursor);
+}
+
 ///////////////////////////////////////////////////////////////

@@ -1,14 +1,10 @@
 ///////////////////////////////////////////////////////////
 #pragma once
 ///////////////////////////////////////////////////////////
-///< C/C++ Lib
-#include <pthread.h>
-#include <stdatomic.h>
-#include <time.h>
-#include <stdbool.h>
 ///< CGame Lib
 #include "../Utils/Information.h"
 #include "../Components/Fonts.h"
+#include "../Engine/Flags.h"
 #include "../Game/Game.h"
 ///////////////////////////////////////////////////////////
 /**

@@ -1,15 +1,17 @@
 ///////////////////////////////////////////////////////////
 #pragma once
 ///////////////////////////////////////////////////////////
-///< C/C++ Lib
-#include "stdio.h"
-///< CGame Lib
+///< TEMPEST Lib
+#include "../Engine/Flags.h"
+
 #include "../Components/Button.h"
 #include "../Components/Fonts.h"
 #include "../Components/Mouse.h"
+#include "../Components/animation.h"
 #include "ScenesManager.h"
-///< RayLib
-#include "raylib.h"
+///////////////////////////////////////////////////////////
+///< Public declarations
+extern SpriteAnimation scrollVeyx;
 ///////////////////////////////////////////////////////////
 /**
  * 

@@ -1,12 +1,11 @@
+//////////////////////////////////////////////////////////////////
 #pragma once
-///< C/C++ Lib
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
+//////////////////////////////////////////////////////////////////
 ///< CGame Lib
+#include "../Engine/Flags.h"
+
 #include "../Components/Textures.h"
 #include "../Utils/Information.h"
-// #include "MenuScene.h"
 //////////////////////////////////////////////////////////////////
 /**
  * @brief Scenes Manager
@@ -51,7 +50,7 @@ typedef enum _scn
  */
 typedef struct _scene
 {
-    bool* ActivedScenes;
+    // bool* ActivedScenes;
     ManagerScenes typeScene;
     ManagerScenes previousScene;
 }Scene;
@@ -99,21 +98,9 @@ Scene* CreateScene(ManagerScenes type);
  */
 void ChangeScene(ManagerScenes next);
 /**
- * @brief Get the current scene
- * 
- * This function retrieves the current scene's information.
- * 
- * @param Scene        The current scene (Scene)
- * 
- * @return Int          ID of the Scene.
- * 
- * This function returns the `InformationScene` struct associated with the current scene,
- * which includes the name, information, log, and type of the scene.
  * 
  */
-int GetCurrentScene(Scene current);
-
-
+void DestroyScenes(void);
 
 
 //////////////////////////////////////////////////////////////////

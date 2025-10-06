@@ -1,13 +1,11 @@
 #pragma once
-///< C/C++ Lib
-///< CGame Lib
+///< TEMPEST Lib
 #include "../Scenes/ScenesManager.h"
 #include "../Scenes/MenuScene.h"
 #include "../Scenes/LoadingScene.h"
 #include "../Scenes/BestiaryScene.h"
 #include "../Scenes/OptionMenuScene.h"
 #include "../Game/Game.h"
-///< Extern Lib
 ///////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////
@@ -22,9 +20,4 @@
  * If an unsupported scene type is provided, it will print an error message.
  */
 void RenderCurrentScene(ManagerScenes);
-/**
- * 
- */
-void UpdateEngineFlags(void);
-
 //////////////////////////////////////////////////////////

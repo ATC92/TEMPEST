@@ -1,36 +1,10 @@
 #pragma once
-///< Externs Lib.
-#include "raylib.h"
-///< C/C++ Lib
-#include <stdio.h>
-#include <stdlib.h>
-///< CGame Lib
+///< TEMPEST Lib
+#include "../Engine/Flags.h"
+
 ////////////////////////////////////////////////////
 #define TILE_SIZE 16
 ////////////////////////////////////////////////////
-/**
- * @brief TileMap, Save information of the TileMap
- * 
- * This struct represents a tile map in the game.
- * It contains an image of the tile map, a texture for rendering,
- * and a rectangle representing the size of the tile map.
- * 
- * @c tmImage   Image of the TileMap \\
- * @c texture   Texture 2D \\
- * @c tmSize    Size of the TileMap
- * 
- * This struct is used to store the tile map image and its associated texture,
- * which can be used for rendering the tile map in the game.
- * The `tmSize` rectangle defines the dimensions of the tile map.
- * The `tmImage` field holds the raw image data, while the `texture` field
- * is used for rendering the tile map efficiently.
- */
-typedef struct _tileMap
-{
-    Image tmImage;          ///< Image of the TileMap.
-    Texture2D texture;      ///< Texture 2D.
-    Rectangle tmSize;       ///< Size of the TileMap.
-}TileMap;
 /**
  * @brief MapData, Save information of the Map
  * 
@@ -85,10 +59,10 @@ typedef enum _mapEnum
  */
 typedef struct _renderData
 {
-    MapData* mapsData;          ///< Pointer to the map data.
-    TileMap* tileMap;           ///< Pointer to the tile data.
-    MapEnum mapSlctr;           ///< Enum that selects the current map.
     int sizeArrayTextures;      ///< Size of the textures array.
+    MapEnum mapSlctr;           ///< Enum that selects the current map.
+    MapData* mapsData;          ///< Pointer to the map data.
+    Texture2D tileMapTex;       ///< Pointer to the Texture2D.
     Texture2D* texturesArray;   ///< Textures array used for rendering the map.
     Texture2D emptyTexture;     ///< Empty texture.
 }RenderData;
