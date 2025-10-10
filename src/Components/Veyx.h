@@ -55,7 +55,7 @@ Veyx GetVeyx(VeyxList list);
 /**
  * 
  */
-void CreateVeyxData(char* name, char* origin, char* desp, uint8_t life, uint8_t mana, uint8_t speed, uint8_t defense, uint8_t pAttack, uint8_t mAttack, VeyxType type[2]);
+void LoadVeyxData(char* path);
 /**
  * 
  */

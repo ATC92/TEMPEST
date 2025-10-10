@@ -13,7 +13,16 @@ void InitMouse(void)
 }
 void UpdateMousePosition(void)
 {
-    mouse = GetMousePosition();
+    switch (scenes->typeScene)
+    {
+    case sGAMESTATE:
+        mouse = (Vector2){-cursor.width * 2,-cursor.height * 2};
+        break;
+    default:
+        mouse = GetMousePosition();
+        DrawTextureEx(cursor,mouse,0.f,3.f,WHITE);
+        break;
+    }
 }
 void DestroyMouse(void)
 {

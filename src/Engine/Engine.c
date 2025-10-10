@@ -48,14 +48,12 @@ void EngineRender()
     {
         UpdateAnimation(&scrollVeyx,true);
     }
-    ///< MousePosition
-    UpdateMousePosition();
     ///< Render current Scene/
     RenderCurrentScene(scenes->typeScene);
+    ///< 
+    UpdateMousePosition();
     ///< Show information of the game < FPS, Position of the player, etc >
     GameInformation();
-    ///< Draw MouseCursor
-    DrawTextureEx(cursor,mouse,0.f,3.f,WHITE);
 #if DEBUG
     DrawRectangleLines((int)mouse.x,(int)mouse.y,(int)(cursor.width * 3),(int)(cursor.height * 3),RED);
 #endif
