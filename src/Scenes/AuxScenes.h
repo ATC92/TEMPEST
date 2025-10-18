@@ -4,6 +4,7 @@
 #include "../Engine/Flags.h"
 #include "../Components/Button.h"
 #include "../Components/Fonts.h"
+#include "../Components/Veyx.h"
 #include "../Utils/String.h"
 
 #include "../Components/Sound.h"
@@ -21,4 +22,11 @@ extern float maxX;
 void SoundBarFollowPoint(Button* vN, Rectangle* dot);
 
 
+//////////////////////////////////////////////////////////////////////////////
+/**
+ * 
+ */
+void DrawScroll(Texture2D* text);
+
+void DrawTextBoxed(Font font, const char *text, Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint);
 //////////////////////////////////////////////////////////////////////////////

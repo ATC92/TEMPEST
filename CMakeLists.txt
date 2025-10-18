@@ -5,12 +5,20 @@ project(Project VERSION 1.0.0 LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 23)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 if (CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
-    add_compile_options(-Wall -Wextra -Wpedantic -Wconversion)
+    add_compile_options(-Wall -Wextra -Wpedantic)
+    # Modo Debug
+    set(CMAKE_C_FLAGS_DEBUG "-O0 -g -fsanitize=address,undefined")
+    set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -fsanitize=address,undefined")
+
+    # Modo Release (menos agresivo)
+    set(CMAKE_C_FLAGS_RELEASE "-O2 -DNDEBUG")
+    set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
 endif()
 add_compile_definitions(ASSETS="${CMAKE_SOURCE_DIR}/assets")
 
-# --- 2. Traer dependencias externas (RayLib) ---
+# --- 2. Dependencias de RayLib ---
 include(FetchContent)
 FetchContent_Declare(
     raylib

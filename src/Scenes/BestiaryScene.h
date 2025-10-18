@@ -8,10 +8,14 @@
 #include "../Components/Fonts.h"
 #include "../Components/Mouse.h"
 #include "../Components/animation.h"
+#include "../Components/Veyx.h"
+
+#include "AuxScenes.h"
 #include "ScenesManager.h"
 ///////////////////////////////////////////////////////////
 ///< Public declarations
 extern SpriteAnimation scrollVeyx;
+///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 /**
  * 

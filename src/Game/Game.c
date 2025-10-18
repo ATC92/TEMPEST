@@ -20,10 +20,10 @@ void InitGameScene(void)
     eplayer = GenEntity(_PLAYER, "Hero",90);
     ///< Create SpriteAnimation for PlayerEntity.
     eplayer->spriteAnimation = (SpriteAnimation*)calloc(4,sizeof(SpriteAnimation));
-    eplayer->spriteAnimation[UP]    = CreateSpriteAnimation("assets/Entities/_aSimon/BackWalk/SimonUp.png",      0,4,0.1f,0.1f,A_LOOP);
-    eplayer->spriteAnimation[DOWN]  = CreateSpriteAnimation("assets/Entities/_aSimon/FrontWalk/SimonDown.png",   0,4,0.1f,0.1f,A_LOOP);
-    eplayer->spriteAnimation[RIGHT] = CreateSpriteAnimation("assets/Entities/_aSimon/SideWalk/SimonSideR.png",   0,3,0.1f,0.1f,A_LOOP);
-    eplayer->spriteAnimation[LEFT]  = CreateSpriteAnimation("assets/Entities/_aSimon/SideWalk/SimonSideL.png",   0,3,0.1f,0.1f,A_LOOP);
+    eplayer->spriteAnimation[UP]    = CreateSpriteAnimation(ASSETS "/Entities/_aSimon/BackWalk/SimonUp.png",      0,4,1,0.1f,0.1f,A_LOOP);
+    eplayer->spriteAnimation[DOWN]  = CreateSpriteAnimation(ASSETS "/Entities/_aSimon/FrontWalk/SimonDown.png",   0,4,1,0.1f,0.1f,A_LOOP);
+    eplayer->spriteAnimation[RIGHT] = CreateSpriteAnimation(ASSETS "/Entities/_aSimon/SideWalk/SimonSideR.png",   0,3,1,0.1f,0.1f,A_LOOP);
+    eplayer->spriteAnimation[LEFT]  = CreateSpriteAnimation(ASSETS "/Entities/_aSimon/SideWalk/SimonSideL.png",   0,3,1,0.1f,0.1f,A_LOOP);
     /////////////////////////////////////////////////////////////////////////////////////////
     // Generate the tilemap (16x16 tiles)
     mapWorld = LoadInformationMap();
@@ -118,12 +118,6 @@ void UpdateGameScene(void)
             PlaySound(sounds[0]);
             scenes->typeScene = sMAINMENU;
             scenes->previousScene = sOPTIONMENU;
-        }
-        else if(scenes->typeScene == sBESTIARY && scenes->previousScene == sMAINMENU)
-        {
-            PlaySound(sounds[0]);
-            scenes->typeScene = sMAINMENU;
-            scenes->previousScene = sBESTIARY;
         }
     }
 }

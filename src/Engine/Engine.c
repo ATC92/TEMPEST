@@ -23,6 +23,9 @@ void InitEngine()
     ///< Init Sounds && Music
     InitSounds();
     InitMusic();
+    ///< Init Veyx Array Registry
+    InitVeyxRegistry();
+    LoadVeyxData("assets/VeyxData/Veyx.data");
     //////////////////////////////////////////////////////////
     ///!<---------- Init Scenes ---------->
     ///< Init Scenes Manager
@@ -100,6 +103,10 @@ void DestroyEngine()
 
     ///< Save Comfiguration
     SaveConfig(gameConfig,"assets/config.txt");
+
+    ///< TraceLog Game Exit Success
+    TraceLog(LOG_INFO,"Game Done, All destroy and All save");
+
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

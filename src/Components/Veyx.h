@@ -14,25 +14,25 @@ typedef enum _veyxList
 typedef enum _veyxType
 {
     vT_NONE_TYPE = -1,
-    vT_FIRE,
-    vT_AQUA,
-    vT_ELECTRIC,
-    vT_GRASS,
-    vT_ROCK,
-    vT_FLY,
-    vT_STEEL,
-    vT_POISON,
-    vT_DARK,
-    vT_LIGHT,
-    vT_DRAGON,
-    vT_ECHO
+    vT_FIRE,                // 0
+    vT_AQUA,                // 1
+    vT_ELECTRIC,            // 2
+    vT_GRASS,               // 3
+    vT_ROCK,                // 4
+    vT_FLY,                 // 5
+    vT_STEEL,               // 6
+    vT_POISON,              // 7
+    vT_DARK,                // 8
+    vT_LIGHT,               // 9
+    vT_DRAGON,              // 10
+    vT_ECHO                 // 11
 }VeyxType;
 
 typedef struct _veyx
 {
-    char* name;
-    char* origin;
-    char* description;
+    char name[20];
+    char origin[100];
+    char description[255];
     uint8_t life;
     uint8_t mana;
     uint8_t speed;
@@ -41,17 +41,19 @@ typedef struct _veyx
     uint8_t magic_attack;
     VeyxType type[2];
 
-    SpriteAnimation animation;
+    Texture2D iconText;
+    SpriteAnimation* animation;
     
 }Veyx;
-///////////////////////////////////////////////////////////
-///< Public declarations
+////////////////////////////////////////////////////////////
+///< Public declaration
 extern Veyx* VeyxRegistry;
-///////////////////////////////////////////////////////////
+extern size_t countVeyx;
+////////////////////////////////////////////////////////////
 /**
  * 
  */
-Veyx GetVeyx(VeyxList list);
+void InitVeyxRegistry(void);
 /**
  * 
  */
@@ -59,5 +61,5 @@ void LoadVeyxData(char* path);
 /**
  * 
  */
-
+void DestroyVeyxRegistry(void);
 ///////////////////////////////////////////////////////////

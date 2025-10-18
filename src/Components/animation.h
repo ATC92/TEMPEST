@@ -25,6 +25,7 @@ typedef struct _spriteAnimation
     int first;
     int last;
     int cur;
+    int step;
 
     float speed;
     float durationLeft;
@@ -35,7 +36,7 @@ typedef struct _spriteAnimation
 /**
  * 
  */
-SpriteAnimation CreateSpriteAnimation(char* path, int first, int last,float speed, float duration, AnimationType type);
+SpriteAnimation CreateSpriteAnimation(char* path, int first, int last, int step, float speed, float duration, AnimationType type);
 /**
  * 
  */

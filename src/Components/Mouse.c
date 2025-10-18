@@ -9,7 +9,7 @@ void InitMouse(void)
 {
     mouse = (Vector2){0.f,0.f};
     HideCursor();
-    cursor = LoadTexture("assets/UI/Cursor/Pointer_2.png");
+    cursor = LoadTexture(ASSETS"/UI/Cursor/Pointer_2.png");
 }
 void UpdateMousePosition(void)
 {

@@ -18,3 +18,4 @@ commands.txt
 .DS_Store
 Doxyfile
 valgrinf-log.txt
+compile_commands.json

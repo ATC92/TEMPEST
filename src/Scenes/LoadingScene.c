@@ -4,8 +4,10 @@
 static double startTime;
 static float midX, midY, seconds;
 static Vector2 bar, posText;
-static bool loadingDone = false;
 static Texture2D Logo;
+///< Flags Loading
+static bool IsVeyxRegistryInit = false;
+static bool loadingDone = false;
 ///< Shaders
 static int locDirection;
 static int locTime;
@@ -29,8 +31,8 @@ void InitLoadingScene(float sec)
     seconds = sec;
     timeShader = 0;
 
-    if(IsPathFile("assets/Icons/VeyxTempest.png"))
-        Logo = LoadTexture("assets/Icons/VeyxTempest.png");
+    if(IsPathFile(ASSETS "/Icons/VeyxTempest.png"))
+        Logo = LoadTexture(ASSETS "/Icons/VeyxTempest.png");
     else 
         TraceLog(LOG_ERROR, "Texture couldnt load: assets/Icons/VeyxTempest.png");
     
@@ -88,6 +90,7 @@ void UpdateLoadingScene(void)
                     WHITE);
             CustomScale(1.f);
         EndShaderMode();
+        
         DrawTextEx(fontType,"Cargando....", posText, 20,0, WHITE);
         #if DEBUG
         DrawLinesMidScreen();
@@ -95,17 +98,24 @@ void UpdateLoadingScene(void)
         DrawRectangleLines((int)midX - 100,(int)midY,200,20,WHITE);
         DrawRectangle((int)midX - 100, (int)midY, (int)(((GetTime() - startTime) / seconds) * 200), 20, GREEN);
 
-        if(IsGameInit == false)
+        if(!IsGameInit)
         {
-            ///< Init Game
             InitGameScene();
+            ///< Load Game Save
+            ///     Need to add function to save the game.
             IsGameInit = true;
-        }
-        
+        }        
     }
     if((GetTime() - startTime) >= seconds)
     {
-        ChangeScene(sGAMESTATE);
+        if(scenes->previousScene == sMAINMENU)
+            ChangeScene(sGAMESTATE);        
+        else
+        {
+            ///< Save Information to .Save
+            ChangeScene(sMAINMENU);
+            IsGameInit = false;
+        }
         loadingDone = false;
     }
 }

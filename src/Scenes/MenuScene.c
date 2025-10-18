@@ -17,21 +17,18 @@ void InitMenuScene(void)
 {
     ///!<------ Loading Textures ------>
     ///<    Load Logo for the game && Validate if the file exists
-    if(IsPathFile("assets/Icons/VeyxTempest.png")) 
-        Logo = LoadTexture("assets/Icons/VeyxTempest.png");
-    else 
-        TraceLog(LOG_ERROR, "Texture couldnt load: assets/Icons/VeyxTempest.png");
+    Logo = LoadTexture(ASSETS"/Icons/VeyxTempest.png");
     ///<    Information for the Buttons (Path)
-    char* pathT1 = "assets/UI/Buttons/button_rectangle_depth_line.png";
-    char* pathT2 = "assets/UI/Buttons/button_rectangle_line.png";
+    char* pathT1 = ASSETS"/UI/Buttons/button_rectangle_depth_line.png";
+    char* pathT2 = ASSETS"/UI/Buttons/button_rectangle_line.png";
     ///<    BackGround for the parallax
-    frontBG = LoadTexture("assets/BackGrounds/PlainsForest/4.png");
-    midBG = LoadTexture("assets/BackGrounds/PlainsForest/3.png");
-    backBG = LoadTexture("assets/BackGrounds/PlainsForest/1.png");
-    cloudBG = LoadTexture("assets/BackGrounds/PlainsForest/2.png");
+    frontBG = LoadTexture(ASSETS"/BackGrounds/PlainsForest/4.png");
+    midBG = LoadTexture(ASSETS"/BackGrounds/PlainsForest/3.png");
+    backBG = LoadTexture(ASSETS"/BackGrounds/PlainsForest/1.png");
+    cloudBG = LoadTexture(ASSETS"/BackGrounds/PlainsForest/2.png");
 
     ///<    Texture Temp
-    Texture2D temp = LoadTexture("assets/UI/Buttons/button_rectangle_depth_line.png");
+    Texture2D temp = LoadTexture(ASSETS "/UI/Buttons/button_rectangle_depth_line.png");
     ///!<------- Creation of Buttons -------->
     ///<    Creation of 3 buttons
     CustomScale(1.f);
@@ -41,7 +38,7 @@ void InitMenuScene(void)
         btt_Exit =  CreateButton(pathT1,pathT2,(Vector2){midScrenTexture, 860.f});
         Vector2 posBes = {.x =1700, .y = 90};
     CustomScale(.6f);
-        btt_Bestiary = CreateButton("assets/UI/BookInformation.png","assets/UI/BookInformation.png",posBes);
+        btt_Bestiary = CreateButton(ASSETS "/UI/BookInformation.png",ASSETS "/UI/BookInformation.png",posBes);
     CustomScale(1.f);
     ///!<------- Position of the text for the buttons ------->
     ///<    Memory allocation for the positions of the text
@@ -106,7 +103,7 @@ void UpdateMenuScene(void)
     DrawButton(btt_StartGame,"Iniciar Juego",foo[0],fontType,40, BLACK);      ///< Start Game Button
     DrawButton(btt_Option,"Opciones",foo[1],fontType,40, BLACK);              ///< Options Button
     DrawButton(btt_Exit,"Salir",foo[2],fontType,40, BLACK);                   ///< Exit Game Button
-    DrawButton(btt_Bestiary,"",foo[3],fontType,40,BLACK);
+    DrawButton(btt_Bestiary," ",(Vector2){0,0},fontType,40,BLACK);
 
 #if DEBUG
     DrawRectangleLinesEx(btt_Bestiary->destinationButton,3.f,RED);
@@ -127,7 +124,7 @@ void UpdateMenuScene(void)
     else if(CheckCollisionPointRec(mouse,btt_Bestiary->destinationButton))
     {
         scrollVeyx.cur = scrollVeyx.first;
-        AccionButton(btt_Bestiary,fontType,"",S_OUTLINE,foo[3],sBESTIARY,MS_NONE,MS_NONE,0.f,40,true,WHITE,BLACK);
+        AccionButton(btt_Bestiary,fontType,"",S_OUTLINE,(Vector2){0,0},sBESTIARY,MS_NONE,MS_NONE,0.f,40,true,WHITE,BLACK);
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

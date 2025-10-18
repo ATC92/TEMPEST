@@ -4,6 +4,7 @@
 //< TEMPEST Libraries
 #include "../Components/Shaders.h"
 #include "../Components/animation.h"
+#include "../Components/Veyx.h"
 #include "../Utils/Scale.h"
 #include "../Game/Game.h"
 

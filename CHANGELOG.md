@@ -2,6 +2,28 @@
 
 **Author:** ATC92
 
+## [0.2.4] - 2025-10-15
+### ADDED
+- [High]    Veyx data: the game now loads Veyx information from a .data file.
+- [Medium]  Bestiary information, now you can see the Veyx information.
+
+### CHANGED
+- [High]    Optimized game save and load system.
+- [High]    The game now properly reinitializes when exiting and starting again.
+- [Medium]  Added exit animation to the BestiaryScene scroll.
+- [Low]     Added compile variables to /TEMPEST. ASSETS compile definition now works.
+
+### BUG FIXED
+- Nothing to report for now.
+
+### PLANNED
+- [High]    Implement the Fight System.
+- [High]    Add the Boss System.
+- [Medium]  Add more details to the map.
+- [Low]     Add unique sounds for each Veyx.
+
+--------------------------------------------------------------
+
 ## [0.2.2] - 2025-10-06
 
 ### ADDED

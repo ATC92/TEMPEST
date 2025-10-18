@@ -1,7 +1,7 @@
 #include "animation.h"
 #include <stdio.h>
 //////////////////////////////////////////////////////////
-SpriteAnimation CreateSpriteAnimation(char* path, int first, int last,float speed, float duration, AnimationType type)
+SpriteAnimation CreateSpriteAnimation(char* path, int first, int last,int step, float speed, float duration, AnimationType type)
 {
     Texture2D atlas = LoadTexture(path);
     SpriteAnimation spriteAnimation = {0};
@@ -14,6 +14,7 @@ SpriteAnimation CreateSpriteAnimation(char* path, int first, int last,float spee
             .first = first,
             .last = last,
             .cur = 0,
+            .step = step,
             .speed = speed,
             .durationLeft = duration,
             .type = type
@@ -46,8 +47,9 @@ void UpdateAnimation(SpriteAnimation* self, bool isMooving)
     if(self->durationLeft <= 0)
     {
         self->durationLeft = self->speed;
-        self->cur ++;
+        self->cur += self->step;
         if(self->cur > self->last)
+        {
             switch (self->type)
             {
             case A_LOOP:
@@ -62,13 +64,26 @@ void UpdateAnimation(SpriteAnimation* self, bool isMooving)
             default:
                 break;
             }
+        }
+        else if (self->cur < self->first) 
+        {
+        // handle reaching the end (which is the beginning) of an animation going backwards
+        switch (self->type) {
+        case A_LOOP:
+            self->cur = self->last;
+            break;
+        case A_ONESHOT:
+            self->cur = self->first;
+            break;
+        }
+        }
     }
 }
 
 Rectangle AnimationFrame(SpriteAnimation* self, int numFramesPerRow,float tileWidth, float tileHeight)
 {
-    int x = (self->cur % numFramesPerRow) * tileWidth;
-    int y = (self->cur / numFramesPerRow) * tileHeight;
+    int x = (self->cur % numFramesPerRow) * (int)tileWidth;
+    int y = (self->cur / numFramesPerRow) * (int)tileHeight;
 
     return (Rectangle){ .x= (float)x, .y = (float)y, .height = tileHeight, .width = tileWidth };
 }
@@ -77,7 +92,7 @@ Rectangle AnimationFrame(SpriteAnimation* self, int numFramesPerRow,float tileWi
 void DrawParallax(Texture2D tex, float* offset, float speed, float scale, float y)
 {
     *offset -= speed;
-    float w = tex.width * scale;
+    float w = (float)tex.width * scale;
 
     if(*offset <= -w) 
         *offset = 0;

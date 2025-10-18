@@ -6,7 +6,7 @@ Font fontType;
 //////////////////////////////////////////////////////////
 void InitFont(void)
 {
-    fontType = LoadFontEx("assets/Font/04B.ttf",20,NULL,0);
+    fontType = LoadFontEx(ASSETS"/Font/04B.ttf",20,NULL,0);
     if(!IsFontValid(fontType))
         TraceLog(LOG_ERROR, "Font not valid %s", "assets/Font/04B.ttf");
 }

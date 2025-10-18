@@ -27,6 +27,7 @@ int main(void)
     }
     DestroyEngine();                                            ///< Destroy Game Engine
     CloseWindow();                                              ///< Close Window OpenGL Context
+    TraceLog(LOG_INFO,"TEMPEST Out, ¡Cya!");                    ///< TraceLog only terminal
     return EXIT_SUCCESS;                                        ///< Close main correctly
 }
 //////////////////////////////////////////////////////////////////

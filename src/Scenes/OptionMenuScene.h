@@ -13,6 +13,16 @@
 #include "ScenesManager.h"
 #include "AuxScenes.h"
 //////////////////////////////////////////////////////////////////////////////
+typedef enum _btts
+{
+    _BTT_ESC,
+    _BTT_MAINMENU,
+    _BTT_FULLSCREEN,
+    _BTT_STATES,
+    _BTT_VOLUME,
+    _BTT_vDOT
+}TypeButton;
+//////////////////////////////////////////////////////////////////////////////
 /**
  * @brief Initialize the Options Menu scene
  * This function sets up all resources, variables, and settings required for the Options Menu.

@@ -17,7 +17,7 @@ static float fadeSpeed = 0.05f;
 void InitSounds(void)
 {
     ///!<---------- Sounds Paths ---------->
-    char* soundPath = "assets/FX/UI/click-b.wav";
+    char* soundPath = ASSETS"/FX/UI/click-b.wav";
     ///< Total Sounds loaded
     totalSounds = 1;
     ///< Memory allocation for the sounds 
@@ -41,8 +41,8 @@ void DestroySounds(void)
 void InitMusic(void)
 {
     ///!<---------- Music Paths ---------->
-    char* musicPathMainMenu = "assets/FX/Music/fantasy_music/Intro.mp3";
-    char* musicPathGameState = "assets/FX/Music/fantasy_music/Adventure.mp3";
+    char* musicPathMainMenu = ASSETS"/FX/Music/fantasy_music/Intro.mp3";
+    char* musicPathGameState = ASSETS"/FX/Music/fantasy_music/Adventure.mp3";
     ///< Total Music loaded
     totalMusic = 2;
     currentMusic = MS_MAINMENU;
