@@ -1,0 +1,7 @@
+# Mika.dialog
+ID|Texto|Opcion_1|Opcion_2|Destino_1|Destino_2
+1|Hola viajero, ¿Podemos tener una batalla de calentamiento?|¡Si!|No por ahorita.|2|3
+2|No te contengas, ¡VAMOS!.|-| - |-| -
+3|Que lastima, queria entrar en calor un rato.|Adiós|Sera despues|4|5
+4|Cuídate.|-| - |-| -
+5|Hasta luego.|-| - |-| -

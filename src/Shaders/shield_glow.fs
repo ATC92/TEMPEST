@@ -26,9 +26,9 @@ void main()
     float d = abs(proj - pos);
 
     float edge0 = 0.0;
-    float edge1 = uWidth * 0.5;   // controla la caída lateral
+    float edge1 = uWidth * 0.5;   // controla la caida lateral
     float mask = 1.0 - smoothstep(edge0, edge1, d);
-    mask = pow(mask, 1.5);        // hace más brillante el centro
+    mask = pow(mask, 1.5);        // hace mas brillante el centro
 
     vec3 glow = uColor * mask * uIntensity;
     vec3 outRGB = base.rgb + glow;

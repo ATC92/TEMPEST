@@ -3,6 +3,7 @@
 ///< C/C++ Lib
 ///< CGame Lib
 #include "../Components/Mouse.h"
+#include "../Components/Entity.h"
 ///< RayLib
 #include "raylib.h"
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -16,7 +17,7 @@
  * 
  * @return 'Void'.
  */
-void DrawInformationCamera(Camera2D);
+void DrawInformationCamera(Camera2D camera, Entity* eplayer);
 /**
  * @brief 
  */

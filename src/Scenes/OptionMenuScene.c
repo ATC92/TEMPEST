@@ -151,6 +151,22 @@ void UpdateOptionMenuScene(void)
                         (Vector2){0,0}, WHITE);
         EndShaderMode();
     }
+    else if(scenes->previousScene == sFIGHTSTATE)
+    {
+        BeginTextureMode(targetBlur);
+            UpdateRenderFight();
+        EndTextureMode();
+
+        BeginShaderMode(shaders[S_BLUR]);
+            float res[2] = {(float)GetScreenWidth(), (float)GetScreenHeight()};
+            float r = 4.0f;
+            SetShaderValue(shaders[S_BLUR], GetShaderLocation(shaders[S_BLUR], "resolution"), res, SHADER_UNIFORM_VEC2);
+            SetShaderValue(shaders[S_BLUR], GetShaderLocation(shaders[S_BLUR], "radius"), &r, SHADER_UNIFORM_FLOAT);
+            DrawTextureRec(targetBlur.texture,
+                        (Rectangle){0,0,(float)targetBlur.texture.width, (float)-targetBlur.texture.height},
+                        (Vector2){0,0}, WHITE);
+        EndShaderMode();
+    }
     else 
     {
         ///<    BackGround draw
@@ -191,15 +207,14 @@ void UpdateOptionMenuScene(void)
 #endif
 
     if (CheckCollisionPointRec(mouse,buttons[_BTT_ESC]->boundingBox))
-        if(scenes->previousScene == sGAMESTATE)
-            AccionButton(buttons[_BTT_ESC],fontType,"Regresar",S_INVERT,foo[0],sGAMESTATE,MS_NONE,MS_NONE,0.1f,30,true,WHITE,WHITE);
-        else
-            AccionButton(buttons[_BTT_ESC],fontType,"Regresar",S_INVERT,foo[0],sMAINMENU,MS_NONE,MS_NONE,0.1f,30,true,WHITE,GRAY);
+    {
+            AccionButton(buttons[_BTT_ESC],fontType,"Regresar",S_INVERT,foo[0],scenes->previousScene,MS_NONE,MS_NONE,0.0f,30,true,WHITE,GRAY);
+    }
     else if (CheckCollisionPointRec(mouse,buttons[_BTT_MAINMENU]->boundingBox) && scenes->previousScene == sGAMESTATE)
-        AccionButton(buttons[_BTT_MAINMENU],fontType,"Menu Principal",S_INVERT,foo[1],sLOADSCREEN,MS_GAMESTATE,MS_MAINMENU,0.1f,40,true,WHITE,BLACK);
+        AccionButton(buttons[_BTT_MAINMENU],fontType,"Menu Principal",S_INVERT,foo[1],sLOADSCREEN,MS_GAMESTATE,MS_MAINMENU,0.0f,40,true,WHITE,BLACK);
     else if(CheckCollisionPointRec(mouse,buttons[_BTT_FULLSCREEN]->destinationButton))
     {
-        AccionButton(buttons[_BTT_FULLSCREEN],fontType,"Activar/Desactivar pantalla completa",S_INVERT,foo[2],sOPTIONMENU,MS_NONE,MS_NONE,0.1f,30,false, WHITE,BLACK);
+        AccionButton(buttons[_BTT_FULLSCREEN],fontType,"Activar/Desactivar pantalla completa",S_INVERT,foo[2],sOPTIONMENU,MS_NONE,MS_NONE,0.0f,30,false, WHITE,BLACK);
         BeginShaderMode(shaders[S_INVERT]);
             DrawTexturePro(buttons[_BTT_STATES]->Texture[IsWindowState(FLAG_FULLSCREEN_MODE) ? 0 : 1],buttons[_BTT_STATES]->sourceButton,buttons[_BTT_STATES]->destinationButton,(Vector2){0,0},0,WHITE);
         EndShaderMode();

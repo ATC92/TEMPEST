@@ -42,9 +42,9 @@ bool IsTileEmpty(Image image, int x, int y)
     return true;
 }
 //////////////////////////////////////////////////////////////////
-void RenderTileMap(RenderData* _mD, int _slct)
+void RenderTileMap(RenderData* _mD, LayerEnum _slct)
 {
-    int tileset_columns = 5;
+    int tileset_columns = _mD->mapsData->size.width;
     for (int y = 0; y < _mD->mapsData[_slct].height; y++)
     {
         for (int x = 0; x < _mD->mapsData[_slct].width; x++)
@@ -75,23 +75,27 @@ void RenderTileMap(RenderData* _mD, int _slct)
     }
 }
 //////////////////////////////////////////////////////////////////
-void RenderPlayer(const Entity* eplayer)
+void RenderEntity(const Entity* eplayer)
 {
 #if DEBUG
-    ///< Draw collision box for debugging
     DrawRectangleLines(
-    (int)eplayer->sizeRect.x,
-    (int)eplayer->sizeRect.y,
-    (int)eplayer->sizeRect.width,
-    (int)eplayer->sizeRect.height,
+    (int)eplayer->boundingBox.x,
+    (int)eplayer->boundingBox.y,
+    (int)eplayer->boundingBox.width,
+    (int)eplayer->boundingBox.height,
     RED);
+    DrawRectangleLines(
+    (int)eplayer->triggerBox.x,
+    (int)eplayer->triggerBox.y,
+    (int)eplayer->triggerBox.width,
+    (int)eplayer->triggerBox.height,
+    YELLOW);
 #endif
 
     int look = eplayer->eLook;
-    CustomScale(0.5f);
-        DrawSpriteAnimationPro(&eplayer->spriteAnimation[look],eplayer->position,0.f,(Vector2){0,0},WHITE,4,32.f,32.f);
-    CustomScale(1.0f);
+    DrawSpriteAnimationPro(&eplayer->spriteAnimation[look],eplayer->position,0.f,(Vector2){0,0},WHITE,4,eplayer->boundingBox.width,eplayer->boundingBox.height);
 }
+
 /////////////////////////////////////////////////////////////////////////
 
 

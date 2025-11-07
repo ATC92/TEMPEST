@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <stdarg.h>
+#include <stddef.h>
 
 #include <math.h>
 #include <float.h>
@@ -22,6 +24,15 @@
 //////////////////////////////////////////////////////////
 ///< Game Flags State
 extern bool IsGameInit;
+extern int tNPCSCoop;
+///< Fight Flag State
+extern bool IsFightRuning;
+extern bool IsVeyxPriorityInit;
+extern bool FightBattleEnds;
+extern bool UseDice;
+extern bool sortActive;
+extern bool startAnimationDice;
+extern bool doneAnimationDice;
 //////////////////////////////////////////////////////////
 ///< OptionMenu Flags State
 extern bool DotPressed;

@@ -5,6 +5,7 @@
 #include "../Scenes/LoadingScene.h"
 #include "../Scenes/BestiaryScene.h"
 #include "../Scenes/OptionMenuScene.h"
+#include "../Scenes/FightScene.h"
 #include "../Game/Game.h"
 ///////////////////////////////////////////////////////////////
 

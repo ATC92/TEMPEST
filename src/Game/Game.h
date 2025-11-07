@@ -6,8 +6,10 @@
 
 #include "../Components/Map.h"
 #include "../Components/Sound.h"
+#include "../Components/Camera.h"
 #include "../Components/Entity.h"
-#include "../Components/animation.h"
+#include "../Components/Inventory.h"
+#include "../Components/Animation.h"
 #include "../Components/Collision.h"
 #include "../Components/LoadTextures.h"
 
@@ -16,9 +18,12 @@
 
 #include "../Scenes/ScenesManager.h"
 #include "../Scenes/MenuScene.h"
+
+// #include "../Scenes/FightScene.h"
 /////////////////////////////////////////////////////
 ///< Public Definitions
 extern Entity* eplayer;
+extern Entity** entityPool;
 /////////////////////////////////////////////////////
 /**
  * @brief Init Game Function

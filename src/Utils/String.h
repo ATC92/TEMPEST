@@ -4,5 +4,11 @@
 ///< CGame Lib
 #include "../Engine/Flags.h"
 //////////////////////////////////////////////////////////////////////
-#define TO_STRING(num) ({static char buf[32]; snprintf(buf, sizeof(buf), "%d", (int)(num * 100)); buf;})
+// #define TO_STRING(num) ({static char buf[32]; snprintf(buf, sizeof(buf), "%d", (int)(num * 100)); buf;})
+static inline const char* TO_STRING(float num)
+{
+    static char buf[32];
+    snprintf(buf, sizeof(buf), "%d", (int)(num));
+    return buf;
+}
 //////////////////////////////////////////////////////////////////////

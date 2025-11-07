@@ -9,7 +9,10 @@
 #include "../Components/Fonts.h"
 #include "../Components/Button.h"
 #include "../Engine/Config.h"
+
 #include "../Game/Game.h"
+#include "FightScene.h"
+
 #include "ScenesManager.h"
 #include "AuxScenes.h"
 //////////////////////////////////////////////////////////////////////////////

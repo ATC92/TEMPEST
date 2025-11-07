@@ -7,6 +7,12 @@
 #include "Textures.h"
 #include "LoadTextures.h"
 //////////////////////////////////////////////////////////////////
+typedef enum _typeMap
+{
+    MP_MINI_TOWN,
+    MP_TOWN
+}TypeMap;
+//////////////////////////////////////////////////////////////////
 /**
  * @brief Load all information about the map.
  * 
@@ -17,7 +23,7 @@
  * 
  * @return RenderData* Pointer to the RenderData structure containing map data and textures.
  */
-RenderData* LoadInformationMap(void);
+RenderData* LoadInformationMap(char* pathTileMap, ...);
 /**
  * @brief Load map tiles from a CSV file.
  * 
@@ -30,6 +36,10 @@ RenderData* LoadInformationMap(void);
  * 
  * @return int** Pointer to a 2D array of integers representing the map tiles.
  */
-int** LoadMapTiles(char*,int*,int*);
+int** LoadMapTiles(const char*,int*,int*);
+/**
+ * 
+ */
+void DestroyRenderMap(RenderData** self, TypeMap tMap);
 
-
+//////////////////////////////////////////////////////////////////

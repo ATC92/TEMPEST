@@ -41,24 +41,31 @@ void DestroySounds(void)
 void InitMusic(void)
 {
     ///!<---------- Music Paths ---------->
+    // char* musicPathMainMenu = ASSETS"/FX/Music/Tumbado.mp3";
     char* musicPathMainMenu = ASSETS"/FX/Music/fantasy_music/Intro.mp3";
     char* musicPathGameState = ASSETS"/FX/Music/fantasy_music/Adventure.mp3";
+    char* musicPathFightScene = ASSETS"/FX/Music/MikaSongs/Brave_Reaction.mp3";
     ///< Total Music loaded
-    totalMusic = 2;
+    totalMusic = 3;
     currentMusic = MS_MAINMENU;
     ///< Memory allocation for the music 
     music = (Music*)calloc(totalMusic,sizeof(Music));
     Music mMainMenu = LoadMusicStream(musicPathMainMenu);
     Music mGameState = LoadMusicStream(musicPathGameState);
+    Music mFightScene = LoadMusicStream(musicPathFightScene);
     ///!<-------- Loading Music ---------->
     if(!IsMusicValid(mMainMenu))
-        TraceLog(LOG_ERROR, "Music [0] not valid, %s",musicPathMainMenu);
+        AssertNotNull(&mMainMenu,"Music not valid.","mMainMenu");
     else 
         music[0] = mMainMenu;
     if(!IsMusicValid(mGameState))
-        TraceLog(LOG_ERROR, "Music [1] not valid, %s",musicPathGameState); 
+        AssertNotNull(&mGameState,"Music not valid.","mGameState");
     else 
         music[1] = mGameState;
+    if(!IsMusicValid(mFightScene))
+        AssertNotNull(&mFightScene,"Music not valid.","mFightScene");
+    else
+        music[2] = mFightScene;
 
 }
 void ChangeMusic()
@@ -75,19 +82,45 @@ void UpdateMusicScene(ManagerScenes typeScene)
         case sGAMESTATE:
             currentMusic = MS_GAMESTATE;
             if(fading)
-                FaidingMusic(MS_MAINMENU, MS_GAMESTATE);
-            else
-                UpdateMusicStream(music[currentMusic]);
+            {
+                PlayMusicStream(music[currentMusic]);
+                fading = false;
+            }
+            UpdateMusicStream(music[currentMusic]);
             break;
         case sMAINMENU:
             currentMusic = MS_MAINMENU;
             if(fading)
-                FaidingMusic(MS_GAMESTATE,MS_MAINMENU);
-            else 
-                UpdateMusicStream(music[currentMusic]);
+            {
+                PlayMusicStream(music[currentMusic]);
+                fading = false;
+            }
+            UpdateMusicStream(music[currentMusic]);
+            break;
+        case sFIGHTSTATE:
+            currentMusic = MS_FIGHTSCENE;
+            if(fading)
+            {
+                PlayMusicStream(music[currentMusic]);
+                fading = false;
+            }            
+            UpdateMusicStream(music[currentMusic]);
             break;
         case sOPTIONMENU:
-            currentMusic = scenes->previousScene == sMAINMENU ? MS_MAINMENU : MS_GAMESTATE;
+            switch (scenes->previousScene)
+            {
+            case sMAINMENU:
+                currentMusic = MS_MAINMENU;
+                break;
+            case sGAMESTATE:
+                currentMusic = MS_GAMESTATE;
+                break;
+            case sFIGHTSTATE:
+                currentMusic = MS_FIGHTSCENE;
+                break;
+            default:
+                break;
+            }
             UpdateMusicStream(music[currentMusic]);
             break;
         case sBESTIARY:

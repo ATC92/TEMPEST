@@ -28,6 +28,7 @@
  */
 typedef struct _btt
 {
+    char name[20];
     bool action;                    ///< Pressed
     float frameHeight;              ///< FrameHight
     Texture2D* Texture;             ///< Textures

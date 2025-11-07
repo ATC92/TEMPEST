@@ -21,6 +21,10 @@ void RenderCurrentScene(ManagerScenes type)
     case sBESTIARY:
         UpdateBestiaryScene();
         break;
+    case sFIGHTSTATE:
+        UpdateLogicFight();
+        UpdateRenderFight();
+        break;
     default:
         TraceLog(LOG_ERROR, "Error, Scene not in Range [%d]",type);
         break;

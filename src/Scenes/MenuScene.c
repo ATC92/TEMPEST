@@ -63,12 +63,6 @@ void InitMenuScene(void)
         .x = (btt_Exit->destinationButton.x + btt_Exit->destinationButton.width / 2) - bar[2].x / 2,
         .y = (btt_Exit->destinationButton.y + btt_Exit->destinationButton.height / 2) - bar[2].y / 2
     };
-    ///!<------------- Init stuff for MainMenuScene ------------->]
-    ///< Shader configuration
-    ///< Value's for Outline Shader
-    SetShaderValue(shaders[S_OUTLINE], GetShaderLocation(shaders[S_OUTLINE], "resolution"), (float[2]){ (float)btt_Bestiary->Texture[1].width, (float)btt_Bestiary->Texture[1].height }, SHADER_UNIFORM_VEC2);
-    SetShaderValue(shaders[S_OUTLINE], GetShaderLocation(shaders[S_OUTLINE], "outlineThickness"), (float[1]){ 5.f }, SHADER_UNIFORM_FLOAT);
-    SetShaderValue(shaders[S_OUTLINE], GetShaderLocation(shaders[S_OUTLINE], "outlineColor"), (float[3]){ 1.0f, 1.0f, 1.0f }, SHADER_UNIFORM_VEC3);
     ///<    Play Music for the MainMenuScene
     PlayMusicStream(music[MS_MAINMENU]);
     ///<    Scroll init for the background
@@ -83,6 +77,12 @@ void InitMenuScene(void)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void UpdateMenuScene(void)
 {
+    ///!<------------- Init stuff for MainMenuScene ------------->]
+    ///< Shader configuration
+    ///< Value's for Outline Shader
+    SetShaderValue(shaders[S_OUTLINE], GetShaderLocation(shaders[S_OUTLINE], "resolution"), (float[2]){ (float)btt_Bestiary->Texture[1].width, (float)btt_Bestiary->Texture[1].height }, SHADER_UNIFORM_VEC2);
+    SetShaderValue(shaders[S_OUTLINE], GetShaderLocation(shaders[S_OUTLINE], "outlineThickness"), (float[1]){ 5.f }, SHADER_UNIFORM_FLOAT);
+    SetShaderValue(shaders[S_OUTLINE], GetShaderLocation(shaders[S_OUTLINE], "outlineColor"), (float[3]){ 1.0f, 1.0f, 1.0f }, SHADER_UNIFORM_VEC3);
     ///!<---- Background Draw -->
     ///< Background Layer
     DrawParallax(backBG,    &sbBG, 0.f, 3.5f, 0.f);

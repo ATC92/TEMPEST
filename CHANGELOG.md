@@ -2,6 +2,38 @@
 
 **Author:** ATC92
 
+### -------------------------------------------------------------------------------------------------------------------
+
+## [0.3.0] - 2025-11-07
+### ADDED
+- [High] Dices system for the battles.
+- [High] FightSystem added, not complete at all.
+- [Medium] Status system for the veyx.
+- [Medium] TableSystem for type veyx.
+- [Medium] Inventory for player and each npc.
+- [Low] More shaders.
+- [Low] Queue for the battles.
+
+### CHANGED
+- [High] Optimization in the map load and render. 
+- [High] Optimization in the veyx load data. 
+- [Medium] Textures for the map.
+
+### BUG FIXED
+- [Low][251107-001] Problem with the inventory for the maingame, (Not working properly).
+- [Low][251107-002] MusicUpdate, when you change scene, the music stops miliseconds and resume.
+
+### BUG REPORT
+- [Medium][251107-003] MusicBar in OptionMenu, problem with the render Dot.
+- [Medium][251107-004] Sometimes in the fight the SelectAttack doesnt render well.
+
+### PLANNED
+- [High] Cart System (Next stop).
+- [Medium] Textures for each STATUS (Veyx status).
+- [Low] Add unique sounds for each veyx.
+
+### -------------------------------------------------------------------------------------------------------------------
+
 ## [0.2.4] - 2025-10-15
 ### ADDED
 - [High]    Veyx data: the game now loads Veyx information from a .data file.
@@ -22,7 +54,7 @@
 - [Medium]  Add more details to the map.
 - [Low]     Add unique sounds for each Veyx.
 
---------------------------------------------------------------
+### -------------------------------------------------------------------------------------------------------------------
 
 ## [0.2.2] - 2025-10-06
 
@@ -49,7 +81,7 @@
 - [Medium]  Add more details to the map.
 - [Low]     Add sounds for each Veyx.
  
---------------------------------------------------------------
+### -------------------------------------------------------------------------------------------------------------------
 
 ## [0.2.0] - 2025-09-27
 ### ADDED
@@ -69,3 +101,4 @@
 - [Medium]  Add more textures.                
 - [Medium]  Add more details on the map.
 - [Low]     Add sounds for each Veyx
+### -------------------------------------------------------------------------------------------------------------------

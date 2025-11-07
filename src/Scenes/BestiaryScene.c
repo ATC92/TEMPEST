@@ -100,8 +100,7 @@ void UpdateBestiaryScene(void)
         if(scrollAnimationOut && scrollVeyx.cur == scrollVeyx.first)
         {
             
-            scenes->typeScene = sMAINMENU;
-            scenes->previousScene = sBESTIARY;
+            ChangeScene(sMAINMENU);
 
             scrollAnimationOut = false;
             scrollVeyx.step = 1;

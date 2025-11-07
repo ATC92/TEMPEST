@@ -31,6 +31,7 @@ typedef enum _scn
     sCONFIGURATIONMENU,
     sLOADSCREEN,
     sBESTIARY,
+    sFIGHTSTATE,
     sEXIT_GAME
 }ManagerScenes;
 /**

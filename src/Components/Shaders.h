@@ -4,16 +4,29 @@
 ///< TEMPEST Lib
 #include "../Engine/Flags.h"
 
+#include "../Utils/ErrorManager.h"
+
 //////////////////////////////////////////////////////////
 ///< Public definition
 extern Shader* shaders;
+
+///< Shield shader
+extern int locDirection;
+extern int locTime;
+extern int locSpeed; 
+extern int locWidth;
+extern int locIntensity; 
+extern int locColor;
+extern int locOffset; 
+extern float timeShader;
 //////////////////////////////////////////////////////////
 typedef enum _typeShader
 {
     S_INVERT,
     S_OUTLINE,
     S_BLUR,
-    S_SHIELDGLOW
+    S_SHIELDGLOW,
+    S_GRAYSCALE
 }TypeShader;
 //////////////////////////////////////////////////////////
 /**
@@ -36,4 +49,8 @@ void InitShaders(void);
  * @note Call this function before closing the game.
  */
 void DestroyShaders(void);
+/**
+ * 
+ */
+void DrawShader(Texture2D self, TypeShader s, Rectangle source, Rectangle dest, Vector2 origin, float rotation, Color color);
 //////////////////////////////////////////////////////////

@@ -23,6 +23,8 @@ void InitEngine()
     ///< Init Sounds && Music
     InitSounds();
     InitMusic();
+    ///< Dice Animations && carts
+    InitSpriteAnimationDice();
     ///< Init Veyx Array Registry
     InitVeyxRegistry();
     LoadVeyxData("assets/VeyxData/Veyx.data");
@@ -37,7 +39,9 @@ void InitEngine()
     ///< Init OptionMenuScene
     InitOptionMenuScene();
     ///< Init BestiaryScene
-    InitBestiaryScene(); 
+    InitBestiaryScene();
+    ///< Init FightScene
+    InitFightScene();
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void EngineRender()

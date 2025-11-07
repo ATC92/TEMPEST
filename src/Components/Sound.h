@@ -9,7 +9,8 @@ typedef enum _MusicType
 {
     MS_NONE = -1,
     MS_MAINMENU,
-    MS_GAMESTATE
+    MS_GAMESTATE,
+    MS_FIGHTSCENE
 }MusicType;
 ///////////////////////////////////////////////////////////////
 ///< Public Variables

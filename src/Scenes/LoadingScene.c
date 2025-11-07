@@ -6,17 +6,8 @@ static float midX, midY, seconds;
 static Vector2 bar, posText;
 static Texture2D Logo;
 ///< Flags Loading
-static bool IsVeyxRegistryInit = false;
+// static bool IsVeyxRegistryInit = false;
 static bool loadingDone = false;
-///< Shaders
-static int locDirection;
-static int locTime;
-static int locSpeed; 
-static int locWidth;
-static int locIntensity; 
-static int locColor;
-static int locOffset; 
-static float timeShader;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void InitLoadingScene(float sec)
 {

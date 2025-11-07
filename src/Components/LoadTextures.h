@@ -34,21 +34,21 @@ int FillTextures(RenderData*);
  * This function iterates through the map data, calculates the source and destination rectangles for each tile,
  * and draws the corresponding texture. If a tile ID is negative, it draws an empty texture instead.
  */
-void RenderTileMap(RenderData*,int);
+void RenderTileMap(RenderData* _mD,LayerEnum _slct);
 /**
- * @brief Render player entity on the screen.
+ * @brief Render entity on the screen.
  * 
- * This function renders the player entity by drawing its collision box and texture based on its current direction.
+ * This function renders the entity by drawing its collision box and texture based on its current direction.
  * 
- * @param eplayer Pointer to the Entity structure representing the player.
+ * @param eplayer Pointer to the Entity.
  * 
  * @return 'Void'.
  * 
- * This function draws a rectangle around the player's collision box for debugging purposes and then draws the player's texture
- * based on the direction the player is looking. The texture is drawn at the player's current position,
+ * This function draws a rectangle around the Entity collision box for debugging purposes and then draws the entity texture
+ * based on the direction the entity is looking. The texture is drawn at the entity current position,
  * adjusted for velocity and frame rate.
  */
-void RenderPlayer(const Entity*);
+void RenderEntity(const Entity*);
 /**
  * @brief Validate if the tile is empty.
  * 

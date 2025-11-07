@@ -7,7 +7,7 @@
 #include "../Components/Button.h"
 #include "../Components/Fonts.h"
 #include "../Components/Mouse.h"
-#include "../Components/animation.h"
+#include "../Components/Animation.h"
 #include "../Components/Veyx.h"
 
 #include "AuxScenes.h"

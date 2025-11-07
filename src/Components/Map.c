@@ -1,30 +1,46 @@
 #include "Map.h"
 //////////////////////////////////////////////////////////////////
-RenderData* LoadInformationMap(void)
+//////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
+RenderData* LoadInformationMap(char* pathTileMap, ...)
 {
+    va_list args;
+    va_start(args,pathTileMap);
+
+    const char* layerPath = NULL;
+    size_t index = 0;
+    
     ///< Allocate Memory to RenderData.
     RenderData* tempData = (RenderData*)calloc(1,sizeof(RenderData));
-    ///< Load Maps
-    tempData->mapsData = (MapData*)calloc(2,sizeof(MapData));
-    tempData->mapsData[0].data = LoadMapTiles(ASSETS"/Maps/CGame_L1_BG_Layer.csv",&tempData->mapsData[0].width,&tempData->mapsData[0].height);
-    tempData->mapsData[0].size = (Rectangle){0,0,(float)tempData->mapsData[0].width * 16, (float)tempData->mapsData[0].height * 16};
-    tempData->mapsData[1].data = LoadMapTiles(ASSETS"/Maps/CGame_L1_UP_Layer.csv",&tempData->mapsData[1].width,&tempData->mapsData[1].height);
-    tempData->mapsData[1].size = (Rectangle){0,0,(float)tempData->mapsData[1].width * 16, (float)tempData->mapsData[1].height * 16};
+    tempData->mapsData = (MapData*)calloc(5,sizeof(MapData));
+    ///< Load Layers
+    while ((layerPath = va_arg(args, const char*)) != NULL)
+    {
+        tempData->mapsData[index].data =LoadMapTiles(layerPath,&tempData->mapsData[index].width,&tempData->mapsData[index].height);
+        tempData->mapsData[index].size = (Rectangle){0,0,(float)tempData->mapsData[index].width * 16, (float)tempData->mapsData[index].height * 16};
+        index ++;
+    }
     ///< Load Textures
     ///<    TileMap && EmptyTexture
-    tempData->tileMapTex = LoadTexture(ASSETS"/Tilemap/TiledMapWorld.png");
+    va_end(args);
+    tempData->tileMapTex = LoadTexture(pathTileMap);
+    if(!IsTextureValid(tempData->tileMapTex))
+        TraceLog(LOG_ERROR,"TilMap not valid");
+    int sizeArray = (tempData->tileMapTex.width / TILE_SIZE) * (tempData->tileMapTex.height / TILE_SIZE);
+    tempData->texturesArray = (Texture2D*)calloc(sizeArray,sizeof(Texture2D));
     tempData->emptyTexture = LoadTexture(ASSETS"/Tilemap/EmptyTexture.png");
+    tempData->sizeArrayTextures = FillTextures(tempData);
     return tempData;
 }
 //////////////////////////////////////////////////////////////////
-int** LoadMapTiles(char* path, int* c, int* r)
+int** LoadMapTiles(const char* path, int* c, int* r)
 {
     ///< Load file CSV[MAP]
     FILE* archivo = fopen(path,"r");
     if (!archivo)
     {
-        printf("%s | ",path);
-        perror("File error.");
+        TraceLog(LOG_ERROR,"File error not loaded");
         return NULL;
     }
     ///< Read R*C.
@@ -71,6 +87,27 @@ int** LoadMapTiles(char* path, int* c, int* r)
     if(filas)*r = filas;
 
     return mapa;
+}
+
+void DestroyRenderMap(RenderData** self, TypeMap tMap)
+{
+    for (int i=0; i < self[tMap]->sizeArrayTextures; i++)
+    {
+        if(IsTextureValid(self[tMap]->texturesArray[i]))
+        {
+            UnloadTexture(self[tMap]->texturesArray[i]);
+            self[tMap]->texturesArray[i] = (Texture2D){0};
+        }
+    }
+    free(self[tMap]->texturesArray);
+    UnloadTexture(self[tMap]->emptyTexture);
+
+    for(int i=0; i < self[tMap]->mapsData[0].height;i++)
+        free(self[tMap]->mapsData[0].data[i]);
+    for(int i=0; i < self[tMap]->mapsData[1].height;i++)
+        free(self[tMap]->mapsData[1].data[i]);
+    free(self[tMap]->mapsData[0].data);
+    free(self[tMap]->mapsData[1].data);
 }
 //////////////////////////////////////////////////////////////////
 
