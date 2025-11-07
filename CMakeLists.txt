@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(Project VERSION 1.0.0 LANGUAGES C CXX)
+project(TEMPEST VERSION 1.0.0 LANGUAGES C CXX)
 
 # --- 1. Opciones globales ---
 set(CMAKE_C_STANDARD 23)
@@ -41,11 +41,11 @@ elseif (MSVC)
 endif()
 
 # --- 3. Añadir ejecutable desde src/ ---
-add_subdirectory(src)  # Aquí se define el target "Project"
+add_subdirectory(src)  # Aquí se define el target "TEMPEST"
 
 # --- 4. Configuración del target existente ---
-target_compile_definitions(Project PRIVATE $<$<CONFIG:Debug>:DEBUG>)
-set_target_properties(Project PROPERTIES
+target_compile_definitions(TEMPEST PRIVATE $<$<CONFIG:Debug>:DEBUG>)
+set_target_properties(TEMPEST PROPERTIES
   RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>"
 )
-target_link_libraries(Project PRIVATE raylib)
+target_link_libraries(TEMPEST PRIVATE raylib)

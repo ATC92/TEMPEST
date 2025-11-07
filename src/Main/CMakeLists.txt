@@ -1,3 +1,3 @@
-project(Project)
+project(TEMPEST)
 
-add_executable(Project main.c)
+add_executable(TEMPEST main.c)

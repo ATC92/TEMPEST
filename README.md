@@ -1,11 +1,13 @@
-# 🌪 TEMPEST
+![VeyxTempest](/assets/Icons/VeyxTempestLow.png)
+
+### `VeyxTempest`
 The game is natively created in **pure C**, using **RayLib**.  
 For now, it will be updated as time and the project progress. Since it is a personal project, development will be at a slow pace.
 
 ---
 
-### 🕹 Meet our protagonist!
-## Simon
+## 🕹 Meet our protagonist!
+### `Simon`
 
 ![SIMON](assets/Entities/_aSimon/PortraitAndShowcase/ShowCase.gif)
 
@@ -22,7 +24,7 @@ You can check out the **GDD** of our game to learn about all mechanics, story, c
 ---
 
 ## 🚀 Version
-#### Alpha V0.2.0
+#### `Alpha V0.3.0`
 
 ---
 
@@ -42,8 +44,50 @@ You can see all updates and changes [here](CHANGELOG.md).
 ---
 
 ## ⚙️ Installation
-- Currently not available, you need the Debug version.
+- Currently not available, you need the `Build` version.
+---
+## 🛠️ How to Compile and Run
 
+Follow these steps to compile and run the program.
+
+### 1. Create the Build Directories
+Inside the root of the project (`TEMPEST/`), create the following directories:
+```bash
+mkdir -p build/Debug
+cd build/Debug
+```
+### Linux/Unix [Debug | Release]
+```bash
+cmake -G"Unix Makefiles" ../.. -DCMAKE_BUILD_TYPE=Debug
+                      |OR|
+cmake -G"Unix Makefiles" ../.. -DCMAKE_BUILD_TYPE=Release
+```
+### Windows (MinGW, VS, etc) [Debug | Release]
+```bash
+cmake -G"MinGW Makefiles" ../.. -DCMAKE_BUILD_TYPE=Debug
+                      |OR|
+cmake -G"MinGW Makefiles" ../.. -DCMAKE_BUILD_TYPE=Release
+```
+Once configuration is complete, go back to the root directory:
+```bash
+cd ../..
+```
+Then build the project:
+```bash
+cmake --build build/Debug --target Project -j 8
+```
+The executable will be created inside:
+```bash
+bin/Debug/
+```
+To run it from the command line:
+```bash
+bin/Debug/TEMPEST
+```
+If you're on Windows, add the .exe extension:
+```bash
+bin/Debug/TEMPEST.exe
+```
 ---
 
 ## 🧑‍💻 Authors
@@ -67,6 +111,6 @@ Licensed under CC BY-ND 4.0 © 2025 Alan Torres
 ## 🏷 Badges
 Add badges from [shields.io](https://shields.io/) to show project status and metrics:  
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  
+[![License: CC BY-ND 4.0](https://img.shields.io/badge/License-CC%20BY--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nd/4.0/)   
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)  
 [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
