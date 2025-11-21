@@ -10,6 +10,7 @@
 #include "../Components/Entity.h"
 #include "../Components/Fight.h"
 #include "../Components/BattleLog.h"
+#include "../Components/Fight.h"
 
 #include "../Utils/String.h"
 #include "../Utils/Queues.h"
@@ -34,13 +35,14 @@ void SoundBarFollowPoint(Button* vN, Rectangle* dot);
  */
 void DrawScroll(Texture2D* text);
 
-void DrawTextBoxed(Font font, const char *text, Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint);
 //////////////////////////////////////////////////////////////////////////////
 void DrawVeyxTeam(Entity* entity);
 void DrawHeadVeyx(const Queue* self, Vector2 pos);
 void DrawCurrentPhase(Queue* self);
 void DrawTeamStatus(Entity* player, Entity* npc);
 void DrawLifeBar(Veyx* vA, Vector2 pos);
+void DrawManaBar(Veyx* vA, Vector2 pos);
+void ReloadMana(Veyx* self);
 bool UpdateFightButtons(Queue* q,Entity* player, Entity** pool,Vector2 mouse, Button** buttons, bool IsMouseOver[], bool IsButtonsPressed[],Veyx* veyxPriority[]);
 bool IsButtonPressed(bool self[]);
 int CompareSpeed(const void* a, const void* b);

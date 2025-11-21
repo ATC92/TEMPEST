@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include <stdarg.h>
 #include <stddef.h>
+#include <inttypes.h>
 
 #include <math.h>
 #include <float.h>

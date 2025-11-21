@@ -71,6 +71,7 @@ typedef struct _attackResult
 ///< AttackMove, information for attack
 typedef struct {
     char name[32];              /// Attack name
+    uint8_t manaCost;           /// Mana cost of attack
     AttackCategory category;    /// Category
     uint8_t power;              /// Power of attack (ej. 40, 80, 120)
     VeyxType type;              /// VeyxType
@@ -113,6 +114,7 @@ typedef struct _veyx
     uint8_t displayedLife;
     uint8_t mana;
     uint8_t maxMana;
+    uint8_t displayedMana;
     uint8_t speed;
     uint8_t maxSpeed;
     uint8_t defense;
@@ -147,7 +149,8 @@ int clamp_int(int v, int lo, int hi);
 float rand_range(float a, float b);
 ////////////////////////////////////////////////////////////
 float CalculateTypeMultiplier(VeyxType moveType, const Veyx* defender);
-AttackResult ApplyAttack(const Veyx* attacker, Veyx* defender, const AttackMove* move);
+AttackResult ApplyAttack(Veyx* attacker, Veyx* defender, const AttackMove* move);
+char* GetStatusToString(StatusEffect status);
 ////////////////////////////////////////////////////////////
 /**
  * 

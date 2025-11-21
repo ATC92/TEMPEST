@@ -23,6 +23,14 @@ You can check out the **GDD** of our game to learn about all mechanics, story, c
 
 ---
 
+## ✨ Features
+- 🖼 **2D Gameplay:** Classic two-dimensional experience with engaging mechanics and visual style.  
+- 💻 **Developed in Pure C:** Efficient performance and deep understanding of low-level programming concepts.  
+- 🎨 **Built with RayLib:** Straightforward API, cross-platform support (Windows, Linux, macOS, Raspberry Pi, Android, HTML5).  
+  [RayLib](https://www.raylib.com/?utm_source=chatgpt.com)
+
+---
+
 ## 🚀 Version
 #### `Alpha V0.3.0`
 
@@ -33,13 +41,12 @@ You can see all updates and changes [here](CHANGELOG.md).
 
 ![Changelog](https://img.shields.io/badge/Changelog-Up%20to%20Date-brightgreen)
 
+
 ---
 
-## ✨ Features
-- 🖼 **2D Gameplay:** Classic two-dimensional experience with engaging mechanics and visual style.  
-- 💻 **Developed in Pure C:** Efficient performance and deep understanding of low-level programming concepts.  
-- 🎨 **Built with RayLib:** Straightforward API, cross-platform support (Windows, Linux, macOS, Raspberry Pi, Android, HTML5).  
-  [RayLib](https://www.raylib.com/?utm_source=chatgpt.com)
+## 🛡️ Information
+
+![Info](infoGit.png)
 
 ---
 

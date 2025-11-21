@@ -4,12 +4,13 @@
 ///< Private
 static Button** buttons;
 static RenderData** mapData;
-static Veyx* veyxPriority[8];
 static Vector2 bar[3];
 static Vector2 foo[3];
+
 static bool IsButtonsPressed[3];
 static bool IsMouseOver[3];
 static bool whoWins;
+static bool animationDoce;
 
 static Queue veyxQueue;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,6 +60,19 @@ void InitFightScene(void)
 
     ///< Init Queue
     InitQueue(&veyxQueue,8);
+
+    Rectangle sizeArea = {.x=GetScreenWidth()/2 - 250,.y=GetScreenHeight()/2 + 250,.width=500,.height=250};
+    InitCardSelector(&eplayer->inventory,sizeArea);
+
+    POLINIZAR_GREEN = (Color){ 0, 192, 0, 255 };
+    color[0] = (float)POLINIZAR_GREEN.r / 255.0f;
+    color[1] = (float)POLINIZAR_GREEN.g / 255.0f;
+    color[2] = (float)POLINIZAR_GREEN.b / 255.0f;
+    color[3] = (float)POLINIZAR_GREEN.a / 255.0f;
+    
+    fadeIntensityLoc = GetShaderLocation(shaders[S_MIKA_SPECIAL_CARD], "fadeIntensity");
+    fadeColorLoc = GetShaderLocation(shaders[S_MIKA_SPECIAL_CARD], "fadeColor");
+    animationDoce = false;
 }
 
 void UpdateRenderFight(void)
@@ -112,16 +126,36 @@ void UpdateRenderFight(void)
                 IsMouseOver[0] = false;
                 IsMouseOver[1] = false;
                 IsMouseOver[2] = false;
+                animationDoce = true;
             }
+        }
+        if(!IsVeyxSelectedCard && currentPhase == FIGHT_CARD_SHOW && IsCardSelected != -1)
+        {
+            for (size_t i = 0; i < 8; i++)
+            {
+                if(IsVeyxAlive(veyxPriority[i]) && eplayer->inventory.object[IsCardSelected].card.actionCard == ACTION_CARD_TEAM && veyxPriority[i]->owner == _PLAYER)
+                    DrawRectangleLinesEx(veyxPriority[i]->sizeInFight,.5f,BLUE);
+                else if(IsVeyxAlive(veyxPriority[i]) && eplayer->inventory.object[IsCardSelected].card.actionCard == ACTION_CARD_ENEMY && veyxPriority[i]->owner == _NPC)
+                    DrawRectangleLinesEx(veyxPriority[i]->sizeInFight,.5f,RED);
+                else if(IsVeyxAlive(veyxPriority[i]) && eplayer->inventory.object[IsCardSelected].card.actionCard == ACTION_CARD_ALL)
+                    DrawRectangleLinesEx(veyxPriority[i]->sizeInFight,.5f,LIME);
+
+            }        
         }
     }
     EndMode2D();
+    if(currentPhase == FIGHT_CARD_SHOW && (doneAnimationDice || !startAnimationDice))
+    {
+        DrawCardSelector();
+        DrawInformationCard();
+    }
+
     ///< BattleLog for the battle
     DrawRectangleRec((Rectangle){.x=GetScreenWidth()/2 - 200, .y=160, .width=400, .height=150}, Fade(BLACK, 0.5f));
     DrawBattleLog((Vector2){GetScreenWidth()/2 - 160, 180});
 
     ///< Buttons
-    if(currentPhase != FIGHT_DICE_SHOW)
+    if(currentPhase != FIGHT_DICE_SHOW && currentPhase != FIGHT_CARD_SHOW && currentPhase != FIGHT_DICE_ROLL)
     {
         DrawButton(buttons[_BTT_ATTACK],"Ataque",foo[0],fontType,40,BLACK);
         DrawButton(buttons[_BTT_EXIT],"Salir",foo[2],fontType,40,BLACK);
@@ -173,6 +207,7 @@ void UpdateRenderFight(void)
         ///< TextPart
         Vector2 bar = {0};
         Vector2 foo = {0};
+        Vector2 foo2 = {0};
 
         bar = MeasureTextEx(fontType,"Presiona ",60,0);
         foo = (Vector2){
@@ -181,12 +216,12 @@ void UpdateRenderFight(void)
         };
         DrawTextPro(fontType,"Presiona",foo,(Vector2){0,0},0,60,0,WHITE);
         
-        bar = MeasureTextEx(fontType,"  para omitir",60,0);
-        foo = (Vector2){
+        // bar2 = MeasureTextEx(fontType,"  para omitir",60,0);
+        foo2 = (Vector2){
             .x = dest.x + dest.width + 20,
             .y = dest.y
         };
-        DrawTextPro(fontType,"para omitir",foo,(Vector2){0,0},0.f,60,0.f,WHITE);
+        DrawTextPro(fontType,"para omitir",foo2,(Vector2){0,0},0.f,60,0.f,WHITE);
         ///< Icons part
         Rectangle base = {
             .x = 500,
@@ -201,12 +236,16 @@ void UpdateRenderFight(void)
             DrawDiceIcons(&eplayer->inventory.object[i].dice,&pos);
             pos.x += 140;
         }
+        recKeyR = (Rectangle){.x = foo.x, .y = foo.y, .width = foo.x + 20, .height = dest.height};
+    #if DEBUG
+        DrawRectangleLinesEx(recKeyR,1.f,RED);
+    #endif
     }
 
     ///< Interaction Buttons
     for(size_t i=0; i<3; i++)
     {
-        if(IsMouseOver[i] && !IsButtonsPressed[i])
+        if(IsMouseOver[i] && !IsButtonsPressed[i] && currentPhase == FIGHT_SELECT_ATTACK && !FightBattleEnds)
         {
             BeginShaderMode(shaders[S_INVERT]);
                 DrawTexturePro(buttons[i]->Texture[1],buttons[i]->sourceButton,buttons[i]->destinationButton,(Vector2){0,0},0,WHITE);
@@ -215,7 +254,7 @@ void UpdateRenderFight(void)
         }
     }
     /// Attack Moment 
-    if(IsButtonsPressed[0] && !UseDice)
+    if(IsButtonsPressed[0] && !UseDice && currentPhase != FIGHT_CARD_SHOW && !FightBattleEnds)
     {
         Rectangle base = {
             .x = 300,
@@ -274,6 +313,7 @@ void UpdateRenderFight(void)
     if(FightBattleEnds)
     {
         whoWins = EndFight(eplayer,entityPool[tNPCSCoop]);
+
         if(whoWins)/// Player Wins
         {
             Vector2 pos = MeasureTextEx(fontType,"GANASTE",100,0);
@@ -297,6 +337,10 @@ void UpdateRenderFight(void)
             DrawTextPro(fontType,"Presiona  Q  para salir",fooOut,(Vector2){0,0},0,40,0,WHITE);
         }
     }
+    
+    // Vector2 temp ={.x = GetScreenWidth()/2, .y=GetScreenHeight()/2};
+    // DrawTextureEx(*eplayer->inventory.object[6].card.cardTexture,temp,0.f,1.f,WHITE);
+    // DrawTextureEx(*selector.inv->object[6].card.cardTexture,temp,0.f,1.f,WHITE);
 }
 
 void UpdateLogicFight(void)
@@ -317,6 +361,7 @@ void UpdateLogicFight(void)
         }
         IsVeyxPriorityInit = false;
         FightBattleEnds = false;
+        buffAcum = entityPool[tNPCSCoop]->inventory.object[10].card.cooldown;
     }
     ///< Update BattleLog
     UpdateBattleLog(GetFrameTime());
@@ -357,5 +402,6 @@ void UpdateLogicFight(void)
 void DestroyFightScene(void)
 {
     FreeQueue(&veyxQueue);
+    DestroySpriteAnimationDice();
 } 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

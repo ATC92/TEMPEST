@@ -21,4 +21,8 @@
  * If an unsupported scene type is provided, it will print an error message.
  */
 void RenderCurrentScene(ManagerScenes);
+/**
+ * 
+ */
+void UpdateLogicCurrentScene(ManagerScenes type, float dt);
 //////////////////////////////////////////////////////////

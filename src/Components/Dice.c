@@ -13,6 +13,17 @@ void InitSpriteAnimationDice()
     diceAnimations[4] = LoadAnimationDice("D12");
     diceAnimations[5] = LoadAnimationDice("D20");
 }
+
+void DestroySpriteAnimationDice()
+{
+    DestroyAnimation(&diceAnimations[0],_OBJECT_DICE);
+    DestroyAnimation(&diceAnimations[1],_OBJECT_DICE);
+    DestroyAnimation(&diceAnimations[2],_OBJECT_DICE);
+    DestroyAnimation(&diceAnimations[3],_OBJECT_DICE);
+    DestroyAnimation(&diceAnimations[4],_OBJECT_DICE);
+    DestroyAnimation(&diceAnimations[5],_OBJECT_DICE);
+    // free(diceAnimations);
+}
 SpriteAnimation LoadAnimationDice(const char* name)
 {
     SpriteAnimation anim = {0};

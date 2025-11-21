@@ -22,12 +22,28 @@ void RenderCurrentScene(ManagerScenes type)
         UpdateBestiaryScene();
         break;
     case sFIGHTSTATE:
-        UpdateLogicFight();
         UpdateRenderFight();
         break;
     default:
         TraceLog(LOG_ERROR, "Error, Scene not in Range [%d]",type);
         break;
+    }
+}
+
+void UpdateLogicCurrentScene(ManagerScenes type, float dt)
+{
+    switch (type)
+    {
+        case sGAMESTATE:
+            ///< GameUpdateLogic | Movement of Player and MouseWheel
+            UpdateGameLogic(dt);
+            break;
+        case sFIGHTSTATE:
+            UpdateLogicFight();
+            break;
+        default:
+            // TraceLog(LOG_ERROR, "Error, Scene not in Range [%d]",type);
+            break;
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -49,15 +49,14 @@ void UpdateAnimation(SpriteAnimation* self, bool isMooving)
     {
         self->durationLeft = self->speed;
         self->cur += self->step;
+        if(!isMooving)
+            self->cur = self->last;  
         if(self->cur > self->last)
         {
             switch (self->type)
             {
             case A_LOOP:
-                if(!isMooving)
-                    self->cur = self->last;                    
-                else
-                    self->cur = self->first;
+                self->cur = self->first;
                 break;
             case A_ONESHOT:
                 self->cur = self->last;
@@ -67,13 +66,14 @@ void UpdateAnimation(SpriteAnimation* self, bool isMooving)
         else if (self->cur < self->first) 
         {
         // handle reaching the end (which is the beginning) of an animation going backwards
-        switch (self->type) {
-        case A_LOOP:
-            self->cur = self->last;
-            break;
-        case A_ONESHOT:
-            self->cur = self->first;
-            break;
+        switch (self->type)
+        {
+            case A_LOOP:
+                self->cur = self->last;
+                break;
+            case A_ONESHOT:
+                self->cur = self->first;
+                break;
         }
         }
     }
@@ -87,18 +87,21 @@ Rectangle AnimationFrame(SpriteAnimation* self, int numFramesPerRow,float tileWi
     return (Rectangle){ .x= (float)x, .y = (float)y, .height = tileHeight, .width = tileWidth };
 }
 
-void DestroyAnimation(SpriteAnimation* self, size_t type)
+void DestroyAnimation(SpriteAnimation* self, TypeEntity type)
 {
-    size_t count;
+    size_t count = 0;
     switch (type)
     {
-    case 0:
-        count = 4;  /// Player
-        break;
-    case 1:
-        count = 2;  /// NPC
-    default:
-        break;
+        case _PLAYER:
+            count = 4;  /// Player
+            break;
+        case _NPC:
+            count = 2;  /// NPC
+            break;
+        case _OBJECT_DICE:
+            count = 6;
+        default:
+            break;
     }
 
     for (size_t i = 0; i < count; i++)

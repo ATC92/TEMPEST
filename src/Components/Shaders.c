@@ -16,10 +16,12 @@ int locIntensity;
 int locColor;
 int locOffset; 
 float timeShader;
+
+
 //////////////////////////////////////////////////////////
 void InitShaders(void)
 {
-    totalShaders = 5;
+    totalShaders = 6;
     shaders = (Shader*)calloc(totalShaders,sizeof(Shader));
     ///< Load Shaders
     Shader invert = LoadShader(NULL, "src/Shaders/invert.fs");
@@ -27,6 +29,7 @@ void InitShaders(void)
     Shader blur = LoadShader("src/Shaders/blur.vs","src/Shaders/glassblur.fs");
     Shader shieldGlow = LoadShader("src/Shaders/shieldGLow.vs","src/Shaders/shield_glow.fs");
     Shader grayScale = LoadShader("src/Shaders/grayscale.vs","src/Shaders/grayscale.fs");
+    Shader mikaSpecialCard = LoadShader("src/Shaders/polinizar.vs","src/Shaders/polinizar.fs");
     
     if (!IsShaderValid(invert)) 
         AssertNotNull(&invert,"Shader error in load.","invert");
@@ -48,6 +51,10 @@ void InitShaders(void)
         AssertNotNull(&grayScale,"Shader error in load.","grayScale");
     else
         shaders[S_GRAYSCALE] = grayScale;
+    if(!IsShaderValid(mikaSpecialCard))
+        AssertNotNull(&mikaSpecialCard,"Shader error in load","mikaSpecialCard");
+    else
+        shaders[S_MIKA_SPECIAL_CARD] = mikaSpecialCard;
 }
 void DestroyShaders(void)
 {

@@ -1,5 +1,10 @@
 #include "Entity.h"
 //////////////////////////////////////////////////////////
+/// Entity Pool for NPC's
+Entity** entityPool;
+/// Main Entity for the player.
+Entity* eplayer;
+
 bool PlayerCanMove;
 //////////////////////////////////////////////////////////
 Entity* GenEntity(TypeEntity _t, char* _n, uint8_t _s)
@@ -99,12 +104,19 @@ void LoadNPCtoMemory(Entity** pool)
     pool[_NPC_MIKA]->position = (Vector2){150,150};
     pool[_NPC_MIKA]->prev_position = (Vector2){150,150};
     pool[_NPC_MIKA]->inventory = InitInventory();
+
+    /// Card Special for Mika
+    pool[_NPC_MIKA]->inventory.object[10].card = LoadSpecialCard(_NPC_MIKA);
+    pool[_NPC_MIKA]->inventory.object[10].accion = FnAccionCard;
+    pool[_NPC_MIKA]->inventory.amountObj++;
+    pool[_NPC_MIKA]->hasSpecialCard = true;
     LoadVeyxList(pool[_NPC_MIKA]);
     
     ///< NPC -> Arturo
     pool[_NPC_ARTURO] = GenEntity(_NPC,"Arturo",90);
-    pool[_NPC_ARTURO]->spriteAnimation = (SpriteAnimation*)calloc(1,sizeof(SpriteAnimation));
+    pool[_NPC_ARTURO]->spriteAnimation = (SpriteAnimation*)calloc(2,sizeof(SpriteAnimation));
     pool[_NPC_ARTURO]->spriteAnimation[0]      = CreateSpriteAnimation(ASSETS "/Entities/Arturo/FrontWalk/ArturoDown.png",     0,3,1,0.3f,.5f,A_LOOP);
+    pool[_NPC_ARTURO]->spriteAnimation[1]      = CreateSpriteAnimation(ASSETS "/Entities/Arturo/FrontWalk/ArturoDown.png",     0,3,1,0.3f,.5f,A_LOOP);
     pool[_NPC_ARTURO]->eLook = 0;
     pool[_NPC_ARTURO]->position = (Vector2){.x = 730, .y = 130};
     pool[_NPC_ARTURO]->prev_position = (Vector2){.x = 730, .y = 130};
@@ -129,8 +141,6 @@ void LoadVeyxList(Entity* entity)
             entity->veyxInventory[2] = VeyxRegistry[vL_SAPMOSS];
             entity->veyxInventory[3] = VeyxRegistry[vL_DRALIK];
             entity->veyxAlive = 4;
-            break;
-        case _BOSS:
             break;
         default:
             TraceLog(LOG_WARNING,"%s LoadVeyxList Function in Entity.c, Error with typeEntity",entity->name);

@@ -2,6 +2,8 @@
 #pragma once 
 //////////////////////////////////////////////////////////
 ///< TEMPEST Lib
+#include "EntityTypes.h"
+
 #include "../Engine/Flags.h"
 
 #include "../Utils/Scale.h"
@@ -56,7 +58,7 @@ Rectangle AnimationFrame(SpriteAnimation* self, int numFramesPerRow, float tileW
 /**
  * 
  */
-void DestroyAnimation(SpriteAnimation* self, size_t type);
+void DestroyAnimation(SpriteAnimation* self, TypeEntity type);
 //////////////////////////////////////////////////////////
 /**
  * 

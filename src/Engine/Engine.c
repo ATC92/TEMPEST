@@ -40,18 +40,11 @@ void InitEngine()
     InitOptionMenuScene();
     ///< Init BestiaryScene
     InitBestiaryScene();
-    ///< Init FightScene
-    InitFightScene();
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void EngineRender()
 {
-    if(scenes->typeScene == sGAMESTATE)
-    {
-        ///< Frame to Animation
-        UpdateAnimation(&eplayer->spriteAnimation[eplayer->eLook],eplayer->isMooving);
-    }
-    else if(scenes->typeScene == sBESTIARY)
+    if(scenes->typeScene == sBESTIARY)
     {
         UpdateAnimation(&scrollVeyx,true);
     }
@@ -68,8 +61,7 @@ void EngineRender()
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void EngineUpdate(float dt)
 {   
-    ///< GameUpdateLogic | Movement of Player and MouseWheel
-    UpdateGameLogic(dt);
+    UpdateLogicCurrentScene(scenes->typeScene,dt);
     ///< UpduateGameScene
     UpdateGameScene();
     ///< 

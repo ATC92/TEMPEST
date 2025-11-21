@@ -6,6 +6,7 @@
 #include "../Components/Fonts.h"
 #include "../Engine/Flags.h"
 #include "../Game/Game.h"
+#include "../Scenes/FightScene.h"
 ///////////////////////////////////////////////////////////
 /**
  * 

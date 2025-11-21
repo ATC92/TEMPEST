@@ -21,9 +21,6 @@
 
 // #include "../Scenes/FightScene.h"
 /////////////////////////////////////////////////////
-///< Public Definitions
-extern Entity* eplayer;
-extern Entity** entityPool;
 /////////////////////////////////////////////////////
 /**
  * @brief Init Game Function

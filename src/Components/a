@@ -1,0 +1,10 @@
+// Define la Curación Base (Debe coincidir con tu FnAccionCard)
+#define BASE_HEAL_AMOUNT 20 
+// Umbral de vida baja (ej: curarse si la vida está por debajo del 30%)
+
+
+
+void UseCard(Inventory* inv, Inventory* player, Veyx* npcVeyxInv, Veyx* playerVeyxInv)
+{
+
+}

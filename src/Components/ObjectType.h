@@ -2,16 +2,15 @@
 #pragma once
 
 #include "../Engine/Flags.h"
-
 #include "Animation.h"
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////< Function Pointer
-typedef void (*UseFn)(void *self);
+typedef void (*UseFn)(void *self, void* dest);
 
 ////////////////////////< DICE
 typedef enum _rarity
 {
-    NORMAL,
+    NORMAL = 1,
     RARE,
     SUPER_RARE,
     SUPER_EXTRA_RARE
@@ -33,45 +32,58 @@ typedef struct _dice
     DiceType type;
     size_t amount;
     Rarity rarity;
-    // SpriteAnimation animation;
     Texture2D icon;
     Rectangle sizeDice;
     Rectangle boundingBox;
 }Dice;
 ////////////////////////< CART 
-typedef enum _typeCart
+typedef enum _typeCard
 {
-    CART_DEBUFF,
-    CART_BUFFER,
-    CART_ATTACK,
-    CART_DEFENSE,
-    CART_HEAL,
-    CART_SPECIAL
-}CartType;
+    CARD_HEAL,
+    CARD_DEBUFF_DEFESE,
+    CARD_BUFF_DEFENSE,
+    CARD_DEBUFF_SPEED,
+    CARD_BUFF_SPEED,
+    CARD_DEBUFF_ATTACK,
+    CARD_BUFF_ATTACK,
+    CARD_CLEANSE,
+    CARD_SPECIAL_POLINIZAR,
+    CARD_MAX_TYPES
+}CardType;
+
+typedef enum _typeActionCard
+{
+    ACTION_CARD_TEAM,
+    ACTION_CARD_ENEMY,
+    ACTION_CARD_ALL
+}ActionCard;
 
 typedef struct _cart
 {
     char name[50];
     char descEffect[255];
-    CartType Type;
+    CardType type;
+    ActionCard actionCard;
     size_t amount;
+    size_t cooldown;
     Rarity rarity;
-    Texture2D cartTexture;
-    Rectangle sizeCart;
-}Cart;
+    Texture2D* cardTexture;
+    Rectangle sizeCard;
+    Rectangle boundingBox;
+}Card;
 ////////////////////////< OBJECT
 typedef enum _objectType {
     OBJ_NONE = -1,
     OBJ_DICE,
-    OBJ_CART
-} ObjectType;
+    OBJ_CARD
+}ObjectType;
 
 typedef struct _obj
 {
     ObjectType type;
     union {
         Dice dice;
-        Cart cart;
+        Card card;
     };
     UseFn accion;
 }Object;

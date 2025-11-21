@@ -105,222 +105,80 @@ void DrawScroll(Texture2D* text)
     EndScissorMode();
 }
 
-void DrawTextBoxed(Font font, const char *text, Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint)
-{
-    int length = (int)TextLength(text);  // Total length in bytes of the text, scanned by codepoints in loop
-
-    float textOffsetY = 0;          // Offset between lines (on line break '\n')
-    float textOffsetX = 0.0f;       // Offset X to next character to draw
-
-    float scaleFactor = fontSize/(float)font.baseSize;     // Character rectangle scaling factor
-
-    // Word/character wrapping mechanism variables
-    enum { MEASURE_STATE = 0, DRAW_STATE = 1 };
-    int state = wordWrap? MEASURE_STATE : DRAW_STATE;
-
-    int startLine = -1;         // Index where to begin drawing (where a line begins)
-    int endLine = -1;           // Index where to stop drawing (where a line ends)
-    int lastk = -1;             // Holds last value of the character position
-
-    for (int i = 0, k = 0; i < length; i++, k++)
-    {
-        // Get next codepoint from byte string and glyph index in font
-        int codepointByteCount = 0;
-        int codepoint = GetCodepoint(&text[i], &codepointByteCount);
-        int index = GetGlyphIndex(font, codepoint);
-
-        // NOTE: Normally we exit the decoding sequence as soon as a bad byte is found (and return 0x3f)
-        // but we need to draw all of the bad bytes using the '?' symbol moving one byte
-        if (codepoint == 0x3f) codepointByteCount = 1;
-        i += (codepointByteCount - 1);
-
-        float glyphWidth = 0;
-        if (codepoint != '\n')
-        {
-            glyphWidth = (font.glyphs[index].advanceX == 0) ? font.recs[index].width*scaleFactor : font.glyphs[index].advanceX*scaleFactor;
-
-            if (i + 1 < length) glyphWidth = glyphWidth + spacing;
-        }
-
-        // NOTE: When wordWrap is ON we first measure how much of the text we can draw before going outside of the rec container
-        // We store this info in startLine and endLine, then we change states, draw the text between those two variables
-        // and change states again and again recursively until the end of the text (or until we get outside of the container)
-        // When wordWrap is OFF we don't need the measure state so we go to the drawing state immediately
-        // and begin drawing on the next line before we can get outside the container
-        if (state == MEASURE_STATE)
-        {
-            // TODO: There are multiple types of spaces in UNICODE, maybe it's a good idea to add support for more
-            // Ref: http://jkorpela.fi/chars/spaces.html
-            if ((codepoint == ' ') || (codepoint == '\t') || (codepoint == '\n')) endLine = i;
-
-            if ((textOffsetX + glyphWidth) > rec.width)
-            {
-                endLine = (endLine < 1)? i : endLine;
-                if (i == endLine) endLine -= codepointByteCount;
-                if ((startLine + codepointByteCount) == endLine) endLine = (i - codepointByteCount);
-
-                state = !state;
-            }
-            else if ((i + 1) == length)
-            {
-                endLine = i;
-                state = !state;
-            }
-            else if (codepoint == '\n') state = !state;
-
-            if (state == DRAW_STATE)
-            {
-                textOffsetX = 0;
-                i = startLine;
-                glyphWidth = 0;
-
-                // Save character position when we switch states
-                int tmp = lastk;
-                lastk = k - 1;
-                k = tmp;
-            }
-        }
-        else
-        {
-            if (codepoint == '\n')
-            {
-                if (!wordWrap)
-                {
-                    textOffsetY += (font.baseSize + font.baseSize/2)*scaleFactor;
-                    textOffsetX = 0;
-                }
-            }
-            else
-            {
-                if (!wordWrap && ((textOffsetX + glyphWidth) > rec.width))
-                {
-                    textOffsetY += (font.baseSize + font.baseSize/2)*scaleFactor;
-                    textOffsetX = 0;
-                }
-
-                // When text overflows rectangle height limit, just stop drawing
-                if ((textOffsetY + font.baseSize*scaleFactor) > rec.height) break;
-
-                // Draw selection background
-                // bool isGlyphSelected = false;
-                // if ((selectStart >= 0) && (k >= selectStart) && (k < (selectStart + selectLength)))
-                // {
-                //     DrawRectangleRec((Rectangle){ rec.x + textOffsetX - 1, rec.y + textOffsetY, glyphWidth, (float)font.baseSize*scaleFactor }, selectBackTint);
-                //     isGlyphSelected = true;
-                // }
-
-                // Draw current character glyph
-                if ((codepoint != ' ') && (codepoint != '\t'))
-                {
-                    DrawTextCodepoint(font, codepoint, (Vector2){ rec.x + textOffsetX, rec.y + textOffsetY }, fontSize,tint);
-                }
-            }
-
-            if (wordWrap && (i == endLine))
-            {
-                textOffsetY += (font.baseSize + font.baseSize/2)*scaleFactor;
-                textOffsetX = 0;
-                startLine = endLine;
-                endLine = -1;
-                glyphWidth = 0;
-                // selectStart += lastk - k;
-                k = lastk;
-
-                state = !state;
-            }
-        }
-
-        if ((textOffsetX != 0) || (codepoint != ' ')) textOffsetX += glyphWidth;  // avoid leading spaces
-    }
-}
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///<--------------- FIGHTSCENE AUX
 void DrawVeyxTeam(Entity* entity)
 {
-    /// RIGHT
-    /// DOWN
-    /// LEFT
-    /// UP
-    if(entity->typeEntity == _PLAYER)
+    // --- Configuración de Escala ---
+    CustomScale(0.5);
+
+    // Determinar la dirección de la textura para el enemigo (NPC)
+    bool flipTexture = (entity->typeEntity == _PLAYER);
+    
+    // --- Iterar sobre las 4 posiciones del inventario ---
+    for (int i = 0; i < 4; i++)
     {
-        CustomScale(0.5);
-        if(entity->veyxInventory[0].life > 0)
-        {
-            Rectangle ori = entity->veyxInventory[0].sizeIcon;
-            DrawTexturePro(entity->veyxInventory[0].iconText,
-                (Rectangle){.x = ori.x, .y=ori.y, .width = -ori.width, .height = ori.height},
-                (Rectangle){.x=250,.y=145,.width=(entity->veyxInventory[0].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[0].sizeIcon.height * scale.ScaleUniform},
-                (Vector2){.x=0,.y=0},0,RAYWHITE);   
-            entity->veyxInventory[0].sizeInFight = (Rectangle){.x=250,.y=145,.width=(entity->veyxInventory[0].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[0].sizeIcon.height * scale.ScaleUniform};
+        Veyx* v = &entity->veyxInventory[i];
+        
+        if (v->life > 0)
+        {            
+            Rectangle destRect = {0};
+            
+            if (entity->typeEntity == _PLAYER)
+            {
+                if (i == 0) destRect = (Rectangle){.x=250,.y=145};
+                else if (i == 1) destRect = (Rectangle){.x=225,.y=170};
+                else if (i == 2) destRect = (Rectangle){.x=210,.y=150};
+                else if (i == 3) destRect = (Rectangle){.x=220,.y=110};
+            }
+            else
+            {
+                if (i == 0) destRect = (Rectangle){.x=370,.y=145};
+                else if (i == 1) destRect = (Rectangle){.x=390,.y=180};
+                else if (i == 2) destRect = (Rectangle){.x=410,.y=150};
+                else if (i == 3) destRect = (Rectangle){.x=395,.y=120};
+            }
+            
+            destRect.width = v->sizeIcon.width * scale.ScaleUniform;
+            destRect.height = v->sizeIcon.height * scale.ScaleUniform;
+            
+            Rectangle sourceRect = v->sizeIcon;
+            if (flipTexture)
+            {
+                 sourceRect.width = -sourceRect.width;
+            }
+            v->sizeInFight = destRect;
+            
+            bool isGrassType = (v->type[0] == vT_GRASS || v->type[1] == vT_GRASS);
+            bool useShader = cardSpecialActived && isGrassType;
+            
+            if (useShader)
+            {
+                currentFadeIntensity = 0.2f;
+
+                BeginShaderMode(shaders[S_MIKA_SPECIAL_CARD]);
+                SetShaderValue(shaders[S_MIKA_SPECIAL_CARD], fadeColorLoc, color, SHADER_UNIFORM_VEC4);
+                SetShaderValue(shaders[S_MIKA_SPECIAL_CARD], fadeIntensityLoc, &currentFadeIntensity, SHADER_UNIFORM_FLOAT);
+            }
+            
+            DrawTexturePro(
+                v->iconText,
+                sourceRect,
+                destRect,
+                (Vector2){.x=0,.y=0},
+                0,
+                RAYWHITE
+            );
+            
+            if (useShader)
+            {
+                EndShaderMode();
+            }
         }
-        if(entity->veyxInventory[1].life > 0)
-        {
-            Rectangle ori = entity->veyxInventory[1].sizeIcon;
-            DrawTexturePro(entity->veyxInventory[1].iconText,
-                    (Rectangle){.x = ori.x, .y=ori.y, .width = -ori.width, .height = ori.height},
-                    (Rectangle){.x=225,.y=170,.width=(entity->veyxInventory[1].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[1].sizeIcon.height * scale.ScaleUniform},
-                    (Vector2){.x=0,.y=0},0,RAYWHITE);  
-            entity->veyxInventory[1].sizeInFight = (Rectangle){.x=225,.y=170,.width=(entity->veyxInventory[1].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[1].sizeIcon.height * scale.ScaleUniform};
-        }
-        if(entity->veyxInventory[2].life > 0)  
-        {
-            Rectangle ori = entity->veyxInventory[2].sizeIcon;
-            DrawTexturePro(entity->veyxInventory[2].iconText,
-                    (Rectangle){.x = ori.x, .y=ori.y, .width = -ori.width, .height = ori.height},
-                    (Rectangle){.x=210,.y=150,.width=(entity->veyxInventory[2].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[2].sizeIcon.height * scale.ScaleUniform},
-                    (Vector2){.x=0,.y=0},0,RAYWHITE);  
-            entity->veyxInventory[2].sizeInFight = (Rectangle){.x=210,.y=150,.width=(entity->veyxInventory[2].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[2].sizeIcon.height * scale.ScaleUniform};
-        }
-        if(entity->veyxInventory[3].life > 0)
-        {
-            Rectangle ori = entity->veyxInventory[3].sizeIcon;
-            DrawTexturePro(entity->veyxInventory[3].iconText,
-                    (Rectangle){.x = ori.x, .y=ori.y, .width = -ori.width, .height = ori.height},
-                    (Rectangle){.x=220,.y=110,.width=(entity->veyxInventory[3].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[3].sizeIcon.height * scale.ScaleUniform},
-                    (Vector2){.x=0,.y=0},0,RAYWHITE);
-            entity->veyxInventory[3].sizeInFight = (Rectangle){.x=220,.y=110,.width=(entity->veyxInventory[3].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[3].sizeIcon.height * scale.ScaleUniform};
-        }
-        CustomScale(1.f);
     }
-    else
-    {
-        CustomScale(0.5);
-        if(entity->veyxInventory[0].life > 0)
-        {
-            Rectangle ori = entity->veyxInventory[0].sizeIcon;
-            DrawTexturePro(entity->veyxInventory[0].iconText,
-                    (Rectangle){.x = ori.x, .y=ori.y, .width = -ori.width, .height = ori.height},
-                    (Rectangle){.x=370,.y=145,.width=(entity->veyxInventory[0].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[0].sizeIcon.height * scale.ScaleUniform},
-                    (Vector2){.x=0,.y=0},0,RAYWHITE);  
-            entity->veyxInventory[0].sizeInFight = (Rectangle){.x=370,.y=145,.width=(entity->veyxInventory[0].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[0].sizeIcon.height * scale.ScaleUniform};
-        } 
-        if(entity->veyxInventory[1].life > 0)
-        {
-            DrawTexturePro(entity->veyxInventory[1].iconText,
-                    entity->veyxInventory[1].sizeIcon,
-                    (Rectangle){.x=390,.y=180,.width=(entity->veyxInventory[1].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[1].sizeIcon.height * scale.ScaleUniform},
-                    (Vector2){.x=0,.y=0},0,RAYWHITE);  
-            entity->veyxInventory[1].sizeInFight = (Rectangle){.x=390,.y=180,.width=(entity->veyxInventory[1].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[1].sizeIcon.height * scale.ScaleUniform};
-        }
-        if(entity->veyxInventory[2].life > 0)    
-        {
-            DrawTexturePro(entity->veyxInventory[2].iconText,
-                    entity->veyxInventory[2].sizeIcon,
-                    (Rectangle){.x=410,.y=150,.width=(entity->veyxInventory[2].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[2].sizeIcon.height * scale.ScaleUniform},
-                    (Vector2){.x=0,.y=0},0,RAYWHITE);  
-            entity->veyxInventory[2].sizeInFight = (Rectangle){.x=410,.y=150,.width=(entity->veyxInventory[2].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[2].sizeIcon.height * scale.ScaleUniform}; 
-        }
-        if(entity->veyxInventory[3].life > 0)  
-        {
-            DrawTexturePro(entity->veyxInventory[3].iconText,
-                    entity->veyxInventory[3].sizeIcon,
-                    (Rectangle){.x=395,.y=120,.width=(entity->veyxInventory[3].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[3].sizeIcon.height * scale.ScaleUniform},
-                    (Vector2){.x=0,.y=0},0,RAYWHITE);
-            entity->veyxInventory[3].sizeInFight = (Rectangle){.x=395,.y=120,.width=(entity->veyxInventory[3].sizeIcon.width * scale.ScaleUniform),.height = entity->veyxInventory[3].sizeIcon.height * scale.ScaleUniform};
-        }
-        CustomScale(1.f);
-    }
+    
+    // --- Restaurar Escala ---
+    CustomScale(1.f);
 }
 
 void DrawHeadVeyx(const Queue* self, Vector2 pos)
@@ -367,20 +225,22 @@ void DrawTeamStatus(Entity* player, Entity* npc)
     {
         DrawTextureEx(player->veyxInventory[i].headIcon,(Vector2){.x = 35,.y = (GetScreenHeight() / 2 - recSize.y /2) + 30 + inc},0,1.f,WHITE); 
         DrawTextureEx(npc->veyxInventory[i].headIcon,(Vector2){.x = GetScreenWidth() - 90,.y = (GetScreenHeight() / 2 - recSize.y /2) + 30 + inc},0,1.f,WHITE);
-        if(player->veyxInventory[i].life <= 0)
+        if(!IsVeyxAlive(&player->veyxInventory[i]))
         {
             BeginShaderMode(shaders[S_GRAYSCALE]);
                 DrawTextureEx(player->veyxInventory[i].headIcon,(Vector2){.x = 35,.y = (GetScreenHeight() / 2 - recSize.y /2) + 30 + inc},0,1.f,WHITE);
             EndShaderMode();       
         }
-        else if(npc->veyxInventory[i].life <= 0)
+        else if(!IsVeyxAlive(&npc->veyxInventory[i]))
         {
             BeginShaderMode(shaders[S_GRAYSCALE]);
                 DrawTextureEx(npc->veyxInventory[i].headIcon,(Vector2){.x = GetScreenWidth() - 90,.y = (GetScreenHeight() / 2 - recSize.y /2) + 30 + inc},0,1.f,WHITE);
             EndShaderMode();         
         }
         DrawLifeBar(&player->veyxInventory[i],(Vector2){.x = 35,.y = (GetScreenHeight() / 2 - recSize.y /2) + 30 + inc});
+        DrawManaBar(&player->veyxInventory[i],(Vector2){.x = 35,.y = (GetScreenHeight() / 2 - recSize.y /2 + 12) + 30 + inc});
         DrawLifeBar(&npc->veyxInventory[i],(Vector2){.x = GetScreenWidth() - 90,.y = (GetScreenHeight() / 2 - recSize.y /2) + 30 + inc});
+        DrawManaBar(&npc->veyxInventory[i],(Vector2){.x = GetScreenWidth() - 90,.y = (GetScreenHeight() / 2 - recSize.y /2 + 12) + 30 + inc});
         inc += 76;
 
     }
@@ -390,13 +250,29 @@ void DrawTeamStatus(Entity* player, Entity* npc)
 
 void DrawLifeBar(Veyx* vA, Vector2 pos)
 {
-    if (vA->displayedLife > vA->life)
-        vA->displayedLife -= 2;
-    else if (vA->displayedLife < vA->life)
-        vA->displayedLife += 2;
+    if (vA->displayedLife != vA->life)
+    {
+        float diff = vA->displayedLife - vA->life;
+        float step = fmaxf(fabsf(diff) * 0.1f, 2.0f);
+        
+        if (vA->displayedLife > vA->life)
+        {
+            vA->displayedLife -= step;
+            if (vA->displayedLife < vA->life || vA->displayedLife >= 255)
+                vA->displayedLife = vA->life;
+        }
+        else
+        {
+            vA->displayedLife += step;
+            if (vA->displayedLife > vA->life)
+                vA->displayedLife = vA->life;
+        }
+    }
 
-    float pct = (vA->life == 0) ? 0.0f : (float)vA->displayedLife / (float)vA->maxlife;;
+    float pct = (float)vA->displayedLife / (float)vA->maxlife;
+    pct = fmaxf(pct, 0.0f);
     int innerWidth = (int)(pct * BAR_WIDTH);
+
     Color fillColor = GREEN;
     if (pct < 0.25) 
         fillColor = RED;
@@ -406,55 +282,27 @@ void DrawLifeBar(Veyx* vA, Vector2 pos)
     Color colorStatus = BLANK;
     switch (vA->status)
     {
-    case STATUS_BURN:
-        colorStatus = RED;
-        break;
-    case STATUS_FREEZE:
-        colorStatus = SKYBLUE;
-        break;
-    case STATUS_POISON:
-        colorStatus = LIME;
-        break;;
-    case STATUS_STUN:
-        colorStatus = YELLOW;
-        break;
-    default:
-        colorStatus = BLANK;
-        break;
+        case STATUS_BURN:   colorStatus = RED;     break;
+        case STATUS_FREEZE: colorStatus = SKYBLUE; break;
+        case STATUS_POISON: colorStatus = LIME;    break;
+        case STATUS_STUN:   colorStatus = YELLOW;  break;
+        default:            colorStatus = BLANK;   break;
     }
 
     switch (vA->owner)
     {
     case _PLAYER:
     {
+        float baseX = pos.x + vA->sizeHead.width + 20;
+        float baseY = pos.y + vA->sizeHead.height / 2 - 5;
         ///< Veyx Status
         DrawRectangleRec((Rectangle){
-        .x = pos.x + vA->sizeHead.width + 20,
-        .y = pos.y + vA->sizeHead.height / 2 + 15,
-        .width = 20,
-        .height = 20
-        },colorStatus);
-
-
-        DrawRectangleRec((Rectangle){
-        .x = pos.x + vA->sizeHead.width + 20,
-        .y = pos.y + vA->sizeHead.height / 2 - 5,
-        .width = BAR_WIDTH,
-        .height = BAR_HEIGHT
-        },WHITE);    
-
-        DrawRectangleRec((Rectangle){
-            .x = pos.x + vA->sizeHead.width + 20,
-            .y = pos.y + vA->sizeHead.height / 2 - 5,
-            .width = innerWidth,
-            .height = BAR_HEIGHT
-        },fillColor);
-    }break;
-    case _NPC:
-    {
-        float baseX = pos.x - vA->sizeHead.width - 50;
-        float baseY = pos.y + vA->sizeHead.height / 2 - 5;
-        float lifeStatus = vA->life <= 0 ? BAR_WIDTH : vA->maxlife - vA->displayedLife; 
+            .x = baseX,
+            .y = baseY + BAR_HEIGHT + 13,
+            .width = 20,
+            .height = 20
+        }, colorStatus);
+        ///< Life veyx 
         DrawRectangleRec((Rectangle){
             .x = baseX,
             .y = baseY,
@@ -462,17 +310,106 @@ void DrawLifeBar(Veyx* vA, Vector2 pos)
             .height = BAR_HEIGHT
         }, WHITE);
         DrawRectangleRec((Rectangle){
-            .x = baseX + (lifeStatus),
+            .x = baseX,
             .y = baseY,
-            .width = BAR_WIDTH - (lifeStatus),
+            .width = innerWidth,
             .height = BAR_HEIGHT
         }, fillColor);
+    }break;
+    case _NPC:
+    {
+        float baseX = pos.x - vA->sizeHead.width - 50;
+        float baseY = pos.y + vA->sizeHead.height / 2 - 5;
+
+        ///< Status Veyx
         DrawRectangleRec((Rectangle){
         .x = baseX + BAR_WIDTH  - 22,
-        .y = baseY + BAR_HEIGHT + 5,
+        .y = baseY + BAR_HEIGHT + 13,
         .width = 20,
         .height = 20
         },colorStatus);
+
+        DrawRectangleRec((Rectangle){
+            .x = baseX,
+            .y = baseY,
+            .width = BAR_WIDTH,
+            .height = BAR_HEIGHT
+        }, WHITE);
+        DrawRectangleRec((Rectangle){
+            .x = baseX + (BAR_WIDTH - innerWidth),
+            .y = baseY,
+            .width = innerWidth,
+            .height = BAR_HEIGHT
+        }, fillColor);
+    }
+    break;
+    default:
+        break;
+    }
+}
+
+void DrawManaBar(Veyx* vA, Vector2 pos)
+{
+    if (vA->displayedMana != vA->mana)
+    {
+        float diff = vA->displayedMana - vA->mana;
+        float step = fmaxf(fabsf(diff) * 0.1f, 2.0f);
+        
+        if (vA->displayedMana > vA->mana)
+        {
+            vA->displayedMana -= step;
+            if (vA->displayedMana < vA->mana || vA->displayedMana >= 255)
+                vA->displayedMana = vA->mana;
+        }
+        else
+        {
+            vA->displayedMana += step;
+            if (vA->displayedMana > vA->mana)
+                vA->displayedMana = vA->mana;
+        }
+    }
+
+    float pct = (float)vA->displayedMana / (float)vA->maxMana;
+    pct = fmaxf(pct, 0.0f);
+    int innerWidth = (int)(pct * BAR_WIDTH);
+
+    Color fillColor = MAGENTA;
+    switch (vA->owner)
+    {
+    case _PLAYER:
+    {
+        float baseX = pos.x + vA->sizeHead.width + 20;
+        float baseY = pos.y + vA->sizeHead.height / 2 - 5;
+        ///< Life veyx 
+        DrawRectangleRec((Rectangle){
+            .x = baseX,
+            .y = baseY,
+            .width = BAR_WIDTH,
+            .height = BAR_HEIGHT
+        }, WHITE);
+        DrawRectangleRec((Rectangle){
+            .x = baseX,
+            .y = baseY,
+            .width = innerWidth,
+            .height = BAR_HEIGHT
+        }, fillColor);
+    }break;
+    case _NPC:
+    {
+        float baseX = pos.x - vA->sizeHead.width - 50;
+        float baseY = pos.y + vA->sizeHead.height / 2 - 5;
+        DrawRectangleRec((Rectangle){
+            .x = baseX,
+            .y = baseY,
+            .width = BAR_WIDTH,
+            .height = BAR_HEIGHT
+        }, WHITE);
+        DrawRectangleRec((Rectangle){
+            .x = baseX + (BAR_WIDTH - innerWidth),
+            .y = baseY,
+            .width = innerWidth,
+            .height = BAR_HEIGHT
+        }, fillColor);
     }
     break;
     default:
@@ -495,8 +432,11 @@ bool UpdateFightButtons(Queue* q,Entity* player,Entity** pool, Vector2 mouse, Bu
     else if(CheckCollisionPointRec(mouse,buttons[1]->boundingBox) && !IsButtonPressed(IsButtonsPressed))
     {
         IsMouseOver[1] = true;
-        // if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
-        //     IsButtonsPressed[1] = true;
+        if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            PlaySound(sounds[0]);
+            IsButtonsPressed[1] = true;
+        }
     }
     else if(CheckCollisionPointRec(mouse,buttons[2]->boundingBox) && !IsButtonPressed(IsButtonsPressed))
     {
@@ -517,7 +457,9 @@ bool UpdateFightButtons(Queue* q,Entity* player,Entity** pool, Vector2 mouse, Bu
             for(size_t i=0; i< 4; i++)
             {
                 player->veyxInventory[i].life = player->veyxInventory[i].maxlife;
+                player->veyxInventory[i].mana = player->veyxInventory[i].mana;
                 pool[tNPCSCoop]->veyxInventory[i].life = pool[tNPCSCoop]->veyxInventory[i].maxlife;
+                pool[tNPCSCoop]->veyxInventory[i].mana = pool[tNPCSCoop]->veyxInventory[i].maxMana;
 
                 player->veyxInventory[i].status = STATUS_NONE;
                 pool[tNPCSCoop]->veyxInventory[i].status = STATUS_NONE;

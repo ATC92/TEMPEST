@@ -10,12 +10,6 @@ static size_t nEntitys = 2;
 /// @brief Textures
 static Texture2D Button_E;
 //--------------------------------------------------------
-///!<------- Public declarations
-
-/// @brief Entity Pool for NPC's
-Entity** entityPool;
-/// Main Entity for the player.
-Entity* eplayer;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void InitGameScene(void)
 {
@@ -27,7 +21,7 @@ void InitGameScene(void)
     ///< Gen player.
     eplayer = GenEntity(_PLAYER, "Simon",120);
     ///< Create SpriteAnimation for PlayerEntity.
-    eplayer->spriteAnimation = (SpriteAnimation*)calloc(5,sizeof(SpriteAnimation));
+    eplayer->spriteAnimation = (SpriteAnimation*)calloc(4,sizeof(SpriteAnimation));
     eplayer->spriteAnimation[UP]    = CreateSpriteAnimation(ASSETS "/Entities/_aSimon/BackWalk/SimonUp.png",      0,3,1,0.1f,0.5f,A_LOOP);
     eplayer->spriteAnimation[DOWN]  = CreateSpriteAnimation(ASSETS "/Entities/_aSimon/FrontWalk/SimonDown.png",   0,3,1,0.1f,0.5f,A_LOOP);
     eplayer->spriteAnimation[RIGHT] = CreateSpriteAnimation(ASSETS "/Entities/_aSimon/SideWalk/SimonSideR.png",   0,3,1,0.1f,0.5f,A_LOOP);
@@ -38,7 +32,7 @@ void InitGameScene(void)
     ///< LoadVeyxData for Player
     LoadVeyxList(eplayer);
     /////////////////////////////////////////////////////////////////////////////////////////
-    mapWorld = (RenderData**)calloc(2,sizeof(RenderData*));
+    mapWorld = (RenderData**)calloc(1,sizeof(RenderData*));
     // Generate the tilemap (16x16 tiles)
     mapWorld[MP_MINI_TOWN] = LoadInformationMap(ASSETS"/Tilemap//MiniTownTileMap/TileMap.png",
         ASSETS"/Maps/MiniTownMap/MiniTownTiled_Ground.csv",
@@ -173,6 +167,7 @@ void UpdateGameLogic(float dt)
         ///< Save Prev Position of all entites 
         UpdatePrevPosition(eplayer,entityPool,nEntitys);
         ///< Update Animation _NPC
+        UpdateAnimation(&eplayer->spriteAnimation[eplayer->eLook],eplayer->isMooving);
         UpdateAnimation(&entityPool[_NPC_MIKA]->spriteAnimation[0],true);
         UpdateAnimation(&entityPool[_NPC_ARTURO]->spriteAnimation[0],true);
 
@@ -234,7 +229,8 @@ void DestroyGameScene(void)
 {
     ///< Render Map
     DestroyRenderMap(mapWorld,MP_MINI_TOWN);
-    free(mapWorld);
+
+    
 
     ///< Animation Data
     ///< Delete Player Data
@@ -242,7 +238,9 @@ void DestroyGameScene(void)
     free(eplayer);
     ///< Pool entities
     DestroyAnimation(entityPool[_NPC_MIKA]->spriteAnimation,_NPC);
+    DestroyAnimation(entityPool[_NPC_ARTURO]->spriteAnimation,_NPC);
     free(entityPool[_NPC_MIKA]);
+    free(entityPool[_NPC_ARTURO]);
     free(entityPool);
 
     ///< Textures

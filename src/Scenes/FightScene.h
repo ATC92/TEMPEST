@@ -4,6 +4,8 @@
 ///< TEMPEST Lib
 #include "../Engine/Flags.h"
 
+// #include "../Components/Card.h"
+#include "../Components/Card.h"
 #include "../Components/Mouse.h"
 #include "../Components/Sound.h"
 #include "../Components/Fonts.h"
@@ -11,6 +13,7 @@
 #include "../Components/Entity.h"
 #include "../Components/Button.h"
 #include "../Components/Camera.h"
+#include "../Components/CardSelector.h"
 #include "../Components/LoadTextures.h"
 
 #include "../Utils/Queues.h"

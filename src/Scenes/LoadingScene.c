@@ -91,9 +91,16 @@ void UpdateLoadingScene(void)
 
         if(!IsGameInit)
         {
+            ///< Card Init
+            InitCard();
+            ///< Init GameScene
             InitGameScene();
             ///< Load Game Save
             ///     Need to add function to save the game.
+            ///< Init FightScene
+            InitFightScene();
+
+            
             IsGameInit = true;
         }        
     }

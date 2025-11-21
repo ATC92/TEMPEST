@@ -1,28 +1,32 @@
 #include "Map.h"
 //////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
-
+// static size_t totalMaps = 5;
 //////////////////////////////////////////////////////////////////
 RenderData* LoadInformationMap(char* pathTileMap, ...)
 {
     va_list args;
-    va_start(args,pathTileMap);
+    va_start(args, pathTileMap);
 
     const char* layerPath = NULL;
+    size_t count = 0;
+    va_list args_copy;
+    va_copy(args_copy, args);
+
+    while ((layerPath = va_arg(args_copy, const char*)) != NULL)
+        count++;
+    va_end(args_copy);
+
+    RenderData* tempData = calloc(1, sizeof(RenderData));
+    tempData->mapsData = calloc(count, sizeof(MapData));
+    tempData->numMaps = count;
+
     size_t index = 0;
-    
-    ///< Allocate Memory to RenderData.
-    RenderData* tempData = (RenderData*)calloc(1,sizeof(RenderData));
-    tempData->mapsData = (MapData*)calloc(5,sizeof(MapData));
-    ///< Load Layers
     while ((layerPath = va_arg(args, const char*)) != NULL)
     {
-        tempData->mapsData[index].data =LoadMapTiles(layerPath,&tempData->mapsData[index].width,&tempData->mapsData[index].height);
-        tempData->mapsData[index].size = (Rectangle){0,0,(float)tempData->mapsData[index].width * 16, (float)tempData->mapsData[index].height * 16};
-        index ++;
+        tempData->mapsData[index].data = LoadMapTiles(layerPath, &tempData->mapsData[index].width,&tempData->mapsData[index].height);
+        tempData->mapsData[index].size =(Rectangle){0,0,(float)tempData->mapsData[index].width * 16,(float)tempData->mapsData[index].height * 16};
+        index++;
     }
-    ///< Load Textures
-    ///<    TileMap && EmptyTexture
     va_end(args);
     tempData->tileMapTex = LoadTexture(pathTileMap);
     if(!IsTextureValid(tempData->tileMapTex))
@@ -102,12 +106,17 @@ void DestroyRenderMap(RenderData** self, TypeMap tMap)
     free(self[tMap]->texturesArray);
     UnloadTexture(self[tMap]->emptyTexture);
 
-    for(int i=0; i < self[tMap]->mapsData[0].height;i++)
-        free(self[tMap]->mapsData[0].data[i]);
-    for(int i=0; i < self[tMap]->mapsData[1].height;i++)
-        free(self[tMap]->mapsData[1].data[i]);
-    free(self[tMap]->mapsData[0].data);
-    free(self[tMap]->mapsData[1].data);
+    for (size_t i = 0; i < self[tMap]->numMaps; i++)
+    {
+        for(size_t j=0; j<(size_t)self[tMap]->mapsData[i].height; j++)
+        {
+            free(self[tMap]->mapsData[i].data[j]);
+        }
+        free(self[tMap]->mapsData[i].data);
+    }
+    free(self[tMap]->mapsData);
+    free(self[tMap]);
+    free(self);
 }
 //////////////////////////////////////////////////////////////////
 

@@ -26,7 +26,8 @@ typedef enum _typeShader
     S_OUTLINE,
     S_BLUR,
     S_SHIELDGLOW,
-    S_GRAYSCALE
+    S_GRAYSCALE,
+    S_MIKA_SPECIAL_CARD
 }TypeShader;
 //////////////////////////////////////////////////////////
 /**

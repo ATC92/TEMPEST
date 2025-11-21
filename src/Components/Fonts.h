@@ -42,4 +42,9 @@ void InitFont(void);
  * @note Ensure that this function is called during the cleanup phase of the application.
  */
 void DestroyFont(void);
+
+/**
+ * 
+ */
+void DrawTextBoxed(Font font, const char *text, Rectangle rec, float fontSize, float spacing, bool wordWrap, Color tint);
 //////////////////////////////////////////////////////////

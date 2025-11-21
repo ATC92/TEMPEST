@@ -8,63 +8,63 @@ size_t countVeyx;
 static AttackMove VeyxMoves[vT_TYPE_MAX][2] = {
     // FIRE
     {
-        {"Flame Burst", CATEGORY_MAGICAL, 20, vT_FIRE, 95, 6, STATUS_NONE, 20, false},
-        {"Fire Punch",  CATEGORY_PHYSICAL, 30, vT_FIRE, 90, 10, STATUS_BURN, 15, false}
+        {"Flame Burst",25, CATEGORY_MAGICAL, 20, vT_FIRE, 95, 6, STATUS_NONE, 20, false},
+        {"Fire Punch",30, CATEGORY_PHYSICAL, 30, vT_FIRE, 90, 10, STATUS_BURN, 15, false}
     },
     // AQUA
     {
-        {"Water Jet",    CATEGORY_MAGICAL, 35, vT_AQUA, 95, 5, STATUS_NONE, 0, false},
-        {"Bubble Crush", CATEGORY_PHYSICAL, 20, vT_AQUA, 100, 0, STATUS_NONE, 0, false}
+        {"Water Jet", 30,  CATEGORY_MAGICAL, 35, vT_AQUA, 95, 5, STATUS_NONE, 0, false},
+        {"Bubble Crush",25, CATEGORY_PHYSICAL, 20, vT_AQUA, 100, 0, STATUS_NONE, 0, false}
     },
     // ELECTRIC
     {
-        {"Thunder Shock", CATEGORY_MAGICAL, 35, vT_ELECTRIC, 90, 10, STATUS_NONE, 20, false},
-        {"Spark Punch",   CATEGORY_PHYSICAL, 20, vT_ELECTRIC, 100, 5, STATUS_STUN, 10, false}
+        {"Thunder Shock",20, CATEGORY_MAGICAL, 35, vT_ELECTRIC, 90, 10, STATUS_NONE, 20, false},
+        {"Spark Punch", 25, CATEGORY_PHYSICAL, 20, vT_ELECTRIC, 100, 5, STATUS_STUN, 10, false}
     },
     // GRASS
     {
-        {"Leaf Blade", CATEGORY_PHYSICAL, 40, vT_GRASS, 95, 6, STATUS_NONE, 0, false},
-        {"Vine Whip",   CATEGORY_PHYSICAL, 25, vT_GRASS, 100, 0, STATUS_POISON, 15, false}
+        {"Leaf Blade",25, CATEGORY_PHYSICAL, 40, vT_GRASS, 95, 6, STATUS_NONE, 0, false},
+        {"Vine Whip", 30,  CATEGORY_PHYSICAL, 25, vT_GRASS, 100, 0, STATUS_POISON, 15, false}
     },
     // ROCK
     {
-        {"Rock Throw",  CATEGORY_PHYSICAL, 30, vT_ROCK, 95, 5, STATUS_NONE, 0, false},
-        {"Stone Slam",  CATEGORY_PHYSICAL, 35, vT_ROCK, 90, 8, STATUS_STUN, 10, false}
+        {"Rock Throw",35, CATEGORY_PHYSICAL, 30, vT_ROCK, 95, 5, STATUS_NONE, 0, false},
+        {"Stone Slam",30, CATEGORY_PHYSICAL, 35, vT_ROCK, 90, 8, STATUS_STUN, 10, false}
     },
     // FLY
     {
-        {"Gust",      CATEGORY_MAGICAL, 25, vT_FLY, 95, 5, STATUS_NONE, 0, false},
-        {"Wing Attack",CATEGORY_PHYSICAL, 35, vT_FLY, 90, 8, STATUS_NONE, 0, false}
+        {"Gust",     20, CATEGORY_MAGICAL, 25, vT_FLY, 95, 5, STATUS_NONE, 0, false},
+        {"Wing Attack",25,CATEGORY_PHYSICAL, 35, vT_FLY, 90, 8, STATUS_NONE, 0, false}
     },
     // STEEL
     {
-        {"Metal Claw", CATEGORY_PHYSICAL, 40, vT_STEEL, 95, 10, STATUS_NONE, 0, false},
-        {"Iron Strike", CATEGORY_PHYSICAL, 30, vT_STEEL, 90, 12, STATUS_STUN, 15, false}
+        {"Metal Claw",30,CATEGORY_PHYSICAL, 40, vT_STEEL, 95, 10, STATUS_NONE, 0, false},
+        {"Iron Strike",25,CATEGORY_PHYSICAL, 30, vT_STEEL, 90, 12, STATUS_STUN, 15, false}
     },
     // POISON
     {
-        {"Poison Sting", CATEGORY_PHYSICAL, 10, vT_POISON, 100, 5, STATUS_POISON, 30, false},
-        {"Toxic Fang",   CATEGORY_PHYSICAL, 35, vT_POISON, 90, 8, STATUS_POISON, 40, false}
+        {"Poison Sting",15,CATEGORY_PHYSICAL, 10, vT_POISON, 100, 5, STATUS_POISON, 30, false},
+        {"Toxic Fang", 20,CATEGORY_PHYSICAL, 35, vT_POISON, 90, 8, STATUS_POISON, 40, false}
     },
     // DARK
     {
-        {"Shadow Claw", CATEGORY_PHYSICAL, 35, vT_DARK, 95, 10, STATUS_NONE, 0, false},
-        {"Night Bite",  CATEGORY_PHYSICAL, 40, vT_DARK, 90, 12, STATUS_STUN, 15, false}
+        {"Shadow Claw",25,CATEGORY_PHYSICAL, 35, vT_DARK, 95, 10, STATUS_NONE, 0, false},
+        {"Night Bite", 30,CATEGORY_PHYSICAL, 40, vT_DARK, 90, 12, STATUS_STUN, 15, false}
     },
     // LIGHT
     {
-        {"Holy Beam",   CATEGORY_MAGICAL, 60, vT_LIGHT, 90, 8, STATUS_NONE, 0, false},
-        {"Radiant Punch", CATEGORY_PHYSICAL, 35, vT_LIGHT, 95, 6, STATUS_NONE, 0, false}
+        {"Holy Beam", 40,CATEGORY_MAGICAL, 60, vT_LIGHT, 90, 8, STATUS_NONE, 0, false},
+        {"Radiant Punch",30, CATEGORY_PHYSICAL, 35, vT_LIGHT, 95, 6, STATUS_NONE, 0, false}
     },
     // DRAGON
     {
-        {"Dragon Claw", CATEGORY_PHYSICAL, 40, vT_DRAGON, 90, 10, STATUS_NONE, 0, false},
-        {"Dragon Breath", CATEGORY_MAGICAL, 35, vT_DRAGON, 90, 8, STATUS_NONE, 0, false}
+        {"Dragon Claw",30 ,CATEGORY_PHYSICAL, 40, vT_DRAGON, 90, 10, STATUS_NONE, 0, false},
+        {"Dragon Breath",35,CATEGORY_MAGICAL, 35, vT_DRAGON, 90, 8, STATUS_NONE, 0, false}
     },
     // ECHO
     {
-        {"Sonic Boom", CATEGORY_MAGICAL, 40, vT_ECHO, 95, 5, STATUS_STUN, 20, false},
-        {"Echo Strike", CATEGORY_PHYSICAL, 35, vT_ECHO, 100, 0, STATUS_NONE, 0, false}
+        {"Sonic Boom",30 ,CATEGORY_MAGICAL, 40, vT_ECHO, 95, 5, STATUS_STUN, 20, false},
+        {"Echo Strike", 25,CATEGORY_PHYSICAL, 35, vT_ECHO, 100, 0, STATUS_NONE, 0, false}
     }
 };
 ///////////////////////////////////////////////////////////
@@ -89,10 +89,15 @@ float CalculateTypeMultiplier(VeyxType moveType, const Veyx* defender)
     return m;
 }
 
-AttackResult ApplyAttack(const Veyx* attacker, Veyx* defender, const AttackMove* move)
+AttackResult ApplyAttack(Veyx* attacker, Veyx* defender, const AttackMove* move)
 {
     ///< Steps for ApplyAttack
     AttackResult res = {0, false, 1.0f, false, STATUS_NONE};
+
+    if(attacker->mana < move->manaCost)
+        attacker->mana = 0;
+    else
+        attacker->mana -= move->manaCost;
 
     /// 1) hit check
     int roll = rand() % 100;
@@ -128,7 +133,7 @@ AttackResult ApplyAttack(const Veyx* attacker, Veyx* defender, const AttackMove*
 
     /// 8) apply to defender (clamped)
     int prevLife = defender->life;
-    defender->life = (uint8_t) clamp_int(defender->life - dmg, 0, 255);
+    defender->life = (uint8_t)clamp_int(defender->life - dmg, 0, 255);
 
     res.damageDone = prevLife - defender->life;
 
@@ -147,6 +152,28 @@ AttackResult ApplyAttack(const Veyx* attacker, Veyx* defender, const AttackMove*
     }
 
     return res;
+}
+
+char* GetStatusToString(StatusEffect status)
+{
+    switch (status)
+    {
+    case STATUS_BURN:
+        return "Quemadura";
+        break;
+    case STATUS_FREEZE:
+        return "Congelado";
+        break;
+    case STATUS_POISON:
+        return "Envenenado";
+        break;
+    case STATUS_STUN:
+        return "Paralizado";
+        break;
+    default:
+        return "Desconocido";
+        break;
+    }
 }
 ///////////////////////////////////////////////////////////
 void InitVeyxRegistry(void)
@@ -202,6 +229,7 @@ void LoadVeyxData(char* path)
                 case 4: 
                     VeyxRegistry[countVeyx].mana = (uint8_t)atoi(token); 
                     VeyxRegistry[countVeyx].maxMana = (uint8_t)atoi(token); 
+                    VeyxRegistry[countVeyx].displayedMana = (uint8_t)atoi(token); 
                     break;
                 case 5: 
                     VeyxRegistry[countVeyx].speed = (uint8_t)atoi(token); 
